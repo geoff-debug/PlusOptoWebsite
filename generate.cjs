@@ -256,7 +256,8 @@ function navbar(active = '') {
         </ul>
         <div class="nav-search-wrap d-none d-lg-block">
           <i class="bi bi-search search-icon"></i>
-          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" />
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
         </div>
       </div>
     </div>

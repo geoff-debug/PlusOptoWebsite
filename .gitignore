@@ -1,6 +1,8 @@
 __MACOSX/
 .DS_Store
 Thumbs.db
+node_modules/
+pagefind/
 
 # wrangler files
 .wrangler
