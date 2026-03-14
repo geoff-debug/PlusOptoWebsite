@@ -5,7 +5,8 @@
       "name": "Static Site Server",
       "runtimeExecutable": "cmd",
       "runtimeArgs": ["/c", "serve.cmd"],
-      "port": 3000
+      "port": 3500,
+      "autoPort": true
     },
     {
       "name": "Site Generator",
