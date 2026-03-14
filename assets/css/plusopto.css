@@ -1,0 +1,978 @@
+/* ==========================================================
+   Plus Opto — Custom Bootstrap 5 Overrides & Components
+   ========================================================== */
+
+/* ----------------------------------------------------------
+   1. CSS Custom Properties (Brand Tokens)
+   ---------------------------------------------------------- */
+
+:root {
+  --po-navy: #112638;
+  --po-navy-light: #183858;
+  --po-navy-mid: #1a3a56;
+  --po-teal: #1fada1;
+  --po-teal-glow: #30e8d9;
+  --po-gold: #f4b625;
+  --po-surface-fg: rgba(210, 228, 245, 0.85);
+  --po-gradient-hero: linear-gradient(135deg, #112638, #183858, #1a3a56);
+  --po-shadow-card: 0 4px 20px -4px rgba(17, 38, 56, 0.08);
+  --po-shadow-elevated: 0 10px 40px -10px rgba(17, 38, 56, 0.18);
+  --bs-primary: #1a4870;
+  --bs-primary-rgb: 26, 72, 112;
+  --bs-link-color: #1fada1;
+  --bs-link-hover-color: #1a8f85;
+}
+
+/* ----------------------------------------------------------
+   2. Typography
+   ---------------------------------------------------------- */
+
+body {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color: #1a2b3c;
+  background-color: #f5f7fa;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Outfit', system-ui, sans-serif;
+}
+
+/* ----------------------------------------------------------
+   3. Top Bar (Navy gradient strip above navbar)
+   ---------------------------------------------------------- */
+
+.topbar {
+  background: var(--po-gradient-hero);
+  color: #fff;
+  font-size: 0.8125rem;
+}
+
+.topbar a {
+  color: var(--po-teal-glow);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.topbar a:hover {
+  color: var(--po-teal);
+}
+
+.topbar .topbar-email {
+  color: var(--po-surface-fg);
+}
+
+.topbar .topbar-email:hover {
+  color: var(--po-teal-glow);
+}
+
+/* ----------------------------------------------------------
+   4. Main Navbar
+   ---------------------------------------------------------- */
+
+.site-navbar {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e4eaf0;
+  box-shadow: 0 2px 8px rgba(17, 38, 56, 0.06);
+}
+
+.site-navbar .nav-link {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #1a2b3c;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.site-navbar .nav-link:hover, .site-navbar .nav-link:focus {
+  color: var(--po-teal);
+  background-color: #f0f5fa;
+}
+
+.site-navbar .dropdown-menu {
+  border: 1px solid #e4eaf0;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(17, 38, 56, 0.12);
+  min-width: 220px;
+  padding: 0.5rem 0;
+  animation: fadeInDown 0.18s ease;
+}
+
+.site-navbar .dropdown-item {
+  font-size: 0.875rem;
+  color: #1a2b3c;
+  padding: 0.5rem 1.25rem;
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.site-navbar .dropdown-item:hover {
+  color: var(--po-teal);
+  background-color: #f0f5fa;
+}
+
+.site-navbar .navbar-toggler {
+  border: 0;
+  padding: 0.25rem;
+}
+
+.site-navbar .navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Search */
+
+.nav-search {
+  background-color: #f0f5fa;
+  border: 0;
+  border-radius: 6px;
+  padding: 0.45rem 0.75rem 0.45rem 2.25rem;
+  font-size: 0.875rem;
+  width: 200px;
+  outline: none;
+  transition: box-shadow 0.2s, width 0.3s;
+}
+
+.nav-search:focus {
+  box-shadow: 0 0 0 3px rgba(31, 173, 161, 0.2);
+  width: 240px;
+}
+
+.nav-search-wrap {
+  position: relative;
+}
+
+.nav-search-wrap .search-icon {
+  position: absolute;
+  left: 0.65rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #8096a8;
+  pointer-events: none;
+  width: 16px;
+  height: 16px;
+}
+
+/* ----------------------------------------------------------
+   5. Buttons
+   ---------------------------------------------------------- */
+
+.btn-teal {
+  background-color: var(--po-teal);
+  color: #fff;
+  border: 0;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: filter 0.2s, box-shadow 0.2s;
+}
+
+.btn-teal:hover {
+  filter: brightness(1.12);
+  box-shadow: 0 4px 16px rgba(31, 173, 161, 0.35);
+  color: #fff;
+}
+
+.btn-navy {
+  background-color: var(--po-navy);
+  color: #fff;
+  border: 0;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-navy:hover {
+  background-color: var(--po-navy-light);
+  box-shadow: 0 4px 16px rgba(17, 38, 56, 0.25);
+  color: #fff;
+}
+
+.btn-outline-teal {
+  border: 2px solid var(--po-teal);
+  color: var(--po-teal);
+  background-color: transparent;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.btn-outline-teal:hover {
+  background-color: var(--po-teal);
+  color: #fff;
+}
+
+/* ----------------------------------------------------------
+   6. Section: Navy (dark hero-style sections)
+   ---------------------------------------------------------- */
+
+.section-navy {
+  background: var(--po-gradient-hero);
+  color: #fff;
+}
+
+.section-navy h1, .section-navy h2, .section-navy h3 {
+  color: #fff;
+}
+
+.section-navy .text-muted {
+  color: var(--po-surface-fg) !important;
+}
+
+/* ----------------------------------------------------------
+   7. Hero Carousel
+   ---------------------------------------------------------- */
+
+.hero-carousel {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-carousel .carousel-item {
+  height: 460px;
+}
+
+@media (max-width: 767.98px) {
+  .hero-carousel .carousel-item {
+    height: 320px;
+  }
+}
+
+@media (min-width: 992px) {
+  .hero-carousel .carousel-item {
+    height: 520px;
+  }
+}
+
+.hero-carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-carousel .carousel-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(17,38,56,0.90) 0%, rgba(17,38,56,0.60) 50%, rgba(17,38,56,0.15) 100%);
+}
+
+.hero-carousel .carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  text-align: left;
+  padding: 0;
+}
+
+.hero-carousel .carousel-caption h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.hero-carousel .carousel-caption p {
+  font-size: clamp(0.95rem, 2vw, 1.15rem);
+  color: rgba(210, 228, 245, 0.85);
+  margin-top: 0.75rem;
+}
+
+.hero-carousel .carousel-control-prev, .hero-carousel .carousel-control-next {
+  width: 48px;
+  height: 48px;
+  background-color: rgba(17,38,56,0.5);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+}
+
+.hero-carousel .carousel-control-prev {
+  left: 16px;
+}
+
+.hero-carousel .carousel-control-next {
+  right: 16px;
+}
+
+.hero-carousel .carousel-control-prev:hover, .hero-carousel .carousel-control-next:hover {
+  background-color: var(--po-navy);
+}
+
+.hero-carousel .carousel-indicators [data-bs-target] {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.4);
+  border: 0;
+  transition: width 0.3s, background-color 0.3s;
+}
+
+.hero-carousel .carousel-indicators .active {
+  width: 24px;
+  border-radius: 5px;
+  background-color: var(--po-teal);
+}
+
+/* ----------------------------------------------------------
+   8. Category Cards
+   ---------------------------------------------------------- */
+
+.category-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(17,38,56,0.95) 0%, rgba(17,38,56,0.8) 40%, rgba(17,38,56,0.3) 70%, transparent 100%);
+  transition: background 0.4s;
+}
+
+.category-card:hover::after {
+  background: linear-gradient(to top, rgba(14,95,88,0.92) 0%, rgba(14,95,88,0.75) 40%, rgba(14,95,88,0.25) 70%, transparent 100%);
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.category-card:hover img {
+  transform: scale(1.05);
+}
+
+.category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--po-shadow-elevated);
+}
+
+.category-card .card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+  padding: 1.5rem;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
+
+.category-card .card-content h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.25rem;
+}
+
+.category-card .card-content p {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 0.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.category-card .card-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--po-teal-glow);
+  text-shadow: none;
+  text-decoration: none;
+}
+
+.category-card:hover .card-link {
+  text-decoration: underline;
+}
+
+/* Category card aspect ratio */
+
+.category-card-wrap {
+  aspect-ratio: 4 / 3;
+}
+
+/* ----------------------------------------------------------
+   9. Product Cards (Blog & Products)
+   ---------------------------------------------------------- */
+
+.card-product {
+  border: 1px solid #e4eaf0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: var(--po-shadow-card);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-product:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--po-shadow-elevated);
+  color: inherit;
+}
+
+.card-product .card-img-wrap {
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.card-product .card-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.card-product:hover .card-img-wrap img {
+  transform: scale(1.05);
+}
+
+.card-product .card-body {
+  padding: 1.25rem;
+}
+
+.card-product .post-date {
+  font-size: 0.78rem;
+  color: #7a94a8;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-product h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a2b3c;
+  margin-bottom: 0.4rem;
+  transition: color 0.2s;
+}
+
+.card-product:hover h3 {
+  color: var(--po-teal);
+}
+
+.card-product .excerpt {
+  font-size: 0.875rem;
+  color: #6b7f8e;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+}
+
+.card-product .read-more {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--po-teal);
+  text-decoration: none;
+}
+
+/* ----------------------------------------------------------
+   10. Featured Products / Highlights (dark section cards)
+   ---------------------------------------------------------- */
+
+.highlight-card {
+  background-color: rgba(24, 56, 88, 0.5);
+  border: 1px solid rgba(210, 228, 245, 0.1);
+  border-radius: 10px;
+  padding: 1.5rem;
+  transition: border-color 0.3s;
+  height: 100%;
+}
+
+.highlight-card:hover {
+  border-color: rgba(31, 173, 161, 0.3);
+}
+
+.highlight-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--po-teal-glow);
+  margin-bottom: 0.75rem;
+}
+
+.highlight-card p {
+  font-size: 0.875rem;
+  color: rgba(210, 228, 245, 0.7);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+.highlight-card a {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--po-teal);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.highlight-card a:hover {
+  color: var(--po-teal-glow);
+}
+
+/* ----------------------------------------------------------
+   11. About / Stat Cards
+   ---------------------------------------------------------- */
+
+.stat-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: var(--po-shadow-card);
+}
+
+.stat-card .stat-value {
+  font-family: 'Outfit', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.stat-card .stat-label {
+  font-size: 0.85rem;
+  color: #7a94a8;
+  margin-top: 0.35rem;
+}
+
+.stat-card.stat-primary .stat-value {
+  color: var(--po-navy);
+}
+
+.stat-card.stat-teal .stat-value {
+  color: var(--po-teal);
+}
+
+.stat-card.stat-gold .stat-value {
+  color: var(--po-gold);
+}
+
+/* ----------------------------------------------------------
+   12. Value Cards (About page)
+   ---------------------------------------------------------- */
+
+.value-card {
+  background-color: #fff;
+  border: 1px solid #e4eaf0;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: var(--po-shadow-card);
+  height: 100%;
+}
+
+.value-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--po-navy);
+  margin-bottom: 0.5rem;
+}
+
+.value-card p {
+  font-size: 0.875rem;
+  color: #6b7f8e;
+  margin-bottom: 0;
+}
+
+/* ----------------------------------------------------------
+   13. Contact Page
+   ---------------------------------------------------------- */
+
+.contact-icon-wrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background-color: rgba(26, 72, 112, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon-wrap svg {
+  color: var(--po-navy);
+}
+
+.hours-box {
+  background-color: #f0f5fa;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+/* ----------------------------------------------------------
+   14. Page Hero (section-navy page headers)
+   ---------------------------------------------------------- */
+
+.page-hero {
+  background: var(--po-gradient-hero);
+  padding: 3rem 0;
+  color: #fff;
+}
+
+.page-hero h1 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+
+.page-hero .subtitle {
+  color: rgba(210, 228, 245, 0.75);
+  margin-bottom: 0;
+}
+
+/* ----------------------------------------------------------
+   15. Breadcrumb
+   ---------------------------------------------------------- */
+
+.breadcrumb-dark {
+  margin-bottom: 0.75rem;
+}
+
+.breadcrumb-dark .breadcrumb-item a {
+  color: var(--po-teal-glow);
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.breadcrumb-dark .breadcrumb-item a:hover {
+  color: var(--po-teal);
+}
+
+.breadcrumb-dark .breadcrumb-item.active {
+  color: rgba(210, 228, 245, 0.65);
+  font-size: 0.875rem;
+}
+
+.breadcrumb-dark .breadcrumb-item + .breadcrumb-item::before {
+  color: rgba(210, 228, 245, 0.4);
+}
+
+/* ----------------------------------------------------------
+   16. Product Detail
+   ---------------------------------------------------------- */
+
+.product-spec-table td {
+  font-size: 0.875rem;
+  padding: 0.6rem 0.75rem;
+  border-color: #e4eaf0;
+}
+
+.product-spec-table td:first-child {
+  font-weight: 500;
+  color: #475e6e;
+  white-space: nowrap;
+  width: 40%;
+}
+
+.product-sidebar .sticky-top {
+  top: 80px;
+}
+
+.product-sidebar .sidebar-card {
+  background-color: #fff;
+  border: 1px solid #e4eaf0;
+  border-radius: 10px;
+  padding: 1.25rem;
+  box-shadow: var(--po-shadow-card);
+  margin-bottom: 1rem;
+}
+
+.spec-mini-list li {
+  font-size: 0.8125rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px solid #eef2f6;
+  color: #475e6e;
+}
+
+.spec-mini-list li:last-child {
+  border-bottom: 0;
+}
+
+.spec-mini-list li span {
+  font-weight: 500;
+  color: #1a2b3c;
+}
+
+/* ----------------------------------------------------------
+   17. Blog Post Content
+   ---------------------------------------------------------- */
+
+.blog-content {
+  font-size: 1.0625rem;
+  line-height: 1.8;
+  color: #2a3d50;
+}
+
+.blog-content h2, .blog-content h3 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--po-navy);
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.blog-content p {
+  margin-bottom: 1.25rem;
+}
+
+.blog-content img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1.5rem 0;
+}
+
+/* ----------------------------------------------------------
+   18. Footer
+   ---------------------------------------------------------- */
+
+.site-footer {
+  background: var(--po-gradient-hero);
+  color: rgba(210, 228, 245, 0.75);
+}
+
+.site-footer h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--po-teal-glow);
+  margin-bottom: 1.1rem;
+}
+
+.site-footer a {
+  color: rgba(210, 228, 245, 0.75);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color 0.2s;
+}
+
+.site-footer a:hover {
+  color: var(--po-teal-glow);
+}
+
+.site-footer .footer-brand p {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.site-footer .footer-contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.875rem;
+}
+
+.site-footer .footer-contact-item svg {
+  color: var(--po-teal);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.footer-divider {
+  border-color: rgba(210, 228, 245, 0.1);
+  margin: 3rem 0 2rem;
+}
+
+.footer-bottom {
+  font-size: 0.8125rem;
+  color: rgba(210, 228, 245, 0.5);
+}
+
+/* ----------------------------------------------------------
+   19. 404 Page
+   ---------------------------------------------------------- */
+
+.not-found-section {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+}
+
+.not-found-code {
+  font-family: 'Outfit', sans-serif;
+  font-size: 7rem;
+  font-weight: 800;
+  color: var(--po-navy);
+  line-height: 1;
+  opacity: 0.12;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* ----------------------------------------------------------
+   20. Utilities
+   ---------------------------------------------------------- */
+
+.text-teal {
+  color: var(--po-teal) !important;
+}
+
+.text-teal-glow {
+  color: var(--po-teal-glow) !important;
+}
+
+.text-navy {
+  color: var(--po-navy) !important;
+}
+
+.text-gold {
+  color: var(--po-gold) !important;
+}
+
+.bg-navy {
+  background-color: var(--po-navy) !important;
+}
+
+.bg-navy-light {
+  background-color: var(--po-navy-light) !important;
+}
+
+.bg-po-muted {
+  background-color: #f0f5fa !important;
+}
+
+/* Animate in */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Form controls */
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--po-teal);
+  box-shadow: 0 0 0 0.2rem rgba(31, 173, 161, 0.2);
+}
+
+/* Placeholder images */
+
+.img-placeholder {
+  background-color: #dde6ef;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #8096a8;
+  font-size: 0.85rem;
+}
+
+/* ----------------------------------------------------------
+   21. Category-page product card (generated pages)
+   ---------------------------------------------------------- */
+
+.product-card {
+  border: 1px solid #e4eaf0;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: var(--po-shadow-card);
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--po-shadow-elevated);
+  color: inherit;
+}
+
+.product-card .img-wrap {
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  background-color: #f0f5fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card .img-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  padding: 1rem;
+  transition: transform 0.5s;
+}
+
+.product-card:hover .img-wrap img {
+  transform: scale(1.05);
+}
+
+.product-card .card-body {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card h3 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a2b3c;
+  margin-bottom: 0.4rem;
+  transition: color 0.2s;
+}
+
+.product-card:hover h3 {
+  color: var(--po-teal);
+}
+
+.product-card .excerpt {
+  font-size: 0.875rem;
+  color: #6b7f8e;
+  line-height: 1.55;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0.75rem;
+  flex: 1;
+}
+
+.product-card .view-link {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a4870;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.product-card:hover .view-link {
+  text-decoration: underline;
+}
+

@@ -1,229 +1,179 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-bs-theme="light" lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>LED Strips &amp; Tape — Plus Opto</title>
-  <meta name="description" content="We offer a comprehensive range of flexible and rigid LED strip lighting for commercial, retail and architectural applications. Our LED strips are available in mono-colour, tuneable white, RGB, RGBW and addressable pixel types with a choice of IP ratings for indoor and outdoor installations." />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link rel="stylesheet" href="css/plusopto.css" />
-  <link rel="icon" href="assets/plusopto-logo.jpg" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>LED Strips &amp; Tape — Plus Opto</title>
+    <meta name="description" content="We offer a comprehensive range of flexible and rigid LED strip lighting for commercial, retail and architectural applications. Our LED strips are available in mono-colour, tuneable white, RGB, RGBW and addressable pixel types with a choice of IP ratings for indoor and outdoor installations.">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/plusopto.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
+
 <body>
-
-  <!-- TOP BAR -->
-  <div class="topbar py-2">
-    <div class="container d-flex align-items-center justify-content-between">
-      <div class="d-flex align-items-center gap-3">
-        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
-          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
-        </a>
-        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
-          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
-        </a>
-      </div>
-      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    <div class="py-2 topbar">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center gap-3"><a class="d-flex align-items-center gap-2" href="tel:+441942671122"><svg class="bi bi-telephone-fill" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" style="font-size:.8rem;">
+                        <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"></path>
+                    </svg>+44 (0) 1942 671122 </a><a class="d-none d-sm-flex align-items-center gap-2 topbar-email" href="mailto:sales@plusopto.co.uk"><svg class="bi bi-envelope-fill" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" style="font-size:.8rem;">
+                        <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"></path>
+                    </svg>sales@plusopto.co.uk </a></div><a class="btn btn-sm px-3 py-1 btn-teal" role="button" href="contact.html" style="font-size:.8rem;">Request a Quote</a>
+        </div>
     </div>
-  </div>
-
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="52" />
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
-        <i class="bi bi-list fs-4"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
-            <ul class="dropdown-menu" id="navCategoryDropdown">
-              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
-              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
-              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
-              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
-              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
-              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
-              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
-              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Tape</a></li>
-              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="about.html">About Us</a></li>
-              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-        <div class="nav-search-wrap d-none d-lg-block">
-          <i class="bi bi-search search-icon"></i>
-          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
-          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+    <nav class="navbar navbar-expand-lg sticky-top site-navbar">
+        <div class="container"><a class="navbar-brand" href="index.html"><img src="assets/img/plusopto-logo.jpg" alt="Plus Opto" height="52"></a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNav" type="button" aria-label="Toggle navigation"><svg class="bi bi-list fs-4" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"></path>
+                </svg></button>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="products.html" role="button">Products</a>
+                        <ul class="dropdown-menu" id="navCategoryDropdown">
+                            <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+                            <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+                            <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+                            <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+                            <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+                            <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+                            <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+                            <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Tape</a></li>
+                            <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="about.html" role="button">About</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="about.html">About Us</a></li>
+                            <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <div class="d-none d-lg-block nav-search-wrap"><svg class="bi bi-search search-icon" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                    </svg><input type="search" aria-label="Search" class="nav-search" placeholder="Search products…"></div>
+            </div>
         </div>
-      </div>
+    </nav>
+    <div style="position:relative;height:300px;"><img src="assets/img/img/934x230%20slideledstrips.fw.png" alt="LED Strips &amp; Tape" style="width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(17,38,56,.92) 0%,rgba(17,38,56,.7) 50%,rgba(17,38,56,.35) 100%);"></div>
+        <div style="position:absolute;inset:0;display:flex;align-items:center;">
+            <div class="container">
+                <nav class="mb-3 breadcrumb-dark" aria-label="breadcrumb">
+                    <ol class="breadcrumb mb-0">
+                        <li class="breadcrumb-item"><a href="products.html"><span>← All Products</span></a></li>
+                    </ol>
+                </nav>
+                <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;color:#fff;margin-bottom:.5rem;">LED Strips &amp; Tape</h1>
+                <p style="color:rgba(210,228,245,.8);max-width:600px;margin:0;">We offer a comprehensive range of flexible and rigid LED strip lighting for commercial, retail and architectural applications. Our LED strips are available in mono-colour, tuneable white, RGB, RGBW and addressable pixel types with a choice of IP ratings for indoor and outdoor installations.</p>
+            </div>
+        </div>
     </div>
-  </nav>
-
-  <!-- CATEGORY HERO -->
-  <div style="position:relative;height:300px;">
-    <img src="assets/img/934x230%20slideledstrips.fw.png" alt="LED Strips &amp; Tape" style="width:100%;height:100%;object-fit:cover;" />
-    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(17,38,56,.92) 0%,rgba(17,38,56,.7) 50%,rgba(17,38,56,.35) 100%);"></div>
-    <div style="position:absolute;inset:0;display:flex;align-items:center;">
-      <div class="container">
-        <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="products.html">← All Products</a></li>
-          </ol>
-        </nav>
-        <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;color:#fff;margin-bottom:.5rem;">LED Strips &amp; Tape</h1>
-        <p style="color:rgba(210,228,245,.8);max-width:600px;margin:0;">We offer a comprehensive range of flexible and rigid LED strip lighting for commercial, retail and architectural applications. Our LED strips are available in mono-colour, tuneable white, RGB, RGBW and addressable pixel types with a choice of IP ratings for indoor and outdoor installations.</p>
-      </div>
-    </div>
-  </div>
-
-  <section class="py-5">
-    <div class="container">
-      <div class="row g-4">
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-flexible-led-strips.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/934x230%20slideledstrips.fw.png" alt="Flexible LED Strips" loading="lazy" />
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-12 col-sm-6 col-lg-4"><a href="product-flexible-led-strips.html" class="product-card">
+                        <div class="img-wrap"><img src="assets/img/flexstripgroup.jpg" alt="Flexible LED Strips" loading="lazy"></div>
+                        <div class="card-body">
+                            <h3>Flexible LED Strips</h3>
+                            <p class="excerpt">Flexible LED strip lighting in mono, CT, RGB, RGBW and addressable types with IP20 to IP68 ratings.</p><span class="view-link">View Details →</span>
+                        </div>
+                    </a></div>
+                <div class="col-12 col-sm-6 col-lg-4"><a href="product-cob-led-strips.html" class="product-card">
+                        <div class="img-wrap"><img src="assets/img/img/934x230%20slideledstrips.fw.png" alt="COB LED Strips" loading="lazy"></div>
+                        <div class="card-body">
+                            <h3>COB LED Strips</h3>
+                            <p class="excerpt">Dot-free COB LED strips providing smooth, uniform linear light output.</p><span class="view-link">View Details →</span>
+                        </div>
+                    </a></div>
+                <div class="col-12 col-sm-6 col-lg-4"><a href="product-rigid-led-strips.html" class="product-card">
+                        <div class="img-wrap"><img src="assets/img/img/934x230%20slideledstrips.fw.png" alt="Rigid LED Strips" loading="lazy"></div>
+                        <div class="card-body">
+                            <h3>Rigid LED Strips</h3>
+                            <p class="excerpt">Rigid aluminium PCB LED strip modules for fixed installations with excellent thermal management.</p><span class="view-link">View Details →</span>
+                        </div>
+                    </a></div>
+                <div class="col-12 col-sm-6 col-lg-4"><a href="product-addressable-led-strips.html" class="product-card">
+                        <div class="img-wrap"><img src="assets/img/img/934x230%20slideledstrips.fw.png" alt="Addressable LED Strips" loading="lazy"></div>
+                        <div class="card-body">
+                            <h3>Addressable LED Strips</h3>
+                            <p class="excerpt">Pixel addressable LED strips with individually controllable LEDs for dynamic lighting effects.</p><span class="view-link">View Details →</span>
+                        </div>
+                    </a></div>
+                <div class="col-12 col-sm-6 col-lg-4"><a href="product-led-neon-flex.html" class="product-card">
+                        <div class="img-wrap"><img src="assets/img/img/934x230%20slideledstrips.fw.png" alt="LED Neon Flex" loading="lazy"></div>
+                        <div class="card-body">
+                            <h3>LED Neon Flex</h3>
+                            <p class="excerpt">Flexible LED neon alternative with uniform illumination in silicone housing for signs and architecture.</p><span class="view-link">View Details →</span>
+                        </div>
+                    </a></div>
+                <div class="col-12 col-sm-6 col-lg-4"><a href="product-aluminium-profiles.html" class="product-card">
+                        <div class="img-wrap"><img src="assets/img/img/934x230%20slideledstrips.fw.png" alt="Aluminium Profiles" loading="lazy"></div>
+                        <div class="card-body">
+                            <h3>Aluminium Profiles</h3>
+                            <p class="excerpt">Aluminium extrusion profiles for LED strip housing with heat dissipation and diffuser options.</p><span class="view-link">View Details →</span>
+                        </div>
+                    </a></div>
             </div>
-            <div class="card-body">
-              <h3>Flexible LED Strips</h3>
-              <p class="excerpt">Flexible LED strip lighting in mono, CT, RGB, RGBW and addressable types with IP20 to IP68 ratings.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
         </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-cob-led-strips.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/934x230%20slideledstrips.fw.png" alt="COB LED Strips" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>COB LED Strips</h3>
-              <p class="excerpt">Dot-free COB LED strips providing smooth, uniform linear light output.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
+    </section>
+    <section class="mt-2 py-5 section-navy">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need a Custom Solution?</h2>
+            <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;"> Our engineering team can help specify or develop a custom solution for your exact requirements. </p><a class="btn btn-lg px-5 btn-teal" role="button" href="contact.html">Talk to Our Engineers</a>
         </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-rigid-led-strips.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/934x230%20slideledstrips.fw.png" alt="Rigid LED Strips" loading="lazy" />
+    </section>
+    <footer class="pt-5 pb-4 site-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-12 col-md-6 col-lg-3 footer-brand"><img class="mb-3" src="assets/img/plusopto-logo.jpg" alt="Plus Opto" height="48" style="background:white;border-radius:6px;padding:4px 8px;">
+                    <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h4>Products</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+                        <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+                        <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+                        <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+                        <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+                        <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+                        <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-3 col-lg-2">
+                    <h4>Company</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="about.html">About Us</a></li>
+                        <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+                        <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3">
+                    <h4>Contact</h4>
+                    <ul class="list-unstyled">
+                        <li class="mb-3 footer-contact-item"><svg class="bi bi-telephone-fill" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"></path>
+                            </svg><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+                        <li class="mb-3 footer-contact-item"><svg class="bi bi-envelope-fill" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414zM0 4.697v7.104l5.803-3.558zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586zm3.436-.586L16 11.801V4.697z"></path>
+                            </svg><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li>
+                        <li class="footer-contact-item"><svg class="bi bi-geo-alt-fill" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"></path>
+                            </svg><span>Leigh, Lancashire, UK</span></li>
+                    </ul>
+                </div>
             </div>
-            <div class="card-body">
-              <h3>Rigid LED Strips</h3>
-              <p class="excerpt">Rigid aluminium PCB LED strip modules for fixed installations with excellent thermal management.</p>
-              <span class="view-link">View Details →</span>
+            <hr class="footer-divider">
+            <div class="d-flex flex-column justify-content-between align-items-center gap-2 flex-md-row footer-bottom">
+                <p class="mb-0">© 2026 Plus Opto. All rights reserved.</p>
+                <p class="mb-0">The Optoelectronic Specialists</p>
             </div>
-          </a>
         </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-addressable-led-strips.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/934x230%20slideledstrips.fw.png" alt="Addressable LED Strips" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Addressable LED Strips</h3>
-              <p class="excerpt">Pixel addressable LED strips with individually controllable LEDs for dynamic lighting effects.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-led-neon-flex.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/934x230%20slideledstrips.fw.png" alt="LED Neon Flex" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>LED Neon Flex</h3>
-              <p class="excerpt">Flexible LED neon alternative with uniform illumination in silicone housing for signs and architecture.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-aluminium-profiles.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/934x230%20slideledstrips.fw.png" alt="Aluminium Profiles" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Aluminium Profiles</h3>
-              <p class="excerpt">Aluminium extrusion profiles for LED strip housing with heat dissipation and diffuser options.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div></div>
-    </div>
-  </section>
-
-  <section class="section-navy py-5 mt-2">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need a Custom Solution?</h2>
-      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">
-        Our engineering team can help specify or develop a custom solution for your exact requirements.
-      </p>
-      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
-    </div>
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer class="site-footer pt-5 pb-4">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-12 col-md-6 col-lg-3 footer-brand">
-          <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="48" class="mb-3" style="background:white; border-radius:6px; padding:4px 8px;" />
-          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2">
-          <h4>Products</h4>
-          <ul class="list-unstyled">
-          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
-          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
-          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
-          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
-          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
-          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
-          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-md-3 col-lg-2">
-          <h4>Company</h4>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="about.html">About Us</a></li>
-            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
-            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-6 col-lg-3">
-          <h4>Contact</h4>
-          <ul class="list-unstyled">
-            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
-            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li>
-            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
-          </ul>
-        </div>
-      </div>
-      <hr class="footer-divider" />
-      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
-        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
-        <p class="mb-0">The Optoelectronic Specialists</p>
-      </div>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
+    </footer>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/main.js"></script>
 </body>
+
 </html>
