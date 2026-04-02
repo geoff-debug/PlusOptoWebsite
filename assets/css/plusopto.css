@@ -229,18 +229,18 @@ h1, h2, h3, h4, h5, h6, .font-heading {
 }
 
 .hero-carousel .carousel-item {
-  height: 460px;
+  height: 560px;
 }
 
 @media (max-width: 767.98px) {
   .hero-carousel .carousel-item {
-    height: 320px;
+    height: 420px;
   }
 }
 
 @media (min-width: 992px) {
   .hero-carousel .carousel-item {
-    height: 520px;
+    height: 640px;
   }
 }
 
