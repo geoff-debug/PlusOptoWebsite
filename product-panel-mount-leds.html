@@ -9,6 +9,81 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="css/plusopto.css" />
   <link rel="icon" href="assets/plusopto-logo.jpg" />
+<style>
+  /* Page-specific styles for product cards */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 991.98px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 575.98px)  { .products-grid { grid-template-columns: 1fr; } }
+
+  .section-intro {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .section-intro h2 { font-size: 20px; font-weight: 700; color: #153049; margin: 0; }
+  .count-chip {
+    background: #e8f7f6; color: #2bbcb0;
+    border: 1px solid #b2e4e0;
+    font-size: 13px; font-weight: 700;
+    padding: 4px 14px; border-radius: 20px;
+  }
+
+  /* Product card */
+  .product-card {
+    border: 1px solid #e2e6ea;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 12px -4px rgba(17,38,56,.08);
+  }
+  .card-image {
+    background: #f4f6f8; height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .card-image img, .card-image svg { max-height: 150px; max-width: 90%; object-fit: contain; }
+  .card-body { padding: 18px; flex: 1; }
+  .part-number { font-size: 12px; font-weight: 600; color: #2bbcb0; text-transform: uppercase; margin-bottom: 6px; }
+  .card-title { font-size: 16px; font-weight: 800; color: #153049; line-height: 1.2; margin-bottom: 10px; }
+  .card-desc { font-size: 13px; color: #718096; line-height: 1.55; margin-bottom: 14px; }
+  .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 0; font-size: 12px; }
+  .spec-table th { background: #153049; color: white; text-align: left; padding: 6px 10px; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .spec-table td { padding: 6px 10px; border-bottom: 1px solid #e2e6ea; }
+  .spec-table td:last-child { text-align: right; font-weight: 600; color: #153049; }
+  .spec-table tr:last-child td { border-bottom: none; }
+  .spec-table tr:nth-child(even) td { background: #f4f6f8; }
+  .card-footer-btns { padding: 14px 18px; border-top: 1px solid #e2e6ea; background: #f8fafc; display: flex; flex-direction: column; gap: 8px; }
+
+  /* Emitter badges */
+  .emitter-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .badge-red   { background: #fde8e8; color: #c53030; border: 1px solid #feb2b2; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-ir850 { background: #f0e6ff; color: #6b21a8; border: 1px solid #d8b4fe; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-ir940 { background: #e8e0ff; color: #4c1d95; border: 1px solid #c4b5fd; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-white      { background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-warm-white { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-nat-white  { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-green      { background: #f0fdf4; color: #15803d; border: 1px solid #86efac; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-blue       { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-yellow     { background: #fefce8; color: #854d0e; border: 1px solid #fde047; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+
+  /* Comparison table */
+  .compare-section { margin-top: 0; }
+  .compare-section h2 { font-size: 20px; font-weight: 800; color: #153049; margin-bottom: 16px; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .compare-table thead tr { background: #153049; }
+  .compare-table thead th { color: white; padding: 11px 14px; text-align: left; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .compare-table tbody tr { border-bottom: 1px solid #e2e6ea; }
+  .compare-table tbody tr:hover { background: #f4f6f8; }
+  .compare-table td { padding: 10px 14px; }
+  .compare-table td:first-child { font-weight: 700; color: #153049; font-size: 12px; }
+  .compare-table-wrap { overflow-x: auto; }
+</style>
 </head>
 <body>
 
@@ -72,80 +147,351 @@
     </div>
   </nav>
 
+  <!-- HERO -->
   <div class="page-hero">
     <div class="container">
-      
-        <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
-          <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="products.html">Products</a></li>
-            <li class="breadcrumb-item"><a href="category-led-components.html">LED Components</a></li>
-            <li class="breadcrumb-item active">Panel Mount LEDs</li>
-          </ol>
-        </nav>
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-components.html">LED Components</a></li>
+          <li class="breadcrumb-item"><a href="product-panel-mount-leds-overview.html">Panel Mount LEDs</a></li>
+          <li class="breadcrumb-item active">Panel Mount LEDs</li>
+        </ol>
+      </nav>
       <h1>Panel Mount LEDs</h1>
       <p class="subtitle">Panel Mount LED indicators from 3mm to 25mm for defence, aerospace, rail and industrial applications.</p>
     </div>
   </div>
 
+  <!-- MAIN CONTENT -->
   <section class="py-5">
     <div class="container">
-      <div class="row g-5">
-        <div class="col-12 col-lg-8">
-          
-          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
-            <img src="assets/img/panelindgrp.jpg" alt="Panel Mount LEDs" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+
+      <div class="section-intro">
+            <h2>Available Products</h2>
+            <span class="count-chip">9 Series</span>
           </div>
 
-          
-          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Overview</h2>
-          <div class="text-muted lh-lg mb-5">
-            <p>We offer an extensive range of Panel Mount LED indicators for use in a wide range of applications including defence, aerospace, rail and industrial markets. Features include: choice of bezel style &amp; finish, hole diameter, choice of input voltage, range of colours including bi-colour and flashing types, waterproof options and choice of termination.</p>
-            <p>Our range includes:</p>
-            <p>- 3.0mm M6 Panel Mount LEDs (PA03 series): 7mm bezel, satin chrome or black finish, without resistor</p>
-            <p>- 3.0mm M6 Panel Mount LEDs 24V (PA05-12/24 series): With integral resistor, 12V or 24VAC operation</p>
-            <p>- 5.0mm M8 Panel Mount LEDs (PA05 series): 9.5mm bezel, choice of termination</p>
-            <p>- 5.0mm M8 Panel Mount LEDs 12V/24V: With integral resistor, satin chrome bezel</p>
-            <p>- 8.0mm M12 Panel Mount LEDs (PA08 series): 14mm bezel diameter</p>
-            <p>- 10mm M14 Panel Mount LEDs (PA10 series): 14mm bezel</p>
-            <p>- 12mm M14 Panel Mount LEDs (PA12 series): Including 110-240VAC options</p>
-            <p>- 16mm M14 Panel Mount LEDs (PA16 series): 12V or 24V operation</p>
-            <p>- 25mm M22 Panel Mount LEDs (PA25 series): Including 110-240VAC options</p>
-          </div>
+          <div class="products-grid">
 
-          
-        </div>
-
-        <div class="col-12 col-lg-4 product-sidebar">
-          <div class="sticky-top">
-            <div class="sidebar-card mb-4">
-              <h3 class="fw-semibold mb-4" style="font-family:'Outfit',sans-serif;font-size:1.05rem;color:#1a2b3c;">Product Resources</h3>
-              
-              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
-              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            <!-- ── PA03 Series: 3.0mm M6 Panel Mount LEDs (no resistor) ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/3mmpanel-grp.jpg" alt="PA03 Series 3mm M6 Panel Mount LEDs" />
+              </div>
+              <div class="card-body">
+                <div class="card-title">PA03-NR Series M6 Panel Mount LEDs</div>
+                <div class="card-desc">M6 Panel Mount LED Indicators with prominent or recessed bezel without integral resistor. Available in satin chrome or black finish with a 3.0mm LED mounted. A choice of colours and bi-colour is available.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>LED Size</td><td>3.0mm</td></tr>
+                    <tr><td>Bezel Diameter</td><td>7.0mm</td></tr>
+                    <tr><td>Thread</td><td>M6</td></tr>
+                    <tr><td>Finish</td><td>Satin Chrome or Black</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+                  </div>
+                  <div>
+                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Selector Guide</div>
+                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+                  </div>
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PA03 Series 3mm M6 Panel Mount LEDs" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
             </div>
-            
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  
-  <section class="py-5 bg-po-muted">
-    <div class="container">
-      <h2 class="fw-bold mb-4" style="font-family:'Outfit',sans-serif;color:#112638;">Related Products</h2>
-      <div class="row g-4">
-          <div class="col-12 col-sm-6 col-lg-3">
-            <a href="product-through-hole-leds.html" class="card-product">
-              <div class="card-img-wrap"><img src="assets/img/throughhole-group.png" alt="Through Hole LEDs" loading="lazy" /></div>
-              <div class="card-body"><h3>Through Hole LEDs</h3><span class="read-more">View Details →</span></div>
-            </a>
-          </div>
-      </div>
-    </div>
-  </section>
+            <!-- ── PA03 CR/CP 12/24V: 3.0mm M6 Panel Mount LEDs with resistor ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/Panel-LEDs-3mm-P-R.jpg" alt="PA03 CR/CP Series 3mm M6 Panel Mount LEDs 12V 24V" />
+              </div>
+              <div class="card-body">
+                <div class="card-title">PA03-12/24V Series M6 Panel Mount LEDs</div>
+                <div class="card-desc">M6 Panel Mount LED Indicators with prominent or recessed bezel with an integral resistor. for 12V or 24V supply voltage. Available in satin chrome or black finish with a 3.0mm LED mounted. A choice of colours and bi-colour is available.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>LED Size</td><td>3.0mm</td></tr>
+                    <tr><td>Bezel Diameter</td><td>7.0mm</td></tr>
+                    <tr><td>Thread</td><td>M6</td></tr>
+                    <tr><td>Input Voltage</td><td>12V / 24VAC</td></tr>
+                    <tr><td>Finish</td><td>Satin Chrome or Black</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="pdfs/M6_Prominent_Chrome_24V_LED_Indicators_Datasheet.pdf" target="_blank" rel="noopener noreferrer"
+                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+                  </div>
+                  <div>
+                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Selector Guide</div>
+                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+                  </div>
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PA03 CR/CP Series 3mm M6 Panel Mount LEDs" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
 
+            <!-- ── PA05 Series: 5.0mm M8 Panel Mount LEDs (no resistor) ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/5mmpanel-grp.jpg" alt="PA05 Series 5mm M8 Panel Mount LEDs" />
+              </div>
+              <div class="card-body">
+                <div class="card-title">PA05-NR Series M8 Panel Mount LEDs</div>
+                <div class="card-desc">M8 Panel Mount LED Indicators with prominent or recessed bezel without integral resistor. Available in satin chrome or black finish with a 5.0mm LED mounted. A choice of colours and bi-colour is available.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>LED Size</td><td>5.0mm</td></tr>
+                    <tr><td>Bezel Diameter</td><td>9.5mm</td></tr>
+                    <tr><td>Thread</td><td>M8</td></tr>
+                    <tr><td>Finish</td><td>Satin Chrome or Black</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+                  </div>
+                  <div>
+                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Selector Guide</div>
+                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+                  </div>
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PA05 Series 5mm M8 Panel Mount LEDs" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+            <!-- ── PA05 CR/CP 12/24V: 5.0mm M8 Panel Mount LEDs with resistor ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/PA05CRx12V.jpg" alt="PA05 CR/CP Series 5mm M8 Panel Mount LEDs 12V 24V" />
+              </div>
+              <div class="card-body">
+                <div class="card-title">PA05-12/24V Series M8 Panel Mount LEDs</div>
+                <div class="card-desc">M8 Panel Mount LED Indicators with prominent or recessed bezel with an integral resistor. for 12V or 24V supply voltage. Available in satin chrome or black finish with a 5.0mm LED mounted. A choice of colours and bi-colour is available.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>LED Size</td><td>5.0mm</td></tr>
+                    <tr><td>Bezel Diameter</td><td>9.5mm</td></tr>
+                    <tr><td>Thread</td><td>M8</td></tr>
+                    <tr><td>Input Voltage</td><td>12VDC / 24VDC</td></tr>
+                    <tr><td>Finish</td><td>Satin Chrome or Black</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+                  </div>
+                  <div>
+                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Selector Guide</div>
+                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+                  </div>
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PA05 CR/CP Series 5mm M8 Panel Mount LEDs" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+            <!-- ── PA08 Series: 8.0mm M12 Panel Mount LEDs ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/Panel-grp.png" alt="PA08 Series 8mm M12 Panel Mount LEDs" />
+              </div>
+              <div class="card-body">
+                <div class="card-title">PA08 Series — 8.0mm M12 Panel Mount LEDs</div>
+                <div class="card-desc">8.0mm LED with choice of bezel position and finish. Available in satin chrome or black with variable input voltage options. Bi-colour and flashing types available.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>LED Size</td><td>8.0mm</td></tr>
+                    <tr><td>Bezel Diameter</td><td>14mm</td></tr>
+                    <tr><td>Thread</td><td>M12</td></tr>
+                    <tr><td>Finish</td><td>Satin Chrome or Black</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+                  </div>
+                  <div>
+                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Selector Guide</div>
+                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+                  </div>
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PA08 Series 8mm M12 Panel Mount LEDs" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+            <!-- ── PA10 Series: 10mm M14 Panel Mount LEDs ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/10mmPanel-grp.png" alt="PA10 Series 10mm M14 Panel Mount LEDs" />
+              </div>
+              <div class="card-body">
+                <div class="card-title">PA10 Series — 10mm M14 Panel Mount LEDs</div>
+                <div class="card-desc">10.0mm LED with recessed or prominent mounting in M14 bezel. Satin chrome or black finish, variable input voltage options. Bi-colour and flashing types available.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>LED Size</td><td>10.0mm</td></tr>
+                    <tr><td>Bezel Diameter</td><td>14mm</td></tr>
+                    <tr><td>Thread</td><td>M14</td></tr>
+                    <tr><td>Finish</td><td>Satin Chrome or Black</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+                  </div>
+                  <div>
+                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Selector Guide</div>
+                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+                  </div>
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PA10 Series 10mm M14 Panel Mount LEDs" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+            <!-- ── PA12 Series: 12mm M14 Panel Mount LEDs ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/12mm-Panel.png" alt="PA12 Series 12mm M14 Panel Mount LEDs" />
+              </div>
+              <div class="card-body">
+                <div class="card-title">PA12 Series — 12mm M14 Panel Mount LEDs</div>
+                <div class="card-desc">10.0mm LED in 12mm housing with M14 threading. Input voltage options include 110–240VAC. Bi-colour and flashing types available with tab terminals.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>LED Size</td><td>10.0mm</td></tr>
+                    <tr><td>Bezel Diameter</td><td>13.5mm</td></tr>
+                    <tr><td>Thread</td><td>M14</td></tr>
+                    <tr><td>Input Voltage</td><td>Up to 110–240VAC</td></tr>
+                    <tr><td>Finish</td><td>Satin Chrome or Black</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+                  </div>
+                  <div>
+                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Selector Guide</div>
+                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+                  </div>
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PA12 Series 12mm M14 Panel Mount LEDs" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+            <!-- ── PA16 Series: 16mm M14 Panel Mount LEDs 12V & 24V ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/PA16-Panel-Mount-192A.jpg" alt="PA16 Series 16mm M14 Panel Mount LEDs 12V 24V" />
+              </div>
+              <div class="card-body">
+                <div class="card-title">PA16 Series — 16mm M14 Panel Mount LEDs 12V &amp; 24V</div>
+                <div class="card-desc">10.0mm LED with integral resistor in prominent chrome bezel. 12V or 24V AC/DC input. Bi-colour and flashing types available with tab terminals.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>LED Size</td><td>10.0mm</td></tr>
+                    <tr><td>Bezel Diameter</td><td>13.5mm</td></tr>
+                    <tr><td>Thread</td><td>M14</td></tr>
+                    <tr><td>Input Voltage</td><td>12V / 24V AC/DC</td></tr>
+                    <tr><td>Finish</td><td>Satin Chrome or Black</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+                  </div>
+                  <div>
+                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Selector Guide</div>
+                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+                  </div>
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PA16 Series 16mm M14 Panel Mount LEDs" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+            <!-- ── PA25 Series: 25mm M22 Panel Mount LEDs 12V & 24V ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/20mmPanel.png" alt="PA25 Series 25mm M22 Panel Mount LEDs 12V 24V" />
+              </div>
+              <div class="card-body">
+                <div class="card-title">PA25 Series — 25mm M22 Panel Mount LEDs 12V &amp; 24V</div>
+                <div class="card-desc">20.0mm LED with integral resistor in prominent 25mm bezel. Input voltage options include 110–240VAC. Bi-colour and flashing types available with tab terminals.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>LED Size</td><td>20.0mm</td></tr>
+                    <tr><td>Bezel Diameter</td><td>25mm</td></tr>
+                    <tr><td>Thread</td><td>M22</td></tr>
+                    <tr><td>Input Voltage</td><td>Up to 110–240VAC</td></tr>
+                    <tr><td>Finish</td><td>Satin Chrome or Black</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="#" target="_blank" rel="noopener noreferrer"
+                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+                  </div>
+                  <div>
+                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Selector Guide</div>
+                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+                  </div>
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PA25 Series 25mm M22 Panel Mount LEDs" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+          </div><!-- /products-grid -->
+
+          <!-- COMPARISON TABLE -->
+
+    </div><!-- /container -->
+  </section>
 
   <!-- FOOTER -->
   <footer class="site-footer pt-5 pb-4">
@@ -158,13 +504,13 @@
         <div class="col-6 col-md-3 col-lg-2">
           <h4>Products</h4>
           <ul class="list-unstyled">
-          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
-          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
-          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
-          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
-          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
-          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
-          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+            <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+            <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+            <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+            <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+            <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+            <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+            <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
           </ul>
         </div>
         <div class="col-6 col-md-3 col-lg-2">
@@ -179,7 +525,8 @@
           <h4>Contact</h4>
           <ul class="list-unstyled">
             <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
-            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
             <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
           </ul>
         </div>
