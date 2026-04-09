@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linear LED Light Engines — Plus Opto</title>
+  <meta name="description" content="Linear LED Light Engines from Philips Fortimo and CertaFlux. Ideal solutions for LED luminaires replacing fluorescent tubes." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+<style>
+  /* Page-specific styles for product cards */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 991.98px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 575.98px)  { .products-grid { grid-template-columns: 1fr; } }
+
+  .section-intro {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .section-intro h2 { font-size: 20px; font-weight: 700; color: #153049; margin: 0; }
+  .count-chip {
+    background: #e8f7f6; color: #2bbcb0;
+    border: 1px solid #b2e4e0;
+    font-size: 13px; font-weight: 700;
+    padding: 4px 14px; border-radius: 20px;
+  }
+
+  /* Product card */
+  .product-card {
+    border: 1px solid #e2e6ea;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 12px -4px rgba(17,38,56,.08);
+  }
+  .card-image {
+    background: #f4f6f8; height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .card-image img { max-height: 150px; max-width: 90%; object-fit: contain; }
+  .card-body { padding: 18px; flex: 1; }
+  .part-number { font-size: 12px; font-weight: 600; color: #2bbcb0; text-transform: uppercase; margin-bottom: 6px; }
+  .card-title { font-size: 16px; font-weight: 800; color: #153049; line-height: 1.2; margin-bottom: 10px; }
+  .card-desc { font-size: 13px; color: #718096; line-height: 1.55; margin-bottom: 14px; }
+  .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 0; font-size: 12px; }
+  .spec-table th { background: #153049; color: white; text-align: left; padding: 6px 10px; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .spec-table td { padding: 6px 10px; border-bottom: 1px solid #e2e6ea; }
+  .spec-table td:last-child { text-align: right; font-weight: 600; color: #153049; }
+  .spec-table tr:last-child td { border-bottom: none; }
+  .spec-table tr:nth-child(even) td { background: #f4f6f8; }
+  .card-footer-btns { padding: 14px 18px; border-top: 1px solid #e2e6ea; background: #f8fafc; display: flex; flex-direction: column; gap: 8px; }
+</style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Tape</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="breadcrumb-item active">Linear LED Light Engines</li>
+        </ol>
+      </nav>
+      <h1>Linear LED Light Engines</h1>
+      <p class="subtitle">We offer a wide range of Linear LED systems which are the ideal solution for LED luminaires which traditionally would have been equipped with fluorescent tubes. Our Linear LED systems portfolio consists of two main series from Philips: Fortimo and CertaFlux.</p>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <section class="py-5">
+    <div class="container">
+
+      <div class="section-intro">
+        <h2>Available Products</h2>
+        <span class="count-chip">10 Products</span>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- ── Fortimo LED Line ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Fortimo-LED-Line.jpg" alt="Fortimo LED Line" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">Fortimo LED Line</div>
+            <div class="card-desc">Systems are designed to produce pure white light for general lighting applications with high efficiency levels. Portfolio includes 3 main product ranges differentiated by single, dual, or triple LED rows.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Efficiency</td><td>Up to 165 lm/W</td></tr>
+                <tr><td>Lifetime</td><td>&gt;50,000 hours</td></tr>
+                <tr><td>CRI</td><td>&gt;80 and &gt;90</td></tr>
+                <tr><td>Color Consistency</td><td>3 SDCM</td></tr>
+                <tr><td>Color Temperature</td><td>3000K, 4000K, 5000K</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/Fortimo-led-strip-commercial-leaflet.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Datasheet</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Fortimo LED Line" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── Fortimo LED Line High Flux ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Fortimo-LED-Line-High-Flux.jpg" alt="Fortimo LED Line High Flux" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">Fortimo LED Line High Flux</div>
+            <div class="card-desc">Linear modules offer high lumens per foot, high energy efficiency and high quality light, designed for elevated application heights requiring increased illumination.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Efficiency</td><td>Up to 158 lm/W</td></tr>
+                <tr><td>Lifetime</td><td>&gt;100,000 hours</td></tr>
+                <tr><td>CRI</td><td>&gt;80</td></tr>
+                <tr><td>Color Consistency</td><td>3 SDCM</td></tr>
+                <tr><td>Color Temperature</td><td>3000K, 3500K, 4000K, 5000K</td></tr>
+                <tr><td>Operating Temp</td><td>-40°C to +95°C</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Fortimo LED Line High Flux" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── Fortimo LED Strip ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Fortimo-LED-Strip-grp.jpg" alt="Fortimo LED Strip" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">Fortimo LED Strip</div>
+            <div class="card-desc">Offers a solution without compromising on the quality of light or energy efficiency. This third generation of LED Strip allows design of high-performance, slim linear LED luminaires.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Efficiency</td><td>Up to 165 lm/W</td></tr>
+                <tr><td>Lifetime</td><td>&gt;50,000 hours</td></tr>
+                <tr><td>CRI</td><td>&gt;80 and &gt;90</td></tr>
+                <tr><td>Color Consistency</td><td>3 SDCM</td></tr>
+                <tr><td>Color Temperature</td><td>3000K, 4000K, 5000K</td></tr>
+                <tr><td>Warranty</td><td>5 year system</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/Fortimo-led-strip-commercial-leaflet.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Datasheet</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Fortimo LED Strip" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── Fortimo LED Strip MF 0.25ft HV6 ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Fortimo-LED-Strip-0.5ft-mf-HV6.jpg" alt="Fortimo LED Strip MF 0.25ft HV6" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">92900293xxx</div>
+            <div class="card-title">Fortimo LED Strip MF 0.25ft HV6</div>
+            <div class="card-desc">Designed for a wide range of linear indoor luminaire types. Form factor makes it easy to design-in and handle in production, compliant to Zhaga standards.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Forward Voltage</td><td>11.0VDC Typical</td></tr>
+                <tr><td>Power</td><td>1.46W</td></tr>
+                <tr><td>Efficiency</td><td>187 lm/W</td></tr>
+                <tr><td>CRI</td><td>&gt;80</td></tr>
+                <tr><td>Color Consistency</td><td>3 SDCM</td></tr>
+                <tr><td>Temp Range</td><td>-40°C to +80°C</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/Fortimo_LED_Strip_0.5ft_MF_8xx_HV6.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Datasheet</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Fortimo LED Strip MF 0.25ft HV6" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── Fortimo LED Strip MF 0.5ft HV6 ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Fortimo-LED-Strip-0.5ft-mf-HV6.jpg" alt="Fortimo LED Strip MF 0.5ft HV6" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">92900293xxx</div>
+            <div class="card-title">Fortimo LED Strip MF 0.5ft HV6</div>
+            <div class="card-desc">Designed for a wide range of linear indoor luminaire types. Form factor makes it easy to design-in and handle in production, compliant to Zhaga standards.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Forward Voltage</td><td>11.0VDC Typical</td></tr>
+                <tr><td>Power</td><td>2.9W</td></tr>
+                <tr><td>Efficiency</td><td>186 lm/W</td></tr>
+                <tr><td>CRI</td><td>&gt;80</td></tr>
+                <tr><td>Color Consistency</td><td>3 SDCM</td></tr>
+                <tr><td>Temp Range</td><td>-40°C to +80°C</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/Fortimo_LED_Strip_0.5ft_MF_8xx_HV6.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Datasheet</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Fortimo LED Strip MF 0.5ft HV6" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── Fortimo LED Strip MF 1ft HV6 ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Fortimo-LED-Strip-1ft-LF-840-FC-HV6_BS.jpg" alt="Fortimo LED Strip MF 1ft HV6" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">92900294xxx</div>
+            <div class="card-title">Fortimo LED Strip MF 1ft HV6</div>
+            <div class="card-desc">Designed for a wide range of linear indoor luminaire types. Zhaga standard compliance optimised for high light output and extended lifetime.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Forward Voltage</td><td>22.1VDC Typical</td></tr>
+                <tr><td>Power</td><td>5.9W</td></tr>
+                <tr><td>Efficiency</td><td>178 lm/W</td></tr>
+                <tr><td>CRI</td><td>&gt;80</td></tr>
+                <tr><td>Color Consistency</td><td>3 SDCM</td></tr>
+                <tr><td>Temp Range</td><td>-40°C to +80°C</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/Fortimo_LED_Strip_1ft_MF_8xx_HV6.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Datasheet</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Fortimo LED Strip MF 1ft HV6" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── Fortimo LED Strip MF 2ft HV6 ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Fortimo-LED-Strip-2ft-LF-840-FC-HV6_BS.jpg" alt="Fortimo LED Strip MF 2ft HV6" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">92900294xxx</div>
+            <div class="card-title">Fortimo LED Strip MF 2ft HV6</div>
+            <div class="card-desc">Designed for a wide range of linear indoor luminaire types. Product range spans 0.25ft to 5ft to accommodate diverse applications.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Forward Voltage</td><td>44.2VDC Typical</td></tr>
+                <tr><td>Power</td><td>11.8W</td></tr>
+                <tr><td>Efficiency</td><td>186 lm/W</td></tr>
+                <tr><td>CRI</td><td>&gt;80</td></tr>
+                <tr><td>Color Consistency</td><td>3 SDCM</td></tr>
+                <tr><td>Temp Range</td><td>-40°C to +80°C</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/Fortimo_LED_Strip_2ft_MF_8xx_HV6.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Datasheet</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Fortimo LED Strip MF 2ft HV6" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── Fortimo LED Strip MF 4ft HV6 ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Fortimo-LED-Strip-4ft-MF-840-FC-HV6.jpg" alt="Fortimo LED Strip MF 4ft HV6" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">92900294xxx</div>
+            <div class="card-title">Fortimo LED Strip MF 4ft HV6</div>
+            <div class="card-desc">Designed for a wide range of linear indoor luminaire types. Coverage from 0.25ft to 5ft addressing extensive application requirements.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Forward Voltage</td><td>88.4VDC Typical</td></tr>
+                <tr><td>Power</td><td>23.6W</td></tr>
+                <tr><td>Efficiency</td><td>186 lm/W</td></tr>
+                <tr><td>CRI</td><td>&gt;80</td></tr>
+                <tr><td>Color Consistency</td><td>3 SDCM</td></tr>
+                <tr><td>Temp Range</td><td>-40°C to +80°C</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/Fortimo_LED_Strip_4ft_MF_8xx_HV6.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Datasheet</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Fortimo LED Strip MF 4ft HV6" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── Fortimo LED Strip MF 5ft HV6 ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Fortimo-LED-Strip-5ft-MF-840-FC-HV6.jpg" alt="Fortimo LED Strip MF 5ft HV6" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">92900294xxx</div>
+            <div class="card-title">Fortimo LED Strip MF 5ft HV6</div>
+            <div class="card-desc">Designed for a wide range of linear indoor luminaire types. Represents the extended range end of the MF HV6 family, compliant with Zhaga standards.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Forward Voltage</td><td>88.4VDC Typical</td></tr>
+                <tr><td>Power</td><td>29.5W</td></tr>
+                <tr><td>Efficiency</td><td>186 lm/W</td></tr>
+                <tr><td>CRI</td><td>&gt;80</td></tr>
+                <tr><td>Color Consistency</td><td>3 SDCM</td></tr>
+                <tr><td>Temp Range</td><td>-40°C to +80°C</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/Fortimo_LED_Strip_5ft_MF_8xx_HV6.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Datasheet</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Fortimo LED Strip MF 5ft HV6" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── Fortimo LED Strip UHE ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Fortimo-LED-Strip-UHE-G7-Fam-BS.jpg" alt="Fortimo LED Strip UHE" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">92900296</div>
+            <div class="card-title">Fortimo LED Strip MF UHE HV6</div>
+            <div class="card-desc">Uses the latest generation of ultra high efficient LED emitters. Two PCB lengths available (1ft and 2ft) to comply with the latest lighting regulations.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Power (1ft)</td><td>4.77W</td></tr>
+                <tr><td>Power (2ft)</td><td>9.56W</td></tr>
+                <tr><td>Efficiency</td><td>229 lm/W</td></tr>
+                <tr><td>Color Temperature</td><td>4000K</td></tr>
+                <tr><td>CRI</td><td>&gt;80</td></tr>
+                <tr><td>Color Consistency</td><td>3 SDCM</td></tr>
+                <tr><td>Temp Range</td><td>-40°C to +80°C</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/Fortimo_LED_Strip_1ft_MF_840_UHE_FC_HV6.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Datasheet</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Fortimo LED Strip MF UHE HV6" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
+
+    </div><!-- /container -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+            <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+            <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+            <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+            <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+            <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+            <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
