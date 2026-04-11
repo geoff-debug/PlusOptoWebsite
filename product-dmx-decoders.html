@@ -1,0 +1,384 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DMX Decoders — Plus Opto</title>
+  <meta name="description" content="PLCC-6 multi-colour SMD LEDs combining visible red with 850nm and 940nm infrared in a single compact 3.5×2.8mm surface-mount package." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+<style>
+  /* Page-specific styles for product cards */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 991.98px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 575.98px)  { .products-grid { grid-template-columns: 1fr; } }
+
+  .section-intro {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .section-intro h2 { font-size: 20px; font-weight: 700; color: #153049; margin: 0; }
+  .count-chip {
+    background: #e8f7f6; color: #2bbcb0;
+    border: 1px solid #b2e4e0;
+    font-size: 13px; font-weight: 700;
+    padding: 4px 14px; border-radius: 20px;
+  }
+
+  /* Product card */
+  .product-card {
+    border: 1px solid #e2e6ea;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 12px -4px rgba(17,38,56,.08);
+  }
+  .card-image {
+    background: #f4f6f8; height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .card-image img, .card-image svg { max-height: 150px; max-width: 90%; object-fit: contain; }
+  .card-body { padding: 18px; flex: 1; }
+  .part-number { font-size: 12px; font-weight: 600; color: #2bbcb0; text-transform: uppercase; margin-bottom: 6px; }
+  .card-title { font-size: 16px; font-weight: 800; color: #153049; line-height: 1.2; margin-bottom: 10px; }
+  .card-desc { font-size: 13px; color: #718096; line-height: 1.55; margin-bottom: 14px; }
+  .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 0; font-size: 12px; }
+  .spec-table th { background: #153049; color: white; text-align: left; padding: 6px 10px; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .spec-table td { padding: 6px 10px; border-bottom: 1px solid #e2e6ea; }
+  .spec-table td:last-child { text-align: right; font-weight: 600; color: #153049; }
+  .spec-table tr:last-child td { border-bottom: none; }
+  .spec-table tr:nth-child(even) td { background: #f4f6f8; }
+  .card-footer-btns { padding: 14px 18px; border-top: 1px solid #e2e6ea; background: #f8fafc; display: flex; flex-direction: column; gap: 8px; }
+
+  /* Emitter badges */
+  .emitter-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .badge-red   { background: #fde8e8; color: #c53030; border: 1px solid #feb2b2; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-ir850 { background: #f0e6ff; color: #6b21a8; border: 1px solid #d8b4fe; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-ir940 { background: #e8e0ff; color: #4c1d95; border: 1px solid #c4b5fd; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-white      { background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-warm-white { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-nat-white  { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-green      { background: #f0fdf4; color: #15803d; border: 1px solid #86efac; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-blue       { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-yellow     { background: #fefce8; color: #854d0e; border: 1px solid #fde047; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+
+  /* Comparison table */
+  .compare-section { margin-top: 0; }
+  .compare-section h2 { font-size: 20px; font-weight: 800; color: #153049; margin-bottom: 16px; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .compare-table thead tr { background: #153049; }
+  .compare-table thead th { color: white; padding: 11px 14px; text-align: left; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .compare-table tbody tr { border-bottom: 1px solid #e2e6ea; }
+  .compare-table tbody tr:hover { background: #f4f6f8; }
+  .compare-table td { padding: 10px 14px; }
+  .compare-table td:first-child { font-weight: 700; color: #153049; font-size: 12px; }
+  .compare-table-wrap { overflow-x: auto; }
+</style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Tape</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-dmx-controllers-overview.html">DMX LED Controllers</a></li>
+          <li class="breadcrumb-item active">DMX Decoders</li>
+        </ol>
+      </nav>
+      <h1>DMX Decoders</h1>
+      <p class="subtitle">DMX Decoders convert DMX512 input signals into Analog, SPI or PWM output to drive LED fixtures and lighting systems.</p>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <section class="py-5">
+    <div class="container">
+
+      <div class="section-intro">
+            <h2>Available Products</h2>
+            <span class="count-chip">3 Products</span>
+          </div>
+
+          <div class="products-grid">
+
+            <!-- ── PRODUCT 1: LF-GIF040YS Series Lifud CC LED Drivers ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/lf-gif060ys.jpg" alt="LF-GIF040YS Series Lifud CC LED Drivers" />
+              </div>
+              <div class="card-body">                <div class="card-title">LF-GIF040-H series</div>
+                <div class="card-desc">The Lifud LF-GIF series of non-dimmable constant current LED drivers are designed for luminaires and LED Light panels. the drivers are flicker free and available in power ratings ranging from 40W to 50W.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>Input Voltage</td><td>220-240VAC mains input</td></tr>
+                    <tr><td>Output Voltage</td><td>25 to 42VDC</td></tr>
+                    <tr><td>Output Current</td><td>750/800/850/900/950/1000/1050mA</td></tr>
+                    <tr><td>Power Rating</td><td>5W to 60W</td></tr>
+                    <tr><td>Flicker Free</td><td>Yes</td></tr>
+                    <tr><td>Connection</td><td>Push terminals</td></tr>
+                    <tr><td>Protection</td><td>Short circuit, over current</td></tr>
+                    <tr><td>Standards</td><td>Compliant to international standards</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="pdfs/LF-GIF040HAxxxxH.pdf" target="_blank" rel="noopener noreferrer"
+                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+                  </div>
+                  <div>
+                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Data</div>
+                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+                  </div>
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LF-GIF040-H series" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+            <!-- ── PRODUCT 2: LF-GIF060YS Series Lifud CC LED Drivers ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/lf-gif060ys.jpg" alt="LF-GIF060YS Series Lifud CC LED Drivers" />
+              </div>
+              <div class="card-body">                <div class="card-title">LF-GIF060YS series</div>
+                <div class="card-desc">The Lifud LF-GIF-YS series of non-dimmable constant current LED drivers are designed for luminaires and LED Light panels. the drivers are flicker free and available in power ratings ranging from 50W to 60W.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>Input Voltage</td><td>220-240VAC mains input</td></tr>
+                    <tr><td>Output Voltage</td><td>30-40VDC</td></tr>
+                    <tr><td>Output Current</td><td>1350/1400/1450/1500/1550mA</td></tr>
+                    <tr><td>Power Rating</td><td>5W to 60W</td></tr>
+                    <tr><td>Flicker Free</td><td>Yes</td></tr>
+                    <tr><td>Connection</td><td>Push terminals</td></tr>
+                    <tr><td>Protection</td><td>Short circuit, over current</td></tr>
+                    <tr><td>Standards</td><td>Compliant to international standards</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="pdfs/LF-GIF060YSxxxxH.pdf" target="_blank" rel="noopener noreferrer"
+                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+                  </div>
+                  <div>
+                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Data</div>
+                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+                  </div>
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LF-GIF060YS series" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+
+            <!-- ── PRODUCT 3: SE12-300/350IF ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/SE15-Constant-Current-driver2.jpg" alt="SE15 Constant Current Driver" />
+              </div>
+              <div class="card-body">                <div class="card-title">SE12-300/350IF</div>
+                <div class="card-desc">The Snappy SE12-300/350 series of non-dimmable constant current LED drivers are designed for luminaires and LED Light panels. The 12W driver is available in 300mA an 350mA CC output.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>Input Voltage</td><td>220-240VAC mains input</td></tr>
+                    <tr><td>Output Voltage</td><td>14-40VDC</td></tr>
+                    <tr><td>Output Current</td><td>Adjustable CC 300-350mA</td></tr>
+                    <tr><td>Power Rating</td><td>12W</td></tr>
+                    <tr><td>Flicker Free</td><td>Yes</td></tr>
+                    <tr><td>Connection</td><td>Screw Terminals</td></tr>
+                    <tr><td>Protection</td><td>Short circuit, over current</td></tr>
+                    <tr><td>Standards</td><td>Compliant to international standards</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="pdfs/LF-GIF060YSxxxxH.pdf" target="_blank" rel="noopener noreferrer"
+                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+                  </div>
+                  <div>
+                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Data</div>
+                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+                  </div>
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LF-GIF060YS series" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+            <!-- ── PRODUCT 4: SE15-300/340/350/500/700IF ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/SE15 Constant Current driver.jpg" alt="SE15 Constant Current Driver" />
+              </div>
+              <div class="card-body">                <div class="card-title">SE15-300/340/350/500/700IF</div>
+                <div class="card-desc">The Snappy SE15-300/340/350/500/700IF series of non-dimmable constant current LED drivers are designed for luminaires and LED Light panels. The 15W driver is available in 300mA to 700mA CC output.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>Input Voltage</td><td>220-240VAC mains input</td></tr>
+                    <tr><td>Output Voltage</td><td>10.7-50VDC</td></tr>
+                    <tr><td>Output Current</td><td>Adjustable CC 300-700mA</td></tr>
+                    <tr><td>Power Rating</td><td>15W</td></tr>
+                    <tr><td>Flicker Free</td><td>Yes</td></tr>
+                    <tr><td>Connection</td><td>Screw Terminals</td></tr>
+                    <tr><td>Protection</td><td>Short circuit, over current</td></tr>
+                    <tr><td>Standards</td><td>Compliant to international standards</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="pdfs/LF-GIF040HAxxxxH.pdf" target="_blank" rel="noopener noreferrer"
+                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+                  </div>
+                  <div>
+                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Download Data</div>
+                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+                  </div>
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LF-GIF040-H series" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+          </div><!-- /products-grid -->
+
+          <!-- COMPARISON TABLE -->
+
+    </div><!-- /container -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+            <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+            <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+            <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+            <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+            <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+            <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
