@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RF Touch Panel LED Controllers — Plus Opto</title>
+  <meta name="description" content="RF Touch Panel LED Controllers from Plus Opto for wireless RF control of LED lighting systems." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+<style>
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 991.98px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 575.98px)  { .products-grid { grid-template-columns: 1fr; } }
+
+  .section-intro {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .section-intro h2 { font-size: 20px; font-weight: 700; color: #153049; margin: 0; }
+  .count-chip {
+    background: #e8f7f6; color: #2bbcb0;
+    border: 1px solid #b2e4e0;
+    font-size: 13px; font-weight: 700;
+    padding: 4px 14px; border-radius: 20px;
+  }
+  .product-card {
+    border: 1px solid #e2e6ea;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 12px -4px rgba(17,38,56,.08);
+  }
+  .card-image {
+    background: #f4f6f8; height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .card-image img { max-height: 150px; max-width: 90%; object-fit: contain; }
+  .card-body { padding: 18px; flex: 1; }
+  .part-number { font-size: 12px; font-weight: 600; color: #2bbcb0; text-transform: uppercase; margin-bottom: 6px; }
+  .card-title { font-size: 16px; font-weight: 800; color: #153049; line-height: 1.2; margin-bottom: 10px; }
+  .card-desc { font-size: 13px; color: #718096; line-height: 1.55; margin-bottom: 14px; }
+  .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 0; font-size: 12px; }
+  .spec-table th { background: #153049; color: white; text-align: left; padding: 6px 10px; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .spec-table td { padding: 6px 10px; border-bottom: 1px solid #e2e6ea; }
+  .spec-table td:last-child { text-align: right; font-weight: 600; color: #153049; }
+  .spec-table tr:last-child td { border-bottom: none; }
+  .spec-table tr:nth-child(even) td { background: #f4f6f8; }
+  .card-footer-btns { padding: 14px 18px; border-top: 1px solid #e2e6ea; background: #f8fafc; display: flex; flex-direction: column; gap: 8px; }
+</style>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Tape</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-touch-panel-led-controllers-overview.html">Touch Panel LED Controllers</a></li>
+          <li class="breadcrumb-item active">RF Touch Panel LED Controllers</li>
+        </ol>
+      </nav>
+      <h1>RF Touch Panel LED Controllers</h1>
+      <p class="subtitle">RF Touch Panel LED Controllers from Plus Opto for wireless RF control of LED lighting systems.</p>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <section class="py-5">
+    <div class="container">
+
+      <div class="section-intro">
+        <h2>Available Products</h2>
+        <span class="count-chip">17 Products</span>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- CARD 1: FUT Series RF Receiver Drivers -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/FUT-044.png" alt="FUT-044 LED Driver" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">FUT036 / FUT035 / FUT037 / FUT038 / FUT039</div>
+            <div class="card-title">FUT Series RF Receiver Drivers</div>
+            <div class="card-desc">The Mi-Light FUT series 2.4GHz RF receiver/drivers are designed to be controlled wirelessly from the FUT series hand-held controllers and B/T series RF Touch Wall panels.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>FUT036</td><td>Dimming, 1-ch, 12A</td></tr>
+                <tr><td>FUT035</td><td>CT, 2-ch, 6A/ch</td></tr>
+                <tr><td>FUT037</td><td>RGB, 3-ch, 6A/ch</td></tr>
+                <tr><td>FUT038</td><td>RGBW, 4-ch, 6A/ch</td></tr>
+                <tr><td>FUT039</td><td>RGB+CT, 5-ch, 6A/ch</td></tr>
+                <tr><td>Dimensions</td><td>97×37×28mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/FUT039W.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">FUT Series</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: FUT Series RF Receiver Drivers" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 2: FUT035W+ -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/FUT039W.png" alt="FUT035W+ RF+WiFi Receiver Driver" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">FUT035W+</div>
+            <div class="card-title">FUT035W+ 2 Modes RF + WiFi</div>
+            <div class="card-desc">The FUT035W+ RF and WiFi controller supports 2 modes in one unit: Dimming control and CCT control for brightness and colour temperature adjustment. Compatible with hand-held RF remotes, RF Touch panels, voice control and Tuya WiFi smart App.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>12A</td></tr>
+                <tr><td>Modes</td><td>Dimming + CCT</td></tr>
+                <tr><td>RF/WiFi</td><td>2.4GHz</td></tr>
+                <tr><td>Transmission</td><td>30 metres</td></tr>
+                <tr><td>Voice Control</td><td>Alexa, Google</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/FUT-035W+.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">FUT035W+</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: FUT035W+" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 3: FUT037W+ -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/FUT039W.png" alt="FUT037W+ RF+WiFi Receiver Driver" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">FUT037W+</div>
+            <div class="card-title">FUT037W+ 3 Modes RF + WiFi</div>
+            <div class="card-desc">The FUT037W+ multi-channel RF and WiFi controller supports 3 modes in one unit: RGB, RGBW and RGBW+CT control with colour temperature &amp; brightness adjustment. Compatible with hand-held RF remotes, RF Touch panels, voice control and Tuya WiFi smart App.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>12A</td></tr>
+                <tr><td>Modes</td><td>RGB, RGBW, RGBW+CT</td></tr>
+                <tr><td>RF/WiFi</td><td>2.4GHz</td></tr>
+                <tr><td>DMX512</td><td>RGB+CCT (transmitter req.)</td></tr>
+                <tr><td>Voice Control</td><td>Alexa, Google</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/FUT037W+.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">FUT037W+</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: FUT037W+" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 4: Ltech P5 RF Receiver Driver -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Ltech-P5-RF-receiver.jpg" alt="Ltech LED Driver P5-RF" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">P5</div>
+            <div class="card-title">Ltech P5 RF Receiver Driver</div>
+            <div class="card-desc">The Ltech P5 RF receiver/driver is designed to be controlled wirelessly from the new RF mini-controllers. The P5 can support dimming, CT, RGB, RGBW and RGB+CT. One remote can be synched to multiple drivers.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>5-ch, 5A/ch</td></tr>
+                <tr><td>RF Frequency</td><td>2.4GHz</td></tr>
+                <tr><td>Output Mode</td><td>Constant voltage</td></tr>
+                <tr><td>Sync</td><td>Up to 10 receivers</td></tr>
+                <tr><td>Dimensions</td><td>91×37×21mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/P5.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">P5</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Ltech P5" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 5: SR-1009F Series -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/SR-1009FA.jpg" alt="SR-1009FA RF Receiver Driver" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">SR-1009F Series</div>
+            <div class="card-title">SR-1009F Series RF Receiver Drivers</div>
+            <div class="card-desc">The SR-1009F series RF receiver/drivers are designed to be controlled wirelessly from the SR-2818/19 series hand-held controllers &amp; SR-2820 touch panels for dimming CT and RGB/W control. Multiple zones can be controlled separately or synchronously.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–36VDC</td></tr>
+                <tr><td>Output</td><td>4-ch, 5A/ch</td></tr>
+                <tr><td>RF Frequency</td><td>868/915/434MHz</td></tr>
+                <tr><td>Output Mode</td><td>CV or CC 350/700mA</td></tr>
+                <tr><td>Dimensions</td><td>180×46×18mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: SR-1009F Series" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 6: SRP-1009-75RGBW CC -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/SRP-1009-75-CCF.jpg" alt="SRP-1009-75CCF RF Receiver Driver" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">SRP-1009-75RGBW</div>
+            <div class="card-title">SRP-1009-75RGBW CC RF Receiver Driver</div>
+            <div class="card-desc">The SRP-1009-75CCF RGBW RF is a mains input constant current output receiver/driver designed to be controlled wirelessly from the SR-2819S series hand-held controllers &amp; touch panels for RGBW colour control. Multiple zones can be controlled separately or synchronously.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>AC Input</td><td>220–240VAC</td></tr>
+                <tr><td>Output</td><td>4-ch, 300–1500mA</td></tr>
+                <tr><td>RF Frequency</td><td>868/916/434MHz</td></tr>
+                <tr><td>CC Output Set By</td><td>DIP switch</td></tr>
+                <tr><td>Dimensions</td><td>244×64×32mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: SRP-1009-75RGBW" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 7: CL Series RF Combo Receiver Drivers -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/WL1-P75v24.jpg" alt="CL Series RF Combo Receiver Drivers" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">CL-1P / CL-2P / CL-3P / CL-4P</div>
+            <div class="card-title">CL Series RF Combo Receiver Drivers</div>
+            <div class="card-desc">The CL series RF 2.4GHz combo receiver drivers have a built in power supply to facilitate mains input voltage 100–240VAC. The range offers single &amp; multi-channel outputs in 12V or 24VDC with 60W or 75W power capability. Units may be controlled via hand-held remotes, touch panels and WiFi App.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>AC Mains Input</td><td>100–240VAC</td></tr>
+                <tr><td>Output Voltage</td><td>12V or 24VDC</td></tr>
+                <tr><td>Output Power</td><td>60W or 75W</td></tr>
+                <tr><td>Channels</td><td>1 to 4</td></tr>
+                <tr><td>Dimensions</td><td>190×53×32mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/CL3P75V24.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">CL Series</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: CL Series" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 8: F4-5A & F4-CC -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/F4-5A.png" alt="Ltech F4-5A LED driver" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">F4-5A / F4-CC</div>
+            <div class="card-title">F4-5A &amp; F4-CC Receiver Drivers</div>
+            <div class="card-desc">The F4-5A and F4-CC are 4-channel 2.4GHz RF receiver drivers designed to be controlled from WiFi-106 LED controllers, wall mounted touch panels and F series hand held remote controllers. F4-5A is constant voltage output; F4-CC is constant current output.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>5–24VDC</td></tr>
+                <tr><td>F4-CV Output</td><td>4-ch, 5A/ch</td></tr>
+                <tr><td>F4-CC Output</td><td>4-ch, 350/700/1050mA</td></tr>
+                <tr><td>RF Frequency</td><td>2.4GHz</td></tr>
+                <tr><td>Dimensions</td><td>175×44×30mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/F4-3A.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">F4-5A &amp; F4-CC</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: F4-5A / F4-CC" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 9: M3-3A & M3-5A -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/M3-3A.png" alt="Ltech M3-3A RF Receiver Driver" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">M3-3A / M3-5A</div>
+            <div class="card-title">M3-3A &amp; M3-5A Receiver Drivers</div>
+            <div class="card-desc">The Ltech M3-3A and M3-5A are 3-channel constant voltage RF 433.92MHz receiver/drivers designed to be controlled wirelessly from the Ltech Mini-series hand-held remote controllers.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>5–24VDC</td></tr>
+                <tr><td>M3-3A Output</td><td>3-ch, 3A/ch</td></tr>
+                <tr><td>M3-5A Output</td><td>3-ch, 5A/ch</td></tr>
+                <tr><td>RF Frequency</td><td>433.92MHz</td></tr>
+                <tr><td>Dimensions</td><td>175×44×30mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/M series mini LED controllers.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">M3-3A &amp; M3-5A</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: M3-3A / M3-5A" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 10: T3-CV & T3-CC -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/T3-CV-new.png" alt="Ltech T3-CV RF Receiver Driver" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">T3-CV / T3-CC</div>
+            <div class="card-title">T3-CV &amp; T3-CC Receiver Drivers</div>
+            <div class="card-desc">The T3-CV and T3-CC are 3-channel 2.4GHz RF receiver drivers designed to be controlled wirelessly by the T3 series hand held remote controls.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>5–24VDC</td></tr>
+                <tr><td>T3-CV Output</td><td>3-ch, 5A/ch</td></tr>
+                <tr><td>T3-CC Output</td><td>3-ch, 350/700/1050mA</td></tr>
+                <tr><td>RF Frequency</td><td>2.4GHz</td></tr>
+                <tr><td>Dimensions</td><td>175×44×30mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/T3.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">T3-CV &amp; T3-CC</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: T3-CV / T3-CC" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 11: T4-CV & T4-CC -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/T4-CV.png" alt="Ltech T4-CV RF Receiver Driver" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">T4-CV / T4-CC</div>
+            <div class="card-title">T4-CV &amp; T4-CC Receiver Drivers</div>
+            <div class="card-desc">The T4-CV and T4-CC are 4-channel 2.4GHz RF receiver drivers designed to be controlled wirelessly by the T4 series hand held remote controls.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>5–24VDC</td></tr>
+                <tr><td>T4-CV Output</td><td>4-ch, 5A/ch</td></tr>
+                <tr><td>T4-CC Output</td><td>4-ch, 350/700/1050mA</td></tr>
+                <tr><td>RF Frequency</td><td>2.4GHz</td></tr>
+                <tr><td>Dimensions</td><td>175×44×30mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/T4.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">T4-CV &amp; T4-CC</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: T4-CV / T4-CC" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 12: R4-5A & R4-CC -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/R4-5A.png" alt="Ltech R4-5A RF Receiver Driver" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">R4-5A / R4-CC</div>
+            <div class="card-title">R4-5A &amp; R4-CC Receiver Drivers</div>
+            <div class="card-desc">The R4-CV and R4-CC are 4-channel 2.4GHz RF receiver drivers designed to be controlled from WiFi-104, V and M series hand held remote controls and wall mounted DX/UX Touch panels. R4-5A is constant voltage output; R4-CC is constant current output.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>5–24VDC</td></tr>
+                <tr><td>R4-CV Output</td><td>4-ch, 5A/ch</td></tr>
+                <tr><td>R4-CC Output</td><td>4-ch, 350/700/1050mA</td></tr>
+                <tr><td>RF Frequency</td><td>2.4GHz</td></tr>
+                <tr><td>Dimensions</td><td>175×44×30mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/R4-5A.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">R4-5A &amp; R4-CC</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: R4-5A / R4-CC" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 13: F4-DMX & F5-DMX -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/F5-DMX-4A.png" alt="Ltech F5-DMX LED driver" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">F4-DMX-5A / F5-DMX-4A</div>
+            <div class="card-title">F4-DMX &amp; F5-DMX Receiver Drivers</div>
+            <div class="card-desc">The F4-DMX-5A 4-channel and F5-DMX-4A 5-channel 2.4GHz RF receiver/drivers with DMX interface are designed to be controlled from WiFi-106, EX series touch panels and Q or F series hand held remotes.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>5–24VDC</td></tr>
+                <tr><td>F4-DMX-5A</td><td>4-ch, 5A/ch</td></tr>
+                <tr><td>F5-DMX-4A</td><td>5-ch, 4A/ch</td></tr>
+                <tr><td>RF Frequency</td><td>2.4GHz</td></tr>
+                <tr><td>Dimensions</td><td>175×44×30mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/F5-DMX-4A.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">F4-DMX &amp; F5-DMX</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: F4-DMX / F5-DMX" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 14: LS2 5-in-1 Receiver Driver -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/LS2.png" alt="Ltech LED Controller LS2" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">LS2</div>
+            <div class="card-title">LS2 5-in-1 Receiver Driver</div>
+            <div class="card-desc">The LS2 5-in-1 RF receiver/driver is designed to be controlled by RF 2.4GHz wirelessly from the FUT series hand-held controllers and B/T series RF Touch Wall panels. The driver can be used for single colour, CT, RGB, RGBW and RGBW+CT LED strips.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>5-ch, 6A/ch</td></tr>
+                <tr><td>RF Frequency</td><td>2.4GHz</td></tr>
+                <tr><td>Transmission</td><td>30 metres</td></tr>
+                <tr><td>Built-in Programs</td><td>9</td></tr>
+                <tr><td>Dimensions</td><td>124×38×23mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/LS2-5in1_controller_2.4g.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">LS2</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LS2" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 15: BC350RF -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/BC-350RF.jpg" alt="BC350RF Rotary RGB LED Controller" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">BC350RF</div>
+            <div class="card-title">BC350RF RGB Controller Driver</div>
+            <div class="card-desc">The BC350-RF is a 3-channel constant voltage RF controller receiver/driver designed to manually control RGB LED strips and fittings via rotary controls or hand held remote controller.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>3-ch, 6A/ch</td></tr>
+                <tr><td>Display</td><td>Integrated LED display</td></tr>
+                <tr><td>Dimensions</td><td>176×46×30mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/BC-350-6A.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">BC350RF</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: BC350RF" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 16: BC354RF -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/BC-354RF.jpg" alt="BC354RF 4-channel rotary RGBW LED controller" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">BC354RF</div>
+            <div class="card-title">BC354RF RGBW Controller Driver</div>
+            <div class="card-desc">The BC354-RF is a 4-channel constant voltage RF controller receiver/driver designed to manually control RGBW LED strips and fittings via rotary controls or hand held remote controller.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>4-ch, 5A/ch</td></tr>
+                <tr><td>Display</td><td>Integrated LED display</td></tr>
+                <tr><td>Dimensions</td><td>176×46×30mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/BC-354RF.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">BC354RF</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: BC354RF" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 17: T3-5A -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/T3-5A.png" alt="Ltech T3-5A RGB Controller Driver" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">T3-5A</div>
+            <div class="card-title">T3-5A RGB Controller Driver</div>
+            <div class="card-desc">The Ltech T3-5A is a 3-channel constant voltage RF controller receiver/driver designed to be controlled manually via integral pushbuttons or via RF 2.4GHz from the hand held T3 remote controller.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>3-ch, 5A/ch</td></tr>
+                <tr><td>RF Frequency</td><td>2.4GHz</td></tr>
+                <tr><td>Dimensions</td><td>211×40×30mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/T3-5A.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">T3-5A</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: T3-5A" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
+
+    </div><!-- /container -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+            <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+            <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+            <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+            <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+            <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+            <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
