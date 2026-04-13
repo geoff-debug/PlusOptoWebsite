@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="css/plusopto.css" />
   <link rel="icon" href="assets/plusopto-logo.jpg" />
 <style>
-  /* Page-specific styles for product cards */
   .products-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -31,8 +30,6 @@
     font-size: 13px; font-weight: 700;
     padding: 4px 14px; border-radius: 20px;
   }
-
-  /* Product card */
   .product-card {
     border: 1px solid #e2e6ea;
     border-radius: 12px;
@@ -47,7 +44,7 @@
     display: flex; align-items: center; justify-content: center;
     overflow: hidden;
   }
-  .card-image img, .card-image svg { max-height: 150px; max-width: 90%; object-fit: contain; }
+  .card-image img { max-height: 150px; max-width: 90%; object-fit: contain; }
   .card-body { padding: 18px; flex: 1; }
   .part-number { font-size: 12px; font-weight: 600; color: #2bbcb0; text-transform: uppercase; margin-bottom: 6px; }
   .card-title { font-size: 16px; font-weight: 800; color: #153049; line-height: 1.2; margin-bottom: 10px; }
@@ -59,18 +56,6 @@
   .spec-table tr:last-child td { border-bottom: none; }
   .spec-table tr:nth-child(even) td { background: #f4f6f8; }
   .card-footer-btns { padding: 14px 18px; border-top: 1px solid #e2e6ea; background: #f8fafc; display: flex; flex-direction: column; gap: 8px; }
-
-  /* Comparison table */
-  .compare-section { margin-top: 0; }
-  .compare-section h2 { font-size: 20px; font-weight: 800; color: #153049; margin-bottom: 16px; }
-  .compare-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
-  .compare-table thead tr { background: #153049; }
-  .compare-table thead th { color: white; padding: 11px 14px; text-align: left; font-weight: 700; font-size: 11px; text-transform: uppercase; }
-  .compare-table tbody tr { border-bottom: 1px solid #e2e6ea; }
-  .compare-table tbody tr:hover { background: #f4f6f8; }
-  .compare-table td { padding: 10px 14px; }
-  .compare-table td:first-child { font-weight: 700; color: #153049; font-size: 12px; }
-  .compare-table-wrap { overflow-x: auto; }
 </style>
 </head>
 <body>
@@ -157,178 +142,478 @@
     <div class="container">
 
       <div class="section-intro">
-            <h2>Available Products</h2>
-            <span class="count-chip">5 Products</span>
+        <h2>Available Products</h2>
+        <span class="count-chip">14 Products</span>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- CARD 1: WiFi-106 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/wifi-106-4.jpg" alt="WiFi-106 LED Controller" />
           </div>
+          <div class="card-body">
+            <div class="part-number">WiFi-106</div>
+            <div class="card-title">WiFi-106 4-Channel LED Controller</div>
+            <div class="card-desc">4-channel WiFi lighting control system facilitates control of a wide range of LED products supporting RGB, RGBW &amp; RGBWW LEDs with 12 Zone control.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>4-channel, 4A/ch PWM</td></tr>
+                <tr><td>Zone Control</td><td>12 zones</td></tr>
+                <tr><td>Includes</td><td>F12 hand-held controller</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/WiFi-106.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">WiFi-106</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WiFi-106" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
 
-          <div class="products-grid">
+        <!-- CARD 2: WiFi-104 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/WIFI-104-&-M12-&-R4-5A.png" alt="WiFi-104 LED Controller" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">WiFi-104</div>
+            <div class="card-title">WiFi-104 4-Channel LED Controller</div>
+            <div class="card-desc">4-channel LED controller/driver can be used as an LED dimmer, CCT &amp; RGBW controller with pre-programmed effects.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>4-channel, 4A/ch PWM</td></tr>
+                <tr><td>Dimensions</td><td>128×73×45mm</td></tr>
+                <tr><td>Includes</td><td>M12 hand-held controller</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/WiFi-104.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">WiFi-104</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WiFi-104" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
 
-            <!-- CARD 1: LT-512S -->
-            <div class="product-card">
-              <div class="card-image">
-                <img src="assets/img/LT512S.jpg" alt="LT-512S USB-DMX Controller" />
+        <!-- CARD 3: FUT-W Series -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/FUT039W.png" alt="FUT-W Series WiFi+RF Controllers" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">FUT036W / FUT035W / FUT037W / FUT038W / FUT039W</div>
+            <div class="card-title">FUT-W Series WiFi+RF Controllers</div>
+            <div class="card-desc">5 models designed to control dimming, CT, RGB, RGBW and RGB+CT using WiFi + Bluetooth for improved network connectivity. No gateway required.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>12A</td></tr>
+                <tr><td>RF Frequency</td><td>2.4GHz</td></tr>
+                <tr><td>Transmission</td><td>30 metres</td></tr>
+                <tr><td>Voice Control</td><td>3rd party support</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/FUT039W.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
               </div>
-              <div class="card-body">
-                <div class="part-number">LT-512S</div>
-                <div class="card-title">LTS 512S USB-DMX controller</div>
-                <div class="card-desc">The Ltech LT512S USB to DMX interface is a DMX512 Master LED Controller.</div>
-                <table class="spec-table">
-                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
-                  <tbody>
-                    <tr><td>Input Voltage</td><td>5VDC</td></tr>
-                    <tr><td>Internal</td><td>120 steps</td></tr>
-                    <tr><td>PC Software</td><td>LED Player</td></tr>
-                    <tr><td>USB-C</td><td>Input</td></tr>
-                  </tbody>
-                </table>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">FUT039W</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
               </div>
-              <div class="card-footer-btns">
-                <a href="pdfs/LT512.pdf" target="_blank" rel="noopener noreferrer"
-                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
-                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
-                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
-                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
-                  </div>
-                  <div>
-                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">LT-512</div>
-                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
-                  </div>
-                </a>
-                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LT-512" class="btn btn-outline-teal w-100">Request a Quote</a>
-              </div>
-            </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: FUT-W Series" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
 
-            <!-- CARD 2: LTSA-512 -->
-            <div class="product-card">
-              <div class="card-image">
-                <img src="assets/img/ltsa512.jpg" alt="LTSA-512 DMX 512 Channel Controller" />
+        <!-- CARD 4: FUT035W+ -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/B2_FUT035.jpg" alt="FUT035W+ WiFi+RF Controller" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">FUT035W+</div>
+            <div class="card-title">FUT035W+ 2-in-1 WiFi+RF Controller</div>
+            <div class="card-desc">Single/dual channel WiFi and RF controller supports 2 modes in one unit: Dimming and CT control with colour temperature &amp; brightness adjustment.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>12A</td></tr>
+                <tr><td>Modes</td><td>Dimming + CT control</td></tr>
+                <tr><td>RF/WiFi</td><td>2.4GHz</td></tr>
+                <tr><td>App</td><td>Tuya WiFi smart App</td></tr>
+                <tr><td>Voice Control</td><td>Alexa, Google</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/FUT-035W+.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
               </div>
-              <div class="card-body">
-                <div class="part-number">LTSA-512</div>
-                <div class="card-title">LTSA-512 DMX 512 Channel Controller</div>
-                <div class="card-desc">The LTSA-512 is a DMX 512 channel controller. Connection to PC is via mini USB with output facilitated by XLR-3 and terminal screw connectors.</div>
-                <table class="spec-table">
-                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
-                  <tbody>
-                    <tr><td>Input Voltage</td><td>5VDC</td></tr>
-                    <tr><td>Internal</td><td>4000 steps</td></tr>
-                    <tr><td>PC Software</td><td>LED Player</td></tr>
-                  </tbody>
-                </table>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">FUT035W+</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
               </div>
-              <div class="card-footer-btns">
-                <a href="pdfs/LTSA512.pdf" target="_blank" rel="noopener noreferrer"
-                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
-                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
-                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
-                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
-                  </div>
-                  <div>
-                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">LTSA-512</div>
-                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
-                  </div>
-                </a>
-                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LTSA-512" class="btn btn-outline-teal w-100">Request a Quote</a>
-              </div>
-            </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: FUT035W+" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
 
-            <!-- CARD 3: LTSA-1024 -->
-            <div class="product-card">
-              <div class="card-image">
-                <img src="assets/img/LTSA1024.png" alt="LTSA-1024 DMX 512 Channel Controller" />
+        <!-- CARD 5: FUT037W+ -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/FUT037W+.jpg" alt="FUT037W+ WiFi+RF Controller" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">FUT037W+</div>
+            <div class="card-title">FUT037W+ 3-in-1 WiFi+RF Controller</div>
+            <div class="card-desc">Multi-channel WiFi and RF controller supports 3 modes in one unit: RGB, RGBW and RGBW+CT control with music rhythm and voice control support.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>12A</td></tr>
+                <tr><td>Modes</td><td>RGB, RGBW, RGBW+CT</td></tr>
+                <tr><td>RF/WiFi</td><td>2.4GHz</td></tr>
+                <tr><td>DMX512</td><td>RGB+CCT (transmitter req.)</td></tr>
+                <tr><td>App</td><td>Tuya WiFi smart App</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/FUT037W+.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
               </div>
-              <div class="card-body">
-                <div class="part-number">LTSA-1024</div>
-                <div class="card-title">LTSA-1024 DMX 512 Channel Controller</div>
-                <div class="card-desc">The LTSA-1024 is a DMX 512 channel controller. Connection to PC is via mini USB with output facilitated by XLR-3 and terminal screw connectors.</div>
-                <table class="spec-table">
-                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
-                  <tbody>
-                    <tr><td>Input Voltage</td><td>5VDC</td></tr>
-                    <tr><td>Internal</td><td>4000 steps</td></tr>
-                    <tr><td>PC Software</td><td>Ltech LED Player</td></tr>
-                  </tbody>
-                </table>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">FUT037W+</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
               </div>
-              <div class="card-footer-btns">
-                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LTSA-1024" class="btn btn-outline-teal w-100">Request a Quote</a>
-              </div>
-            </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: FUT037W+" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
 
-            <!-- CARD 4: LT-600 -->
-            <div class="product-card">
-              <div class="card-image">
-                <img src="assets/img/lt-600.jpg" alt="LT-600 DMX 512 Channel Controller" />
+        <!-- CARD 6: WL5 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/WL5.png" alt="WL5 WiFi LED Controller" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">WL5</div>
+            <div class="card-title">WL5 5-Channel WiFi LED Controller</div>
+            <div class="card-desc">Multi-channel WiFi LED controller designed to drive constant voltage LED lighting products. Compatible with Android and iOS devices via wireless and 4G App control.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>5-channel, 6A/ch</td></tr>
+                <tr><td>WiFi</td><td>IEEE 802.11b/g/n 2.4GHz</td></tr>
+                <tr><td>Control</td><td>Wireless &amp; 4G via App</td></tr>
+                <tr><td>Voice Control</td><td>3rd party support</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/WL5.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
               </div>
-              <div class="card-body">
-                <div class="part-number">LT-600</div>
-                <div class="card-title">LT-600 DMX 512 Channel Controller</div>
-                <div class="card-desc">The LT-600 is a DMX 512 channel controller. Connection to PC is via mini USB with output facilitated by XLR-3 and terminal screw connectors.</div>
-                <table class="spec-table">
-                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
-                  <tbody>
-                    <tr><td>Input Voltage</td><td>12VDC</td></tr>
-                    <tr><td>Channels</td><td>16</td></tr>
-                    <tr><td>DMX Output</td><td>Max 170 pixel × 16CH</td></tr>
-                    <tr><td>SPI Output</td><td>Max 1364 pixel × 16CH</td></tr>
-                    <tr><td>Grey Scale</td><td>Max 65536 (64K)</td></tr>
-                    <tr><td>SD Memory Card</td><td>2GB max</td></tr>
-                  </tbody>
-                </table>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">WL5</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
               </div>
-              <div class="card-footer-btns">
-                <a href="pdfs/LT-600_EN.pdf" target="_blank" rel="noopener noreferrer"
-                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
-                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
-                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
-                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
-                  </div>
-                  <div>
-                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">LT-600</div>
-                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
-                  </div>
-                </a>
-                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LT-600" class="btn btn-outline-teal w-100">Request a Quote</a>
-              </div>
-            </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WL5" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
 
-            <!-- CARD 5: MS-WF-512 -->
-            <div class="product-card">
-              <div class="card-image">
-                <img src="assets/img/MS-WF-512.png" alt="MS-WF-512 DMX/WiFi/RF Controller" />
-              </div>
-              <div class="card-body">
-                <div class="part-number">MS-WF-512</div>
-                <div class="card-title">MS-WF-512 DMX/WiFi/RF Controller</div>
-                <div class="card-desc">Ultra thin wall mounted lighting control system. The LCD colour screen offers simple and easy operation. Integrates with the L-BUS system to provide DMX, WiFi and RF control.</div>
-                <table class="spec-table">
-                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
-                  <tbody>
-                    <tr><td>Input Voltage</td><td>5–24VDC</td></tr>
-                    <tr><td>Protocols</td><td>WiFi &amp; DMX/RDM</td></tr>
-                    <tr><td>Control</td><td>LAN</td></tr>
-                    <tr><td>Dimming</td><td>Colour temp, RGB, RGBW, RGBWY</td></tr>
-                    <tr><td>Remote</td><td>MS-10 hand-held included</td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <div class="card-footer-btns">
-                <a href="pdfs/MS-WF-512.pdf" target="_blank" rel="noopener noreferrer"
-                   class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
-                   style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
-                  <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
-                    <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
-                  </div>
-                  <div>
-                    <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">MS-WF-512</div>
-                    <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
-                  </div>
-                </a>
-                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: MS-WF-512" class="btn btn-outline-teal w-100">Request a Quote</a>
-              </div>
-            </div>
+        <!-- CARD 7: WPx-P150V24 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/WL5-P75V24-RGB-CCT-24V.jpg" alt="WPx-P150V24 Series WiFi+RF Controllers" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">WP1–WP5-P150V24</div>
+            <div class="card-title">WPx-P150V24 Series WiFi+RF Controllers</div>
+            <div class="card-desc">Multi-channel WiFi and RF 2.4GHz controllers designed to drive constant voltage LED lighting products with built-in AC mains power supply. 1 to 5 channel models available.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>AC Mains Input</td><td>100–240VAC</td></tr>
+                <tr><td>Output Voltage</td><td>24VDC</td></tr>
+                <tr><td>Output Power</td><td>150W</td></tr>
+                <tr><td>Channels</td><td>1 to 5</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WPx-P150V24 Series" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
 
-          </div><!-- /products-grid -->
+        <!-- CARD 8: WLx-P75V24 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/WL1-P75v24.jpg" alt="WLx-P75V24 Series WiFi+RF Controllers" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">WL1–WL5-P75V24</div>
+            <div class="card-title">WLx-P75V24 Series WiFi+RF Controllers</div>
+            <div class="card-desc">Multi-channel WiFi &amp; RF 2.4GHz controllers designed to drive constant voltage LED lighting with integrated AC mains power supply. 1 to 5 channel models available.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>AC Mains Input</td><td>100–240VAC</td></tr>
+                <tr><td>Output Voltage</td><td>24VDC</td></tr>
+                <tr><td>Output Power</td><td>75W</td></tr>
+                <tr><td>Channels</td><td>1 to 5</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/WL5-P75V24.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">WL5-P75V24</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WLx-P75V24 Series" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 9: ST-75 Series -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/ST-75-12-W1W2.png" alt="ST-75 Series WiFi Controllers" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">ST-75-12 / ST-75-24 Series</div>
+            <div class="card-title">ST-75 Series WiFi LED Controllers</div>
+            <div class="card-desc">Multi-channel WiFi controllers designed to drive constant voltage LED lighting with integrated AC mains power supply. Available in 12V and 24V, 1-channel dimming to 3-channel RGB.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>AC Mains Input</td><td>100–240VAC</td></tr>
+                <tr><td>Output</td><td>12VDC or 24VDC</td></tr>
+                <tr><td>Channels</td><td>1-ch Dim / 2-ch CCT / 3-ch RGB</td></tr>
+                <tr><td>Protection</td><td>Short circuit, OC, OT</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/ST-75-12_24.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">ST-75-12/24</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: ST-75 Series" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 10: WiFi-102-RGBW -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Wifi-101-RGBW.png" alt="WiFi-102-RGBW LED Controller" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">WiFi-102-RGBW</div>
+            <div class="card-title">WiFi-102-RGBW LED Controller</div>
+            <div class="card-desc">4-channel WiFi LED controllers designed to control RGBW LED strips with voice control, time switch and music functions.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>4-channel, 4A/ch</td></tr>
+                <tr><td>WiFi</td><td>2.4GHz 802.11b/g/n</td></tr>
+                <tr><td>Dimensions</td><td>125×33×20mm</td></tr>
+                <tr><td>Voice Control</td><td>Amazon Echo, Google</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/WIFI-102-RGBW.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">WiFi-102-RGBW</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WiFi-102-RGBW" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 11: WiFi-Bluetooth Mini Controllers -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/WiFi-Bluetooth-Mni-controller-RGBCCT.jpg" alt="WiFi Bluetooth Mini Controllers" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">WiFi CTL Mini</div>
+            <div class="card-title">WiFi-Bluetooth Mini Controllers</div>
+            <div class="card-desc">Small LED controllers supporting constant voltage LED strips with Smart Life or Tuya App control and voice assistant support. Available in mono, CCT, RGB, RGBW and RGB+CT.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>5–24VDC</td></tr>
+                <tr><td>Max Current</td><td>3.5A</td></tr>
+                <tr><td>Channels</td><td>1 to 5</td></tr>
+                <tr><td>Voice Control</td><td>Alexa, Google Assistant</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WiFi CTL Mini" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 12: WiFi-108 Gateway -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/wifi-108.gif" alt="WiFi-108 Gateway" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">WiFi-108</div>
+            <div class="card-title">WiFi-108 Intelligent Gateway</div>
+            <div class="card-desc">Intelligent gateway facilitates control of a wide range of LED products supporting multi-zone control and voice commands. Compatible with L-BUS lighting system. iOS and Android App support.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>5VDC</td></tr>
+                <tr><td>Connection</td><td>RJ45</td></tr>
+                <tr><td>Dimensions</td><td>90×90×55mm</td></tr>
+                <tr><td>Voice Control</td><td>Amazon Echo &amp; Genie</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/WIFI-108.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">WiFi-108</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WiFi-108" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 13: WiFi-101-CT -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/WIFI-102-CT-1.png" alt="WiFi-101-CT LED Controller" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">WiFi-101-CT</div>
+            <div class="card-title">WiFi-101-CT Colour Temperature Controller</div>
+            <div class="card-desc">2-channel WiFi LED controllers designed to control colour adjustable LED strips with voice control and music functions. Compatible with hand-held remotes and touch panels.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Output</td><td>2-channel, 4A/ch</td></tr>
+                <tr><td>WiFi</td><td>2.4GHz 802.11b/g/n</td></tr>
+                <tr><td>Dimensions</td><td>125×33×20mm</td></tr>
+                <tr><td>Voice Control</td><td>Amazon Echo, Google</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/WIFI-101-CT.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">WiFi-101-CT</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WiFi-101-CT" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 14: WL-BOX1 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/WL-Box-1.png" alt="WL-BOX1 RF to WiFi Gateway" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">WL-BOX1</div>
+            <div class="card-title">WL-BOX1 RF to WiFi Gateway</div>
+            <div class="card-desc">RF to WiFi Gateway providing bridge connection from RF 2.4GHz to WiFi wireless networks, allowing connection of Smartphone Apps. Compatible with FUT series RF products.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Supply Voltage</td><td>5V micro USB</td></tr>
+                <tr><td>Transmission</td><td>30 metres</td></tr>
+                <tr><td>Dimensions</td><td>90.5×66×15mm</td></tr>
+                <tr><td>Voice Control</td><td>Alexa, Google Assistant</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WL-BOX1" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
 
     </div><!-- /container -->
   </section>
