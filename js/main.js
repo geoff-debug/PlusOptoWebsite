@@ -38,7 +38,7 @@
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          from:     'contact@plusopto.co.uk',
+          from:     'contact@plusopto.com',
           to:       ['sales@plusopto.co.uk'],
           subject:  'Website enquiry from ' + name,
           text:     body,
