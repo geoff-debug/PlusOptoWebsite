@@ -3,12 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Infrared Phototransistors — Plus Opto</title>
-  <meta name="description" content="Infrared phototransistors from Plus Opto. SMD and through-hole phototransistors for sensing and detection applications." />
+  <title>Phototransistors — Plus Opto</title>
+  <meta name="description" content="Infrared phototransistors in through hole and surface mount packages." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="css/plusopto.css" />
   <link rel="icon" href="assets/plusopto-logo.jpg" />
+<style>
+  /* Page-specific styles for product cards */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 991.98px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 575.98px)  { .products-grid { grid-template-columns: 1fr; } }
+
+  .section-intro {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .section-intro h2 { font-size: 20px; font-weight: 700; color: #153049; margin: 0; }
+  .count-chip {
+    background: #e8f7f6; color: #2bbcb0;
+    border: 1px solid #b2e4e0;
+    font-size: 13px; font-weight: 700;
+    padding: 4px 14px; border-radius: 20px;
+  }
+
+  /* Product card */
+  .product-card {
+    border: 1px solid #e2e6ea;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 12px -4px rgba(17,38,56,.08);
+  }
+  .card-image {
+    background: #f4f6f8; height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .card-image img, .card-image svg { max-height: 150px; max-width: 90%; object-fit: contain; }
+  .card-body { padding: 18px; flex: 1; }
+  .part-number { font-size: 12px; font-weight: 600; color: #2bbcb0; text-transform: uppercase; margin-bottom: 6px; }
+  .card-title { font-size: 16px; font-weight: 800; color: #153049; line-height: 1.2; margin-bottom: 10px; }
+  .card-desc { font-size: 13px; color: #718096; line-height: 1.55; margin-bottom: 14px; }
+  .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 0; font-size: 12px; }
+  .spec-table th { background: #153049; color: white; text-align: left; padding: 6px 10px; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .spec-table td { padding: 6px 10px; border-bottom: 1px solid #e2e6ea; }
+  .spec-table td:last-child { text-align: right; font-weight: 600; color: #153049; }
+  .spec-table tr:last-child td { border-bottom: none; }
+  .spec-table tr:nth-child(even) td { background: #f4f6f8; }
+  .card-footer-btns { padding: 14px 18px; border-top: 1px solid #e2e6ea; background: #f8fafc; display: flex; flex-direction: column; gap: 8px; }
+
+  /* Emitter badges */
+  .emitter-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .badge-red   { background: #fde8e8; color: #c53030; border: 1px solid #feb2b2; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-ir850 { background: #f0e6ff; color: #6b21a8; border: 1px solid #d8b4fe; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-ir940 { background: #e8e0ff; color: #4c1d95; border: 1px solid #c4b5fd; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-white      { background: #ebf8ff; color: #2b6cb0; border: 1px solid #bee3f8; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-warm-white { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-nat-white  { background: #f0fdf4; color: #166534; border: 1px solid #bbf7d0; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-green      { background: #f0fdf4; color: #15803d; border: 1px solid #86efac; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-blue       { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-yellow     { background: #fefce8; color: #854d0e; border: 1px solid #fde047; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-infrared   { background: #fde8e8; color: #C00000; border: 1px solid #C00000; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+
+  /* Comparison table */
+  .compare-section { margin-top: 0; }
+  .compare-section h2 { font-size: 20px; font-weight: 800; color: #153049; margin-bottom: 16px; }
+  .compare-table { width: 100%; border-collapse: collapse; font-size: 12.5px; }
+  .compare-table thead tr { background: #153049; }
+  .compare-table thead th { color: white; padding: 11px 14px; text-align: left; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .compare-table tbody tr { border-bottom: 1px solid #e2e6ea; }
+  .compare-table tbody tr:hover { background: #f4f6f8; }
+  .compare-table td { padding: 10px 14px; }
+  .compare-table td:first-child { font-weight: 700; color: #153049; font-size: 12px; }
+  .compare-table-wrap { overflow-x: auto; }
+</style>
 </head>
 <body>
 
@@ -72,79 +148,127 @@
     </div>
   </nav>
 
-  <!-- CATEGORY HERO -->
-  <div style="position:relative;height:350px;">
-    <img src="assets/cat-displays.jpg" alt="Infrared (IR) Emitters" style="width:100%;height:100%;object-fit:cover;" />
-    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(17,38,56,.92) 0%,rgba(17,38,56,.7) 50%,rgba(17,38,56,.35) 100%);"></div>
-    <div style="position:absolute;inset:0;display:flex;align-items:center;">
-      <div class="container">
-        <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
-          <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider-color:rgba(210,228,245,0.4);--bs-breadcrumb-item-active-color:rgba(210,228,245,0.75);">
-            <li class="breadcrumb-item"><a href="index.html" style="color:#30e8d9;text-decoration:none;">Home</a></li>
-            <li class="breadcrumb-item"><a href="products.html" style="color:#30e8d9;text-decoration:none;">Products</a></li>
-            <li class="breadcrumb-item"><a href="category-led-components.html" style="color:#30e8d9;text-decoration:none;">LED Components</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Infrared Phototransistors</li>
-          </ol>
-        </nav>
-        <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;color:#fff;margin-bottom:.5rem;">Infrared Phototransistors</h1>
-        <p style="color:rgba(210,228,245,.8);max-width:600px;margin:0;">We offer a comprehensive range of infrared phototransistors in SMD and through-hole packages for sensing and detection applications.</p>
-      </div>
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-components.html">LED Components</a></li>
+          <li class="breadcrumb-item"><a href="products-infrared-devices-overview.html">Infrared Devices</a></li>
+          <li class="breadcrumb-item active">Phototransistors</li>
+        </ol>
+      </nav>
+      <h1>Phototransistors</h1>
+      <p class="subtitle">Our range of Infrared sensors encompasses phototransistors in through hole plastic and Surface Mount packages with a choice of power ratings. Applications include position sensing, street light controls, security, machine vision, remote control, and detection in instruments.</p>
     </div>
   </div>
 
+  <!-- MAIN CONTENT -->
   <section class="py-5">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-through-hole-infrared-emitters.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/IR-Through-hole.png" alt="IR Through-hole" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Through-hole Phototransistors</h3>
-              <p class="excerpt">Surface mount infrared emitters in a compact PLCC package for proximity sensing, object detection and data transmission applications.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="#" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/Infrared-PLCC-4.jpg" alt="Infrared PLCC-4" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Low Power SMD Infrared Emitters</h3>
-              <p class="excerpt">Through-hole infrared emitters in 3mm and 5mm packages offering high radiant intensity for remote control, sensing and illumination applications.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="#" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/Everlight Chip LED group2.jpg" alt="Chip LED SMD Infrared Emitters" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Chip LED SMD Infrared Emitters</h3>
-              <p class="excerpt">Our range of Infrared Chip LED emitters encompasses packages from 0402 to 1206 outline.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section-navy py-5 mt-2">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need a Custom Solution?</h2>
-      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">
-        Our engineering team can help specify or develop a custom solution for your exact requirements.
-      </p>
-      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
-    </div>
-  </section>
+      <div class="section-intro">
+            <h2>Available Products</h2>
+            <span class="count-chip">3 Products</span>
+          </div>
 
+          <div class="products-grid">
+
+            <!-- ── PRODUCT 1 ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/High-Power-3535-IR-Emitter.jpg" alt="High Power IR Emitter" />
+              </div>
+              <div class="card-body">                <div class="card-title">High Power IR Emitter 3535 830nm</div>
+                <div class="emitter-badges">
+                  <span class="badge-infrared">Infrared</span>
+                </div>
+                <div class="card-desc">The SLR3535 series are high power ceramic IR Emitters with 830nm emission. The integral lens produces a 30° beam angle and is suitable for applications including security surveillance and Biomedical.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>Package</td><td>3535</td></tr>
+                    <tr><td>Peak wavelength</td><td>830nm</td></tr>
+                    <tr><td>Forward Voltage (Vf)</td><td>1.6 – 2.0V</td></tr>
+                    <tr><td>Max. Forward Current</td><td>350mA</td></tr>
+                    <tr><td>Viewing Angle</td><td>30°</td></tr>
+                    <tr><td>Operating Temp.</td><td>−40°C to +85°C</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="pdfs/SL3535R830-1-3D-1WY.pdf" target="_blank" class="btn btn-teal w-100">
+                  <i class="bi bi-file-earmark-arrow-down me-2"></i>SL3535R830-1-3D-1WY
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: High Power IR Emitter" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+            <!-- ── PRODUCT 2 ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/3535ir-lsb.jpg" alt="High Power 850nm IR Emitter" />
+              </div>
+              <div class="card-body">
+                <div class="card-title">High Power IR Emitter 3535 850nm</div>
+                <div class="emitter-badges">
+                  <span class="badge-infrared">Infrared</span>
+                </div>
+                <div class="card-desc">High power surface mount emitters specially suited to CCTV and recognition systems operating at 850nm wavelength. These components feature rectangular light patterns and multiple beam angle configurations.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>Package</td><td>3535 (3.5 × 3.5mm)</td></tr>
+                    <tr><td>Peak wavelength</td><td>850nm</td></tr>
+                    <tr><td>Max. Forward Current</td><td>1A</td></tr>
+                    <tr><td>Output</td><td>890mW/sr @ 1A</td></tr>
+                    <tr><td>Viewing Angle</td><td>45° – 130°</td></tr>
+                    <tr><td>Operating Temp.</td><td>−40°C to +85°C</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="pdfs/Ligitek 3535 Infrared High Power selector.pdf" target="_blank" class="btn btn-teal w-100">
+                  <i class="bi bi-file-earmark-arrow-down me-2"></i>Ligitek 3535 High Power IR selector guide
+                </a>
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: High Power IR Emitter 850nm" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+            <!-- ── PRODUCT 3 ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/3535ir-lsa-1.jpg" alt="High Power 940nm IR Emitter" />
+              </div>
+              <div class="card-body">
+                <div class="card-title">High Power IR Emitter 3535 940nm</div>
+                <div class="emitter-badges">
+                  <span class="badge-infrared">Infrared</span>
+                </div>
+                <div class="card-desc">High power surface mount emitters specially suited to CCTV and recognition systems at 940nm. They offer rectangular illumination patterns with various beam angle options in the industry-standard 3535 package.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>Package</td><td>3535 (3.5 × 3.5mm)</td></tr>
+                    <tr><td>Peak wavelength</td><td>940nm</td></tr>
+                    <tr><td>Max. Forward Current</td><td>1A</td></tr>
+                    <tr><td>Output</td><td>1150mW/sr @ 1A</td></tr>
+                    <tr><td>Viewing Angle</td><td>45° – 130°</td></tr>
+                    <tr><td>Operating Temp.</td><td>−40°C to +85°C</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: High Power IR Emitter 940nm" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+          </div><!-- /products-grid -->
+
+    </div><!-- /container -->
+  </section>
 
   <!-- FOOTER -->
   <footer class="site-footer pt-5 pb-4">
@@ -157,13 +281,13 @@
         <div class="col-6 col-md-3 col-lg-2">
           <h4>Products</h4>
           <ul class="list-unstyled">
-          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
-          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
-          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
-          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
-          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
-          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
-          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+            <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+            <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+            <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+            <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+            <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+            <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+            <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
           </ul>
         </div>
         <div class="col-6 col-md-3 col-lg-2">
@@ -178,7 +302,8 @@
           <h4>Contact</h4>
           <ul class="list-unstyled">
             <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
-            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
             <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
           </ul>
         </div>
