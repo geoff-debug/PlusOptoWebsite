@@ -25,7 +25,7 @@
       var phone   = document.getElementById('fphone').value;
       var message = document.getElementById('fmessage').value;
 
-      fetch('WORKER_URL_PLACEHOLDER', {
+      fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name: name, company: company, email: email, phone: phone, message: message })
