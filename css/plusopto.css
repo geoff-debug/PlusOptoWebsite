@@ -815,6 +815,24 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   line-height: 1.6;
 }
 
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(210, 228, 245, 0.1);
+  color: rgba(210, 228, 245, 0.75);
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.footer-social a:hover {
+  background: var(--po-teal);
+  color: #fff;
+}
+
 .site-footer .footer-contact-item {
   display: flex;
   align-items: flex-start;
