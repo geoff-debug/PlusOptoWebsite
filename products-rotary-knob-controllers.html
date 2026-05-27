@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rotary Knob Controllers — Plus Opto</title>
+  <meta name="description" content="Rotary wall panel controllers for wired and RF wireless LED lighting control. Wired, RF 2.4GHz, DMX512, DALI and 0-10V versions available." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+<style>
+  /* Page-specific styles for product cards */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 991.98px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 575.98px)  { .products-grid { grid-template-columns: 1fr; } }
+
+  .section-intro {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .section-intro h2 { font-size: 20px; font-weight: 700; color: #153049; margin: 0; }
+  .count-chip {
+    background: #e8f7f6; color: #2bbcb0;
+    border: 1px solid #b2e4e0;
+    font-size: 13px; font-weight: 700;
+    padding: 4px 14px; border-radius: 20px;
+  }
+
+  /* Product card */
+  .product-card {
+    border: 1px solid #e2e6ea;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 12px -4px rgba(17,38,56,.08);
+  }
+  .card-image {
+    background: #f4f6f8; height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .card-image img { max-height: 150px; max-width: 90%; object-fit: contain; }
+  .card-body { padding: 18px; flex: 1; }
+  .card-title { font-size: 16px; font-weight: 800; color: #153049; line-height: 1.2; margin-bottom: 10px; }
+  .card-desc { font-size: 13px; color: #718096; line-height: 1.55; margin-bottom: 14px; }
+  .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 0; font-size: 12px; }
+  .spec-table th { background: #153049; color: white; text-align: left; padding: 6px 10px; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .spec-table td { padding: 6px 10px; border-bottom: 1px solid #e2e6ea; }
+  .spec-table td:last-child { text-align: right; font-weight: 600; color: #153049; }
+  .spec-table tr:last-child td { border-bottom: none; }
+  .spec-table tr:nth-child(even) td { background: #f4f6f8; }
+  .card-footer-btns { padding: 14px 18px; border-top: 1px solid #e2e6ea; background: #f8fafc; display: flex; flex-direction: column; gap: 8px; }
+
+  /* Protocol badges */
+  .emitter-badges { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .badge-rf       { background: #e8f7f6; color: #0f766e; border: 1px solid #99f6e4; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-zigbee   { background: #fef9c3; color: #854d0e; border: 1px solid #fde047; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-wired    { background: #f1f5f9; color: #475569; border: 1px solid #cbd5e1; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-dmx      { background: #fff7ed; color: #c2410c; border: 1px solid #fed7aa; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-dali     { background: #f5f3ff; color: #6d28d9; border: 1px solid #ddd6fe; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-0-10v    { background: #f0fdf4; color: #15803d; border: 1px solid #86efac; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-triac    { background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-lv       { background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-rgb      { background: #fdf4ff; color: #86198f; border: 1px solid #f0abfc; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+  .badge-ct       { background: #fefce8; color: #92400e; border: 1px solid #fde68a; border-radius: 20px; font-size: 11px; font-weight: 700; padding: 3px 10px; }
+</style>
+  <link rel="canonical" href="https://www.plusopto.com/products-rotary-knob-controllers.html" />
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Tape</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-rotary-knob-controllers-overview.html">Rotary Knob Controllers</a></li>
+          <li class="breadcrumb-item active">Products</li>
+        </ol>
+      </nav>
+      <h1>Rotary Knob Controllers</h1>
+      <p class="subtitle">Rotary wall panel controllers for wired and RF wireless LED lighting control. Available in RF 2.4GHz, DMX512, DALI, 0-10V and direct wired configurations.</p>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <section class="py-5">
+    <div class="container">
+
+      <div class="section-intro">
+        <h2>Available Products</h2>
+        <span class="count-chip">10 Products</span>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- ── PRODUCT 1: EasyAir 2B Wireless Switch ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/EasyAir-2B.jpg" alt="EasyAir 2B Wireless Switch" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">EasyAir 2B Wireless Switch</div>
+            <div class="emitter-badges">
+              <span class="badge-rf">RF 2.4GHz</span>
+              <span class="badge-zigbee">Zigbee</span>
+            </div>
+            <div class="card-desc">Wireless 2-button switch panel designed to work with EasyAir SNS/SNH sensor controllers. On/off and dimming control with no wiring or batteries required.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Protocol</td><td>RF 2.4GHz / Zigbee</td></tr>
+                <tr><td>Buttons</td><td>2</td></tr>
+                <tr><td>Function</td><td>On/Off &amp; Dimming</td></tr>
+                <tr><td>Wireless Range</td><td>Up to 10m</td></tr>
+                <tr><td>Dimensions</td><td>81 × 81 × 14mm</td></tr>
+                <tr><td>Power</td><td>No battery / No wiring</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: EasyAir 2B Wireless Switch" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── PRODUCT 2: EasyAir 4B Wireless Switch ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/EasyAir-4B.jpg" alt="EasyAir 4B Wireless Switch" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">EasyAir 4B Wireless Switch</div>
+            <div class="emitter-badges">
+              <span class="badge-rf">RF 2.4GHz</span>
+              <span class="badge-zigbee">Zigbee</span>
+            </div>
+            <div class="card-desc">Wireless 4-button switch panel for on/off, dimming and scene setting. Works with EasyAir SNS/SNH sensor controllers. No wiring or batteries required.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Protocol</td><td>RF 2.4GHz / Zigbee</td></tr>
+                <tr><td>Buttons</td><td>4</td></tr>
+                <tr><td>Function</td><td>On/Off, Dim &amp; Scene</td></tr>
+                <tr><td>Wireless Range</td><td>Up to 10m</td></tr>
+                <tr><td>Dimensions</td><td>81 × 81 × 14mm</td></tr>
+                <tr><td>Power</td><td>No battery / No wiring</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: EasyAir 4B Wireless Switch" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── PRODUCT 3: K1 RF LED Controller ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/K1-LED-Controller.jpg" alt="K1 RF LED Controller" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">K1 RF Rotary Panel Controller</div>
+            <div class="emitter-badges">
+              <span class="badge-rf">RF 2.4GHz</span>
+              <span class="badge-ct">CT Tuneable</span>
+            </div>
+            <div class="card-desc">Rotary panel dimmer designed to drive LED strips and clusters via wireless RF signal. Controls brightness and colour temperature. Battery powered — no mains wiring required.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Protocol</td><td>RF 2.4GHz</td></tr>
+                <tr><td>Control</td><td>Brightness &amp; CT</td></tr>
+                <tr><td>Wireless Range</td><td>Up to 30m</td></tr>
+                <tr><td>Dimensions</td><td>86 × 86 × 27mm</td></tr>
+                <tr><td>Power</td><td>3V CR2032 (included)</td></tr>
+                <tr><td>Pairs With</td><td>FUT-035 / FUT-036</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: K1 RF Rotary Panel Controller" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── PRODUCT 4: E6-TD1 AC Mains Triac ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/E610-1.png" alt="E6-TD1 AC Mains Rotary Dimmer" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">E6-TD1 AC Mains Rotary Dimmer</div>
+            <div class="emitter-badges">
+              <span class="badge-triac">Triac</span>
+              <span class="badge-wired">Wired</span>
+            </div>
+            <div class="card-desc">Mains rotary panel dimmer for LED strips and clusters via AC mains triac control. Hard-wired connection via terminal block. Compatible with leading edge triac LED drivers.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>220–240VAC</td></tr>
+                <tr><td>Control</td><td>Leading Edge Triac</td></tr>
+                <tr><td>LED Load</td><td>6–300W</td></tr>
+                <tr><td>Halogen Load</td><td>25–500W</td></tr>
+                <tr><td>Connection</td><td>Terminal Block</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: E6-TD1 AC Mains Rotary Dimmer" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── PRODUCT 5: EX61 DMX512 ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Rotary-control-group.jpg" alt="EX61 DMX512 Rotary Controller" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">EX61 DMX512 Rotary Controller</div>
+            <div class="emitter-badges">
+              <span class="badge-dmx">DMX512</span>
+              <span class="badge-rf">RF 2.4GHz</span>
+            </div>
+            <div class="card-desc">Wireless rotary panel LED dimmer for LED strips and clusters via RF or wired DMX512 signal. WiFi gateway compatible. Compatible with L-Bus system and F1 hand-held remote.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>100–240VAC</td></tr>
+                <tr><td>Protocol</td><td>DMX512 / RF 2.4GHz</td></tr>
+                <tr><td>Channels</td><td>Single</td></tr>
+                <tr><td>Wireless Range</td><td>30m</td></tr>
+                <tr><td>WiFi Gateway</td><td>Compatible</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: EX61 DMX512 Rotary Controller" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── PRODUCT 6: E6-DA1 DALI ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/E610-2.png" alt="E6-DA1 DALI Rotary Controller" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">E6-DA1 DALI Rotary Controller</div>
+            <div class="emitter-badges">
+              <span class="badge-dali">DALI</span>
+              <span class="badge-wired">Wired</span>
+            </div>
+            <div class="card-desc">Rotary panel dimmer for LED strips and clusters via DALI signal. Adopts DALI standard protocol IEC62386. Compatible with DALI constant voltage and constant current drivers.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Protocol</td><td>DALI (IEC62386)</td></tr>
+                <tr><td>Power Supply</td><td>DALI PSU</td></tr>
+                <tr><td>Channels</td><td>Single</td></tr>
+                <tr><td>Driver Compat.</td><td>CV &amp; CC DALI</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: E6-DA1 DALI Rotary Controller" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── PRODUCT 7: E610P-RF 0-10V ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/E610.png" alt="E610P-RF 0-10V Rotary Controller" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">E610P-RF 0-10V Rotary Controller</div>
+            <div class="emitter-badges">
+              <span class="badge-0-10v">0–10V</span>
+              <span class="badge-rf">RF 2.4GHz</span>
+            </div>
+            <div class="card-desc">Rotary panel LED dimmer module with RF remote control, designed to drive LED strips and clusters via 0/1-10V dimmer drivers. WiFi gateway compatible. Works with F1 hand-held remote.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>100–240VAC</td></tr>
+                <tr><td>Protocol</td><td>0–10V / RF 2.4GHz</td></tr>
+                <tr><td>Output</td><td>0–10V, 50mA</td></tr>
+                <tr><td>Channels</td><td>Single</td></tr>
+                <tr><td>WiFi Gateway</td><td>Compatible</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: E610P-RF 0-10V Rotary Controller" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── PRODUCT 8: E610-P 0-10V ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/E610-1.png" alt="E610-P 0-10V Rotary Dimmer" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">E610-P 0-10V Rotary Dimmer</div>
+            <div class="emitter-badges">
+              <span class="badge-0-10v">0–10V</span>
+              <span class="badge-wired">Wired</span>
+            </div>
+            <div class="card-desc">Rotary panel 0-10V dimmer module for LED strips and fittings via 0/1-10V dimmer drivers. Hard-wired mains input with single-channel 0-10V analogue output.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>100–240VAC</td></tr>
+                <tr><td>Protocol</td><td>0–10V (Wired)</td></tr>
+                <tr><td>Output</td><td>0–10V, 50mA</td></tr>
+                <tr><td>Channels</td><td>Single</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: E610-P 0-10V Rotary Dimmer" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── PRODUCT 9: BC-K3-RGB ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/BC-K3-RGB.png" alt="BC-K3-RGB Rotary Controller" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">BC-K3-RGB Rotary Controller</div>
+            <div class="emitter-badges">
+              <span class="badge-rgb">RGB</span>
+              <span class="badge-lv">Low Voltage</span>
+              <span class="badge-wired">Wired</span>
+            </div>
+            <div class="card-desc">Rotary panel LED controller for full colour RGB LED lamps and fittings via hard-wired 3-channel constant voltage output. Direct connection to LED lamps and drivers.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Channels</td><td>3 (RGB)</td></tr>
+                <tr><td>Current per Ch.</td><td>4A</td></tr>
+                <tr><td>Max Load</td><td>288W</td></tr>
+                <tr><td>Connection</td><td>Hard Wired</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: BC-K3-RGB Rotary Controller" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- ── PRODUCT 10: BC-K2-CT ── -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Rotary-Control-CT.png" alt="BC-K2-CT Rotary Controller" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">BC-K2-CT Rotary Controller</div>
+            <div class="emitter-badges">
+              <span class="badge-ct">CT Tuneable</span>
+              <span class="badge-lv">Low Voltage</span>
+              <span class="badge-wired">Wired</span>
+            </div>
+            <div class="card-desc">Rotary panel LED controller for 2-channel colour temperature white LED lamps and fittings via hard-wired constant voltage output. Smooth CCT adjustment from warm to cool white.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Input Voltage</td><td>12–24VDC</td></tr>
+                <tr><td>Channels</td><td>2 (CT)</td></tr>
+                <tr><td>Current per Ch.</td><td>4A</td></tr>
+                <tr><td>Max Load</td><td>192W</td></tr>
+                <tr><td>Connection</td><td>Hard Wired</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: BC-K2-CT Rotary Controller" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
+
+    </div><!-- /container -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+            <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+            <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+            <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+            <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+            <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+            <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
