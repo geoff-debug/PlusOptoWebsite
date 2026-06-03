@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LED Modules — Plus Opto</title>
+  <meta name="description" content="LED chain modules for signage applications including channel letter backlighting, face and halo illumination. IP67 waterproof options, mono-colour and RGB." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+<style>
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 991.98px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 575.98px)  { .products-grid { grid-template-columns: 1fr; } }
+
+  .section-intro {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .section-intro h2 { font-size: 20px; font-weight: 700; color: #153049; margin: 0; }
+  .count-chip {
+    background: #e8f7f6; color: #2bbcb0;
+    border: 1px solid #b2e4e0;
+    font-size: 13px; font-weight: 700;
+    padding: 4px 14px; border-radius: 20px;
+  }
+
+  .product-card {
+    border: 1px solid #e2e6ea;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 12px -4px rgba(17,38,56,.08);
+  }
+  .card-image {
+    background: #f4f6f8; height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .card-image img { max-height: 150px; max-width: 90%; object-fit: contain; }
+  .card-body { padding: 18px; flex: 1; }
+  .part-number { font-size: 12px; font-weight: 600; color: #2bbcb0; text-transform: uppercase; margin-bottom: 6px; }
+  .card-title { font-size: 16px; font-weight: 800; color: #153049; line-height: 1.2; margin-bottom: 10px; }
+  .card-desc { font-size: 13px; color: #718096; line-height: 1.55; margin-bottom: 14px; }
+  .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 0; font-size: 12px; }
+  .spec-table th { background: #153049; color: white; text-align: left; padding: 6px 10px; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .spec-table td { padding: 6px 10px; border-bottom: 1px solid #e2e6ea; }
+  .spec-table td:last-child { text-align: right; font-weight: 600; color: #153049; }
+  .spec-table tr:last-child td { border-bottom: none; }
+  .spec-table tr:nth-child(even) td { background: #f4f6f8; }
+  .card-footer-btns { padding: 14px 18px; border-top: 1px solid #e2e6ea; background: #f8fafc; display: flex; flex-direction: column; gap: 8px; }
+</style>
+  <link rel="canonical" href="https://www.plusopto.com/product-led-modules.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Product",
+      "@id": "https://www.plusopto.com/product-led-modules.html#product",
+      "name": "LED Modules",
+      "description": "LED chain modules for signage applications including channel letter backlighting, face and halo illumination.",
+      "image": "https://www.plusopto.com/assets/img/LED-Modules-Banner.jpg",
+      "brand": { "@type": "Brand", "name": "Plus Opto" },
+      "offers": {
+        "@type": "Offer",
+        "url": "https://www.plusopto.com/product-led-modules.html",
+        "priceCurrency": "GBP",
+        "availability": "https://schema.org/InStock",
+        "seller": { "@type": "Organization", "name": "Plus Opto" }
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/product-led-modules.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Assemblies & Light Engines", "item": "https://www.plusopto.com/category-led-assemblies.html" },
+        { "@type": "ListItem", "position": 4, "name": "LED Modules Overview", "item": "https://www.plusopto.com/product-led-modules-overview.html" },
+        { "@type": "ListItem", "position": 5, "name": "LED Modules", "item": "https://www.plusopto.com/product-led-modules.html" }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Tape</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="breadcrumb-item"><a href="product-led-modules-overview.html">LED Modules Overview</a></li>
+          <li class="breadcrumb-item active">LED Modules</li>
+        </ol>
+      </nav>
+      <h1>LED Modules</h1>
+      <p class="subtitle">LED chain modules designed for channel letter backlighting, face and halo illumination in signage applications. IP67 waterproof options available in mono-colour and RGB.</p>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <section class="py-5">
+    <div class="container">
+
+      <div class="section-intro">
+        <h2>Available Products</h2>
+        <span class="count-chip">11 Products</span>
+      </div>
+
+      <div class="products-grid">
+
+        <!-- CARD 1: PWM9607-1YL2835T -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/minimodule-2835T.png" alt="PWM9607-1YL2835T Mini LED Module" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">PWM9607-1YL2835T</div>
+            <div class="card-title">Mini LED Module — Single 2835</div>
+            <div class="card-desc">Designed for channel letter illumination &amp; backlighting. Waterproof mini modules supplied in wired chains of 100 pieces.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Operating Voltage</td><td>12VDC</td></tr>
+                <tr><td>LED Emitter</td><td>Single 2835</td></tr>
+                <tr><td>Power Consumption</td><td>0.2W per module</td></tr>
+                <tr><td>IP Rating</td><td>IP67</td></tr>
+                <tr><td>Beam Angle</td><td>120°</td></tr>
+                <tr><td>Dimensions</td><td>9×6×4.2mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/PWM9607-1YL2835Txx-12-IP67.pdf" target="_blank" class="btn btn-outline-teal w-100">PWM9607-1YL2835T Datasheet</a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PWM9607-1YL2835T" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 2: PWM1210-1YL2835 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/mini-modulePWM1212-1Y.png" alt="PWM1210-1YL2835 Mini LED Module" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">PWM1210-1YL2835</div>
+            <div class="card-title">Mini LED Module — Single 2835 160°</div>
+            <div class="card-desc">Designed for light-box &amp; channel letter illumination. Supplied with 44mm flexible wire spacing in 100-piece chains.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Operating Voltage</td><td>12VDC</td></tr>
+                <tr><td>LED Emitter</td><td>Single 2835</td></tr>
+                <tr><td>Power Consumption</td><td>0.24W per module</td></tr>
+                <tr><td>IP Rating</td><td>IP67</td></tr>
+                <tr><td>Beam Angle</td><td>160°</td></tr>
+                <tr><td>Dimensions</td><td>12×10×8.2mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/PWM1210-1YL2835W-12v series.pdf" target="_blank" class="btn btn-outline-teal w-100">PWM1210-1YL2835 Datasheet</a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PWM1210-1YL2835" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 3: PWM4417-2YL2835 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/PWM4417-2.png" alt="PWM4417-2YL2835 LED Module" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">PWM4417-2YL2835</div>
+            <div class="card-title">LED Module — Dual 2835, 112lm</div>
+            <div class="card-desc">Designed for light-box &amp; channel letter illumination. 3.0mm mounting hole and 3M adhesive tape, suitable for 4–16cm depth lightboxes.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Operating Voltage</td><td>12VDC</td></tr>
+                <tr><td>LED Emitters</td><td>Dual 2835</td></tr>
+                <tr><td>Power Consumption</td><td>0.72W per module</td></tr>
+                <tr><td>Luminous Flux</td><td>112lm</td></tr>
+                <tr><td>IP Rating</td><td>IP67</td></tr>
+                <tr><td>Beam Angle</td><td>175°</td></tr>
+                <tr><td>Dimensions</td><td>44×17×6.5mm</td></tr>
+                <tr><td>Chain Config</td><td>20 pcs, 100mm spacing</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/PWM4417-2SLY2835x-12v-IP67.pdf" target="_blank" class="btn btn-outline-teal w-100">PWM4417-2YL2835 Datasheet</a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PWM4417-2YL2835" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 4: PWM5316-2YL2835 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/PWM5316.jpg" alt="PWM5316-2YL2835 LED Module" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">PWM5316-2YL2835</div>
+            <div class="card-title">LED Module — Dual 2835, 140lm</div>
+            <div class="card-desc">High efficiency LED module designed for channel letter illumination and backlighting. 3.0mm mounting hole and 3M adhesive tape.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Operating Voltage</td><td>12VDC</td></tr>
+                <tr><td>LED Emitters</td><td>Dual 2835</td></tr>
+                <tr><td>Power Consumption</td><td>1.0W per module</td></tr>
+                <tr><td>Luminous Flux</td><td>140lm</td></tr>
+                <tr><td>IP Rating</td><td>IP65</td></tr>
+                <tr><td>Beam Angle</td><td>175°</td></tr>
+                <tr><td>Dimensions</td><td>53.3×15.8×7.6mm</td></tr>
+                <tr><td>Chain Config</td><td>20 pcs, 80mm spacing</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/PWM5316-2YL2835-12v.pdf" target="_blank" class="btn btn-outline-teal w-100">PWM5316-2YL2835 Datasheet</a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PWM5316-2YL2835" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 5: PWM7816-3YL2835 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/PWM7816.jpg" alt="PWM7816-3YL2835 LED Module" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">PWM7816-3YL2835</div>
+            <div class="card-title">LED Module — 3× 2835, 200lm</div>
+            <div class="card-desc">High efficiency LED module designed for channel letter illumination and backlighting. 3.0mm mounting hole and 3M adhesive tape.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Operating Voltage</td><td>12VDC</td></tr>
+                <tr><td>LED Emitters</td><td>3× 2835</td></tr>
+                <tr><td>Power Consumption</td><td>1.44W per module</td></tr>
+                <tr><td>Luminous Flux</td><td>200lm</td></tr>
+                <tr><td>IP Rating</td><td>IP67</td></tr>
+                <tr><td>Beam Angle</td><td>175°</td></tr>
+                <tr><td>Dimensions</td><td>78.3×15.8×7.6mm</td></tr>
+                <tr><td>Chain Config</td><td>20 pcs, 80mm spacing</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/PWM7816-3YL2835-12V.pdf" target="_blank" class="btn btn-outline-teal w-100">PWM7816-3YL2835 Datasheet</a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PWM7816-3YL2835" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 6: PWM4743-4YL2835 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/PWM4343-4YL2835-12V.jpg" alt="PWM4743-4YL2835 LED Module" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">PWM4743-4YL2835</div>
+            <div class="card-title">LED Module — 4× 2835, 243lm</div>
+            <div class="card-desc">High efficiency LED module designed for channel letter illumination and backlighting. 3.0mm mounting hole and 3M adhesive tape.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Operating Voltage</td><td>12VDC</td></tr>
+                <tr><td>LED Emitters</td><td>4× 2835</td></tr>
+                <tr><td>Power Consumption</td><td>1.8W per module</td></tr>
+                <tr><td>Luminous Flux</td><td>243lm</td></tr>
+                <tr><td>IP Rating</td><td>IP65</td></tr>
+                <tr><td>Beam Angle</td><td>175°</td></tr>
+                <tr><td>Dimensions</td><td>47×43×7.8mm</td></tr>
+                <tr><td>Chain Config</td><td>20 pcs, 140mm spacing</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/PWM4743-4YL2835x-12v.pdf" target="_blank" class="btn btn-outline-teal w-100">PWM4743-4YL2835 Datasheet</a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PWM4743-4YL2835" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 7: PWM3322FPC-1YL2835 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/FPC-Module.jpg" alt="PWM3322FPC-1YL2835 FPC LED Module" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">PWM3322FPC-1YL2835</div>
+            <div class="card-title">FPC LED Module — 2835, 86lm</div>
+            <div class="card-desc">Flexible PCB backlighting solution designed for the illumination of lightboxes with a depth of 40mm–150mm with minimal spotting.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Operating Voltage</td><td>12VDC</td></tr>
+                <tr><td>LED Emitters</td><td>High efficiency 2835</td></tr>
+                <tr><td>Power Consumption</td><td>0.72W per module</td></tr>
+                <tr><td>Luminous Flux</td><td>86lm per module</td></tr>
+                <tr><td>Beam Angle</td><td>175°</td></tr>
+                <tr><td>Dimensions</td><td>33×22×7.6mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/PWM3322FPC-1YL2835x-12v.pdf" target="_blank" class="btn btn-outline-teal w-100">PWM3322FPC Datasheet</a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PWM3322FPC-1YL2835" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 8: PWM6719-3YL5050 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Module-PAM6719W-3YL5050.png" alt="PWM6719-3YL5050 LED Module" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">PWM6719-3YL5050</div>
+            <div class="card-title">LED Module — 3× 5050, IP67</div>
+            <div class="card-desc">Designed for channel letter illumination and backlighting. 3.0mm mounting holes and 3M adhesive tape. IP67 waterproof.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Operating Voltage</td><td>12VDC</td></tr>
+                <tr><td>LED Emitters</td><td>3× 5050</td></tr>
+                <tr><td>Power Consumption</td><td>0.72W per module</td></tr>
+                <tr><td>IP Rating</td><td>IP67</td></tr>
+                <tr><td>Beam Angle</td><td>160°</td></tr>
+                <tr><td>Dimensions</td><td>67×19×5.9mm</td></tr>
+                <tr><td>Chain Config</td><td>20 pcs, 50mm spacing</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/PWM6719-3YL5050 series.pdf" target="_blank" class="btn btn-outline-teal w-100">PWM6719-3YL5050 Datasheet</a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PWM6719-3YL5050" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 9: PWM5132-4YL5050 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Module-PAM4915-2YL5050.png" alt="PWM5132-4YL5050 LED Module" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">PWM5132-4YL5050</div>
+            <div class="card-title">LED Module — 4× 5050, IP67</div>
+            <div class="card-desc">Designed for channel letter illumination and backlighting. 3.0mm mounting holes and 3M adhesive tape. IP67 waterproof.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Operating Voltage</td><td>12VDC</td></tr>
+                <tr><td>LED Emitters</td><td>4× 5050</td></tr>
+                <tr><td>Power Consumption</td><td>0.96W per module</td></tr>
+                <tr><td>IP Rating</td><td>IP67</td></tr>
+                <tr><td>Beam Angle</td><td>160°</td></tr>
+                <tr><td>Dimensions</td><td>51×32×5.9mm</td></tr>
+                <tr><td>Chain Config</td><td>20 pcs, 78mm spacing</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/PWM5132-4YL5050-12v-IP65.pdf" target="_blank" class="btn btn-outline-teal w-100">PWM5132-4YL5050 Datasheet</a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PWM5132-4YL5050" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 10: PWM7118-3YL5050RGB -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/PWM7118-3YL5050RGB.png" alt="PWM7118-3YL5050RGB LED Module" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">PWM7118-3YL5050RGB</div>
+            <div class="card-title">RGB LED Module — 3× 5050, IP67</div>
+            <div class="card-desc">RGB module designed for signage, cove lighting, backlighting and channel letter illumination. 3.0mm mounting holes and 3M adhesive tape.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Operating Voltage</td><td>12VDC</td></tr>
+                <tr><td>LED Emitters</td><td>3× 5050 RGB</td></tr>
+                <tr><td>Power Consumption</td><td>0.72W per module</td></tr>
+                <tr><td>IP Rating</td><td>IP67</td></tr>
+                <tr><td>Beam Angle</td><td>160°</td></tr>
+                <tr><td>Dimensions</td><td>71×18×8.1mm</td></tr>
+                <tr><td>Chain Config</td><td>20 pcs, 82mm spacing</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/PWM7118-3YL5050RGB.pdf" target="_blank" class="btn btn-outline-teal w-100">PWM7118-3YL5050RGB Datasheet</a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PWM7118-3YL5050RGB" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- CARD 11: PWM4237-4YL5050RGB -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/PWM4237-RGB.jpg" alt="PWM4237-4YL5050RGB LED Module" />
+          </div>
+          <div class="card-body">
+            <div class="part-number">PWM4237-4YL5050RGB</div>
+            <div class="card-title">RGB LED Module — 4× 5050, IP67</div>
+            <div class="card-desc">RGB module for signage, cove lighting, backlighting and channel letter illumination. 3.0mm mounting hole and 3M adhesive tape.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Operating Voltage</td><td>12VDC</td></tr>
+                <tr><td>LED Emitters</td><td>4× 5050 RGB</td></tr>
+                <tr><td>Power Consumption</td><td>1.44W per module</td></tr>
+                <tr><td>IP Rating</td><td>IP67</td></tr>
+                <tr><td>Beam Angle</td><td>160°</td></tr>
+                <tr><td>Dimensions</td><td>42×37×8.1mm</td></tr>
+                <tr><td>Chain Config</td><td>20 pcs, 100mm spacing</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/PWM4237-4YL5050RGB-12v-IP67.pdf" target="_blank" class="btn btn-outline-teal w-100">PWM4237-4YL5050RGB Datasheet</a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: PWM4237-4YL5050RGB" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
+    </div><!-- /container -->
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+            <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+            <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+            <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+            <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+            <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+            <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
