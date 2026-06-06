@@ -3,286 +3,714 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dimmable LED Drivers — Plus Opto</title>
+  <title>Dimmable LED Drivers â€” Plus Opto</title>
   <meta name="description" content="Dimmable LED drivers supporting DALI, Casambi, 0-10V, triac, DMX, Bluetooth and Zigbee protocols." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
-  <link rel="stylesheet" href="css/plusopto.css" />
-  <link rel="icon" href="assets/plusopto-logo.jpg" />
-          <link rel="canonical" href="https://www.plusopto.com/product-dimmable-led-drivers.html" />
-  <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Product",
-      "@id": "https://www.plusopto.com/product-dimmable-led-drivers.html#product",
-      "name": "Dimmable LED Drivers",
-      "description": "Dimmable LED drivers supporting DALI, Casambi, 0-10V, triac, DMX, Bluetooth and Zigbee protocols.",
-      "image": "https://www.plusopto.com/assets/img/leddriversgrp.jpg",
-      "brand": {
-        "@type": "Brand",
-        "name": "Plus Opto"
-      },
-      "offers": {
-        "@type": "Offer",
-        "url": "https://www.plusopto.com/product-dimmable-led-drivers.html",
-        "priceCurrency": "GBP",
-        "availability": "https://schema.org/InStock",
-        "seller": {
-          "@type": "Organization",
-          "name": "Plus Opto"
-        }
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://www.plusopto.com/product-dimmable-led-drivers.html#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://www.plusopto.com/index.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Products",
-          "item": "https://www.plusopto.com/products.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 3,
-          "name": "LED Drivers",
-          "item": "https://www.plusopto.com/category-led-drivers.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 4,
-          "name": "Dimmable LED Drivers",
-          "item": "https://www.plusopto.com/product-dimmable-led-drivers.html"
-        }
-      ]
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --po-navy:          #112638;
+      --po-navy-light:    #183858;
+      --po-navy-mid:      #1a3a56;
+      --po-teal:          #1fada1;
+      --po-teal-glow:     #30e8d9;
+      --po-surface-fg:    rgba(210, 228, 245, 0.85);
+      --po-gradient-hero: linear-gradient(135deg, #112638, #183858, #1a3a56);
+      --po-shadow-card:   0 4px 20px -4px rgba(17, 38, 56, 0.08);
+      --po-shadow-elevated: 0 10px 40px -10px rgba(17, 38, 56, 0.18);
     }
-  ]
-}
-  </script>
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      color: #1a2b3c;
+      background-color: #f5f7fa;
+      margin: 0;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Outfit', system-ui, sans-serif;
+    }
+
+    /* Top bar */
+    .topbar {
+      background: var(--po-gradient-hero);
+      color: #fff;
+      font-size: 0.8125rem;
+      padding: 8px 0;
+    }
+    .topbar a {
+      color: var(--po-teal-glow);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .topbar a:hover { color: var(--po-teal); }
+    .topbar .topbar-email { color: var(--po-surface-fg); }
+    .topbar .topbar-email:hover { color: var(--po-teal-glow); }
+    .topbar-cta {
+      background: var(--po-teal);
+      color: #fff !important;
+      padding: 5px 16px;
+      border-radius: 6px;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      font-size: 0.8rem;
+      transition: filter 0.2s;
+      text-decoration: none;
+    }
+    .topbar-cta:hover { filter: brightness(1.12); }
+
+    /* Navbar */
+    .site-navbar {
+      background-color: #ffffff;
+      border-bottom: 1px solid #e4eaf0;
+      box-shadow: 0 2px 8px rgba(17, 38, 56, 0.06);
+    }
+    .site-navbar .nav-link {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #1a2b3c;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      transition: color 0.2s, background-color 0.2s;
+    }
+    .site-navbar .nav-link:hover,
+    .site-navbar .nav-link:focus {
+      color: var(--po-teal);
+      background-color: #f0f5fa;
+    }
+    .site-navbar .dropdown-menu {
+      border: 1px solid #e4eaf0;
+      border-radius: 10px;
+      box-shadow: 0 8px 32px rgba(17, 38, 56, 0.12);
+      min-width: 240px;
+      padding: 0.5rem 0;
+    }
+    .site-navbar .dropdown-item {
+      font-size: 0.875rem;
+      color: #1a2b3c;
+      padding: 0.5rem 1.25rem;
+      transition: color 0.2s, background-color 0.2s;
+    }
+    .site-navbar .dropdown-item:hover {
+      color: var(--po-teal);
+      background-color: #f0f5fa;
+    }
+
+    /* Hero banner â€” matches category page exactly: 300px, image + gradient overlay */
+    .category-hero {
+      position: relative;
+      height: 300px;
+    }
+    .category-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .category-hero .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(17,38,56,.92) 0%, rgba(17,38,56,.7) 50%, rgba(17,38,56,.35) 100%);
+    }
+    .category-hero .hero-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+    }
+    .category-hero h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .category-hero .subtitle {
+      color: rgba(210, 228, 245, 0.8);
+      max-width: 600px;
+      margin: 0;
+      font-size: 0.95rem;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb-dark .breadcrumb-item a {
+      color: var(--po-teal-glow);
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+    .breadcrumb-dark .breadcrumb-item a:hover { color: var(--po-teal); }
+    .breadcrumb-dark .breadcrumb-item.active {
+      color: rgba(210, 228, 245, 0.65);
+      font-size: 0.875rem;
+    }
+    .breadcrumb-dark .breadcrumb-item + .breadcrumb-item::before {
+      color: rgba(210, 228, 245, 0.4);
+    }
+
+    /* Section label */
+    .section-label {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--po-navy);
+      margin-bottom: 1rem;
+    }
+
+    /* Product list cards */
+    .product-card {
+      border: 1px solid #e4eaf0;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: var(--po-shadow-card);
+      display: flex;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s, box-shadow 0.3s;
+      margin-bottom: 12px;
+    }
+    .product-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--po-shadow-elevated);
+      color: inherit;
+    }
+    .product-card-static {
+      border: 1px solid #e4eaf0;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: var(--po-shadow-card);
+      display: flex;
+      margin-bottom: 12px;
+      color: inherit;
+    }
+    .product-card .img-wrap,
+    .product-card-static .img-wrap {
+      width: 120px;
+      min-width: 120px;
+      background: #f0f5fa;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-right: 1px solid #e4eaf0;
+      overflow: hidden;
+    }
+    .product-card .img-wrap img,
+    .product-card-static .img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .product-card:hover .img-wrap img { transform: scale(1.05); }
+    .product-card .card-body,
+    .product-card-static .card-body {
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      flex: 1;
+    }
+    .product-card h3,
+    .product-card-static h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1a2b3c;
+      margin-bottom: 5px;
+      transition: color 0.2s;
+    }
+    .product-card:hover h3 { color: var(--po-teal); }
+    .product-card .excerpt,
+    .product-card-static .excerpt {
+      font-size: 0.825rem;
+      color: #6b7f8e;
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 10px;
+    }
+    .tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #f0f5fa;
+      color: #1a4870;
+      border: 1px solid #c8d9eb;
+    }
+    .view-link {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1a4870;
+      text-decoration: none;
+    }
+    .product-card:hover .view-link {
+      text-decoration: underline;
+      color: var(--po-teal);
+    }
+    .no-link {
+      font-size: 0.775rem;
+      color: #8096a8;
+      font-style: italic;
+    }
+
+    /* Related product cards */
+    .card-product {
+      border: 1px solid #e4eaf0;
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: #fff;
+      box-shadow: var(--po-shadow-card);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      height: 100%;
+    }
+    .card-product:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--po-shadow-elevated);
+      color: inherit;
+    }
+    .card-product .card-img-wrap {
+      overflow: hidden;
+      aspect-ratio: 16 / 9;
+      background: #f0f5fa;
+    }
+    .card-product .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .card-product:hover .card-img-wrap img { transform: scale(1.05); }
+    .card-product .card-body { padding: 1rem 1.1rem; }
+    .card-product h3 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #1a2b3c;
+      margin-bottom: 0.4rem;
+      transition: color 0.2s;
+    }
+    .card-product:hover h3 { color: var(--po-teal); }
+    .card-product .read-more {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1a4870;
+      text-decoration: none;
+    }
+    .card-product:hover .read-more {
+      color: var(--po-teal);
+      text-decoration: underline;
+    }
+
+    /* Buttons */
+    .btn-teal {
+      background-color: var(--po-teal);
+      color: #fff;
+      border: 0;
+      font-family: 'Outfit', sans-serif;
+      font-weight: 600;
+      transition: filter 0.2s, box-shadow 0.2s;
+    }
+    .btn-teal:hover {
+      filter: brightness(1.12);
+      box-shadow: 0 4px 16px rgba(31, 173, 161, 0.35);
+      color: #fff;
+    }
+
+    /* CTA section */
+    .section-navy {
+      background: var(--po-gradient-hero);
+    }
+
+    /* Footer */
+    .site-footer {
+      background: var(--po-gradient-hero);
+      color: rgba(210, 228, 245, 0.75);
+      padding: 3rem 0 1.5rem;
+    }
+    .site-footer h4 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--po-teal-glow);
+      margin-bottom: 1.1rem;
+    }
+    .site-footer a {
+      color: rgba(210, 228, 245, 0.75);
+      text-decoration: none;
+      font-size: 0.875rem;
+      transition: color 0.2s;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+    .site-footer a:hover { color: var(--po-teal-glow); }
+    .footer-divider {
+      border-color: rgba(210, 228, 245, 0.1);
+      margin: 2rem 0 1.5rem;
+    }
+    .footer-bottom {
+      font-size: 0.8125rem;
+      color: rgba(210, 228, 245, 0.5);
+    }
+    .footer-social a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: rgba(210, 228, 245, 0.1);
+      color: rgba(210, 228, 245, 0.75);
+      font-size: 1rem;
+      transition: background 0.2s, color 0.2s;
+      margin-right: 6px;
+      margin-bottom: 0;
+    }
+    .footer-social a:hover {
+      background: var(--po-teal);
+      color: #fff;
+    }
+    .footer-contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+      color: rgba(210, 228, 245, 0.75);
+    }
+    .footer-contact-item i { color: var(--po-teal); flex-shrink: 0; margin-top: 2px; }
+    .footer-contact-item a { display: inline; margin-bottom: 0; }
+  </style>
 </head>
 <body>
 
-  <!-- TOP BAR -->
-  <div class="topbar py-2">
-    <div class="container d-flex align-items-center justify-content-between">
-      <div class="d-flex align-items-center gap-3">
-        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
-          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
-        </a>
-        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
-          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
-        </a>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex gap-3">
+        <a href="tel:+441942671122"><i class="bi bi-telephone me-1"></i>+44 (0) 1942 671122</a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-md-inline"><i class="bi bi-envelope me-1"></i>sales@plusopto.co.uk</a>
       </div>
-      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+      <a href="https://plusopto.com/contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
     </div>
   </div>
 
-  <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+  <!-- Navbar -->
+  <nav class="site-navbar navbar navbar-expand-lg sticky-top">
     <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      <a class="navbar-brand" href="https://plusopto.com/index.html">
+        <img src="https://plusopto.com/assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
         <i class="bi bi-list fs-4"></i>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
+          <li class="nav-item"><a class="nav-link" href="https://plusopto.com/index.html">Home</a></li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
-            <ul class="dropdown-menu" id="navCategoryDropdown">
-              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
-              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
-              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
-              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
-              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
-              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
-              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
-              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
-              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
-            </ul>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <a class="nav-link dropdown-toggle" href="https://plusopto.com/products.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Products</a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="about.html">About Us</a></li>
-              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="https://plusopto.com/category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="https://plusopto.com/category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="https://plusopto.com/category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="https://plusopto.com/category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="https://plusopto.com/category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="https://plusopto.com/category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="https://plusopto.com/category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="https://plusopto.com/category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="https://plusopto.com/category-semiconductors.html">Semiconductors</a></li>
             </ul>
           </li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://plusopto.com/blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="https://plusopto.com/about.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="https://plusopto.com/about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="https://plusopto.com/contact.html">Contact</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="https://plusopto.com/contact.html">Contact</a></li>
         </ul>
-        <div class="nav-search-wrap d-none d-lg-block">
+        <div class="nav-search-wrap d-none d-lg-block ms-2">
           <i class="bi bi-search search-icon"></i>
-          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <input type="search" class="nav-search" placeholder="Search productsâ€¦" aria-label="Search" autocomplete="off" />
           <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
         </div>
       </div>
     </div>
   </nav>
 
-  <div class="page-hero">
-    <div class="container">
-      
+  <!-- Hero banner â€” matches category page structure exactly -->
+  <div class="category-hero">
+    <img src="https://plusopto.com/assets/img/leddriversgrp.jpg" alt="Dimmable LED Drivers" />
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <div class="container">
         <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
           <ol class="breadcrumb mb-0">
-            <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-            <li class="breadcrumb-item"><a href="products.html">Products</a></li>
-            <li class="breadcrumb-item"><a href="category-led-drivers.html">LED Drivers</a></li>
-            <li class="breadcrumb-item active">Dimmable LED Drivers</li>
+            <li class="breadcrumb-item"><a href="https://plusopto.com/products.html">â† All Products</a></li>
+            <li class="breadcrumb-item"><a href="https://plusopto.com/category-led-drivers.html">LED Drivers</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Dimmable LED Drivers</li>
           </ol>
         </nav>
-      <h1>Dimmable LED Drivers</h1>
-      <p class="subtitle">Dimmable LED drivers supporting DALI, Casambi, 0-10V, triac, DMX, Bluetooth and Zigbee protocols.</p>
+        <h1>Dimmable LED Drivers</h1>
+        <p class="subtitle">Dimmable LED drivers supporting DALI, Casambi, 0-10V, triac, DMX, Bluetooth and Zigbee protocols.</p>
+      </div>
     </div>
   </div>
 
+  <!-- Main content -->
   <section class="py-5">
     <div class="container">
-      <div class="row g-5">
-        <div class="col-12 col-lg-8">
-          
-          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
-            <img src="assets/img/leddriversgrp.jpg" alt="Dimmable LED Drivers" class="img-fluid" style="max-height:360px;object-fit:contain;" />
-          </div>
 
-          
-          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Overview</h2>
-          <div class="text-muted lh-lg mb-5">
-            <p>To support our extensive range of LED products we offer a wide range of dimmable LED drivers in Constant Voltage and Constant Current output mode. A choice of dimming protocols is available.</p>
-            <p>Our range includes:</p>
-            <p>- DALI Dimming Constant Current LED Drivers: DALI, DALI 2 and DALI DT8 for CCT tuneable LEDs &nbsp;<a href="product-cc-dali-dimmable-led-drivers.html" class="fw-bold" style="color:#153049;">View Details →</a></p>
-            <p>- DALI Dimming Constant Voltage LED Drivers: DALI, DALI 2 and DALI DT8 for CCT tuneable LEDs &nbsp;<a href="product-cv-dali-dimmable-led-drivers.html" class="fw-bold" style="color:#153049;">View Details →</a></p>
-            <p>- Casambi Enabled LED Drivers: Bluetooth Low Energy wireless light management &nbsp;<a href="product-casambi-enabled-drivers-overview.html" class="fw-bold" style="color:#153049;">View Details →</a></p>
-            <p>- Intelligent Dimmable LED Drivers: Smart LED drivers in CV or CC mode</p>
-            <p>- 0/1-10V Dimming LED Drivers: Constant current mode, 10W to 600W &nbsp;<a href="product-0-10v-cc-dimmable-led-drivers.html" class="fw-bold" style="color:#153049;">View Details →</a></p>
-            <p>- 0/1-10V Dimming LED Drivers: Constant voltage mode, 10W to 600W &nbsp;<a href="product-0-10v-cv-dimmable-led-drivers.html" class="fw-bold" style="color:#153049;">View Details →</a></p>
-            <p>- Triac Mains: constant voltage Dimmable LED Drivers 10 to 150W &nbsp;<a href="product-triac-mains-cv-dimmable-led-drivers.html" class="fw-bold" style="color:#153049;">View Details →</a></p>
-            <p>- Triac Mains: constant current Dimmable LED Drivers 10 to 150W &nbsp;<a href="product-triac-mains-cc-dimmable-led-drivers.html" class="fw-bold" style="color:#153049;">View Details →</a></p>
-            <p>- DMX-PWM Dimming LED Drivers: DMX512 to PWM, single and multi-channel, 10W to 150W <a href="product-dmx-controllers-overview.html" style="color:#153049;font-weight:700;text-decoration:none;">View Details →</a></p>
-            <p>- Bluetooth LED Drivers: BLE mesh technology, T-PWM dimming, 10W to 100W</p>
-            <p>- Zigbee LED Drivers with Tuya App: Mesh technology, 12W to 150W</p>
-            <p>- Push Dimming LED Drivers: Linear space-saving design, 60W to 150W</p>
-            <p>All drivers feature short circuit, temperature &amp; over current protection and conform to international safety standards.</p>
-          </div>
+      <p style="font-size:0.9rem;line-height:1.7;color:#475e6e;border-bottom:1px solid #e4eaf0;padding-bottom:1.5rem;margin-bottom:1.5rem;">
+        To support our extensive range of LED products we offer a wide range of dimmable LED drivers in Constant Voltage and Constant Current output mode. A choice of dimming protocols is available including DALI, DALI 2, Casambi, 0â€“10V, Triac, DMX, Bluetooth and Zigbee. All drivers feature short circuit, temperature and over-current protection and conform to international safety standards.
+      </p>
 
-          
+      <div class="section-label">Product Range</div>
+
+      <!-- DALI CC + CV combined -->
+      <div class="product-card-static">
+        <div class="img-wrap">
+          <img src="https://plusopto.com/assets/img/leddriversgrp.jpg" alt="DALI LED Drivers" loading="lazy" />
         </div>
-
-        <div class="col-12 col-lg-4 product-sidebar">
-          <div class="sticky-top">
-            <div class="sidebar-card mb-4">
-              <h3 class="fw-semibold mb-4" style="font-family:'Outfit',sans-serif;font-size:1.05rem;color:#1a2b3c;">Product Resources</h3>
-              
-              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
-              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
-            </div>
-            
+        <div class="card-body">
+          <h3>DALI Dimmable LED Drivers</h3>
+          <p class="excerpt">DALI, DALI 2 and DALI DT8 protocols for standard and CCT tuneable LEDs. Available in Constant Current and Constant Voltage output modes.</p>
+          <div class="tags"><span class="tag">DALI 2</span><span class="tag">DALI DT8</span><span class="tag">CCT Tunable</span></div>
+          <div style="display:flex;gap:16px;margin-top:4px;">
+            <a href="https://plusopto.com/product-cc-dali-dimmable-led-drivers.html" class="view-link">Constant Current â†’</a>
+            <a href="https://plusopto.com/product-cv-dali-dimmable-led-drivers.html" class="view-link">Constant Voltage â†’</a>
           </div>
         </div>
       </div>
+
+      <!-- 0-10V CC + CV combined -->
+      <div class="product-card-static">
+        <div class="img-wrap">
+          <img src="https://plusopto.com/assets/img/LF-GDE030YG.jpg" alt="0-10V LED Drivers" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>0/1â€“10V Dimmable LED Drivers</h3>
+          <p class="excerpt">Analogue 0/1â€“10V dimming in Constant Current and Constant Voltage output modes, 10W to 600W output range.</p>
+          <div class="tags"><span class="tag">0â€“10V</span><span class="tag">10â€“600W</span></div>
+          <div style="display:flex;gap:16px;margin-top:4px;">
+            <a href="https://plusopto.com/product-0-10v-cc-dimmable-led-drivers.html" class="view-link">Constant Current â†’</a>
+            <a href="https://plusopto.com/product-0-10v-cv-dimmable-led-drivers.html" class="view-link">Constant Voltage â†’</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Triac CC + CV combined -->
+      <div class="product-card-static">
+        <div class="img-wrap">
+          <img src="https://plusopto.com/assets/img/Driver-group-white.jpg" alt="Triac Mains LED Drivers" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Triac Mains Dimmable LED Drivers</h3>
+          <p class="excerpt">Mains-dimmable LED drivers in Constant Current and Constant Voltage output modes, 10W to 150W.</p>
+          <div class="tags"><span class="tag">Triac</span><span class="tag">10â€“150W</span></div>
+          <div style="display:flex;gap:16px;margin-top:4px;">
+            <a href="https://plusopto.com/product-triac-mains-cc-dimmable-led-drivers.html" class="view-link">Constant Current â†’</a>
+            <a href="https://plusopto.com/product-triac-mains-cv-dimmable-led-drivers.html" class="view-link">Constant Voltage â†’</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Casambi -->
+      <a class="product-card" href="https://plusopto.com/product-casambi-enabled-drivers-overview.html">
+        <div class="img-wrap">
+          <img src="https://plusopto.com/assets/img/Driver-group-white.jpg" alt="Casambi LED Drivers" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Casambi Enabled LED Drivers</h3>
+          <p class="excerpt">Bluetooth Low Energy wireless light management using the Casambi ecosystem. App-based control with no gateway required.</p>
+          <div class="tags"><span class="tag">Casambi</span><span class="tag">Bluetooth LE</span><span class="tag">Wireless</span></div>
+          <span class="view-link">View Details â†’</span>
+        </div>
+      </a>
+
+      <!-- Intelligent (no link) -->
+      <div class="product-card-static">
+        <div class="img-wrap">
+          <img src="https://plusopto.com/assets/img/Philips%20programmable%20driver%20group%20banner.jpg" alt="Intelligent Dimmable LED Drivers" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Intelligent Dimmable LED Drivers</h3>
+          <p class="excerpt">Smart LED drivers available in both constant voltage and constant current modes with advanced dimming capabilities.</p>
+          <div class="tags"><span class="tag">CC</span><span class="tag">CV</span><span class="tag">Smart</span></div>
+          <span class="no-link">Contact us for details</span>
+        </div>
+      </div>
+
+      <!-- DMX -->
+      <a class="product-card" href="https://plusopto.com/product-dmx-controllers-overview.html">
+        <div class="img-wrap">
+          <img src="https://plusopto.com/assets/img/leddriversgrp.jpg" alt="DMX LED Drivers" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>DMX-PWM Dimmable LED Drivers</h3>
+          <p class="excerpt">DMX512 to PWM conversion, single and multi-channel, 10W to 150W.</p>
+          <div class="tags"><span class="tag">DMX512</span><span class="tag">PWM</span><span class="tag">Multi-channel</span><span class="tag">10â€“150W</span></div>
+          <span class="view-link">View Details â†’</span>
+        </div>
+      </a>
+
+      <!-- Bluetooth (no link) -->
+      <div class="product-card-static">
+        <div class="img-wrap">
+          <img src="https://plusopto.com/assets/img/Driver-group-white.jpg" alt="Bluetooth LED Drivers" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Bluetooth Dimmable LED Drivers</h3>
+          <p class="excerpt">BLE mesh technology with T-PWM dimming, 10W to 100W.</p>
+          <div class="tags"><span class="tag">Bluetooth</span><span class="tag">BLE Mesh</span><span class="tag">T-PWM</span><span class="tag">10â€“100W</span></div>
+          <span class="no-link">Contact us for details</span>
+        </div>
+      </div>
+
+      <!-- Zigbee (no link) -->
+      <div class="product-card-static">
+        <div class="img-wrap">
+          <img src="https://plusopto.com/assets/img/Driver-group-white.jpg" alt="Zigbee LED Drivers" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Zigbee Dimmable LED Drivers with Tuya App</h3>
+          <p class="excerpt">Zigbee mesh technology with Tuya app control, 12W to 150W.</p>
+          <div class="tags"><span class="tag">Zigbee</span><span class="tag">Tuya</span><span class="tag">Mesh</span><span class="tag">12â€“150W</span></div>
+          <span class="no-link">Contact us for details</span>
+        </div>
+      </div>
+
+      <!-- Push dim (no link) -->
+      <div class="product-card-static">
+        <div class="img-wrap">
+          <img src="https://plusopto.com/assets/img/LF-GDE030YG.jpg" alt="Push Dimming LED Drivers" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3>Push Dimmable LED Drivers</h3>
+          <p class="excerpt">Linear space-saving design, 60W to 150W.</p>
+          <div class="tags"><span class="tag">Push Dim</span><span class="tag">Linear</span><span class="tag">60â€“150W</span></div>
+          <span class="no-link">Contact us for details</span>
+        </div>
+      </div>
+
+      <!-- Related products -->
+      <h2 class="mt-5 mb-3" style="font-family:'Outfit',sans-serif;font-size:1.25rem;font-weight:700;color:#112638;">Related Products</h2>
+      <div class="row g-3">
+        <div class="col-6 col-md-3">
+          <a class="card-product" href="https://plusopto.com/product-fixed-output-cc-led-drivers.html">
+            <div class="card-img-wrap"><img src="https://plusopto.com/assets/img/LF-GDE030YG.jpg" alt="Fixed Output CC LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Fixed Output CC LED Drivers</h3><span class="read-more">View Details â†’</span></div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a class="card-product" href="https://plusopto.com/product-fixed-output-cv-led-drivers.html">
+            <div class="card-img-wrap"><img src="https://plusopto.com/assets/img/SnappySNP-and-slimiline.jpg" alt="Fixed Output CV LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Fixed Output CV LED Drivers</h3><span class="read-more">View Details â†’</span></div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a class="card-product" href="https://plusopto.com/product-fully-programmable-led-drivers.html">
+            <div class="card-img-wrap"><img src="https://plusopto.com/assets/img/Fully-programmable22w_-40W.jpg" alt="Fully Programmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Fully Programmable LED Drivers</h3><span class="read-more">View Details â†’</span></div>
+          </a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a class="card-product" href="https://plusopto.com/product-led-driver-ics.html">
+            <div class="card-img-wrap"><img src="https://plusopto.com/assets/img/LED%20Driver%20ICs.png" alt="LED Driver ICs" loading="lazy" /></div>
+            <div class="card-body"><h3>LED Driver ICs</h3><span class="read-more">View Details â†’</span></div>
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
-  
-  <section class="py-5 bg-po-muted">
+  <!-- CTA -->
+  <section class="section-navy py-5 mt-2">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#fff;">Need a Custom Solution?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">
+        Our engineering team can help specify or develop a custom solution for your exact requirements.
+      </p>
+      <a href="https://plusopto.com/contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
     <div class="container">
-      <h2 class="fw-bold mb-4" style="font-family:'Outfit',sans-serif;color:#112638;">Related Products</h2>
       <div class="row g-4">
-          <div class="col-12 col-sm-6 col-lg-3">
-            <a href="product-fixed-output-cc-led-drivers.html" class="card-product">
-              <div class="card-img-wrap"><img src="assets/img/leddriversgrp.jpg" alt="Fixed Output CC LED Drivers" loading="lazy" /></div>
-              <div class="card-body"><h3>Fixed Output CC LED Drivers</h3><span class="read-more">View Details →</span></div>
-            </a>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3">
-            <a href="product-fixed-output-cv-led-drivers.html" class="card-product">
-              <div class="card-img-wrap"><img src="assets/img/SnappySNP-and-slimiline.jpg" alt="Fixed Output CV LED Drivers" loading="lazy" /></div>
-              <div class="card-body"><h3>Fixed Output CV LED Drivers</h3><span class="read-more">View Details →</span></div>
-            </a>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3">
-            <a href="product-fully-programmable-led-drivers.html" class="card-product">
-              <div class="card-img-wrap"><img src="assets/img/Fully-programmable22w_-40W.jpg" alt="Fully Programmable LED Drivers" loading="lazy" /></div>
-              <div class="card-body"><h3>Fully Programmable LED Drivers</h3><span class="read-more">View Details →</span></div>
-            </a>
-          </div>
-          <div class="col-12 col-sm-6 col-lg-3">
-            <a href="product-led-driver-ics.html" class="card-product">
-              <div class="card-img-wrap"><img src="assets/img/LED%20Driver%20ICs.png" alt="LED Driver ICs" loading="lazy" /></div>
-              <div class="card-body"><h3>LED Driver ICs</h3><span class="read-more">View Details →</span></div>
-            </a>
-          </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- FOOTER -->
-  <footer class="site-footer pt-5 pb-4">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-12 col-md-6 col-lg-3 footer-brand">
-          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
-          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
-          <div class="footer-social mt-2">
-            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
-              <i class="bi bi-twitter-x"></i>
-            </a>
-            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
-              <i class="bi bi-linkedin"></i>
-            </a>
+        <div class="col-12 col-md-4">
+          <img src="https://plusopto.com/assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p style="font-size:0.875rem;line-height:1.6;color:rgba(210,228,245,0.75);">Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-3">
+            <a href="https://x.com/plusopto" aria-label="X / Twitter"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
           </div>
         </div>
-        <div class="col-6 col-md-3 col-lg-2">
+        <div class="col-6 col-md-2">
           <h4>Products</h4>
-          <ul class="list-unstyled">
-          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
-          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
-          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
-          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
-          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
-          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
-          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
-          </ul>
+          <a href="https://plusopto.com/category-display-solutions.html">Display Solutions</a>
+          <a href="https://plusopto.com/category-led-components.html">LED Components</a>
+          <a href="https://plusopto.com/category-led-drivers.html">LED Drivers</a>
+          <a href="https://plusopto.com/category-led-controllers.html">LED Controllers</a>
+          <a href="https://plusopto.com/category-led-assemblies.html">LED Assemblies</a>
+          <a href="https://plusopto.com/category-connected-lighting.html">Connected Lighting</a>
+          <a href="https://plusopto.com/category-led-interconnection.html">LED Interconnection</a>
         </div>
-        <div class="col-6 col-md-3 col-lg-2">
+        <div class="col-6 col-md-2">
           <h4>Company</h4>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="about.html">About Us</a></li>
-            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
-            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
-          </ul>
+          <a href="https://plusopto.com/about.html">About Us</a>
+          <a href="https://plusopto.com/blog.html">News &amp; Blog</a>
+          <a href="https://plusopto.com/contact.html">Contact Us</a>
         </div>
-        <div class="col-12 col-md-6 col-lg-3">
+        <div class="col-12 col-md-4">
           <h4>Contact</h4>
-          <ul class="list-unstyled">
-            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
-            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
-            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
-          </ul>
+          <div class="footer-contact-item">
+            <i class="bi bi-telephone"></i>
+            <a href="tel:+441942671122">+44 (0) 1942 671122</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope"></i>
+            <a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-geo-alt"></i>
+            <span>Leigh, Lancashire, UK</span>
+          </div>
         </div>
       </div>
       <hr class="footer-divider" />
-      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
       <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
-        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
-        <p class="mb-0">The Optoelectronic Specialists</p>
+        <p class="mb-0">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+        <p class="mb-0">Â© 2026 Plus Opto. All rights reserved. The Optoelectronic Specialists</p>
       </div>
     </div>
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="https://plusopto.com/js/main.js"></script>
 </body>
 </html>
+
