@@ -217,6 +217,18 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/product-casambi-enabled-led-drivers-cc.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-casambi-enabled-led-drivers-cv.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/product-casambi-enabled-led-drivers.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -271,6 +283,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/product-circular-led-light-engines.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/product-circular-tft-displays.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -289,12 +307,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.plusopto.com/product-compact-CV-LED-drivers.html</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.plusopto.com/product-compact-cv-led-drivers-philips.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -302,6 +314,12 @@
   </url>
   <url>
     <loc>https://www.plusopto.com/product-compact-cv-led-drivers-snappy-se-series.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-compact-CV-LED-drivers.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -337,6 +355,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/product-din-rail-CV-LED-drivers.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/product-distribution-box-10way-fused.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -349,8 +373,32 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/product-distribution-box-3way-rgbct.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/product-distribution-box-3way-rgbcw.html</loc>
     <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-distribution-box-3way-rgbw.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-distribution-box-4way-rgb.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-distribution-box-6way-ct.html</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -517,6 +565,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/product-graphic-oled-displays-miniature.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/product-graphic-oled-displays.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -637,8 +691,38 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.plusopto.com/product-led-neon-flex.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://www.plusopto.com/product-led-modules-overview.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-led-modules.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-led-neon-flex-360.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-led-neon-flex-overview.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-led-neon-flex-white-sideview.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-led-neon-flex-white-topview.html</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -793,8 +877,20 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/product-rigid-led-strips-standard.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/product-rigid-led-strips.html</loc>
     <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-rotary-knob-controllers-overview.html</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -859,14 +955,32 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/product-smd-led-plcc2-3020.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/product-smd-led-plcc2-3528.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/product-smd-led-plcc4-3528.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/product-smd-lowpower-plcc-leds.html</loc>
     <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-smd-midpower-plcc-leds-2835.html</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -885,6 +999,12 @@
   <url>
     <loc>https://www.plusopto.com/product-smd-plcc2-4-lens.html</loc>
     <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-smd-uv-leds-uva-3535.html</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1075,6 +1195,18 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/products-flexible-led-strip-smd-white-ct.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/products-flexible-led-strip-smd-white-lens.html</loc>
+    <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/products-flexible-led-strip-smd-white.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -1123,8 +1255,8 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.plusopto.com/products-smd-PLCC-6-RGB.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://www.plusopto.com/products-rotary-knob-controllers.html</loc>
+    <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1160,6 +1292,12 @@
   </url>
   <url>
     <loc>https://www.plusopto.com/products-smd-chipled-1305-reverse-mount.html</loc>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/products-smd-PLCC-6-RGB.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
