@@ -31,12 +31,6 @@
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.plusopto.com/blog-post.html</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://www.plusopto.com/blog.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -119,12 +113,6 @@
     <lastmod>2026-05-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.plusopto.com/category.html</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.plusopto.com/contact.html</loc>
@@ -1124,12 +1112,6 @@
   </url>
   <url>
     <loc>https://www.plusopto.com/product-triac-mains-cv-dimmable-led-drivers.html</loc>
-    <lastmod>2026-05-09</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.plusopto.com/product-uv-leds.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
