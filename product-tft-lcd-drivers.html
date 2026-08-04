@@ -183,6 +183,7 @@
             <p>Boards can be matched to panel resolution, interface type (LVDS, RGB, MIPI) and connector configuration, with options for on-screen display controls, brightness adjustment and power supply integration to suit your application.</p>
             <p>Industrial display projects are often controlled by platforms such as Raspberry Pi or Windows-based computers. These platforms commonly use HDMI or VGA, while the original LCD module normally does not accept HDMI directly. An added driver board converts the host signal into the format required by the LCD module.</p>
             <p><strong>HDMI/VGA：</strong>LCD driver boards are available as an additional integration service. Common display sizes—including 5.0-inch, 7.0-inch and 10.1-inch modules—can use ready-developed boards with HDMI and VGA inputs, allowing customers to connect the display to their system more conveniently.</p>
+            <p><strong>SPI：</strong>Some embedded platforms only provide SPI but still need to operate 4.3-inch, 5.0-inch or 7.0-inch displays. Native SPI is generally not suitable for the higher resolutions used at these sizes because its data rate is limited. A driver board with cache memory and font resources can bridge the interface, allowing the host to control the display through SPI while reducing development time and cost.</p>
           </div>
 
         </div>
