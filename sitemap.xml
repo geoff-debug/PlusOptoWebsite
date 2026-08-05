@@ -37,6 +37,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/careers.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/category-connected-lighting.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>weekly</changefreq>
@@ -199,6 +205,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/product-capacitive-touch-screens.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/product-casambi-enabled-drivers-overview.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -327,6 +339,18 @@
   <url>
     <loc>https://www.plusopto.com/product-dali-controllers.html</loc>
     <lastmod>2026-05-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-development-boards-overview.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-development-boards-stm32.html</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1039,6 +1063,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/product-tft-lcd-drivers.html</loc>
+    <lastmod>2026-08-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/product-tft-lcd-module-customisation.html</loc>
     <lastmod>2026-08-01</lastmod>
     <changefreq>monthly</changefreq>
@@ -1191,6 +1221,12 @@
   <url>
     <loc>https://www.plusopto.com/products-flexible-led-strip-smd-white-lens.html</loc>
     <lastmod>2026-07-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/products-flexible-led-strip-smd-white-multirow.html</loc>
+    <lastmod>2026-08-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
