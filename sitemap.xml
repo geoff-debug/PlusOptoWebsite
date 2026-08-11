@@ -265,8 +265,14 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/product-chip-led-3224.html</loc>
+    <lastmod>2026-08-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/product-chip-leds.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -992,7 +998,7 @@
   </url>
   <url>
     <loc>https://www.plusopto.com/product-smd-multicolour-leds.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -1238,7 +1244,7 @@
   </url>
   <url>
     <loc>https://www.plusopto.com/products-infrared-devices-midpower-IR-emitters.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -1315,8 +1321,8 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.plusopto.com/products-smd-PLCC-6-RGB.html</loc>
-    <lastmod>2026-05-09</lastmod>
+    <loc>https://www.plusopto.com/products-smd-PLCC-6-red-IR.html</loc>
+    <lastmod>2026-08-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
