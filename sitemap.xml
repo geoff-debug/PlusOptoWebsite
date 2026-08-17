@@ -997,6 +997,30 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/product-smd-led-plcc4-3528rgb.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-smd-led-plcc6-3528RGB.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-smd-led-plcc6-3535RGB.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/product-smd-led-plcc10-5050RGB+CT.html</loc>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/product-smd-lowpower-plcc-leds.html</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
@@ -1016,7 +1040,7 @@
   </url>
   <url>
     <loc>https://www.plusopto.com/product-smd-multicolour-leds.html</loc>
-    <lastmod>2026-08-11</lastmod>
+    <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
