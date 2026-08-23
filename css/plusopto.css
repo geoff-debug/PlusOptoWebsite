@@ -833,6 +833,69 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   color: #fff;
 }
 
+.footer-enews {
+  margin-top: 1rem;
+}
+
+.footer-enews hr {
+  border: 0;
+  border-top: 1px solid rgba(210, 228, 245, 0.14);
+  margin: 0 0 0.875rem;
+}
+
+.footer-enews .label {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--po-teal-glow);
+  margin-bottom: 0.5rem;
+}
+
+.footer-enews-form {
+  display: flex;
+}
+
+.footer-enews-form input {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(210, 228, 245, 0.25);
+  border-right: 0;
+  border-radius: 7px 0 0 7px;
+  padding: 0.5rem 0.625rem;
+  font-size: 0.8rem;
+  color: #fff;
+  font-family: inherit;
+  width: 100%;
+  min-width: 0;
+}
+
+.footer-enews-form input::placeholder {
+  color: rgba(210, 228, 245, 0.45);
+}
+
+.footer-enews-form input:focus {
+  outline: 2px solid var(--po-teal-glow);
+  outline-offset: 1px;
+  box-shadow: none;
+}
+
+.footer-enews-form button {
+  background: var(--po-teal);
+  color: #fff;
+  border: 0;
+  border-radius: 0 7px 7px 0;
+  padding: 0 0.8rem;
+  font-size: 1rem;
+  cursor: pointer;
+  flex: none;
+  transition: background 0.2s;
+}
+
+.footer-enews-form button:hover {
+  background: #199489;
+}
+
 .site-footer .footer-contact-item {
   display: flex;
   align-items: flex-start;
