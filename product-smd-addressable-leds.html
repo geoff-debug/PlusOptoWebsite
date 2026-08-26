@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -80,6 +80,54 @@
   ]
 }
   </script>
+<style>
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 991.98px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 575.98px)  { .products-grid { grid-template-columns: 1fr; } }
+
+  .section-intro {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .section-intro h2 { font-size: 20px; font-weight: 700; color: #153049; margin: 0; }
+  .count-chip {
+    background: #e8f7f6; color: #2bbcb0;
+    border: 1px solid #b2e4e0;
+    font-size: 13px; font-weight: 700;
+    padding: 4px 14px; border-radius: 20px;
+  }
+
+  .product-card {
+    border: 1px solid #e2e6ea;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 12px -4px rgba(17,38,56,.08);
+  }
+  .card-image {
+    background: #f4f6f8; height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .card-image img { max-height: 150px; max-width: 90%; object-fit: contain; }
+  .card-body { padding: 18px; flex: 1; }
+  .card-title { font-size: 16px; font-weight: 800; color: #153049; line-height: 1.2; margin-bottom: 10px; }
+  .card-desc { font-size: 13px; color: #718096; line-height: 1.55; margin-bottom: 14px; }
+  .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 0; font-size: 12px; }
+  .spec-table th { background: #153049; color: white; text-align: left; padding: 6px 10px; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .spec-table td { padding: 6px 10px; border-bottom: 1px solid #e2e6ea; }
+  .spec-table td:last-child { text-align: right; font-weight: 600; color: #153049; }
+  .spec-table tr:last-child td { border-bottom: none; }
+  .spec-table tr:nth-child(even) td { background: #f4f6f8; }
+  .card-footer-btns { padding: 14px 18px; border-top: 1px solid #e2e6ea; background: #f8fafc; display: flex; flex-direction: column; gap: 8px; }
+</style>
 </head>
 <body>
 
@@ -144,7 +192,7 @@
     </div>
   </nav>
 
-  <!-- CATEGORY HERO -->
+  <!-- HERO BANNER -->
   <div style="position:relative;height:350px;">
     <img src="assets/img/rgbarray.jpg" alt="Addressable LEDs" style="width:100%;height:100%;object-fit:cover;" />
     <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(17,38,56,.92) 0%,rgba(17,38,56,.7) 50%,rgba(17,38,56,.35) 100%);"></div>
@@ -165,107 +213,288 @@
     </div>
   </div>
 
+  <!-- MAIN CONTENT -->
   <section class="py-5">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-smd-addressable-leds-WS2812B.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/WS2812B.png" alt="WS2812B 5050RGB Addressable LED" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>WS2812B 5050RGB Addressable LED 5V</h3>
-              <p class="excerpt">An intelligent RGB emitter in a 5050 PLCC-4 package with integrated control IC, designed for pixel addressable LED strips &amp; arrays with 12mA max current per chip at 5VDC.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-smd-addressable-leds-LG3535RGB.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/WS2812B.png" alt="LG-3535RGB Addressable RGB LED" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>LG-3535RGB Addressable RGB LED</h3>
-              <p class="excerpt">A Ligitek 3535 PLCC-4 RGB emitter with integrated control using unipolar RZ communication, rated at 17mA per chip, 5VDC operation.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-smd-addressable-leds-sk9822.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/SK9822-5V-RGB.jpg" alt="SK9822 5050RGB Addressable LED 5V" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>SK9822 5050RGB Addressable LED 5V</h3>
-              <p class="excerpt">Built-in IC RGB LED with two-wire SPI transmission, 20mA max per chip, offering 256 level grayscale PWM adjustment and 5-bit brightness control.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-smd-addressable-leds-ws2815b.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/ws2815-RGB+IC.png" alt="WS2815B 5050RGB LED 12V" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>WS2815B 5050RGB LED 12V</h3>
-              <p class="excerpt">An intelligent 3-chip 5050 PLCC-6 RGB emitter with integrated IC, 10mA max per chip, operating at 12VDC.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-smd-addressable-leds-LG110FRGB.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/LG110chip-LED-RGB.png" alt="LG110FRGB Addressable Chip LED" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>LG110FRGB Addressable Chip LED</h3>
-              <p class="excerpt">A 1204 surface mount addressable chip LED providing cost effective full colour RGB solution for backlighting and dynamic lighting applications.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-smd-addressable-leds-LG112FRGBW.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/LG112RGB.jpg" alt="LG112FRGBW Addressable Chip LED" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>LG112FRGBW Addressable Chip LED</h3>
-              <p class="excerpt">A 1204 package RGBW solution offering 4-chip full colour capability for backlighting with integrated control IC.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="#" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/Addressable-8812RGBW.jpg" alt="8812RGBW+IC PLCC-4 LED 5V" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>8812RGBW+IC PLCC-4 LED 5V</h3>
-              <p class="excerpt">An LG8812RGBW 5050 package with 4-chip RGBW functionality and choice of white colour temperature selections.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-smd-addressable-leds-sk6812.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/SK9822-5V-RGB.jpg" alt="SK6812+IC 3838RGB LED 5V" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>SK6812+IC 3838RGB LED 5V</h3>
-              <p class="excerpt">A PLCC-6 3838 addressable LED using unipolar NRZ communication mode, 3.8×3.8mm package, 3.5–7.5V operation with 256-level PWM.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
+
+      <div class="section-intro">
+        <h2>Available Products</h2>
+        <span class="count-chip">8 Products</span>
       </div>
-    </div>
+
+      <div class="products-grid">
+
+        <!-- 1 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/WS2812B.png" alt="WS2812B 5050RGB Addressable LED 5V" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">WS2812B 5050RGB Addressable LED 5V</div>
+            <div class="card-desc">An intelligent RGB emitter in a compact 5050 PLCC-4 package with an integrated control IC, combining the LED chips and driver IC in a single package for pixel addressable LED strips &amp; arrays.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Package</td><td>5050 PLCC-4</td></tr>
+                <tr><td>Control</td><td>Integrated control IC</td></tr>
+                <tr><td>Max Current</td><td>12mA per chip</td></tr>
+                <tr><td>Operating Voltage</td><td>5VDC</td></tr>
+                <tr><td>Applications</td><td>Pixel addressable LED strips &amp; arrays</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/WS2812B_(V5).pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">WS2812B Datasheet (V5)</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WS2812B 5050RGB Addressable LED" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/WS2812B.png" alt="LG-3535RGB Addressable RGB LED" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">LG-3535RGB Addressable RGB LED</div>
+            <div class="card-desc">A Ligitek 3535 PLCC-4 RGB emitter with integrated control using unipolar RZ communication for pixel addressable LED strips &amp; arrays.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Package</td><td>3535 PLCC-4</td></tr>
+                <tr><td>Control</td><td>Integrated control, unipolar RZ communication</td></tr>
+                <tr><td>Max Current</td><td>17mA per chip</td></tr>
+                <tr><td>Operating Voltage</td><td>5VDC</td></tr>
+                <tr><td>Applications</td><td>Pixel addressable LED strips &amp; arrays</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/LG-3535FRGB-bd-t12-ml2.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">LG-3535FRGB Datasheet</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LG-3535RGB Addressable RGB LED" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/SK9822-5V-RGB.jpg" alt="SK9822 5050RGB Addressable LED 5V" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">SK9822 5050RGB Addressable LED 5V</div>
+            <div class="card-desc">Built-in IC RGB LED with two-wire SPI transmission, offering 256 level grayscale PWM adjustment and 5-bit brightness control for pixel addressable LED strips &amp; arrays.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Package</td><td>5050 SMD</td></tr>
+                <tr><td>Control</td><td>Built-in IC, two-wire SPI transmission</td></tr>
+                <tr><td>Max Current</td><td>20mA per chip</td></tr>
+                <tr><td>Dimming</td><td>256 level grayscale PWM, 5-bit brightness control</td></tr>
+                <tr><td>Operating Voltage</td><td>5VDC</td></tr>
+                <tr><td>Applications</td><td>Pixel addressable LED strips &amp; arrays</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/sk9822_datasheet.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">SK9822 Datasheet</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: SK9822 5050RGB Addressable LED" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/ws2815-RGB+IC.png" alt="WS2815B 5050RGB LED 12V" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">WS2815B 5050RGB LED 12V</div>
+            <div class="card-desc">An intelligent 3-chip 5050 PLCC-6 RGB emitter with integrated IC, operating at 12VDC for pixel addressable LED strips &amp; arrays.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Package</td><td>5050 PLCC-6</td></tr>
+                <tr><td>Control</td><td>Integrated control IC, 3-chip</td></tr>
+                <tr><td>Max Current</td><td>10mA per chip</td></tr>
+                <tr><td>Operating Voltage</td><td>12VDC</td></tr>
+                <tr><td>Applications</td><td>Pixel addressable LED strips &amp; arrays</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/WS2815B_V1.0_EN.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">WS2815B Datasheet (V1.0)</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WS2815B 5050RGB LED 12V" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/LG110chip-LED-RGB.png" alt="LG110FRGB Addressable Chip LED" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">LG110FRGB Addressable Chip LED</div>
+            <div class="card-desc">A 1204 surface mount addressable chip LED providing a cost effective full colour RGB solution for backlighting and dynamic lighting applications.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Package</td><td>1204 chip LED</td></tr>
+                <tr><td>Control</td><td>Integrated control IC</td></tr>
+                <tr><td>Colour</td><td>Full colour RGB</td></tr>
+                <tr><td>Applications</td><td>Backlighting &amp; dynamic lighting</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/lg-110frgb-t05-a01.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">LG-110FRGB Datasheet (T05-A01)</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LG110FRGB Addressable Chip LED" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/LG112RGB.jpg" alt="LG112FRGBW Addressable Chip LED" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">LG112FRGBW Addressable Chip LED</div>
+            <div class="card-desc">A 1204 package RGBW solution offering 4-chip full colour capability for backlighting with integrated control IC.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Package</td><td>1204 chip LED</td></tr>
+                <tr><td>Control</td><td>Integrated control IC</td></tr>
+                <tr><td>Colour</td><td>4-chip RGBW full colour</td></tr>
+                <tr><td>Applications</td><td>Backlighting &amp; dynamic lighting</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/LG-112FRGBW (ARGBW).pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">LG-112FRGBW Datasheet (ARGBW)</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LG112FRGBW Addressable Chip LED" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/Addressable-8812RGBW.jpg" alt="8812RGBW+IC PLCC-4 LED 5V" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">8812RGBW+IC PLCC-4 LED 5V</div>
+            <div class="card-desc">An LG8812RGBW 5050 package with 4-chip RGBW functionality and choice of white colour temperature selections.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Package</td><td>5050 PLCC-4</td></tr>
+                <tr><td>Control</td><td>Integrated control IC</td></tr>
+                <tr><td>Colour</td><td>4-chip RGBW, choice of CCT</td></tr>
+                <tr><td>Operating Voltage</td><td>5VDC</td></tr>
+                <tr><td>Applications</td><td>Pixel addressable LED strips &amp; arrays</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: 8812RGBW+IC PLCC-4 LED 5V" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/SK9822-5V-RGB.jpg" alt="SK6812+IC 3838RGB LED 5V" loading="lazy" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">SK6812+IC 3838RGB LED 5V</div>
+            <div class="card-desc">A PLCC-6 3838 addressable LED combining the LED chips and driver IC in a single package, using unipolar NRZ communication mode for individual pixel addressing.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Package</td><td>PLCC-6 3838 (3.8×3.8mm)</td></tr>
+                <tr><td>Control</td><td>Integrated control IC, unipolar NRZ communication</td></tr>
+                <tr><td>Dimming</td><td>256-level PWM</td></tr>
+                <tr><td>Operating Voltage</td><td>3.5–7.5VDC</td></tr>
+                <tr><td>Applications</td><td>Pixel addressable LED strips &amp; arrays</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="pdfs/SK6812 MINI.pdf" target="_blank" rel="noopener noreferrer"
+               class="d-flex align-items-center gap-3 p-3 rounded-3 border text-decoration-none"
+               style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+              <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                <i class="bi bi-filetype-pdf fs-5" style="color:#1a4870;"></i>
+              </div>
+              <div>
+                <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">SK6812 MINI Datasheet</div>
+                <div style="font-size:.78rem;color:#8096a8;">PDF Technical Document</div>
+              </div>
+            </a>
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: SK6812+IC 3838RGB LED 5V" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
+
+    </div><!-- /container -->
   </section>
 
   <section class="section-navy py-5 mt-2">
