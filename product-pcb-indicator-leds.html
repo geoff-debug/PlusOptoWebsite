@@ -9,6 +9,54 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="css/plusopto.css" />
   <link rel="icon" href="assets/plusopto-logo.jpg" />
+<style>
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 991.98px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 575.98px)  { .products-grid { grid-template-columns: 1fr; } }
+
+  .section-intro {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .section-intro h2 { font-size: 20px; font-weight: 700; color: #153049; margin: 0; }
+  .count-chip {
+    background: #e8f7f6; color: #2bbcb0;
+    border: 1px solid #b2e4e0;
+    font-size: 13px; font-weight: 700;
+    padding: 4px 14px; border-radius: 20px;
+  }
+
+  .product-card {
+    border: 1px solid #e2e6ea;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 12px -4px rgba(17,38,56,.08);
+  }
+  .card-image {
+    background: #f4f6f8; height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .card-image img { max-height: 150px; max-width: 90%; object-fit: contain; }
+  .card-body { padding: 18px; flex: 1; }
+  .card-title { font-size: 16px; font-weight: 800; color: #153049; line-height: 1.2; margin-bottom: 10px; }
+  .card-desc { font-size: 13px; color: #718096; line-height: 1.55; margin-bottom: 14px; }
+  .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 0; font-size: 12px; }
+  .spec-table th { background: #153049; color: white; text-align: left; padding: 6px 10px; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .spec-table td { padding: 6px 10px; border-bottom: 1px solid #e2e6ea; }
+  .spec-table td:last-child { text-align: right; font-weight: 600; color: #153049; }
+  .spec-table tr:last-child td { border-bottom: none; }
+  .spec-table tr:nth-child(even) td { background: #f4f6f8; }
+  .card-footer-btns { padding: 14px 18px; border-top: 1px solid #e2e6ea; background: #f8fafc; display: flex; flex-direction: column; gap: 8px; }
+</style>
           <link rel="canonical" href="https://www.plusopto.com/product-pcb-indicator-leds.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Plus Opto" />
@@ -166,68 +214,133 @@
 
   <section class="py-5">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="#" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/LA304B-SMD.png" alt="LA304B Surface Mount PCB Indicator" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>LA304B Surface Mount PCB Indicators</h3>
-              <p class="excerpt">Single-way indicators built on 3.0mm and 5.0mm round LED lamps designed for surface mount assembly, in UL94-V0 rated housings with clear, tinted or diffused lens options.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="#" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/SingletierPCBInd.png" alt="LA16B/LA93B 3.0mm and 5.0mm PCB Indicators" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>LA16B/LA93B 3.0mm and 5.0mm PCB Indicators</h3>
-              <p class="excerpt">Single-way through-hole PCB indicators available in 3.0mm and 5.0mm sizes, with water clear, tinted or diffused lens options and a wide viewing angle.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="#" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/2TierPCB-Ind.png" alt="LA45B/LA44B 2-Tier PCB Indicators" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>LA45B/LA44B 2-Tier PCB Indicators</h3>
-              <p class="excerpt">Two-tier through-hole PCB indicators, in UL94-V0 rated housings, with interlocking versions for compact multi-status indication.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="#" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/3tierPCBInd.png" alt="LA73B 3-Tier PCB Indicators" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>LA73B 3-Tier PCB Indicators</h3>
-              <p class="excerpt">Three-tier through-hole PCB indicators, in UL94-V0 rated housings, with interlocking versions for stacked multi-status indication.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="#" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/4wayPCBInd.png" alt="LA79B 4-Way PCB Indicators" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>LA79B 4-Way PCB Indicators</h3>
-              <p class="excerpt">Four-way through-hole PCB indicators, in UL94-V0 rated housings, with interlocking versions for extended multi-status indication.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
+
+      <div class="section-intro">
+        <h2>Available Products</h2>
+        <span class="count-chip">5 Series</span>
       </div>
+
+      <div class="products-grid">
+
+        <!-- LA304B Series: Surface Mount PCB Indicators -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/LA304B-SMD.png" alt="LA304B Surface Mount PCB Indicator" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">LA304B Surface Mount PCB Indicators</div>
+            <div class="card-desc">Single-way indicators built on 3.0mm and 5.0mm round LED lamps designed for surface mount assembly, in UL94-V0 rated housings with clear, tinted or diffused lens options.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Configuration</td><td>Single-way</td></tr>
+                <tr><td>Mounting</td><td>Surface Mount</td></tr>
+                <tr><td>LED Size</td><td>3.0mm / 5.0mm</td></tr>
+                <tr><td>Housing Rating</td><td>UL94-V0</td></tr>
+                <tr><td>Lens Options</td><td>Clear, Tinted or Diffused</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LA304B Surface Mount PCB Indicators" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- LA16B/LA93B Series: Single-Way Through-Hole PCB Indicators -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/SingletierPCBInd.png" alt="LA16B/LA93B 3.0mm and 5.0mm PCB Indicators" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">LA16B/LA93B 3.0mm and 5.0mm PCB Indicators</div>
+            <div class="card-desc">Single-way through-hole PCB indicators available in 3.0mm and 5.0mm sizes, with water clear, tinted or diffused lens options and a wide viewing angle.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Configuration</td><td>Single-way</td></tr>
+                <tr><td>Mounting</td><td>Through-Hole</td></tr>
+                <tr><td>LED Size</td><td>3.0mm / 5.0mm</td></tr>
+                <tr><td>Lens Options</td><td>Water Clear, Tinted or Diffused</td></tr>
+                <tr><td>Viewing Angle</td><td>Wide</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LA16B/LA93B PCB Indicators" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- LA45B/LA44B Series: 2-Tier PCB Indicators -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/2TierPCB-Ind.png" alt="LA45B/LA44B 2-Tier PCB Indicators" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">LA45B/LA44B 2-Tier PCB Indicators</div>
+            <div class="card-desc">Two-tier through-hole PCB indicators, in UL94-V0 rated housings, with interlocking versions for compact multi-status indication.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Configuration</td><td>2-Tier</td></tr>
+                <tr><td>Mounting</td><td>Through-Hole</td></tr>
+                <tr><td>Housing Rating</td><td>UL94-V0</td></tr>
+                <tr><td>Interlocking</td><td>Available</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LA45B/LA44B 2-Tier PCB Indicators" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- LA73B Series: 3-Tier PCB Indicators -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/3tierPCBInd.png" alt="LA73B 3-Tier PCB Indicators" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">LA73B 3-Tier PCB Indicators</div>
+            <div class="card-desc">Three-tier through-hole PCB indicators, in UL94-V0 rated housings, with interlocking versions for stacked multi-status indication.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Configuration</td><td>3-Tier</td></tr>
+                <tr><td>Mounting</td><td>Through-Hole</td></tr>
+                <tr><td>Housing Rating</td><td>UL94-V0</td></tr>
+                <tr><td>Interlocking</td><td>Available</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LA73B 3-Tier PCB Indicators" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+        <!-- LA79B Series: 4-Way PCB Indicators -->
+        <div class="product-card">
+          <div class="card-image">
+            <img src="assets/img/4wayPCBInd.png" alt="LA79B 4-Way PCB Indicators" />
+          </div>
+          <div class="card-body">
+            <div class="card-title">LA79B 4-Way PCB Indicators</div>
+            <div class="card-desc">Four-way through-hole PCB indicators, in UL94-V0 rated housings, with interlocking versions for extended multi-status indication.</div>
+            <table class="spec-table">
+              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+              <tbody>
+                <tr><td>Configuration</td><td>4-Way</td></tr>
+                <tr><td>Mounting</td><td>Through-Hole</td></tr>
+                <tr><td>Housing Rating</td><td>UL94-V0</td></tr>
+                <tr><td>Interlocking</td><td>Available</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer-btns">
+            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: LA79B 4-Way PCB Indicators" class="btn btn-outline-teal w-100">Request a Quote</a>
+          </div>
+        </div>
+
+      </div><!-- /products-grid -->
+
     </div>
   </section>
 
