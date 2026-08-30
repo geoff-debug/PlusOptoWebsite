@@ -698,6 +698,12 @@ h1, h2, h3, h4, h5, h6, .font-heading {
     url('../assets/img/plusopto_contact_us_banner.jpg') center 30% / cover no-repeat;
 }
 
+.page-hero-privacy {
+  background:
+    linear-gradient(100deg, rgba(17, 38, 56, 0.92) 0%, rgba(24, 56, 88, 0.8) 40%, rgba(26, 58, 86, 0.45) 100%),
+    url('../assets/img/priv.jpg') center / cover no-repeat;
+}
+
 /* ----------------------------------------------------------
    15. Breadcrumb
    ---------------------------------------------------------- */
