@@ -710,6 +710,12 @@ h1, h2, h3, h4, h5, h6, .font-heading {
     url('../assets/img/hero-banner.jpg') center / cover no-repeat;
 }
 
+.page-hero-about {
+  background:
+    linear-gradient(100deg, rgba(9, 20, 30, 0.8) 0%, rgba(9, 20, 30, 0.55) 45%, rgba(9, 20, 30, 0.25) 100%),
+    url('../assets/img/plusopto_30th_hero_banner_2.jpg') center / cover no-repeat;
+}
+
 /* ----------------------------------------------------------
    15. Breadcrumb
    ---------------------------------------------------------- */
