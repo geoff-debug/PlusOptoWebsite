@@ -1,26 +1,77 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CV DALI Dimmable LED Drivers — Plus Opto</title>
-  <meta name="description" content="CV DALI Dimmable LED Drivers. Constant voltage DALI, DALI 2 and DALI DT8 supported for intelligent lighting control." />
+  <title>Lifud CV DALI Dimmable LED Drivers — Plus Opto</title>
+  <meta name="description" content="Lifud LF-GHD series constant voltage DALI dimmable LED drivers in power ratings from 75W to 240W." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
   <link rel="stylesheet" href="css/plusopto.css" />
   <link rel="icon" href="assets/plusopto-logo.jpg" />
-          <link rel="canonical" href="https://www.plusopto.com/product-cv-dali-dimmable-led-drivers.html" />
+<style>
+  /* Page-specific styles for product cards */
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 991.98px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 575.98px)  { .products-grid { grid-template-columns: 1fr; } }
+
+  .section-intro {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  .section-intro h2 { font-size: 20px; font-weight: 700; color: #153049; margin: 0; }
+  .count-chip {
+    background: #e8f7f6; color: #2bbcb0;
+    border: 1px solid #b2e4e0;
+    font-size: 13px; font-weight: 700;
+    padding: 4px 14px; border-radius: 20px;
+  }
+
+  /* Product card */
+  .product-card {
+    border: 1px solid #e2e6ea;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 12px -4px rgba(17,38,56,.08);
+  }
+  .card-image {
+    background: #f4f6f8; height: 180px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden;
+  }
+  .card-image img, .card-image svg { max-height: 150px; max-width: 90%; object-fit: contain; }
+  .card-body { padding: 18px; flex: 1; }
+  .part-number { font-size: 12px; font-weight: 600; color: #2bbcb0; text-transform: uppercase; margin-bottom: 6px; }
+  .card-title { font-size: 16px; font-weight: 800; color: #153049; line-height: 1.2; margin-bottom: 10px; }
+  .card-desc { font-size: 13px; color: #718096; line-height: 1.55; margin-bottom: 14px; }
+  .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 0; font-size: 12px; }
+  .spec-table th { background: #153049; color: white; text-align: left; padding: 6px 10px; font-weight: 700; font-size: 11px; text-transform: uppercase; }
+  .spec-table td { padding: 6px 10px; border-bottom: 1px solid #e2e6ea; }
+  .spec-table td:last-child { text-align: right; font-weight: 600; color: #153049; }
+  .spec-table tr:last-child td { border-bottom: none; }
+  .spec-table tr:nth-child(even) td { background: #f4f6f8; }
+  .card-footer-btns { padding: 14px 18px; border-top: 1px solid #e2e6ea; background: #f8fafc; display: flex; flex-direction: column; gap: 8px; }
+</style>
+          <link rel="canonical" href="https://www.plusopto.com/product-cv-dali-dimmable-led-drivers-lifud.html" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Plus Opto" />
-  <meta property="og:title" content="CV DALI Dimmable LED Drivers — Plus Opto" />
-  <meta property="og:description" content="CV DALI Dimmable LED Drivers. Constant voltage DALI, DALI 2 and DALI DT8 supported for intelligent lighting control." />
-  <meta property="og:url" content="https://www.plusopto.com/product-cv-dali-dimmable-led-drivers.html" />
+  <meta property="og:title" content="Lifud CV DALI Dimmable LED Drivers — Plus Opto" />
+  <meta property="og:description" content="Lifud LF-GHD series constant voltage DALI dimmable LED drivers in power ratings from 75W to 240W." />
+  <meta property="og:url" content="https://www.plusopto.com/product-cv-dali-dimmable-led-drivers-lifud.html" />
   <meta property="og:image" content="https://www.plusopto.com/assets/plusopto-logo.jpg" />
   <meta property="og:locale" content="en_GB" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:site" content="@plusopto" />
-  <meta name="twitter:title" content="CV DALI Dimmable LED Drivers — Plus Opto" />
-  <meta name="twitter:description" content="CV DALI Dimmable LED Drivers. Constant voltage DALI, DALI 2 and DALI DT8 supported for intelligent lighting control." />
+  <meta name="twitter:title" content="Lifud CV DALI Dimmable LED Drivers — Plus Opto" />
+  <meta name="twitter:description" content="Lifud LF-GHD series constant voltage DALI dimmable LED drivers in power ratings from 75W to 240W." />
   <meta name="twitter:image" content="https://www.plusopto.com/assets/plusopto-logo.jpg" />
   <script type="application/ld+json">
 {
@@ -28,9 +79,9 @@
   "@graph": [
     {
       "@type": "Product",
-      "@id": "https://www.plusopto.com/product-cv-dali-dimmable-led-drivers.html#product",
-      "name": "CV DALI Dimmable LED Drivers",
-      "description": "CV DALI Dimmable LED Drivers. Constant voltage DALI, DALI 2 and DALI DT8 supported for intelligent lighting control.",
+      "@id": "https://www.plusopto.com/product-cv-dali-dimmable-led-drivers-lifud.html#product",
+      "name": "Lifud CV DALI Dimmable LED Drivers",
+      "description": "Lifud LF-GHD series constant voltage DALI dimmable LED drivers in power ratings from 75W to 240W.",
       "image": "https://www.plusopto.com/assets/plusopto-logo.jpg",
       "brand": {
         "@type": "Brand",
@@ -38,7 +89,7 @@
       },
       "offers": {
         "@type": "Offer",
-        "url": "https://www.plusopto.com/product-cv-dali-dimmable-led-drivers.html",
+        "url": "https://www.plusopto.com/product-cv-dali-dimmable-led-drivers-lifud.html",
         "priceCurrency": "GBP",
         "availability": "https://schema.org/InStock",
         "seller": {
@@ -49,7 +100,7 @@
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.plusopto.com/product-cv-dali-dimmable-led-drivers.html#breadcrumb",
+      "@id": "https://www.plusopto.com/product-cv-dali-dimmable-led-drivers-lifud.html#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -72,8 +123,8 @@
         {
           "@type": "ListItem",
           "position": 4,
-          "name": "CV DALI Dimmable LED Drivers",
-          "item": "https://www.plusopto.com/product-cv-dali-dimmable-led-drivers.html"
+          "name": "Lifud CV DALI Dimmable LED Drivers",
+          "item": "https://www.plusopto.com/product-cv-dali-dimmable-led-drivers-lifud.html"
         }
       ]
     }
@@ -144,138 +195,60 @@
     </div>
   </nav>
 
-  <!-- CATEGORY HERO -->
-  <div style="position:relative;height:350px;">
-    <img src="assets/img/LED-drivers-overview.jpg" alt="CV DALI Dimmable LED Drivers" style="width:100%;height:100%;object-fit:cover;" />
-    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(17,38,56,.92) 0%,rgba(17,38,56,.7) 50%,rgba(17,38,56,.35) 100%);"></div>
-    <div style="position:absolute;inset:0;display:flex;align-items:center;">
-      <div class="container">
-        <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
-          <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider-color:rgba(210,228,245,0.4);--bs-breadcrumb-item-active-color:rgba(210,228,245,0.75);">
-            <li class="breadcrumb-item"><a href="index.html" style="color:#30e8d9;text-decoration:none;">Home</a></li>
-            <li class="breadcrumb-item"><a href="products.html" style="color:#30e8d9;text-decoration:none;">Products</a></li>
-            <li class="breadcrumb-item"><a href="category-led-drivers.html" style="color:#30e8d9;text-decoration:none;">LED Drivers</a></li>
-            <li class="breadcrumb-item"><a href="product-dimmable-led-drivers.html" style="color:#30e8d9;text-decoration:none;">Dimmable LED Drivers</a></li>
-            <li class="breadcrumb-item active" aria-current="page">CV DALI Dimmable LED Drivers</li>
-          </ol>
-        </nav>
-        <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;color:#fff;margin-bottom:.5rem;">CV DALI Dimmable LED Drivers</h1>
-        <p style="color:rgba(210,228,245,.8);max-width:600px;margin:0;">Our range of DALI Dimmable LED drivers is based on the DALI bus-mastering protocol for intelligent lighting control &amp; follow the IEC62386 / IEC60929 standard. DALI, DALI 2 and DALI DT8 is also supported for CCT tuneable LEDs.</p>
-      </div>
+  <!-- HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-cv-dali-dimmable-led-drivers.html">CV DALI Dimmable LED Drivers</a></li>
+          <li class="breadcrumb-item active">Lifud CV DALI Dimmable LED Drivers</li>
+        </ol>
+      </nav>
+      <h1>Lifud CV DALI Dimmable LED Drivers</h1>
+      <p class="subtitle">DALI (Digital Addressable Lighting Interface) is an International Standard for the control of DALI enabled lighting systems. Our Lifud LF-GHD series covers constant voltage DALI dimmable LED drivers in power ratings from 75W to 240W, conforming to the IEC62386 DALI standard.</p>
     </div>
   </div>
 
+  <!-- MAIN CONTENT -->
   <section class="py-5">
     <div class="container">
-      <div class="row g-4">
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-cv-dali-dimmable-led-drivers-lifud.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/LF-GHD-series-CV-DALI.jpg" alt="Lifud CV DALI Dimmable LED Drivers 24V 75W-240W" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Lifud CV DALI Dimmable LED Drivers 24V 75W-240W</h3>
-              <p class="excerpt">The Lifud LF-GHD series are constant voltage DALI dimmable LED drivers in power ratings from 75W to 240W.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-cv-dali-dimmable-led-drivers-snappy.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/SD200-24VL6.jpg" alt="Snappy CV DALI Dimmable LED Driver" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Snappy CV DALI Dimmable LED Driver 24V 200W</h3>
-              <p class="excerpt">The Snappy SD200-24VL6 is a 24VDC 200W constant voltage DALI dimmable LED driver.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-cv-dali-dimmable-led-drivers-snappy.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/SD200-24VL6.jpg" alt="Snappy CV DALI Dimmable Driver 24V 96W" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Snappy CV DALI Dimmable Driver 24V 96W</h3>
-              <p class="excerpt">The Snappy SD96-24VL6 is a 24V 96W Constant Voltage DALI dimmable LED driver.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-cv-dali-dimmable-led-drivers-snappy.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/SDL60-12-DALI.jpg" alt="Snappy CV DALI Dimmable Driver 60 to 240W" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Snappy CV DALI Dimmable Drivers 60 to 240W</h3>
-              <p class="excerpt">The SDL series are 12V and 24V constant voltage DALI dimmable LED drivers available in 12V and 24VDC output. Power ratings range from 60W to 240W. Drivers conform to DALI standard IEC62386 and offer short circuit, over-heat, over load and over voltage protection.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-cv-dali-dimmable-led-drivers-ltech.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/LM-36-12-G1D2.jpg" alt="Ltech CV DALI 36W CV" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Ltech CV DALI 36W to 240W LED Drivers</h3>
-              <p class="excerpt">The Ltech LMxxxG1D2 series are constant voltage DALI dimmable LED drivers from 36W to 240W with additional mains push dimming. The drivers conform to DALI-2 standard.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-cv-dali-dimmable-led-drivers-ltech.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/LM-75-24-G1T2-1.png" alt="Ltech CV DALI 75W & 100W CT Dimmable" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Ltech DALI CV 75W to 240W CT Dimmable</h3>
-              <p class="excerpt">The Ltech LM-75_100-G2D2 series are 12V and 24V 75W and 100W constant voltage DALI-2, DT8 colour temperature dimmable LED drivers.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-cv-dali-dimmable-led-drivers-ltech.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/LM-150-12-G1D2.png" alt="Ltech CV DALI-2 150W CV Dimmable" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Ltech CV DALI-2 150W CV Dimmable</h3>
-              <p class="excerpt">The Ltech LM-150-12_24-G1D2 series are 12V and 24V 150W constant voltage DALI-2 dimmable LED drivers with additional mains push dimming.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-sm-6 col-lg-4">
-          <a href="product-cv-dali-dimmable-led-drivers-snappy.html" class="product-card">
-            <div class="img-wrap">
-              <img src="assets/img/Snappy-SDG series-DALI.png" alt="Snappy CV DALI Dimmable Drivers 100W to 320W IP67" loading="lazy" />
-            </div>
-            <div class="card-body">
-              <h3>Snappy CV DALI Dimmable Drivers 100W to 320W, IP67</h3>
-              <p class="excerpt">The Snappy SDG series are constant voltage 12V or 24V DALI dimmable LED drivers in waterproof metal case rated to IP67.</p>
-              <span class="view-link">View Details →</span>
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section-navy py-5 mt-2">
-    <div class="container text-center">
-      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need a Custom Solution?</h2>
-      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">
-        Our engineering team can help specify or develop a custom solution for your exact requirements.
-      </p>
-      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
-    </div>
+      <div class="section-intro">
+            <h2>Available Products</h2>
+            <span class="count-chip">1 Product</span>
+          </div>
+
+          <div class="products-grid">
+
+            <!-- ── PRODUCT 1 ── -->
+            <div class="product-card">
+              <div class="card-image">
+                <img src="assets/img/LF-GHD-series-CV-DALI.jpg" alt="Lifud LF-GHD Series 24V 75W-240W Constant Voltage DALI Dimmable LED Driver" />
+              </div>
+              <div class="card-body">
+                <div class="card-title">LF-GHD series 24V 75W-240W CV DALI dimmable LED driver</div>
+                <div class="card-desc">The Lifud LF-GHD series are constant voltage DALI dimmable LED drivers in power ratings from 75W to 240W.</div>
+                <table class="spec-table">
+                  <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
+                  <tbody>
+                    <tr><td>Input Voltage</td><td>240VAC mains</td></tr>
+                    <tr><td>Output Voltage</td><td>24VDC</td></tr>
+                    <tr><td>Output Power</td><td>75W to 240W</td></tr>
+                    <tr><td>Dimming</td><td>DALI IEC62386</td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="card-footer-btns">
+                <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Lifud LF-GHD CV DALI Dimmable LED Driver" class="btn btn-outline-teal w-100">Request a Quote</a>
+              </div>
+            </div>
+
+          </div><!-- /products-grid -->
+
+    </div><!-- /container -->
   </section>
 
   <!-- FOOTER -->
