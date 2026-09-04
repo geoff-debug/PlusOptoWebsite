@@ -10,15 +10,6 @@
   <link rel="stylesheet" href="css/plusopto.css" />
   <link rel="icon" href="assets/plusopto-logo.jpg" />
 <style>
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 48px;
-  }
-  @media (max-width: 991.98px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 575.98px)  { .products-grid { grid-template-columns: 1fr; } }
-
   .section-intro {
     display: flex; align-items: center; justify-content: space-between;
     margin-bottom: 24px;
@@ -30,32 +21,6 @@
     font-size: 13px; font-weight: 700;
     padding: 4px 14px; border-radius: 20px;
   }
-  .product-card {
-    border: 1px solid #e2e6ea;
-    border-radius: 12px;
-    overflow: hidden;
-    background: #fff;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 2px 12px -4px rgba(17,38,56,.08);
-  }
-  .card-image {
-    background: #f4f6f8; height: 180px;
-    display: flex; align-items: center; justify-content: center;
-    overflow: hidden;
-  }
-  .card-image img { max-height: 150px; max-width: 90%; object-fit: contain; }
-  .card-body { padding: 18px; flex: 1; }
-  .part-number { font-size: 12px; font-weight: 600; color: #2bbcb0; text-transform: uppercase; margin-bottom: 6px; }
-  .card-title { font-size: 16px; font-weight: 800; color: #153049; line-height: 1.2; margin-bottom: 10px; }
-  .card-desc { font-size: 13px; color: #718096; line-height: 1.55; margin-bottom: 14px; }
-  .spec-table { width: 100%; border-collapse: collapse; margin-bottom: 0; font-size: 12px; }
-  .spec-table th { background: #153049; color: white; text-align: left; padding: 6px 10px; font-weight: 700; font-size: 11px; text-transform: uppercase; }
-  .spec-table td { padding: 6px 10px; border-bottom: 1px solid #e2e6ea; }
-  .spec-table td:last-child { text-align: right; font-weight: 600; color: #153049; }
-  .spec-table tr:last-child td { border-bottom: none; }
-  .spec-table tr:nth-child(even) td { background: #f4f6f8; }
-  .card-footer-btns { padding: 14px 18px; border-top: 1px solid #e2e6ea; background: #f8fafc; display: flex; flex-direction: column; gap: 8px; }
 </style>
           <link rel="canonical" href="https://www.plusopto.com/product-rf-led-controllers.html" />
   <meta property="og:type" content="website" />
@@ -218,199 +183,73 @@
         <span class="count-chip">8 Products</span>
       </div>
 
-      <div class="products-grid">
+      <div class="row g-4">
 
-        <!-- CARD 1: C Series Hand-Held Remotes -->
-        <div class="product-card">
-          <div class="card-image">
-            <img src="assets/img/C3-series-remote-controls.jpg" alt="C Series Hand-Held Remote Controls" />
-          </div>
-          <div class="card-body">
-            <div class="part-number">C1 / C3 / C4 / C5 / C8</div>
-            <div class="card-title">C Series Hand-Held Remote Controls</div>
-            <div class="card-desc">2.4GHz hand-held remote controllers compatible with FUT series RF receiver LED drivers. Multi-zone brightness and colour control with 30-metre control distance.</div>
-            <table class="spec-table">
-              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
-              <tbody>
-                <tr><td>RF Frequency</td><td>2.4GHz</td></tr>
-                <tr><td>Transmission</td><td>30 metres</td></tr>
-                <tr><td>Models</td><td>C1, C3, C4, C5, C8</td></tr>
-                <tr><td>Compatible With</td><td>FUT series receivers</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="card-footer-btns">
-            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: C Series Remote Controls" class="btn btn-outline-teal w-100">Request a Quote</a>
-          </div>
-        </div>
+        <div class="col-12 col-sm-6 col-lg-4"><a href="mailto:sales@plusopto.co.uk?subject=Quote Request: C Series Remote Controls" class="product-card">
+            <div class="img-wrap"><img src="assets/img/C3-series-remote-controls.jpg" alt="C Series Hand-Held Remote Controls" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>C Series Hand-Held Remote Controls</h3>
+              <p class="excerpt">2.4GHz hand-held remote controllers compatible with FUT series RF receiver LED drivers. Multi-zone brightness and colour control with 30-metre control distance.</p><span class="view-link">Request a Quote →</span>
+            </div>
+          </a></div>
 
-        <!-- CARD 2: FUT/A Series RF Controllers -->
-        <div class="product-card">
-          <div class="card-image">
-            <img src="assets/img/FUT088_FUT043A.jpg" alt="FUT/A Series RF Controllers" />
-          </div>
-          <div class="card-body">
-            <div class="part-number">FUT043A / FUT044A / FUT045A</div>
-            <div class="card-title">FUT/A Series RF Controllers</div>
-            <div class="card-desc">Cost effective solution for LED lighting control with multiple channel options including RGB, RGBW and RGB+CT. Dimming and colour temperature control.</div>
-            <table class="spec-table">
-              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
-              <tbody>
-                <tr><td>FUT043A</td><td>RGB</td></tr>
-                <tr><td>FUT044A</td><td>RGBW</td></tr>
-                <tr><td>FUT045A</td><td>RGB+CT</td></tr>
-                <tr><td>RF Frequency</td><td>2.4GHz</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="card-footer-btns">
-            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: FUT/A Series" class="btn btn-outline-teal w-100">Request a Quote</a>
-          </div>
-        </div>
+        <div class="col-12 col-sm-6 col-lg-4"><a href="mailto:sales@plusopto.co.uk?subject=Quote Request: FUT/A Series" class="product-card">
+            <div class="img-wrap"><img src="assets/img/FUT088_FUT043A.jpg" alt="FUT/A Series RF Controllers" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>FUT/A Series RF Controllers</h3>
+              <p class="excerpt">Cost effective solution for LED lighting control with multiple channel options including RGB, RGBW and RGB+CT. Dimming and colour temperature control.</p><span class="view-link">Request a Quote →</span>
+            </div>
+          </a></div>
 
-        <!-- CARD 8: Zigbee Controllers -->
-        <div class="product-card">
-          <div class="card-image">
-            <img src="assets/img/Zigbee-group.png" alt="Zigbee Controllers" />
-          </div>
-          <div class="card-body">
-            <div class="part-number">Zigbee Series</div>
-            <div class="card-title">Zigbee Controllers</div>
-            <div class="card-desc">Open global standard for low-power wireless IoT networks using IEEE 802.15.4. Mesh network capable with support for dimming, CCT, RGB and RGBW control.</div>
-            <table class="spec-table">
-              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
-              <tbody>
-                <tr><td>Standard</td><td>IEEE 802.15.4</td></tr>
-                <tr><td>Network</td><td>Mesh capable</td></tr>
-                <tr><td>Control</td><td>Dim, CCT, RGB, RGBW</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="card-footer-btns">
-            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Zigbee Controllers" class="btn btn-outline-teal w-100">Request a Quote</a>
-          </div>
-        </div>
+        <div class="col-12 col-sm-6 col-lg-4"><a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Zigbee Controllers" class="product-card">
+            <div class="img-wrap"><img src="assets/img/Zigbee-group.png" alt="Zigbee Controllers" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>Zigbee Controllers</h3>
+              <p class="excerpt">Open global standard for low-power wireless IoT networks using IEEE 802.15.4. Mesh network capable with support for dimming, CCT, RGB and RGBW control.</p><span class="view-link">Request a Quote →</span>
+            </div>
+          </a></div>
 
-        <!-- CARD 9: Bluetooth Controllers -->
-        <div class="product-card">
-          <div class="card-image">
-            <img src="assets/img/Onlumi-Bluetooth-Controllers.jpg" alt="Bluetooth Controllers" />
-          </div>
-          <div class="card-body">
-            <div class="part-number">Bluetooth Series</div>
-            <div class="card-title">Bluetooth Controllers</div>
-            <div class="card-desc">Bluetooth Low Energy (BLE) wireless controllers with mesh technology. Smartphone and tablet compatible, supporting dimming, CT, RGB and RGBW control.</div>
-            <table class="spec-table">
-              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
-              <tbody>
-                <tr><td>Protocol</td><td>Bluetooth Low Energy</td></tr>
-                <tr><td>Network</td><td>Mesh technology</td></tr>
-                <tr><td>Control</td><td>Dim, CT, RGB, RGBW</td></tr>
-                <tr><td>App</td><td>Smartphone / tablet</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="card-footer-btns">
-            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Bluetooth Controllers" class="btn btn-outline-teal w-100">Request a Quote</a>
-          </div>
-        </div>
+        <div class="col-12 col-sm-6 col-lg-4"><a href="mailto:sales@plusopto.co.uk?subject=Quote Request: Bluetooth Controllers" class="product-card">
+            <div class="img-wrap"><img src="assets/img/Onlumi-Bluetooth-Controllers.jpg" alt="Bluetooth Controllers" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>Bluetooth Controllers</h3>
+              <p class="excerpt">Bluetooth Low Energy (BLE) wireless controllers with mesh technology. Smartphone and tablet compatible, supporting dimming, CT, RGB and RGBW control.</p><span class="view-link">Request a Quote →</span>
+            </div>
+          </a></div>
 
-        <!-- CARD 10: RF Receiver/Drivers -->
-        <div class="product-card">
-          <div class="card-image">
-            <img src="assets/img/FUT089.jpg" alt="RF Receiver/Drivers" />
-          </div>
-          <div class="card-body">
-            <div class="part-number">FUT Series Receivers</div>
-            <div class="card-title">RF Receiver/Drivers</div>
-            <div class="card-desc">Range of RF receiver/drivers for LED strip and fitting control. 5–24VDC supply, single and multi-channel options, compatible with FUT series remote controls.</div>
-            <table class="spec-table">
-              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
-              <tbody>
-                <tr><td>Input Voltage</td><td>5–24VDC</td></tr>
-                <tr><td>Channels</td><td>Single / multi-channel</td></tr>
-                <tr><td>Compatible With</td><td>FUT series remotes</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="card-footer-btns">
-            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: RF Receiver/Drivers" class="btn btn-outline-teal w-100">Request a Quote</a>
-          </div>
-        </div>
+        <div class="col-12 col-sm-6 col-lg-4"><a href="mailto:sales@plusopto.co.uk?subject=Quote Request: RF Receiver/Drivers" class="product-card">
+            <div class="img-wrap"><img src="assets/img/FUT089.jpg" alt="RF Receiver/Drivers" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>RF Receiver/Drivers</h3>
+              <p class="excerpt">Range of RF receiver/drivers for LED strip and fitting control. 5–24VDC supply, single and multi-channel options, compatible with FUT series remote controls.</p><span class="view-link">Request a Quote →</span>
+            </div>
+          </a></div>
 
-        <!-- CARD 11: WL-BOX1 RF to WiFi Gateway -->
-        <div class="product-card">
-          <div class="card-image">
-            <img src="assets/img/WL-Box-1.png" alt="WL-BOX1 RF to WiFi Gateway" />
-          </div>
-          <div class="card-body">
-            <div class="part-number">WL-BOX1</div>
-            <div class="card-title">WL-BOX1 RF to WiFi Gateway</div>
-            <div class="card-desc">Bridge connection from RF 2.4GHz to WiFi wireless networks, allowing connection of Smartphone Apps. Compatible with FUT series RF products. Alexa and Google Assistant support.</div>
-            <table class="spec-table">
-              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
-              <tbody>
-                <tr><td>Supply Voltage</td><td>5V micro USB</td></tr>
-                <tr><td>Transmission</td><td>30 metres</td></tr>
-                <tr><td>Dimensions</td><td>90.5×66×15mm</td></tr>
-                <tr><td>Voice Control</td><td>Alexa, Google Assistant</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="card-footer-btns">
-            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WL-BOX1" class="btn btn-outline-teal w-100">Request a Quote</a>
-          </div>
-        </div>
+        <div class="col-12 col-sm-6 col-lg-4"><a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WL-BOX1" class="product-card">
+            <div class="img-wrap"><img src="assets/img/WL-Box-1.png" alt="WL-BOX1 RF to WiFi Gateway" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>WL-BOX1 RF to WiFi Gateway</h3>
+              <p class="excerpt">Bridge connection from RF 2.4GHz to WiFi wireless networks, allowing connection of Smartphone Apps. Compatible with FUT series RF products. Alexa and Google Assistant support.</p><span class="view-link">Request a Quote →</span>
+            </div>
+          </a></div>
 
-        <!-- CARD 12: SR-2818 RF to WiFi Converter -->
-        <div class="product-card">
-          <div class="card-image">
-            <img src="assets/img/SR-2818WIN-WiFi-RF-Converter.jpg" alt="SR-2818 RF to WiFi Converter" />
-          </div>
-          <div class="card-body">
-            <div class="part-number">SR-2818</div>
-            <div class="card-title">SR-2818 RF to WiFi Converter</div>
-            <div class="card-desc">Converts WiFi signal to RF compatible with SR-1009 series receivers. Enables smartphone app control of RF LED lighting systems over a standard WiFi network.</div>
-            <table class="spec-table">
-              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
-              <tbody>
-                <tr><td>Input Voltage</td><td>12VDC</td></tr>
-                <tr><td>RF Output</td><td>2.4GHz</td></tr>
-                <tr><td>Dimensions</td><td>110×85×24.2mm</td></tr>
-                <tr><td>Compatible With</td><td>SR-1009 series</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="card-footer-btns">
-            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: SR-2818" class="btn btn-outline-teal w-100">Request a Quote</a>
-          </div>
-        </div>
+        <div class="col-12 col-sm-6 col-lg-4"><a href="mailto:sales@plusopto.co.uk?subject=Quote Request: SR-2818" class="product-card">
+            <div class="img-wrap"><img src="assets/img/SR-2818WIN-WiFi-RF-Converter.jpg" alt="SR-2818 RF to WiFi Converter" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>SR-2818 RF to WiFi Converter</h3>
+              <p class="excerpt">Converts WiFi signal to RF compatible with SR-1009 series receivers. Enables smartphone app control of RF LED lighting systems over a standard WiFi network.</p><span class="view-link">Request a Quote →</span>
+            </div>
+          </a></div>
 
-        <!-- CARD 13: WL-SW1 RF Smart Switch -->
-        <div class="product-card">
-          <div class="card-image">
-            <img src="assets/img/WL-SW1.jpg" alt="WL-SW1 RF Smart Switch" />
-          </div>
-          <div class="card-body">
-            <div class="part-number">WL-SW1</div>
-            <div class="card-title">WL-SW1 RF Smart Switch</div>
-            <div class="card-desc">WiFi + BLE + 2.4G protocol smart switch for mains-powered lighting and appliance control. Alexa and Google Assistant voice control support.</div>
-            <table class="spec-table">
-              <thead><tr><th>Parameter</th><th style="text-align:right">Value</th></tr></thead>
-              <tbody>
-                <tr><td>Supply Voltage</td><td>110–240VAC</td></tr>
-                <tr><td>Max Output</td><td>10A</td></tr>
-                <tr><td>Protocol</td><td>WiFi + BLE + 2.4G</td></tr>
-                <tr><td>Voice Control</td><td>Alexa, Google Assistant</td></tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="card-footer-btns">
-            <a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WL-SW1" class="btn btn-outline-teal w-100">Request a Quote</a>
-          </div>
-        </div>
+        <div class="col-12 col-sm-6 col-lg-4"><a href="mailto:sales@plusopto.co.uk?subject=Quote Request: WL-SW1" class="product-card">
+            <div class="img-wrap"><img src="assets/img/WL-SW1.jpg" alt="WL-SW1 RF Smart Switch" loading="lazy" /></div>
+            <div class="card-body">
+              <h3>WL-SW1 RF Smart Switch</h3>
+              <p class="excerpt">WiFi + BLE + 2.4G protocol smart switch for mains-powered lighting and appliance control. Alexa and Google Assistant voice control support.</p><span class="view-link">Request a Quote →</span>
+            </div>
+          </a></div>
 
-      </div><!-- /products-grid -->
+      </div><!-- /row -->
 
     </div><!-- /container -->
   </section>
