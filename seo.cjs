@@ -156,13 +156,6 @@ function buildProductLD(filename, name, description, image, breadcrumbCategory) 
         description,
         image: imageUrl,
         brand: { '@type': 'Brand', name: 'Plus Opto' },
-        offers: {
-          '@type': 'Offer',
-          url,
-          priceCurrency: 'GBP',
-          availability: 'https://schema.org/InStock',
-          seller: { '@type': 'Organization', name: 'Plus Opto' },
-        },
       },
       {
         '@type': 'BreadcrumbList',
