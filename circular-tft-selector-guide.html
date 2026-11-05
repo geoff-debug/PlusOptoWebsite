@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Circular TFT Selector Guide | Plus Opto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   Plus Opto — Circular TFT Selector Guide
+   Self-contained component. Everything is scoped to .po-selector,
+   so the <section> block below can be pasted into any plusopto.com
+   page (the tokens match css/plusopto.css).
+   ========================================================== */
+.po-selector {
+  --po-navy: #112638;
+  --po-navy-light: #183858;
+  --po-navy-mid: #1a3a56;
+  --po-teal: #1fada1;
+  --po-teal-dark: #1a8f85;
+  --po-teal-glow: #30e8d9;
+  --po-gold: #f4b625;
+  --po-text: #1a2b3c;
+  --po-muted: #475e6e;
+  --po-subtle: #8096a8;
+  --po-line: #e4eaf0;
+  --po-tint: #f0f5fa;
+  --po-gradient-hero: linear-gradient(135deg, #112638, #183858, #1a3a56);
+  --po-shadow-card: 0 4px 20px -4px rgba(17, 38, 56, 0.08);
+
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color: var(--po-text);
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 48px 16px;
+  box-sizing: border-box;
+}
+.po-selector *, .po-selector *::before, .po-selector *::after { box-sizing: inherit; }
+
+/* Heading */
+.po-selector .po-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--po-teal); margin: 0 0 .5rem;
+}
+.po-selector h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.25rem); font-weight: 700;
+  color: var(--po-navy); margin: 0 0 .6rem; line-height: 1.2;
+}
+.po-selector .po-intro { color: var(--po-muted); max-width: 70ch; margin: 0 0 1.75rem; line-height: 1.6; }
+
+/* Filters */
+.po-selector .po-filters {
+  display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center;
+  margin-bottom: 1rem;
+}
+.po-selector .po-filter-group { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+.po-selector .po-filter-label { font-size: .8rem; font-weight: 600; color: var(--po-subtle); margin-right: .25rem; }
+.po-selector .po-chip {
+  font: 500 .82rem 'Space Grotesk', sans-serif;
+  border: 1px solid var(--po-line); background: #fff; color: var(--po-text);
+  border-radius: 999px; padding: .35rem .85rem; cursor: pointer;
+  transition: background-color .2s, color .2s, border-color .2s;
+}
+.po-selector .po-chip:hover { border-color: var(--po-teal); color: var(--po-teal); }
+.po-selector .po-chip[aria-pressed="true"] { background: var(--po-teal); border-color: var(--po-teal); color: #fff; }
+.po-selector .po-chip:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(31,173,161,.25); }
+.po-selector .po-count { margin-left: auto; font-size: .82rem; color: var(--po-subtle); }
+
+/* Table card */
+.po-selector .po-table-card {
+  background: #fff; border: 1px solid var(--po-line); border-radius: 12px;
+  box-shadow: var(--po-shadow-card); overflow: hidden;
+}
+.po-selector .po-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.po-selector table { width: 100%; border-collapse: collapse; min-width: 980px; font-size: .875rem; }
+.po-selector thead tr { background: var(--po-gradient-hero); }
+.po-selector thead th {
+  background: transparent; color: #fff;
+  font-family: 'Outfit', sans-serif; font-weight: 600; font-size: .8rem;
+  text-align: left; vertical-align: bottom; line-height: 1.25;
+  padding: .85rem .6rem; white-space: nowrap;
+}
+.po-selector thead th .po-unit { display: block; font-weight: 400; color: rgba(210,228,245,.75); font-size: .72rem; }
+.po-selector tbody td {
+  padding: .7rem .6rem; border-top: 1px solid var(--po-line);
+  vertical-align: middle; white-space: nowrap;
+}
+.po-selector tbody tr:nth-child(even) td { background: #fafcfd; }
+.po-selector tbody tr:hover td { background: var(--po-tint); }
+.po-selector .num { font-variant-numeric: tabular-nums; }
+.po-selector td.po-iface { white-space: normal; max-width: 120px; }
+.po-selector td.po-num-right, .po-selector th.po-num-right { text-align: right; }
+
+/* Sticky model column */
+.po-selector th:first-child, .po-selector td:first-child { position: sticky; left: 0; z-index: 1; }
+.po-selector thead th:first-child { background: var(--po-navy); }
+.po-selector tbody td:first-child { background: #fff; box-shadow: 1px 0 0 var(--po-line); }
+.po-selector tbody tr:nth-child(even) td:first-child { background: #fafcfd; }
+.po-selector tbody tr:hover td:first-child { background: var(--po-tint); }
+.po-selector .po-model { font-weight: 600; color: var(--po-navy); letter-spacing: .01em; }
+
+/* Size badge */
+.po-selector .po-size {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 3rem; height: 3rem; border-radius: 50%;
+  border: 2px solid var(--po-teal); color: var(--po-navy);
+  font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .85rem;
+}
+.po-selector .po-size small { font-size: .62rem; font-weight: 500; margin-left: 1px; color: var(--po-muted); }
+
+/* Tags */
+.po-selector .po-tag {
+  display: inline-block; font-size: .74rem; font-weight: 500; line-height: 1;
+  padding: .3rem .5rem; border-radius: 4px; margin: 1px 2px 1px 0;
+  background: var(--po-tint); color: var(--po-navy-mid);
+}
+.po-selector .po-tag-touch { background: rgba(31,173,161,.12); color: var(--po-teal-dark); }
+.po-selector .po-touch-sub { display: block; font-size: .72rem; color: var(--po-subtle); margin-top: .25rem; }
+.po-selector .po-none { color: var(--po-subtle); }
+.po-selector .po-rec {
+  display: table; margin-top: .3rem;
+  font: 600 .66rem 'Outfit', sans-serif; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--po-gold); color: var(--po-navy); padding: .22rem .45rem; border-radius: 4px;
+}
+.po-selector .po-empty { padding: 2rem; text-align: center; color: var(--po-subtle); display: none; }
+
+/* Footer note + CTA */
+.po-selector .po-foot {
+  display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
+  margin-top: 1.25rem;
+}
+.po-selector .po-note { font-size: .8rem; color: var(--po-subtle); margin: 0; max-width: 75ch; line-height: 1.55; }
+.po-selector .po-btn {
+  display: inline-block; font: 600 .9rem 'Outfit', sans-serif; text-decoration: none;
+  background: var(--po-navy); color: #fff; padding: .7rem 1.4rem; border-radius: 8px;
+  transition: background-color .2s, box-shadow .2s;
+}
+.po-selector .po-btn:hover { background: var(--po-navy-light); box-shadow: 0 4px 16px rgba(17,38,56,.25); color: #fff; }
+
+@media (max-width: 640px) {
+  .po-selector { padding: 32px 16px; }
+  .po-selector .po-count { margin-left: 0; width: 100%; }
+}
+</style>
+</head>
+<body style="margin:0;background:#f5f7fa;">
+
+<!-- ============ PASTE FROM HERE ============ -->
+<section class="po-selector" id="circular-tft-selector">
+  <p class="po-eyebrow">Display Solutions</p>
+  <h2>Circular TFT Selector Guide</h2>
+  <p class="po-intro">Round IPS TFT modules from 1.28" to 4", with SPI, RGB, MCU and MIPI DSI interfaces. Several are available with optically bonded PCAP touch. Filter by interface or touch to narrow down the list, then get in touch for samples, pricing or a customised version.</p>
+
+  <div class="po-filters" role="group" aria-label="Filter displays">
+    <div class="po-filter-group" data-filter="iface">
+      <span class="po-filter-label">Interface</span>
+      <button type="button" class="po-chip" aria-pressed="true" data-value="all">All</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="SPI">SPI</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="RGB">SPI + RGB</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="MIPI">MIPI DSI</button>
+    </div>
+    <div class="po-filter-group" data-filter="touch">
+      <span class="po-filter-label">Touch</span>
+      <button type="button" class="po-chip" aria-pressed="true" data-value="all">All</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="yes">PCAP</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="no">No touch</button>
+    </div>
+    <span class="po-count" aria-live="polite"></span>
+  </div>
+
+  <div class="po-table-card">
+    <div class="po-table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Model No.</th>
+            <th scope="col">Size<span class="po-unit">inch</span></th>
+            <th scope="col">Resolution<span class="po-unit">pixels</span></th>
+            <th scope="col">Outline<span class="po-unit">mm</span></th>
+            <th scope="col">Viewing Area<span class="po-unit">mm</span></th>
+            <th scope="col">Active Area<span class="po-unit">mm</span></th>
+            <th scope="col">Interface</th>
+            <th scope="col">Driver IC</th>
+            <th scope="col" class="po-num-right">Brightness<span class="po-unit">cd/m²</span></th>
+            <th scope="col">Touch Screen</th>
+            <th scope="col">Op. Temp.<span class="po-unit">°C</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-iface="SPI" data-touch="no">
+            <td class="po-model">WF0128BTYAA4DNN0</td>
+            <td><span class="po-size">1.28<small>"</small></span></td>
+            <td class="num">240 × 240</td>
+            <td class="num">35.60 × 37.74</td>
+            <td class="po-none">–</td>
+            <td class="num">32.40 × 32.40</td>
+            <td class="po-iface"><span class="po-tag">SPI</span></td>
+            <td>GC9A01</td>
+            <td class="num po-num-right">400</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-iface="SPI" data-touch="yes">
+            <td class="po-model">WF0128BTYAA4DNF10</td>
+            <td><span class="po-size">1.28<small>"</small></span></td>
+            <td class="num">240 × 240</td>
+            <td class="num">50.20 × 50.20</td>
+            <td class="num">32.80 × 32.80</td>
+            <td class="num">32.40 × 32.40</td>
+            <td class="po-iface"><span class="po-tag">SPI</span></td>
+            <td>GC9A01</td>
+            <td class="num po-num-right">320</td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">Optical bonding · 1-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-iface="SPI RGB MCU" data-touch="no">
+            <td class="po-model">WFN0128A2T0YADNN000</td>
+            <td><span class="po-size">1.28<small>"</small></span></td>
+            <td class="num">240 × 240</td>
+            <td class="num">35.60 × 37.74</td>
+            <td class="po-none">–</td>
+            <td class="num">32.40 × 32.40</td>
+            <td class="po-iface"><span class="po-tag">SPI</span><span class="po-tag">SPI + RGB</span><span class="po-tag">MCU</span></td>
+            <td>GC9A01</td>
+            <td class="num po-num-right">500</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-iface="MIPI" data-touch="no">
+            <td class="po-model">WFN0160A2T0YAMNN000</td>
+            <td><span class="po-size">1.6<small>"</small></span></td>
+            <td class="num">400 × 400</td>
+            <td class="num">42.94 × 45.89</td>
+            <td class="num">42.04 × 42.04</td>
+            <td class="num">39.84 × 39.84</td>
+            <td class="po-iface"><span class="po-tag">MIPI DSI</span></td>
+            <td>ST7797</td>
+            <td class="num po-num-right">350</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-iface="RGB" data-touch="no">
+            <td class="po-model">WFN0210A2T0YADNN000</td>
+            <td><span class="po-size">2.1<small>"</small></span></td>
+            <td class="num">480 × 480</td>
+            <td class="num">56.18 × 59.71</td>
+            <td class="po-none">–</td>
+            <td class="num">53.28 × 53.28</td>
+            <td class="po-iface"><span class="po-tag">SPI + RGB</span></td>
+            <td>ST7701</td>
+            <td class="num po-num-right">450</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-iface="RGB" data-touch="yes">
+            <td class="po-model">WFN0210A2T0YADNA000</td>
+            <td><span class="po-size">2.1<small>"</small></span></td>
+            <td class="num">480 × 480</td>
+            <td class="num">71.27 × 71.27</td>
+            <td class="po-none">–</td>
+            <td class="num">53.28 × 53.28</td>
+            <td class="po-iface"><span class="po-tag">SPI + RGB</span></td>
+            <td>ST7701</td>
+            <td class="num po-num-right">430</td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">Optical bonding · 1-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-iface="RGB" data-touch="no">
+            <td class="po-model">WFN0276A2T0YADNN000</td>
+            <td><span class="po-size">2.76<small>"</small></span></td>
+            <td class="num">480 × 480</td>
+            <td class="num">73.03 × 76.48</td>
+            <td class="po-none">–</td>
+            <td class="num">70.128 × 70.128</td>
+            <td class="po-iface"><span class="po-tag">SPI + RGB</span></td>
+            <td>ST7701</td>
+            <td class="num po-num-right">420</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-iface="MIPI" data-touch="no">
+            <td class="po-model">WF0340ATYAB7MNN0<span class="po-rec">Recommended</span></td>
+            <td><span class="po-size">3.4<small>"</small></span></td>
+            <td class="num">800 × 800</td>
+            <td class="num">94.90 × 96.95</td>
+            <td class="num">91.25 × 93.23</td>
+            <td class="num">87.60 × 87.60</td>
+            <td class="po-iface"><span class="po-tag">MIPI DSI</span></td>
+            <td>ILI9881C</td>
+            <td class="num po-num-right">300</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-iface="MIPI" data-touch="no">
+            <td class="po-model">WFN0400A2T0YAMNN000</td>
+            <td><span class="po-size">4.0<small>"</small></span></td>
+            <td class="num">720 × 720</td>
+            <td class="num">105.30 × 109.62</td>
+            <td class="po-none">–</td>
+            <td class="num">101.52 × 101.52</td>
+            <td class="po-iface"><span class="po-tag">MIPI DSI</span></td>
+            <td>FL7703</td>
+            <td class="num po-num-right">350</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-iface="MIPI" data-touch="yes">
+            <td class="po-model">WFN0400A2T0YAMNA000</td>
+            <td><span class="po-size">4.0<small>"</small></span></td>
+            <td class="num">720 × 720</td>
+            <td class="num">125.00 × 125.00</td>
+            <td class="num">102.12 × 102.12</td>
+            <td class="num">101.52 × 101.52</td>
+            <td class="po-iface"><span class="po-tag">MIPI DSI</span></td>
+            <td>FL7703</td>
+            <td class="num po-num-right">320</td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">Optical bonding · 4-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="po-empty">No displays match these filters.</div>
+    </div>
+  </div>
+
+  <div class="po-foot">
+    <p class="po-note">All modules use IPS panels for wide viewing angles. Specifications are typical values and may change. Please ask for the latest datasheet before designing in.</p>
+    <a class="po-btn" href="contact.html">Request a Quote</a>
+  </div>
+
+  <script>
+  (function () {
+    var root = document.getElementById('circular-tft-selector');
+    if (!root) return;
+    var state = { iface: 'all', touch: 'all' };
+    var rows = root.querySelectorAll('tbody tr');
+    var count = root.querySelector('.po-count');
+    var empty = root.querySelector('.po-empty');
+
+    function apply() {
+      var shown = 0;
+      rows.forEach(function (r) {
+        var okI = state.iface === 'all' || (' ' + r.dataset.iface + ' ').indexOf(' ' + state.iface + ' ') > -1;
+        var okT = state.touch === 'all' || r.dataset.touch === state.touch;
+        var ok = okI && okT;
+        r.hidden = !ok;
+        if (ok) shown++;
+      });
+      count.textContent = 'Showing ' + shown + ' of ' + rows.length + ' displays';
+      empty.style.display = shown ? 'none' : 'block';
+    }
+
+    root.querySelectorAll('.po-filter-group').forEach(function (g) {
+      var key = g.dataset.filter;
+      g.addEventListener('click', function (e) {
+        var btn = e.target.closest('.po-chip');
+        if (!btn) return;
+        g.querySelectorAll('.po-chip').forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+        state[key] = btn.dataset.value;
+        apply();
+      });
+    });
+    apply();
+  })();
+  </script>
+</section>
+<!-- ============ PASTE TO HERE ============ -->
+
+</body>
+</html>
