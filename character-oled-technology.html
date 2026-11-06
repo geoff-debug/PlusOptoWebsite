@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Character OLED Display Technology — Plus Opto</title>
+  <meta name="description" content="How character OLED displays work, built-in fonts, interfaces and replacing STN LCD and VFD modules. Character OLEDs from 8x2 to 40x2 supplied by Plus Opto." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="Character OLED Display Technology — Plus Opto" />
+  <meta property="og:description" content="How character OLED displays work, built-in fonts, interfaces and replacing STN LCD and VFD modules. Character OLEDs from 8x2 to 40x2 supplied by Plus Opto." />
+  <meta property="og:url" content="https://www.plusopto.com/character-oled-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/oled-character-group.png" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="Character OLED Display Technology — Plus Opto" />
+  <meta name="twitter:description" content="How character OLED displays work, built-in fonts, interfaces and replacing STN LCD and VFD modules. Character OLEDs from 8x2 to 40x2 supplied by Plus Opto." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/oled-character-group.png" />
+  <link rel="canonical" href="https://www.plusopto.com/character-oled-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/character-oled-technology.html#webpage",
+      "url": "https://www.plusopto.com/character-oled-technology.html",
+      "name": "Character OLED Display Technology — Plus Opto",
+      "description": "How character OLED displays work, built-in fonts, interfaces and replacing STN LCD and VFD modules. Character OLEDs from 8x2 to 40x2 supplied by Plus Opto.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Plus Opto",
+        "url": "https://www.plusopto.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/character-oled-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "Display Solutions", "item": "https://www.plusopto.com/category-display-solutions.html" },
+        { "@type": "ListItem", "position": 4, "name": "OLED Display Modules", "item": "https://www.plusopto.com/product-oled-display-modules.html" },
+        { "@type": "ListItem", "position": 5, "name": "Character OLED Displays", "item": "https://www.plusopto.com/product-character-oled-displays.html" },
+        { "@type": "ListItem", "position": 6, "name": "Character OLED Technology", "item": "https://www.plusopto.com/character-oled-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/character-oled-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can a character OLED replace my existing STN LCD?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In most cases, yes. Character OLEDs such as the 8x2 WEH000802A, 16x2 WEH001602A and 40x2 WEH004002A share the outline size, viewing area and pin out of the equivalent Winstar STN LCDs (WH0802A, WH1602B and WH4002A). Because the OLED needs no backlight, the backlight supply can be removed, and only small software changes are usually needed." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a character OLED replace a VFD?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Character OLEDs are offered as a mechanically compatible alternative to vacuum fluorescent displays, giving a similar bright, self-lit appearance without the high voltage supply and filament drive that a VFD needs." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which character sets are built in?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The WS0010 controller has a 4 in 1 font ROM with English, Japanese, European and Russian character sets, including ASCII. The font table is selected by software, so one module can serve several markets." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which interface should I use?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The default 6800 parallel interface, in 8-bit or 4-bit mode, matches most existing character LCD designs. 8080 parallel suits processors with an Intel-style bus, and SPI reduces the connection to a few wires for new designs or small microcontrollers." }
+        },
+        {
+          "@type": "Question",
+          "name": "How long does a character OLED last?",
+          "acceptedAnswer": { "@type": "Answer", "text": "As with all OLEDs, brightness slowly reduces over operating life, and characters that are shown continuously at full brightness age faster than the rest of the display. Reducing brightness, turning the display off when idle and avoiding fixed text for long periods all help to extend life. Our engineers can advise on lifetime for your application." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CATEGORY HERO -->
+  <div style="position:relative;height:350px;">
+    <img src="assets/img/LCD%20OLED%20Character%20Banner.jpg" alt="Character OLED Display Technology" style="width:100%;height:100%;object-fit:cover;" />
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(17,38,56,.92) 0%,rgba(17,38,56,.7) 50%,rgba(17,38,56,.35) 100%);"></div>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;">
+      <div class="container">
+        <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+          <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider-color:rgba(210,228,245,0.4);--bs-breadcrumb-item-active-color:rgba(210,228,245,0.75);">
+            <li class="breadcrumb-item"><a href="index.html" style="color:#30e8d9;text-decoration:none;">Home</a></li>
+            <li class="breadcrumb-item"><a href="products.html" style="color:#30e8d9;text-decoration:none;">Products</a></li>
+            <li class="breadcrumb-item"><a href="category-display-solutions.html" style="color:#30e8d9;text-decoration:none;">Display Solutions</a></li>
+            <li class="breadcrumb-item"><a href="product-oled-display-modules.html" style="color:#30e8d9;text-decoration:none;">OLED Display Modules</a></li>
+            <li class="breadcrumb-item"><a href="product-character-oled-displays.html" style="color:#30e8d9;text-decoration:none;">Character OLED Displays</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Character OLED Technology</li>
+          </ol>
+        </nav>
+        <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;color:#fff;margin-bottom:.5rem;">Character OLED Display Technology</h1>
+        <p style="color:rgba(210,228,245,.8);max-width:600px;margin:0;">Self-lit character OLED modules from 8x2 to 40x2, sharing the size and pin out of standard STN character LCDs. Find out how character OLEDs work, what the built-in 4 in 1 font controller offers, and how to upgrade an existing LCD or VFD design.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <img src="assets/img/oled-character-group.png" alt="Winstar Character OLED Display Modules" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Overview</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>A character OLED displays text as rows of fixed character cells, just like the familiar 16x2 character LCD. The difference is the display technology: instead of a liquid crystal panel in front of a backlight, every dot is a tiny OLED that produces its own light. Characters appear bright and sharp on a true black background, readable from almost any angle, with no backlight to power.</p>
+            <p>As the authorised distributor for Winstar Display Corporation we offer character OLED modules in 8x2, 12x2, 16x1, 16x2, 20x2, 20x4 and 40x2 formats, each character made from a 5x8 dot matrix. Standard models share the outline, viewing area and pin out of the equivalent Winstar STN LCDs, making them a simple upgrade for existing products, and they are also a mechanically compatible alternative to vacuum fluorescent displays (VFDs).</p>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Formats from 8x2 to 40x2 characters</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Same size and pin out as STN character LCDs</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">4 in 1 font ROM: English, Japanese, European, Russian</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">6800, 8080 and SPI interfaces</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Self-lit: no backlight required</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Mechanically compatible alternative to VFDs</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="sidebar-card mb-4">
+              <h3 class="fw-semibold mb-4" style="font-family:'Outfit',sans-serif;font-size:1.05rem;color:#1a2b3c;">Product Resources</h3>
+              <a href="product-character-oled-displays.html"
+                 class="d-flex align-items-center gap-3 p-3 rounded-3 border mb-3 text-decoration-none"
+                 style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                  <i class="bi bi-fonts fs-5" style="color:#1a4870;"></i>
+                </div>
+                <div>
+                  <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Character OLED Displays</div>
+                  <div style="font-size:.78rem;color:#8096a8;">Full product range</div>
+                </div>
+              </a>
+              <a href="graphic-oled-technology.html"
+                 class="d-flex align-items-center gap-3 p-3 rounded-3 border mb-3 text-decoration-none"
+                 style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                  <i class="bi bi-grid-3x3-gap-fill fs-5" style="color:#1a4870;"></i>
+                </div>
+                <div>
+                  <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Graphic OLED Technology</div>
+                  <div style="font-size:.78rem;color:#8096a8;">How OLED displays work</div>
+                </div>
+              </a>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+            <div class="sidebar-card mb-4">
+              <h3 class="fw-semibold mb-3" style="font-family:'Outfit',sans-serif;font-size:1.05rem;color:#1a2b3c;">Character OLED at a Glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-0">
+                <li>Formats: <span>8x2, 12x2, 16x1, 16x2, 20x2, 20x4, 40x2</span></li>
+                <li>Character cell: <span>5x8 dot matrix</span></li>
+                <li>Diagonal: <span>1.2&quot; to 5.85&quot;</span></li>
+                <li>Structure: <span>COB (Chip on Board)</span></li>
+                <li>Controller: <span>WS0010, 4 in 1 font ROM</span></li>
+                <li>Fonts: <span>English, Japanese, European, Russian</span></li>
+                <li>Interfaces: <span>6800 (default), 8080, SPI</span></li>
+                <li>Drop-in for: <span>STN character LCDs and VFDs</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">How a Character OLED Works</h2>
+          <div class="text-muted lh-lg">
+            <p>The display is divided into character cells, for example 16 cells across and 2 rows down on a 16x2 module. Each cell is a small 5x8 grid of OLED dots, and each dot lights up on its own when current flows through it, so no backlight is needed.</p>
+            <p class="mb-0">You do not have to draw the characters yourself. Your microcontroller sends a character code and the WS0010 controller looks up the shape in its built-in font ROM, then drives the dots. The ROM holds four font tables, English, Japanese, European and Russian, selected in software, so the same module can display text for several markets. The command set follows the familiar character LCD style, so existing character LCD software usually needs only small changes.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 p-4 bg-white text-center" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <svg viewBox="0 0 640 300" role="img" aria-labelledby="charDiagTitle" style="width:100%;height:auto;display:block;">
+              <title id="charDiagTitle">A 16x2 character OLED made of character cells, with one cell enlarged to show its 5x8 dot matrix</title>
+              <defs>
+                <marker id="arwChar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#183858"/></marker>
+              </defs>
+              <g font-family="Outfit, system-ui, sans-serif" text-anchor="middle">
+                <text x="190" y="24" font-size="16" font-weight="600" fill="#112638">16x2 Character OLED</text>
+                <text x="190" y="42" font-size="12" fill="#6b7f8e">16 characters x 2 lines</text>
+                <text x="488" y="24" font-size="16" font-weight="600" fill="#112638">One Character Cell</text>
+                <text x="488" y="42" font-size="12" fill="#6b7f8e">5x8 dots, shape stored in font ROM</text>
+              </g>
+              <!-- module -->
+              <rect x="10" y="64" width="360" height="124" rx="6" fill="#2a8c3e" fill-opacity=".25" stroke="#b7c6d3"/>
+              <rect x="20" y="74" width="340" height="104" rx="3" fill="#112638"/>
+              <g>
+              <rect x="30" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="50" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="70" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="90" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="110" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="130" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="150" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="170" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="190" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="210" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="230" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="250" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="270" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="290" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="310" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="330" y="84" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="30" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="50" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="70" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="90" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="110" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="130" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="150" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="170" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="190" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="210" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="230" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="250" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="270" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="290" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="310" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              <rect x="330" y="130" width="18" height="34" rx="1" fill="#1a3550"/>
+              </g>
+              <rect x="29" y="83" width="20" height="36" rx="2" fill="none" stroke="#f4b625" stroke-width="2"/>
+              <g font-family="'Courier New', monospace" font-size="24" font-weight="700" fill="#30e8d9" text-anchor="middle">
+              <text x="39" y="110">A</text>
+              <text x="59" y="110">B</text>
+              <text x="79" y="110">C</text>
+              <text x="119" y="110">1</text>
+              <text x="139" y="110">2</text>
+              <text x="159" y="110">3</text>
+              <text x="199" y="110">&#228;</text>
+              <text x="219" y="110">&#246;</text>
+              <text x="239" y="110">&#252;</text>
+              <text x="279" y="110">&#1044;</text>
+              <text x="299" y="110">&#1046;</text>
+              <text x="319" y="110">&#1071;</text>
+              <text x="79" y="156">P</text>
+              <text x="99" y="156">L</text>
+              <text x="119" y="156">U</text>
+              <text x="139" y="156">S</text>
+              <text x="199" y="156">O</text>
+              <text x="219" y="156">P</text>
+              <text x="239" y="156">T</text>
+              <text x="259" y="156">O</text>
+              </g>
+              <path d="M39 82 C 60 50, 380 48, 422 106" stroke="#183858" stroke-width="2" fill="none" marker-end="url(#arwChar)"/>
+              <!-- zoomed cell -->
+              <rect x="428" y="50" width="120" height="180" rx="6" fill="#112638" stroke="#f4b625" stroke-width="2"/>
+              <rect x="440" y="62" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="460" y="62" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="480" y="62" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="500" y="62" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="520" y="62" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="440" y="82" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="460" y="82" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="480" y="82" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="500" y="82" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="520" y="82" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="440" y="102" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="460" y="102" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="480" y="102" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="500" y="102" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="520" y="102" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="440" y="122" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="460" y="122" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="480" y="122" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="500" y="122" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="520" y="122" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="440" y="142" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="460" y="142" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="480" y="142" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="500" y="142" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="520" y="142" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="440" y="162" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="460" y="162" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="480" y="162" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="500" y="162" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="520" y="162" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="440" y="182" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="460" y="182" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="480" y="182" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="500" y="182" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="520" y="182" width="16" height="16" rx="3" fill="#30e8d9"/>
+              <rect x="440" y="202" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="460" y="202" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="480" y="202" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="500" y="202" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <rect x="520" y="202" width="16" height="16" rx="3" fill="#2c4a66"/>
+              <g font-family="Outfit, system-ui, sans-serif" font-size="12" text-anchor="middle">
+                <text x="190" y="212" fill="#6b7f8e">Your MCU sends a character code, e.g. 0x41 for "A"</text>
+                <text x="190" y="232" font-weight="600" fill="#1fada1">The controller draws it from the font ROM</text>
+                <text x="488" y="252" fill="#6b7f8e">Bottom row used for the cursor</text>
+                <text x="320" y="284" fill="#6b7f8e">English, Japanese, European and Russian fonts built in</text>
+              </g>
+            </svg>
+            <p class="text-muted mb-0 mt-3" style="font-size:.8125rem;">Simplified illustration: each character is a 5x8 dot cell drawn by the controller from its built-in font</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANTAGES -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;color:#112638;">Advantages of Character OLED Displays</h2>
+        <p class="text-muted mx-auto" style="max-width:580px;">Why designers upgrade from STN character LCDs and VFDs to character OLEDs</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-arrow-left-right"></i></div>
+            <h3>Drop-in Upgrade</h3>
+            <p>Same outline, viewing area and pin out as standard STN character LCDs, so most designs can upgrade without mechanical changes.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-circle-half"></i></div>
+            <h3>Brighter, Higher Contrast</h3>
+            <p>Self-lit characters on a true black background look crisp and clear, with no grey background or backlight bleed.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-arrows-fullscreen"></i></div>
+            <h3>Wide Viewing Angles</h3>
+            <p>Text stays readable from almost any direction, without the narrow viewing cone of an STN LCD.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-lightning-charge-fill"></i></div>
+            <h3>Fast Response</h3>
+            <p>OLED dots switch almost instantly, so scrolling text and changing values stay sharp, with no ghosting, even at low temperatures.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-battery-charging"></i></div>
+            <h3>Lower Power</h3>
+            <p>No backlight to run, and only lit dots draw current, giving lower consumption than a backlit LCD or a VFD.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-globe2"></i></div>
+            <h3>Multi-Language Fonts</h3>
+            <p>English, Japanese, European and Russian character sets in one controller, selected in software, for products sold worldwide.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERFACES & COMPARISON -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center mb-5">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">OLED, STN LCD or VFD?</h2>
+          <div class="text-muted lh-lg mb-0">
+            <p>Character OLEDs combine the bright, self-lit look of a VFD with the size, pin out and low voltage operation of an STN character LCD.</p>
+            <p class="mb-0">If you are maintaining a product that uses a character LCD or a VFD that is becoming hard to source, a character OLED is often the simplest way to refresh the design.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <table class="table product-spec-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;"></th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#1fada1;padding:.75rem;border-color:#e4eaf0;">Character OLED</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">STN LCD</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">VFD</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Light source</td><td class="fw-medium">Self-lit</td><td class="text-muted">Backlight</td><td class="text-muted">Self-lit</td></tr>
+                <tr><td>Contrast</td><td class="fw-medium">Very high, true black</td><td class="text-muted">Moderate</td><td class="text-muted">High</td></tr>
+                <tr><td>Viewing angle</td><td class="fw-medium">Wide</td><td class="text-muted">Limited</td><td class="text-muted">Wide</td></tr>
+                <tr><td>Supply</td><td class="fw-medium">Low voltage logic</td><td class="text-muted">Low voltage + backlight</td><td class="text-muted">Needs high voltage and filament drive</td></tr>
+                <tr><td>Response at low temp</td><td class="fw-medium">Fast</td><td class="text-muted">Slows in the cold</td><td class="text-muted">Fast</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Choosing an Interface</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>The WS0010 controller supports three interfaces. The default 6800 parallel bus matches most existing character LCD designs and can run in 8-bit or 4-bit mode. 8080 parallel suits processors with an Intel-style bus, while SPI reduces the connection to just a few wires.</p>
+            <p class="mb-0">Our engineers can help with interface selection, initialisation and samples.</p>
+          </div>
+          <a href="contact.html" class="btn btn-navy px-4">Ask Our Engineers</a>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <table class="table product-spec-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Interface</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Data Lines</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#1fada1;padding:.75rem;border-color:#e4eaf0;">Best Suited To</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>6800 parallel (default)</td><td class="text-muted">8 or 4 data + control</td><td class="fw-medium">Replacing existing character LCDs</td></tr>
+                <tr><td>8080 parallel</td><td class="text-muted">8 data + control</td><td class="fw-medium">Processors with an Intel-style bus</td></tr>
+                <tr><td>SPI</td><td class="text-muted">Serial, few wires</td><td class="fw-medium">New designs, small MCUs, low pin count</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE TABLE -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;color:#112638;">Character OLED Range</h2>
+        <p class="text-muted mx-auto" style="max-width:580px;">Compare our character OLED modules by format, size and the STN LCD they replace</p>
+      </div>
+      <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+        <table class="table product-spec-table mb-0">
+          <thead>
+            <tr>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Model</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Format</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Diagonal</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Outline (mm)</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Duty</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#1fada1;padding:.75rem;border-color:#e4eaf0;">Replaces STN LCD</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>WEH000802A</td><td>8x2</td><td>1.2&quot;</td><td class="text-muted">58.0 x 32.0</td><td class="text-muted">–</td><td class="fw-medium">WH0802A</td></tr>
+            <tr><td>WEH001601B</td><td>16x1</td><td>2.25&quot;</td><td class="text-muted">80.0 x 36.0</td><td class="text-muted">1/8</td><td class="text-muted">–</td></tr>
+            <tr><td>WEH001602A</td><td>16x2</td><td>2.29&quot;</td><td class="text-muted">80.0 x 36.0</td><td class="text-muted">–</td><td class="fw-medium">WH1602B</td></tr>
+            <tr><td>WEH002002A</td><td>20x2</td><td>3.08&quot;</td><td class="text-muted">–</td><td class="text-muted">1/16</td><td class="text-muted">–</td></tr>
+            <tr><td>WEH002004A</td><td>20x4</td><td>2.88&quot;</td><td class="text-muted">–</td><td class="text-muted">1/16</td><td class="text-muted">–</td></tr>
+            <tr><td>WEH004002A</td><td>40x2</td><td>5.85&quot;</td><td class="text-muted">–</td><td class="text-muted">–</td><td class="fw-medium">WH4002A</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted text-center mt-3 mb-0" style="font-size:.8125rem;">Standard models: COB structure, WS0010 controller with 4 in 1 font ROM, 6800 (default), 8080 and SPI interfaces. 12x2 also available. – see datasheet or contact us. <a href="product-character-oled-displays.html" class="fw-semibold" style="color:#1a4870;">View Character OLED Displays →</a></p>
+    </div>
+  </section>
+
+  <!-- STATS & APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 text-center mb-5">
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">8x2~40x2</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Character Formats</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">5x8</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Dot Matrix Characters</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-gold);">4 in 1</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Built-in Font Sets</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">3</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Interface Options</div>
+        </div>
+      </div>
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;">Typical Applications</h2>
+        <p class="mx-auto" style="max-width:580px;color:rgba(210,228,245,.75);">Character OLED modules suit any product that shows text, values and simple menus</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-gear-wide-connected me-2"></i>Industrial Controls</h3>
+            <p class="mb-0">Machine controllers, PLC panels and process equipment showing status and settings.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-speedometer2 me-2"></i>Test &amp; Measurement</h3>
+            <p class="mb-0">Meters, power supplies and instruments that need clear readings from any angle.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-music-note-beamed me-2"></i>Audio Equipment</h3>
+            <p class="mb-0">Amplifiers, receivers and pro audio gear, including VFD replacement designs.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-heart-pulse-fill me-2"></i>Medical Devices</h3>
+            <p class="mb-0">Patient equipment and analysers where text must be easy to read in any lighting.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-house-gear-fill me-2"></i>Home &amp; Building Control</h3>
+            <p class="mb-0">Thermostats, alarm panels, access control and appliance displays.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-receipt me-2"></i>Retail &amp; Point of Sale</h3>
+            <p class="mb-0">Customer displays, vending machines and terminals showing prices and messages.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5">
+    <div class="container" style="max-width:760px;">
+      <h2 class="fw-bold mb-4 text-center" style="font-family:'Outfit',sans-serif;color:#112638;">Frequently Asked Questions</h2>
+      <div class="accordion" id="charFaq" style="--bs-accordion-active-bg:rgba(31,173,161,.08);--bs-accordion-active-color:#112638;--bs-accordion-btn-focus-box-shadow:0 0 0 .2rem rgba(31,173,161,.25);--bs-accordion-border-color:#e4eaf0;--bs-accordion-border-radius:10px;--bs-accordion-inner-border-radius:10px;">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">Can a character OLED replace my existing STN LCD?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#charFaq"><div class="accordion-body text-muted lh-lg">In most cases, yes. Character OLEDs such as the 8x2 WEH000802A, 16x2 WEH001602A and 40x2 WEH004002A share the outline size, viewing area and pin out of the equivalent Winstar STN LCDs (WH0802A, WH1602B and WH4002A). Because the OLED needs no backlight, the backlight supply can be removed, and only small software changes are usually needed.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Can a character OLED replace a VFD?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#charFaq"><div class="accordion-body text-muted lh-lg">Yes. Character OLEDs are offered as a mechanically compatible alternative to vacuum fluorescent displays, giving a similar bright, self-lit appearance without the high voltage supply and filament drive that a VFD needs.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Which character sets are built in?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#charFaq"><div class="accordion-body text-muted lh-lg">The WS0010 controller has a 4 in 1 font ROM with English, Japanese, European and Russian character sets, including ASCII. The font table is selected by software, so one module can serve several markets.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Which interface should I use?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#charFaq"><div class="accordion-body text-muted lh-lg">The default 6800 parallel interface, in 8-bit or 4-bit mode, matches most existing character LCD designs. 8080 parallel suits processors with an Intel-style bus, and SPI reduces the connection to a few wires for new designs or small microcontrollers.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">How long does a character OLED last?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#charFaq"><div class="accordion-body text-muted lh-lg">As with all OLEDs, brightness slowly reduces over operating life, and characters that are shown continuously at full brightness age faster than the rest of the display. Reducing brightness, turning the display off when idle and avoiding fixed text for long periods all help to extend life. Our engineers can advise on lifetime for your application.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <h2 class="fw-bold mb-4" style="font-family:'Outfit',sans-serif;color:#112638;">Related Products</h2>
+      <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-character-oled-displays.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/oled-character-group.png" alt="Character OLED Displays" loading="lazy" /></div>
+              <div class="card-body"><h3>Character OLED Displays</h3><span class="read-more">More Information →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="graphic-oled-technology.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/Graphic%20oled%20displays%20grp.png" alt="Graphic OLED Technology" loading="lazy" /></div>
+              <div class="card-body"><h3>Graphic OLED Technology</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-graphic-oled-displays-miniature.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/WEO009664D.jpg" alt="Miniature OLED Displays" loading="lazy" /></div>
+              <div class="card-body"><h3>Miniature OLED Displays</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-oled-touchscreen-displays.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/OLED-CTP-grp.png" alt="OLED Touchscreen Displays" loading="lazy" /></div>
+              <div class="card-body"><h3>OLED Touchscreen Displays</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need a Custom Solution?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">
+        Our engineering team can help specify or develop a custom solution for your exact requirements.
+      </p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
