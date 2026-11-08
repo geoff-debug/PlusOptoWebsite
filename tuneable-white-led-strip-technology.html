@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuneable White LED Strip Technology — Plus Opto</title>
+  <meta name="description" content="How tuneable white (CCT) LED strips mix warm and cool white channels to adjust colour temperature, the differences between dual-LED and 2-in-1 strips, and how to wire and control them." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="Tuneable White LED Strip Technology — Plus Opto" />
+  <meta property="og:description" content="How tuneable white (CCT) LED strips mix warm and cool white channels to adjust colour temperature, the differences between dual-LED and 2-in-1 strips, and how to wire and control them." />
+  <meta property="og:url" content="https://www.plusopto.com/tuneable-white-led-strip-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/2835HD-CT-Tuneable-120-LED.png" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="Tuneable White LED Strip Technology — Plus Opto" />
+  <meta name="twitter:description" content="How tuneable white (CCT) LED strips mix warm and cool white channels to adjust colour temperature, the differences between dual-LED and 2-in-1 strips, and how to wire and control them." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/2835HD-CT-Tuneable-120-LED.png" />
+  <link rel="canonical" href="https://www.plusopto.com/tuneable-white-led-strip-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/tuneable-white-led-strip-technology.html#webpage",
+      "url": "https://www.plusopto.com/tuneable-white-led-strip-technology.html",
+      "name": "Tuneable White LED Strip Technology — Plus Opto",
+      "description": "How tuneable white (CCT) LED strips mix warm and cool white channels to adjust colour temperature, the differences between dual-LED and 2-in-1 strips, and how to wire and control them.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/tuneable-white-led-strip-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Strips & Modules", "item": "https://www.plusopto.com/category-led-strips.html" },
+        { "@type": "ListItem", "position": 4, "name": "Flexible LED Strips", "item": "https://www.plusopto.com/product-flexible-led-strips.html" },
+        { "@type": "ListItem", "position": 5, "name": "Flexible White CT Tuneable LED Strip SMD", "item": "https://www.plusopto.com/products-flexible-led-strip-smd-white-ct.html" },
+        { "@type": "ListItem", "position": 6, "name": "Tuneable White Technology", "item": "https://www.plusopto.com/tuneable-white-led-strip-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/tuneable-white-led-strip-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is tuneable white (CCT) LED strip?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Tuneable white, also called CCT or CT adjustable strip, has two independent channels of white LEDs, one warm and one cool. By changing the brightness of each channel, a controller can set any colour temperature between the two, from warm white to cool daylight, as well as dim the overall output." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many wires does a tuneable white strip have?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Tuneable white strip normally has three connections: a common positive (V+) and two negative channels, one for warm white and one for cool white. It needs a two-channel CCT controller or driver between the power supply and the strip." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between dual-LED and 2-in-1 tuneable strip?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Dual-LED strip alternates separate warm and cool LEDs along the strip. 2-in-1 strip, such as our 3838 and 5050 versions, places a warm and a cool chip inside the same LED package, so both colours come from the same point. This gives better colour mixing, especially close to the strip or on reflective surfaces." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is light output the same at every colour temperature?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not always. At the ends of the range only one channel is lit, while in the middle both channels share the output. Power ratings such as 24W/m are quoted with both channels fully on, so check the datasheet and size the power supply for the maximum combined load." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which controllers work with tuneable white strip?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Any two-channel CCT controller can be used, including RF remote and wall panel controllers, DALI DT8 and DMX systems, and Casambi Bluetooth control. We can recommend a matching controller and power supply for your strip and run lengths." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+          <li class="breadcrumb-item"><a href="product-flexible-led-strips.html">Flexible LED Strips</a></li>
+          <li class="breadcrumb-item"><a href="products-flexible-led-strip-smd-white-ct.html">Flexible White CT Tuneable LED Strip SMD</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Tuneable White Technology</li>
+        </ol>
+      </nav>
+      <h1>Tuneable White LED Strip Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How tuneable white (CCT) LED strips blend warm and cool white light to set any colour temperature, and how to choose, wire and control them.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/2835HD-CT-Tuneable-120-LED.png" alt="Tuneable CT white flexible LED strip" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What is a tuneable white LED strip?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>A tuneable white strip, also called CCT or CT adjustable strip, carries two independent channels of white LEDs: one warm white and one cool white. By changing the brightness of each channel, a controller blends the two to give any colour temperature between them, from a warm, relaxing glow to crisp, cool daylight, and dims the overall output at the same time.</p>
+            <p>Our tuneable white range includes dual-LED 2835 strips at 120 and 252 LEDs/m, 2-in-1 3838 and 5050 strips with a warm and cool chip in every package, and dot-free SOB and COB versions. Strips are available in 12V and 24V, with CRI 80, 90 or 95, and work with our range of CCT controllers, from simple RF remotes to DALI DT8 and Casambi systems.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>Adjust colour temperature and brightness from one strip</li>
+            <li>Dual-LED, 2-in-1, SOB and COB constructions</li>
+            <li>Warm and cool white channels selected from 1800K to 6500K</li>
+            <li>High colour rendering options: CRI 80, 90 and 95</li>
+            <li>Compatible with RF, wall panel, DALI DT8, DMX and Casambi control</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">Tuneable range at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Technology: <span>SMD, SOB and COB</span></li>
+                <li>Emitters: <span>2835, 3838 &amp; 5050 2-in-1</span></li>
+                <li>LED density: <span>60 – 252 LEDs/m</span></li>
+                <li>Strip width: <span>4, 8 and 10mm</span></li>
+                <li>Voltage: <span>12V and 24V</span></li>
+                <li>CCT: <span>1800K – 6500K</span></li>
+                <li>CRI: <span>80, 90, 95</span></li>
+                <li>Power: <span>up to 24W/m (both channels)</span></li>
+                <li>Wiring: <span>3-wire, common V+</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How colour tuning works</h2>
+          <div class="text-muted lh-lg">
+            <p>The strip has three connections: a <strong>common positive</strong> (V+) and two negative channels, one for the <strong>warm white</strong> LEDs and one for the <strong>cool white</strong> LEDs. A two-channel CCT controller sits between the power supply and the strip and switches each channel using PWM (pulse width modulation).</p>
+            <p>With only the warm channel on, the strip gives its warmest colour temperature; with only the cool channel on, its coolest. Mixing the two in different proportions moves the colour smoothly between them, while scaling both channels together dims the light without changing its colour.</p>
+            <p>The <strong>power rating</strong> is quoted with both channels fully on, so size the power supply for the combined maximum load.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 300" role="img" aria-labelledby="ctDiagTitle">
+              <title id="ctDiagTitle">Tuneable white strip wiring and colour mixing between warm and cool white channels</title>
+              <defs>
+                <linearGradient id="cctGrad" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#ffb347"/>
+                  <stop offset="50%" stop-color="#fff4dc"/>
+                  <stop offset="100%" stop-color="#cfe6ff"/>
+                </linearGradient>
+              </defs>
+              <style>
+                .dg-box{fill:#112638}
+                .dg-boxt{font:600 13px Outfit,system-ui,sans-serif;fill:#fff}
+                .dg-fpc{fill:#e8eef4;stroke:#b7c6d3}
+                .dg-warm{fill:#ffb347;stroke:#e08a16}
+                .dg-cool{fill:#cfe6ff;stroke:#7fa9d6}
+                .dg-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .dg-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .dg-wire{fill:none;stroke-width:3}
+              </style>
+              <!-- Wiring -->
+              <text x="320" y="22" text-anchor="middle" class="dg-lbl">Two channels, one strip</text>
+              <rect x="20" y="50" width="110" height="74" rx="8" class="dg-box"/>
+              <text x="75" y="83" text-anchor="middle" class="dg-boxt">Power</text>
+              <text x="75" y="101" text-anchor="middle" class="dg-boxt">supply</text>
+              <rect x="180" y="50" width="120" height="74" rx="8" class="dg-box"/>
+              <text x="240" y="83" text-anchor="middle" class="dg-boxt">CCT</text>
+              <text x="240" y="101" text-anchor="middle" class="dg-boxt">controller</text>
+              <path d="M130 87 H180" class="dg-wire" stroke="#183858"/>
+              <path d="M300 64 H350" class="dg-wire" stroke="#c0392b"/>
+              <path d="M300 87 H350" class="dg-wire" stroke="#e08a16"/>
+              <path d="M300 110 H350" class="dg-wire" stroke="#7fa9d6"/>
+              <text x="312" y="58" class="dg-sub">V+</text>
+              <rect x="350" y="70" width="270" height="34" rx="4" class="dg-fpc"/>
+              <g>
+                <rect x="364" y="78" width="16" height="18" rx="2" class="dg-warm"/><rect x="394" y="78" width="16" height="18" rx="2" class="dg-cool"/>
+                <rect x="424" y="78" width="16" height="18" rx="2" class="dg-warm"/><rect x="454" y="78" width="16" height="18" rx="2" class="dg-cool"/>
+                <rect x="484" y="78" width="16" height="18" rx="2" class="dg-warm"/><rect x="514" y="78" width="16" height="18" rx="2" class="dg-cool"/>
+                <rect x="544" y="78" width="16" height="18" rx="2" class="dg-warm"/><rect x="574" y="78" width="16" height="18" rx="2" class="dg-cool"/>
+              </g>
+              <text x="485" y="128" text-anchor="middle" class="dg-sub">Warm and cool white LEDs on separate channels</text>
+
+              <!-- Mixing scale -->
+              <rect x="40" y="176" width="560" height="34" rx="6" fill="url(#cctGrad)" stroke="#e4eaf0"/>
+              <text x="40" y="232" class="dg-sub">Warm only</text>
+              <text x="320" y="232" text-anchor="middle" class="dg-sub">Both channels mixed</text>
+              <text x="600" y="232" text-anchor="end" class="dg-sub">Cool only</text>
+              <text x="40" y="168" class="dg-lbl" style="font-size:13px">e.g. 2700K</text>
+              <text x="600" y="168" text-anchor="end" class="dg-lbl" style="font-size:13px">e.g. 6500K</text>
+              <text x="320" y="270" text-anchor="middle" class="dg-sub">Changing the balance of the two channels sets the colour temperature</text>
+            </svg>
+            <figcaption>Simplified illustration: a CCT controller drives the warm and cool white channels independently from a common positive supply.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Strip types</p>
+        <h2 class="ips-section-title mb-2">Choosing a tuneable white strip</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">How the warm and cool LEDs are arranged affects how well the colours blend, how the strip looks and where it works best.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Characteristic</th><th scope="col" class="ips-col">Dual-LED SMD</th><th scope="col" class="ips-col">2-in-1 SMD</th><th scope="col" class="ips-col">SOB / COB</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Construction</td><td class="ips-col">Separate warm and cool LEDs, alternating</td><td class="ips-col">Warm and cool chips in the same LED package</td><td class="ips-col">Dense warm and cool emitters under a continuous cover</td></tr>
+            <tr><td>Our emitters</td><td class="ips-col">2835</td><td class="ips-col">3838, 5050</td><td class="ips-col">SOB and COB</td></tr>
+            <tr><td>Our densities</td><td class="ips-col">120 and 252 LEDs/m</td><td class="ips-col">60 and 120 LEDs/m</td><td class="ips-col">High density, dot-free</td></tr>
+            <tr><td>Colour mixing</td><td class="ips-col">Good, best viewed via diffuser or bounced light</td><td class="ips-col">Very good, both colours from one point</td><td class="ips-col">Excellent, seamless line</td></tr>
+            <tr><td>Appearance</td><td class="ips-col">Visible LED dots</td><td class="ips-col">Visible LED dots, uniform colour</td><td class="ips-col">Dot-free line of light</td></tr>
+            <tr><td>Best for</td><td class="ips-col">Coves, indirect and general lighting</td><td class="ips-col">Shallow profiles and close viewing</td><td class="ips-col">Visible lines, gloss surfaces, slim profiles</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of tuneable white LED strips</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why designers specify tuneable white where one fixed colour temperature is not enough.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-sun"></i></span>
+            <h3>Human-centric lighting</h3>
+            <p>Follow the natural daylight cycle with cooler light during the day and warmer light in the evening, supporting comfort, wellbeing and alertness.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-arrow-left-right"></i></span>
+            <h3>One strip, many moods</h3>
+            <p>Switch from warm and relaxing to bright and focused at the touch of a button, so one installation suits many uses of the same space.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-eyedropper"></i></span>
+            <h3>Match the surroundings</h3>
+            <p>Fine-tune colour temperature on site to match daylight, existing luminaires or finishes, without changing the strip.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-palette"></i></span>
+            <h3>High colour quality</h3>
+            <p>CRI 80, 90 and 95 options keep colours natural across the tuning range, ideal for retail, hospitality and display lighting.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-box-seam"></i></span>
+            <h3>Simpler stock</h3>
+            <p>One tuneable strip can replace several fixed colour temperatures, simplifying specification and stock for installers and OEMs.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-diagram-3"></i></span>
+            <h3>Flexible control</h3>
+            <p>Works with RF remotes and wall panels, DALI DT8, DMX and Casambi Bluetooth, from a single room to a whole building.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTROL -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Control &amp; installation</p>
+          <h2 class="ips-section-title mb-3">Getting the best from tuneable white</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Use a two-channel CCT controller</strong> matched to the strip voltage and the current of each channel.</li>
+            <li><strong>Size the power supply for both channels on</strong>, using the maximum rating such as 24W/m, plus a safety margin.</li>
+            <li><strong>Choose 24V for longer runs</strong> to reduce voltage drop, which can shift colour as well as brightness along the strip.</li>
+            <li><strong>Diffuse dual-LED strip</strong> with an opal profile cover if it will be seen directly; choose 2-in-1, SOB or COB for shallow or open mounting.</li>
+            <li><strong>Mount on aluminium profile</strong> at higher power ratings to keep the LEDs cool and colour stable.</li>
+            <li><strong>Keep channels consistent</strong> across multiple runs so every strip tunes to the same colour.</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Control options</h3>
+            <p class="mb-3">We supply a full range of CCT-compatible controllers and drivers:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="product-rf-controllers-drivers-overview.html">RF controllers and remotes</a></li>
+              <li><a href="product-touch-panel-led-controllers-overview.html">Touch panel wall controllers</a></li>
+              <li><a href="product-dali-controllers.html">DALI controllers</a></li>
+              <li><a href="product-casambi-enabled-drivers-overview.html">Casambi Bluetooth drivers</a></li>
+              <li><a href="product-dmx-controllers-overview.html">DMX controllers</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">1800–6500K</div><div class="ips-stat-label">Colour temperature options</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">CRI 95</div><div class="ips-stat-label">Highest colour rendering</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">252</div><div class="ips-stat-label">Max LEDs per metre (SMD)</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">2</div><div class="ips-stat-label">Independent white channels</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where tuneable white excels</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">Tuneable white is used wherever the light needs to change with the time of day, the task or the mood.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-building me-2"></i>Offices &amp; education</h3><p class="mb-0">Human-centric schemes with cooler light for focus and warmer light to wind down.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-heart-pulse me-2"></i>Healthcare &amp; care homes</h3><p class="mb-0">Circadian lighting that supports patients' and residents' natural rhythms.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-cup-straw me-2"></i>Hospitality</h3><p class="mb-0">Restaurants, bars and hotels that move from bright daytime service to warm evening ambience.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail &amp; display</h3><p class="mb-0">Tune the light to suit different products, seasons or displays.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-house-heart me-2"></i>Homes</h3><p class="mb-0">Kitchens, bathrooms and living spaces with bright task light and relaxing warm tones.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-lightbulb me-2"></i>Luminaire OEMs</h3><p class="mb-0">Tuneable linear light engines for pendants, battens and architectural luminaires.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">Explore tuneable white strips &amp; control</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse our tuneable white strips and the controllers to drive them.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="products-flexible-led-strip-smd-white-ct.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/2835HD-CT-Tuneable-120-LED.png" alt="Tuneable CT White LED Strips" loading="lazy" /></div>
+            <div class="card-body"><h3>Tuneable White LED Strips</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-rf-controllers-drivers-overview.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/RF-Controller-banner.jpg" alt="RF LED Controllers" loading="lazy" /></div>
+            <div class="card-body"><h3>RF LED Controllers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-touch-panel-led-controllers-overview.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Ltech-Touch-panel-Visual-banner.jpg" alt="Touch Panel LED Controllers" loading="lazy" /></div>
+            <div class="card-body"><h3>Touch Panel Controllers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dali-controllers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Lifud-DALI-2-Visual-3.jpg" alt="DALI Controllers" loading="lazy" /></div>
+            <div class="card-body"><h3>DALI Controllers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">Tuneable white questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="ctFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is tuneable white (CCT) LED strip?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#ctFaq"><div class="accordion-body">Tuneable white, also called CCT or CT adjustable strip, has two independent channels of white LEDs, one warm and one cool. By changing the brightness of each channel, a controller can set any colour temperature between the two, from warm white to cool daylight, as well as dim the overall output.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">How many wires does a tuneable white strip have?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#ctFaq"><div class="accordion-body">Tuneable white strip normally has three connections: a common positive (V+) and two negative channels, one for warm white and one for cool white. It needs a two-channel CCT controller or driver between the power supply and the strip.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">What is the difference between dual-LED and 2-in-1 tuneable strip?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#ctFaq"><div class="accordion-body">Dual-LED strip alternates separate warm and cool LEDs along the strip. 2-in-1 strip, such as our 3838 and 5050 versions, places a warm and a cool chip inside the same LED package, so both colours come from the same point. This gives better colour mixing, especially close to the strip or on reflective surfaces.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Is light output the same at every colour temperature?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#ctFaq"><div class="accordion-body">Not always. At the ends of the range only one channel is lit, while in the middle both channels share the output. Power ratings such as 24W/m are quoted with both channels fully on, so check the datasheet and size the power supply for the maximum combined load.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">Which controllers work with tuneable white strip?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#ctFaq"><div class="accordion-body">Any two-channel CCT controller can be used, including RF remote and wall panel controllers, DALI DT8 and DMX systems, and Casambi Bluetooth control. We can recommend a matching controller and power supply for your strip and run lengths.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help with a tuneable white scheme?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Our team can help you choose the right strip, controller and power supply, and plan wiring and run lengths for consistent colour across your installation.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
