@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Constant Current LED Driver Technology — Plus Opto</title>
+  <meta name="description" content="How constant current LED drivers work, how to match output current and voltage window to your LEDs, and how to choose a compact CC driver for luminaires, downlights and panels." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="Constant Current LED Driver Technology — Plus Opto" />
+  <meta property="og:description" content="How constant current LED drivers work, how to match output current and voltage window to your LEDs, and how to choose a compact CC driver for luminaires, downlights and panels." />
+  <meta property="og:url" content="https://www.plusopto.com/cc-led-driver-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/xitanium_compact-driver-36w.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="Constant Current LED Driver Technology — Plus Opto" />
+  <meta name="twitter:description" content="How constant current LED drivers work, how to match output current and voltage window to your LEDs, and how to choose a compact CC driver for luminaires, downlights and panels." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/xitanium_compact-driver-36w.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/cc-led-driver-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/cc-led-driver-technology.html#webpage",
+      "url": "https://www.plusopto.com/cc-led-driver-technology.html",
+      "name": "Constant Current LED Driver Technology — Plus Opto",
+      "description": "How constant current LED drivers work, how to match output current and voltage window to your LEDs, and how to choose a compact CC driver for luminaires, downlights and panels.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/cc-led-driver-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Drivers", "item": "https://www.plusopto.com/category-led-drivers.html" },
+        { "@type": "ListItem", "position": 4, "name": "Fixed Output CC LED Drivers", "item": "https://www.plusopto.com/product-fixed-output-cc-led-drivers.html" },
+        { "@type": "ListItem", "position": 5, "name": "Compact CC LED Drivers", "item": "https://www.plusopto.com/products-compact-cc-led-drivers.html" },
+        { "@type": "ListItem", "position": 6, "name": "CC Driver Technology", "item": "https://www.plusopto.com/cc-led-driver-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/cc-led-driver-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between constant current and constant voltage LED drivers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A constant current (CC) driver holds the current at a fixed value, such as 350mA or 700mA, and lets the output voltage vary to suit the LEDs. It is used for LED modules, light engines and COBs without their own current control. A constant voltage (CV) driver holds a fixed voltage, such as 12V or 24V, and is used for LED strip and modules that have built-in resistors or current regulators." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I choose the right CC driver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Match the driver's output current to the current your LEDs are rated for, check that the total forward voltage of the LEDs falls inside the driver's output voltage window, and make sure the power (current x voltage) is within the driver's rating. Then choose the input voltage, connection type, size and IP rating to suit the luminaire." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the output voltage window?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The output voltage window is the range of voltages a CC driver can supply while holding its rated current, for example 25 to 42VDC. The combined forward voltage of the LEDs connected to it must sit within this range, ideally not right at either end." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should LEDs be connected in series or parallel to a CC driver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Series connection is preferred, because the same current flows through every LED and each one runs at exactly the rated current. Parallel strings can share current unevenly unless the LED module is designed for it, so follow the module manufacturer's guidance." }
+        },
+        {
+          "@type": "Question",
+          "name": "What does flicker free mean?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A flicker-free driver supplies a smooth DC current with very little ripple, so the light output does not pulse. This improves visual comfort, avoids stroboscopic effects and prevents banding when the light is filmed or photographed." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-fixed-output-cc-led-drivers.html">Fixed Output CC LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="products-compact-cc-led-drivers.html">Compact CC LED Drivers</a></li>
+          <li class="breadcrumb-item active" aria-current="page">CC Driver Technology</li>
+        </ol>
+      </nav>
+      <h1>Constant Current LED Driver Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How constant current LED drivers power LED modules and light engines, and how to match current, voltage and power to choose the right driver.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/xitanium_compact-driver-36w.jpg" alt="Compact constant current LED driver" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What is a constant current LED driver?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>A constant current (CC) LED driver converts mains power into a regulated DC supply that holds the <strong>current</strong> through the LEDs at a fixed value, such as 350mA, 700mA or 1050mA. The output voltage automatically adjusts to whatever the connected LEDs need, within the driver's rated voltage window.</p>
+            <p>LEDs are current-driven devices: their brightness, colour and lifetime depend on the current flowing through them, and a small change in voltage can cause a large change in current. Holding the current constant keeps light output stable and protects the LEDs. Our compact, non-dimmable CC drivers from Lifud, Snappy, LTECH and Philips Xitanium cover 4W to 60W, with output currents from 150mA to 1550mA.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>Stable light output and colour from regulated current</li>
+            <li>Protects LEDs from over-current and thermal runaway</li>
+            <li>Compact housings for downlights, panels and luminaires</li>
+            <li>Flicker-free output on many models</li>
+            <li>Short circuit and over-current protection</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">Compact CC drivers at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Brands: <span>Lifud, Snappy, LTECH, Philips</span></li>
+                <li>Power: <span>4W – 60W</span></li>
+                <li>Output current: <span>150mA – 1550mA</span></li>
+                <li>Output voltage: <span>3V – 50VDC (model dependent)</span></li>
+                <li>Input: <span>100–240VAC or 220–240VAC</span></li>
+                <li>Dimming: <span>Non-dimmable, fixed output</span></li>
+                <li>Connection: <span>Push, screw or flying leads</span></li>
+                <li>Protection: <span>Short circuit, over current</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">Current, voltage window and power</h2>
+          <div class="text-muted lh-lg">
+            <p>Every CC driver has three key output ratings: the fixed <strong>output current</strong>, the <strong>output voltage window</strong> it can supply while holding that current, and the maximum <strong>power</strong>.</p>
+            <p>When LEDs are connected in <strong>series</strong>, the same current flows through each one and their forward voltages add up. If each LED has a forward voltage of around 3V, ten in series need about 30V. That total must fall inside the driver's voltage window, for example 25 to 42V.</p>
+            <p>The power drawn is simply <strong>current x voltage</strong>: 1050mA at 30V is about 31.5W, which must be within the driver's rated power.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 310" role="img" aria-labelledby="ccDiagTitle">
+              <title id="ccDiagTitle">Constant current driver supplying a series LED string, with the string voltage inside the driver output voltage window</title>
+              <defs>
+                <marker id="carw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#183858"/></marker>
+              </defs>
+              <style>
+                .dg-box{fill:#112638}
+                .dg-boxt{font:600 13px Outfit,system-ui,sans-serif;fill:#fff}
+                .dg-led{fill:#f4b625;stroke:#d39a14}
+                .dg-wire{fill:none;stroke:#183858;stroke-width:2}
+                .dg-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .dg-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .dg-v{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#1fada1}
+              </style>
+              <text x="320" y="22" text-anchor="middle" class="dg-lbl">Series LED string on a CC driver</text>
+              <!-- mains + driver -->
+              <text x="40" y="90" text-anchor="middle" class="dg-sub">Mains</text>
+              <text x="40" y="106" text-anchor="middle" class="dg-sub">AC in</text>
+              <path d="M70 98 H100" class="dg-wire" marker-end="url(#carw)"/>
+              <rect x="100" y="64" width="120" height="68" rx="8" class="dg-box"/>
+              <text x="160" y="94" text-anchor="middle" class="dg-boxt">CC driver</text>
+              <text x="160" y="114" text-anchor="middle" class="dg-boxt" style="font-size:12px">1050mA fixed</text>
+              <!-- LED string -->
+              <path d="M220 80 H250" class="dg-wire"/>
+              <g>
+                <rect x="250" y="70" width="24" height="20" rx="3" class="dg-led"/><rect x="284" y="70" width="24" height="20" rx="3" class="dg-led"/><rect x="318" y="70" width="24" height="20" rx="3" class="dg-led"/><rect x="352" y="70" width="24" height="20" rx="3" class="dg-led"/><rect x="386" y="70" width="24" height="20" rx="3" class="dg-led"/>
+                <rect x="420" y="70" width="24" height="20" rx="3" class="dg-led"/><rect x="454" y="70" width="24" height="20" rx="3" class="dg-led"/><rect x="488" y="70" width="24" height="20" rx="3" class="dg-led"/><rect x="522" y="70" width="24" height="20" rx="3" class="dg-led"/><rect x="556" y="70" width="24" height="20" rx="3" class="dg-led"/>
+              </g>
+              <path d="M274 80 H284 M308 80 H318 M342 80 H352 M376 80 H386 M410 80 H420 M444 80 H454 M478 80 H488 M512 80 H522 M546 80 H556" class="dg-wire"/>
+              <path d="M580 80 H600 V120 H220" class="dg-wire" marker-end="url(#carw)"/>
+              <text x="415" y="60" text-anchor="middle" class="dg-v">10 LEDs x ~3V = ~30V</text>
+              <text x="415" y="142" text-anchor="middle" class="dg-sub">The same 1050mA flows through every LED</text>
+
+              <!-- voltage window bar -->
+              <text x="320" y="186" text-anchor="middle" class="dg-lbl" style="font-size:13px">Driver output voltage window</text>
+              <rect x="80" y="200" width="480" height="26" rx="5" fill="#e8eef4" stroke="#b7c6d3"/>
+              <rect x="174" y="200" width="320" height="26" fill="rgba(31,173,161,.25)" stroke="#1fada1"/>
+              <text x="174" y="246" text-anchor="middle" class="dg-sub">25V</text>
+              <text x="494" y="246" text-anchor="middle" class="dg-sub">42V</text>
+              <line x1="302" y1="194" x2="302" y2="232" stroke="#f4b625" stroke-width="4"/>
+              <text x="302" y="264" text-anchor="middle" class="dg-v">~30V string: inside window</text>
+              <text x="320" y="292" text-anchor="middle" class="dg-sub">Power = 1.05A x 30V = approx. 31.5W (within driver rating)</text>
+            </svg>
+            <figcaption>Simplified illustration: the driver fixes the current, the LED string sets the voltage, and that voltage must sit inside the driver's output window.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CC VS CV -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">CC vs CV</p>
+        <h2 class="ips-section-title mb-2">Constant current or constant voltage?</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">The LED product you are powering decides which type of driver you need.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Characteristic</th><th scope="col" class="ips-col">Constant current (CC)</th><th scope="col">Constant voltage (CV)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>What is fixed</td><td class="ips-col">Output current, e.g. 350mA, 700mA, 1050mA</td><td>Output voltage, e.g. 12V or 24V</td></tr>
+            <tr><td>What varies</td><td class="ips-col">Output voltage, within the window</td><td>Output current, up to the maximum</td></tr>
+            <tr><td>Use with</td><td class="ips-col">LED modules, light engines, COBs and high-power LEDs without current control</td><td>LED strip, chain modules and products with built-in current control</td></tr>
+            <tr><td>Wiring</td><td class="ips-col">LEDs normally in series</td><td>Loads normally in parallel</td></tr>
+            <tr><td>Typical applications</td><td class="ips-col">Downlights, panels, spotlights, luminaires</td><td>Strip lighting, signage, cove lighting</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted text-center mt-4 mb-0">Powering LED strip? See our <a href="product-compact-CV-LED-drivers.html">compact constant voltage LED drivers</a>.</p>
+    </div>
+  </section>
+
+  <!-- RANGE TABLE -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">Compact CC drivers compared</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Choose by power, output current and the voltage of your LED load.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Series</th><th scope="col" class="ips-col">Power</th><th scope="col" class="ips-col">Output current</th><th scope="col" class="ips-col">Output voltage</th><th scope="col" class="ips-col">Connection</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>SNP4 (miniature)</td><td class="ips-col">4W</td><td class="ips-col">350 / 500 / 700mA</td><td class="ips-col">3 – 12VDC</td><td class="ips-col">Flying leads, IP66</td></tr>
+            <tr><td>SP10 (miniature)</td><td class="ips-col">10W</td><td class="ips-col">350 / 500 / 700mA</td><td class="ips-col">4 – 29VDC</td><td class="ips-col">Flying leads</td></tr>
+            <tr><td>Snappy SE12</td><td class="ips-col">12W</td><td class="ips-col">300 – 350mA</td><td class="ips-col">14 – 40VDC</td><td class="ips-col">Screw terminals</td></tr>
+            <tr><td>Snappy SE15</td><td class="ips-col">15W</td><td class="ips-col">300 – 700mA</td><td class="ips-col">10.7 – 50VDC</td><td class="ips-col">Screw terminals</td></tr>
+            <tr><td>LTECH SN15</td><td class="ips-col">15W</td><td class="ips-col">150 – 350mA</td><td class="ips-col">9 – 42VDC</td><td class="ips-col">Push-in terminals</td></tr>
+            <tr><td>Philips Xitanium mini</td><td class="ips-col">10 – 48W</td><td class="ips-col">350 – 1050mA</td><td class="ips-col">See datasheet</td><td class="ips-col">Push terminals</td></tr>
+            <tr><td>Lifud LF-GIF040</td><td class="ips-col">Up to 50W</td><td class="ips-col">750 – 1050mA</td><td class="ips-col">25 – 42VDC</td><td class="ips-col">Push terminals</td></tr>
+            <tr><td>Lifud LF-GIF060YS</td><td class="ips-col">Up to 60W</td><td class="ips-col">1350 – 1550mA</td><td class="ips-col">30 – 40VDC</td><td class="ips-col">Push terminals</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of compact CC drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why a matched constant current driver is the heart of a reliable LED luminaire.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-activity"></i></span>
+            <h3>Stable light output</h3>
+            <p>Regulated current keeps brightness and colour consistent as LEDs warm up and supply voltage varies.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-hourglass-split"></i></span>
+            <h3>Longer LED life</h3>
+            <p>Running LEDs at their rated current prevents over-driving and thermal runaway, protecting lifetime.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-arrows-collapse"></i></span>
+            <h3>Compact size</h3>
+            <p>Small, slim housings fit inside downlights, panels and track heads, or in the ceiling void beside them.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-eye"></i></span>
+            <h3>Flicker free</h3>
+            <p>Low-ripple output on many models gives comfortable light with no visible flicker or camera banding.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-shield-check"></i></span>
+            <h3>Built-in protection</h3>
+            <p>Short circuit and over-current protection as standard, with over-temperature protection on Xitanium drivers.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-sliders"></i></span>
+            <h3>Wide choice</h3>
+            <p>4W to 60W and 150mA to 1550mA from four leading brands, to match almost any LED module or light engine.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELECTION -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Selection guide</p>
+          <h2 class="ips-section-title mb-3">Choosing a CC driver in five steps</h2>
+          <ol class="text-muted lh-lg mb-0 ps-3">
+            <li><strong>Find the LED current</strong> from the LED module or light engine datasheet, e.g. 700mA.</li>
+            <li><strong>Add up the forward voltage</strong> of all LEDs or modules connected in series.</li>
+            <li><strong>Check the voltage window</strong>: the total must sit within the driver's output range, ideally not at either end.</li>
+            <li><strong>Check the power</strong>: current x voltage must be within the driver's rating.</li>
+            <li><strong>Choose the format</strong>: input voltage, size, connection type, IP rating and whether dimming is needed.</li>
+          </ol>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Worked example</h3>
+            <p class="mb-3">A downlight light engine rated at 700mA with a forward voltage of 33V:</p>
+            <ul class="list-unstyled spec-mini-list mb-4">
+              <li>Required current: <span>700mA</span></li>
+              <li>Load voltage: <span>33V</span></li>
+              <li>Power: <span>0.7A x 33V = 23.1W</span></li>
+              <li>Suitable driver: <span>700mA, window covering 33V, 25W+</span></li>
+            </ul>
+            <p class="mb-3">Need dimming? See our DALI and dimmable options:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="products-compact-dali-cc-led-drivers.html">DALI dimmable CC LED drivers</a></li>
+              <li><a href="product-dimmable-led-drivers.html">All dimmable LED drivers</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">4–60W</div><div class="ips-stat-label">Power range</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">150–1550mA</div><div class="ips-stat-label">Output currents</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">IP66</div><div class="ips-stat-label">Miniature SNP4</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">4</div><div class="ips-stat-label">Leading brands</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where compact CC drivers are used</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">Compact CC drivers power LED luminaires across commercial and residential lighting.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-lamp me-2"></i>Downlights</h3><p class="mb-0">Remote or integrated drivers for recessed and surface downlights.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-grid me-2"></i>LED panels</h3><p class="mb-0">Slim drivers for edge-lit and back-lit panel luminaires.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail spotlights</h3><p class="mb-0">Track and spot luminaires using COB and high-power LEDs.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-circle me-2"></i>Light engines</h3><p class="mb-0">Circular, square and linear light engines in new luminaires.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-easel me-2"></i>Display &amp; cabinets</h3><p class="mb-0">Miniature drivers for display cabinets, furniture and small fittings.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-arrow-repeat me-2"></i>Retrofit &amp; replacement</h3><p class="mb-0">Replacing failed drivers in existing LED luminaires.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE LINKS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Explore</p>
+        <h2 class="ips-section-title mb-2">Explore LED drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse our constant current drivers and related ranges.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="products-compact-cc-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/SE15 Constant Current driver.jpg" alt="Compact CC LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Compact CC Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="products-compact-dali-cc-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Lifud-LF-ADD.png" alt="DALI CC LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>DALI CC Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-linear-CC-LED-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Xitanium-Linear-90W-0.15-0.jpg" alt="Linear CC LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Linear CC Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="circular-square-led-light-engine-technology.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/lightenginegrp.jpg" alt="LED Light Engines" loading="lazy" /></div>
+            <div class="card-body"><h3>LED Light Engines</h3><span class="read-more">Learn More →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">CC driver questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="ccFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is the difference between constant current and constant voltage LED drivers?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#ccFaq"><div class="accordion-body">A constant current (CC) driver holds the current at a fixed value, such as 350mA or 700mA, and lets the output voltage vary to suit the LEDs. It is used for LED modules, light engines and COBs without their own current control. A constant voltage (CV) driver holds a fixed voltage, such as 12V or 24V, and is used for LED strip and modules that have built-in resistors or current regulators.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">How do I choose the right CC driver?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#ccFaq"><div class="accordion-body">Match the driver's output current to the current your LEDs are rated for, check that the total forward voltage of the LEDs falls inside the driver's output voltage window, and make sure the power (current x voltage) is within the driver's rating. Then choose the input voltage, connection type, size and IP rating to suit the luminaire.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">What is the output voltage window?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#ccFaq"><div class="accordion-body">The output voltage window is the range of voltages a CC driver can supply while holding its rated current, for example 25 to 42VDC. The combined forward voltage of the LEDs connected to it must sit within this range, ideally not right at either end.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Should LEDs be connected in series or parallel to a CC driver?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#ccFaq"><div class="accordion-body">Series connection is preferred, because the same current flows through every LED and each one runs at exactly the rated current. Parallel strings can share current unevenly unless the LED module is designed for it, so follow the module manufacturer's guidance.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">What does flicker free mean?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#ccFaq"><div class="accordion-body">A flicker-free driver supplies a smooth DC current with very little ripple, so the light output does not pulse. This improves visual comfort, avoids stroboscopic effects and prevents banding when the light is filmed or photographed.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help matching a driver?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Send us your LED module or light engine details and our team will recommend a matched constant current driver.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
