@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LED Module Technology — Plus Opto</title>
+  <meta name="description" content="How LED chain modules work for sign and lightbox backlighting, how to choose module type, spacing and brightness for box depth, and how to size power supplies for 12V module chains." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="LED Module Technology — Plus Opto" />
+  <meta property="og:description" content="How LED chain modules work for sign and lightbox backlighting, how to choose module type, spacing and brightness for box depth, and how to size power supplies for 12V module chains." />
+  <meta property="og:url" content="https://www.plusopto.com/led-module-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/LED-Modules-Banner.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="LED Module Technology — Plus Opto" />
+  <meta name="twitter:description" content="How LED chain modules work for sign and lightbox backlighting, how to choose module type, spacing and brightness for box depth, and how to size power supplies for 12V module chains." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/LED-Modules-Banner.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/led-module-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/led-module-technology.html#webpage",
+      "url": "https://www.plusopto.com/led-module-technology.html",
+      "name": "LED Module Technology — Plus Opto",
+      "description": "How LED chain modules work for sign and lightbox backlighting, how to choose module type, spacing and brightness for box depth, and how to size power supplies for 12V module chains.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/led-module-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Assemblies & Light Engines", "item": "https://www.plusopto.com/category-led-assemblies.html" },
+        { "@type": "ListItem", "position": 4, "name": "LED Modules Overview", "item": "https://www.plusopto.com/product-led-modules-overview.html" },
+        { "@type": "ListItem", "position": 5, "name": "LED Modules", "item": "https://www.plusopto.com/product-led-modules.html" },
+        { "@type": "ListItem", "position": 6, "name": "LED Module Technology", "item": "https://www.plusopto.com/led-module-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/led-module-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an LED chain module?",
+          "acceptedAnswer": { "@type": "Answer", "text": "An LED chain module is a small, sealed LED light source with one or more LEDs on a rigid PCB, potted or encapsulated for protection. Modules are joined by flexible wires into chains so they can be spaced out across the back of a sign, channel letter or lightbox and powered from a single 12V supply." }
+        },
+        {
+          "@type": "Question",
+          "name": "How far apart should LED modules be spaced?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Spacing depends on the depth of the lightbox or letter and the beam angle of the module. As a general guide, deeper boxes allow wider spacing because the light has more distance to spread, while shallow boxes need modules closer together or wide-angle modules to avoid hotspots. We can help calculate spacing and module count for your sign." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many modules can I connect to one power supply?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Multiply the power per module by the number of modules and add a safety margin of around 20%. For example, 100 modules at 0.72W is 72W, so a 100W 12V supply would be suitable. Very long chains should be fed at more than one point to avoid voltage drop." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between IP65 and IP67 modules?",
+          "acceptedAnswer": { "@type": "Answer", "text": "IP65 modules are protected against dust and water jets, suitable for most sealed outdoor signs. IP67 modules are fully potted and protected against temporary immersion, giving extra protection where condensation or water ingress is likely." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can LED modules be cut?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. Module chains are wired in parallel, so the connecting wire can be cut between any two modules to make shorter chains, and chains can be joined to make longer runs. Seal any cut ends to maintain the IP rating." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="breadcrumb-item"><a href="product-led-modules-overview.html">LED Modules Overview</a></li>
+          <li class="breadcrumb-item"><a href="product-led-modules.html">LED Modules</a></li>
+          <li class="breadcrumb-item active" aria-current="page">LED Module Technology</li>
+        </ol>
+      </nav>
+      <h1>LED Module Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How LED chain modules light signs, channel letters and lightboxes evenly, and how to choose the right module, spacing and power supply for your design.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/LED-Modules-Banner.jpg" alt="LED chain modules" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What is an LED chain module?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>An LED chain module is a small, self-contained light source: one or more LEDs mounted on a rigid circuit board with their own current control, sealed in a plastic housing and protected by potting or encapsulation. Modules are joined by flexible wires into chains, so they can be laid out in rows across the back of a sign, inside a channel letter or behind a lightbox face, and powered together from a single low-voltage supply.</p>
+            <p>Our range runs at 12VDC and covers single-LED mini modules for small letters, multi-LED 2835 modules up to 720lm for large lightboxes, 5050 modules in white and RGB, and an FPC module for minimal spotting. Modules are rated IP65 or IP67, with wide 120° to 175° beam angles, and fix with 3M adhesive tape and a screw hole.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>Even, efficient backlighting for signs, letters and lightboxes</li>
+            <li>Wide-angle optics spread light across the sign face</li>
+            <li>IP65 and IP67 sealed construction for outdoor signage</li>
+            <li>Parallel-wired chains that can be cut and joined to suit</li>
+            <li>Mono-colour white and RGB colour-changing options</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">Module range at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Voltage: <span>12VDC</span></li>
+                <li>LEDs: <span>2835 and 5050</span></li>
+                <li>LEDs per module: <span>1 – 6</span></li>
+                <li>Colours: <span>White and RGB</span></li>
+                <li>Power: <span>0.2W – 6W per module</span></li>
+                <li>Output: <span>up to 720lm per module</span></li>
+                <li>Beam angle: <span>120° – 175°</span></li>
+                <li>IP rating: <span>IP65 and IP67</span></li>
+                <li>Mounting: <span>3M tape and screw hole</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How modules light a sign</h2>
+          <div class="text-muted lh-lg">
+            <p>Modules are fixed in rows to the back panel of the sign, facing the translucent front face. Each module's wide-angle optic spreads light outwards, and the light from neighbouring modules overlaps before it reaches the face, so the sign glows evenly rather than showing individual bright spots.</p>
+            <p>The two things that control evenness are <strong>depth</strong> (the distance from the modules to the face) and <strong>spacing</strong> (the distance between modules). A deeper box gives the light more room to spread, so modules can be placed further apart. Shallow boxes need closer spacing or wider beam angles.</p>
+            <p>Every module in a chain is wired in <strong>parallel</strong> across the 12V supply, so each one receives the same voltage and the chain can be cut or extended between any two modules.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 300" role="img" aria-labelledby="modDiagTitle">
+              <title id="modDiagTitle">Cross-section of a lightbox showing LED modules on the back panel spreading light onto the front face</title>
+              <defs>
+                <marker id="marw" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#183858"/></marker>
+                <radialGradient id="mglow" cx="50%" cy="100%" r="100%"><stop offset="0%" stop-color="#ffd76a" stop-opacity=".75"/><stop offset="100%" stop-color="#ffd76a" stop-opacity="0"/></radialGradient>
+              </defs>
+              <style>
+                .dg-box{fill:none;stroke:#183858;stroke-width:3}
+                .dg-face{fill:#fff8e6;stroke:#e9c46a;stroke-width:3}
+                .dg-mod{fill:#e8eef4;stroke:#7f93a6}
+                .dg-led{fill:#f4b625}
+                .dg-wire{stroke:#183858;stroke-width:1.5;fill:none}
+                .dg-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .dg-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .dg-dim{stroke:#183858;stroke-width:1.2}
+              </style>
+              <text x="300" y="24" text-anchor="middle" class="dg-lbl">Lightbox cross-section</text>
+              <!-- face -->
+              <rect x="60" y="50" width="480" height="10" class="dg-face"/>
+              <text x="300" y="44" text-anchor="middle" class="dg-sub">Translucent sign face</text>
+              <!-- box sides and back -->
+              <path d="M60 60 V230 H540 V60" class="dg-box"/>
+              <text x="300" y="250" text-anchor="middle" class="dg-sub">Back panel</text>
+              <!-- light cones -->
+              <g>
+                <path d="M130 214 L62 62 L225 62 Z" fill="url(#mglow)"/>
+                <path d="M250 214 L155 62 L345 62 Z" fill="url(#mglow)"/>
+                <path d="M370 214 L275 62 L465 62 Z" fill="url(#mglow)"/>
+                <path d="M490 214 L395 62 L538 62 Z" fill="url(#mglow)"/>
+              </g>
+              <!-- wires -->
+              <path d="M154 224 H226 M274 224 H346 M394 224 H466" class="dg-wire"/>
+              <!-- modules -->
+              <g>
+                <rect x="106" y="214" width="48" height="14" rx="3" class="dg-mod"/><rect x="124" y="208" width="12" height="6" class="dg-led"/>
+                <rect x="226" y="214" width="48" height="14" rx="3" class="dg-mod"/><rect x="244" y="208" width="12" height="6" class="dg-led"/>
+                <rect x="346" y="214" width="48" height="14" rx="3" class="dg-mod"/><rect x="364" y="208" width="12" height="6" class="dg-led"/>
+                <rect x="466" y="214" width="48" height="14" rx="3" class="dg-mod"/><rect x="484" y="208" width="12" height="6" class="dg-led"/>
+              </g>
+              <!-- depth dimension -->
+              <line x1="575" y1="60" x2="575" y2="214" class="dg-dim" marker-start="url(#marw)" marker-end="url(#marw)"/>
+              <text x="585" y="142" class="dg-sub">Depth</text>
+              <!-- spacing dimension -->
+              <line x1="130" y1="270" x2="250" y2="270" class="dg-dim" marker-start="url(#marw)" marker-end="url(#marw)"/>
+              <text x="190" y="290" text-anchor="middle" class="dg-sub">Spacing</text>
+              <text x="420" y="290" text-anchor="middle" class="dg-sub">Overlapping beams give an even face</text>
+            </svg>
+            <figcaption>Simplified illustration: LED modules (grey) on the back panel, wired in a chain, with overlapping wide-angle beams lighting the sign face.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYPES -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Module types</p>
+        <h2 class="ips-section-title mb-2">Choosing a module</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Match the module to the size and depth of the sign: small modules for narrow letters, high-output modules for large, deep lightboxes.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Type</th><th scope="col" class="ips-col">Our modules</th><th scope="col" class="ips-col">Output &amp; power</th><th scope="col" class="ips-col">Best for</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Mini modules</td><td class="ips-col">Single 2835 (PWM9607, PWM1210)</td><td class="ips-col">0.2 – 0.24W per module</td><td class="ips-col">Small and narrow channel letters, shallow returns</td></tr>
+            <tr><td>2835 multi-LED modules</td><td class="ips-col">2, 3, 4 and 6 x 2835 (PWM4417 – PWM6868)</td><td class="ips-col">112 – 720lm, 0.72 – 6W per module</td><td class="ips-col">Channel letters and lightboxes, from small to large and deep</td></tr>
+            <tr><td>5050 white modules</td><td class="ips-col">3 and 4 x 5050 (PWM6719, PWM5132)</td><td class="ips-col">0.72 – 0.96W per module</td><td class="ips-col">Letters and lightboxes needing an IP67 module</td></tr>
+            <tr><td>RGB modules</td><td class="ips-col">3 and 4 x 5050 RGB (PWM7118, PWM4237)</td><td class="ips-col">0.72 – 1.44W per module</td><td class="ips-col">Colour-changing signage, cove and feature lighting</td></tr>
+            <tr><td>FPC module</td><td class="ips-col">2835 on flexible PCB (PWM3322FPC)</td><td class="ips-col">86lm, 0.72W per module</td><td class="ips-col">Lightboxes 40 – 150mm deep with minimal spotting</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of LED modules</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why sign makers choose LED modules over fluorescent tubes and LED strip for backlighting.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-grid-3x3"></i></span>
+            <h3>Even illumination</h3>
+            <p>Wide-angle optics up to 175° spread light across the face, so fewer modules give a bright, uniform sign without hotspots.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-arrows-move"></i></span>
+            <h3>Flexible layout</h3>
+            <p>Wired chains bend around letter shapes and can be spaced to suit any outline, from narrow strokes to large lightboxes.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-cloud-rain"></i></span>
+            <h3>Built for outdoors</h3>
+            <p>Sealed IP65 and IP67 housings protect the LEDs from moisture and dust in exterior signs.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-lightning-charge"></i></span>
+            <h3>Low energy, low heat</h3>
+            <p>Efficient 2835 and 5050 LEDs use far less energy than fluorescent tubes, with less heat inside the sign.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-tools"></i></span>
+            <h3>Quick to install</h3>
+            <p>3M adhesive tape and a screw hole on every module make fixing fast and secure, with no soldering needed.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-palette"></i></span>
+            <h3>White or colour</h3>
+            <p>Mono-colour white modules for classic signs, and RGB modules for colour-changing and dynamic effects.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DESIGN GUIDE -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Design guide</p>
+          <h2 class="ips-section-title mb-3">Planning a module layout</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Measure the depth</strong> from the back panel to the face. Deeper boxes allow wider spacing and fewer modules.</li>
+            <li><strong>Choose the module for the depth and size</strong>: mini modules for narrow letters, high-output modules for large or deep lightboxes.</li>
+            <li><strong>Lay modules in even rows</strong>, keeping spacing between rows similar to spacing along the chain, and keep modules back from the edges to avoid bright borders.</li>
+            <li><strong>Calculate the power</strong>: number of modules x watts per module, plus around 20% margin, to size the 12V supply.</li>
+            <li><strong>Feed long chains at more than one point</strong> to avoid voltage drop and dimmer modules at the far end.</li>
+            <li><strong>Seal cut wire ends</strong> and use outdoor-rated drivers and connectors for exterior signs.</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Power supply example</h3>
+            <p class="mb-3">A lightbox using 100 x PWM4417 modules at 0.72W each:</p>
+            <ul class="list-unstyled spec-mini-list mb-4">
+              <li>Module load: <span>100 x 0.72W = 72W</span></li>
+              <li>With 20% margin: <span>approx. 86W</span></li>
+              <li>Suggested supply: <span>100W, 12VDC</span></li>
+            </ul>
+            <p class="mb-3">We supply 12V drivers and controllers to complete your sign:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="category-led-drivers.html">LED drivers</a></li>
+              <li><a href="category-led-controllers.html">LED controllers for RGB modules</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">12VDC</div><div class="ips-stat-label">Safe low voltage</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">720lm</div><div class="ips-stat-label">Max output per module</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">175°</div><div class="ips-stat-label">Widest beam angle</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">IP67</div><div class="ips-stat-label">Highest protection rating</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where LED modules excel</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">LED modules are the standard light source for illuminated signage.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-fonts me-2"></i>Channel letters</h3><p class="mb-0">Face-lit, halo-lit and combination built-up letters.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-window me-2"></i>Lightboxes</h3><p class="mb-0">Single and double-sided lightboxes, fascias and projecting signs.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail signage</h3><p class="mb-0">Shop fronts, menu boards and illuminated logos.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-fuel-pump me-2"></i>Forecourt &amp; totems</h3><p class="mb-0">Pylon signs, totems and forecourt canopies.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-easel me-2"></i>Display &amp; exhibition</h3><p class="mb-0">Backlit graphics, display stands and point-of-sale.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-rainbow me-2"></i>Colour effects</h3><p class="mb-0">RGB modules for colour-changing signs, coves and feature lighting.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">Explore LED modules</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse our modules and the products to power and control them.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-led-modules.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/PWM7816.jpg" alt="LED Modules" loading="lazy" /></div>
+            <div class="card-body"><h3>LED Modules</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-led-modules-overview.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/LED-Modules-Banner.jpg" alt="LED Modules Overview" loading="lazy" /></div>
+            <div class="card-body"><h3>LED Modules Overview</h3><span class="read-more">View Details →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="category-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/SnappySNP-and-slimiline.jpg" alt="LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>LED Drivers</h3><span class="read-more">View Details →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="category-led-interconnection.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Disti_Boxes_hpd_group.jpg" alt="Interconnection Solutions" loading="lazy" /></div>
+            <div class="card-body"><h3>Interconnection Solutions</h3><span class="read-more">View Details →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">LED module questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="modFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is an LED chain module?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#modFaq"><div class="accordion-body">An LED chain module is a small, sealed LED light source with one or more LEDs on a rigid PCB, potted or encapsulated for protection. Modules are joined by flexible wires into chains so they can be spaced out across the back of a sign, channel letter or lightbox and powered from a single 12V supply.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">How far apart should LED modules be spaced?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#modFaq"><div class="accordion-body">Spacing depends on the depth of the lightbox or letter and the beam angle of the module. As a general guide, deeper boxes allow wider spacing because the light has more distance to spread, while shallow boxes need modules closer together or wide-angle modules to avoid hotspots. We can help calculate spacing and module count for your sign.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">How many modules can I connect to one power supply?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#modFaq"><div class="accordion-body">Multiply the power per module by the number of modules and add a safety margin of around 20%. For example, 100 modules at 0.72W is 72W, so a 100W 12V supply would be suitable. Very long chains should be fed at more than one point to avoid voltage drop.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">What is the difference between IP65 and IP67 modules?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#modFaq"><div class="accordion-body">IP65 modules are protected against dust and water jets, suitable for most sealed outdoor signs. IP67 modules are fully potted and protected against temporary immersion, giving extra protection where condensation or water ingress is likely.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">Can LED modules be cut?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#modFaq"><div class="accordion-body">Yes. Module chains are wired in parallel, so the connecting wire can be cut between any two modules to make shorter chains, and chains can be joined to make longer runs. Seal any cut ends to maintain the IP rating.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help planning a sign?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Send us your sign size and depth and our team will recommend the right module, spacing, quantity and power supply.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
