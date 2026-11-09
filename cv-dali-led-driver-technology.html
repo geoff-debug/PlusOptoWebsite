@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV DALI LED Driver Technology — Plus Opto</title>
+  <meta name="description" content="How constant voltage DALI dimmable LED drivers work: digital DALI control of 12V and 24V LED strip, PWM dimming, DALI-2, DT6 and DT8 tunable white, and how to size and install a CV DALI driver." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="CV DALI LED Driver Technology — Plus Opto" />
+  <meta property="og:description" content="How constant voltage DALI dimmable LED drivers work: digital DALI control of 12V and 24V LED strip, PWM dimming, DALI-2, DT6 and DT8 tunable white, and how to size and install a CV DALI driver." />
+  <meta property="og:url" content="https://www.plusopto.com/cv-dali-led-driver-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/Snappy-dali-group-sm.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="CV DALI LED Driver Technology — Plus Opto" />
+  <meta name="twitter:description" content="How constant voltage DALI dimmable LED drivers work: digital DALI control of 12V and 24V LED strip, PWM dimming, DALI-2, DT6 and DT8 tunable white, and how to size and install a CV DALI driver." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/Snappy-dali-group-sm.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/cv-dali-led-driver-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/cv-dali-led-driver-technology.html#webpage",
+      "url": "https://www.plusopto.com/cv-dali-led-driver-technology.html",
+      "name": "CV DALI LED Driver Technology — Plus Opto",
+      "description": "How constant voltage DALI dimmable LED drivers work: digital DALI control of 12V and 24V LED strip, PWM dimming, DALI-2, DT6 and DT8 tunable white, and how to size and install a CV DALI driver.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/cv-dali-led-driver-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Drivers", "item": "https://www.plusopto.com/category-led-drivers.html" },
+        { "@type": "ListItem", "position": 4, "name": "Dimmable LED Drivers", "item": "https://www.plusopto.com/product-dimmable-led-drivers.html" },
+        { "@type": "ListItem", "position": 5, "name": "CV DALI Dimmable LED Drivers", "item": "https://www.plusopto.com/product-cv-dali-dimmable-led-drivers.html" },
+        { "@type": "ListItem", "position": 6, "name": "CV DALI Driver Technology", "item": "https://www.plusopto.com/cv-dali-led-driver-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/cv-dali-led-driver-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a CV DALI LED driver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A constant voltage (CV) DALI driver is a 12V or 24V DC LED power supply with a built-in DALI interface. It powers LED strip and other constant voltage loads, and dims them in response to digital commands from a DALI controller, so each driver can be addressed, grouped and set to scenes individually." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a CV and a CC DALI driver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A CV DALI driver holds a fixed output voltage, usually 12V or 24V, and is used with LED strip and modules that have their own current limiting. A CC DALI driver delivers a fixed current, such as 350mA or 700mA, and is used with LED modules and COB light engines without current limiting. The DALI control side works the same way for both." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does a CV DALI driver dim LED strip?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most CV DALI drivers dim by pulse width modulation (PWM). The output stays at 12V or 24V but is switched on and off at high frequency, and the DALI level sets how long the output is on in each cycle. This keeps the colour of the LEDs consistent across the whole dimming range." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a CV DALI driver control tunable white LED strip?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, with a DALI DT8 driver that has two output channels, one for warm white and one for cool white. The Ltech LM-75/100-G2D2 has two independent outputs for DT8 colour temperature control, and the Lifud LF-GHD series can be switched between DT6 and DT8, so a DALI controller can set both brightness and colour temperature." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I size a CV DALI driver for LED strip?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Match the driver output voltage to the strip, then add up the strip load in watts (watts per metre multiplied by length) and choose a driver rated at least 20% above that total. For long runs, feed the strip from more than one point to limit voltage drop." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-dimmable-led-drivers.html">Dimmable LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-cv-dali-dimmable-led-drivers.html">CV DALI Dimmable LED Drivers</a></li>
+          <li class="breadcrumb-item active" aria-current="page">CV DALI Driver Technology</li>
+        </ol>
+      </nav>
+      <h1>CV DALI LED Driver Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How constant voltage DALI drivers bring digital, addressable dimming to 12V and 24V LED strip, and how to choose between DALI-2, DT6 and DT8 tunable white models.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/Snappy-dali-group-sm.jpg" alt="Constant voltage DALI dimmable LED drivers" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What is a CV DALI LED driver?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>A constant voltage (CV) DALI driver is a 12V or 24V DC LED power supply with a built-in DALI interface. DALI (Digital Addressable Lighting Interface) is the open, international lighting control standard defined in IEC 62386. Each driver has its own digital address on a two-wire control bus, so LED strip, linear profiles and signage can be switched, dimmed, grouped and set to scenes individually from a DALI controller.</p>
+            <p>Our CV DALI range from Lifud, Snappy and Ltech covers 36W to 320W at 12V or 24V, in slim linear, compact and IP67 waterproof cases. DALI-2 and DT6 single-channel drivers are available, with DT8 colour temperature models for tunable white strip, and most add mains push dimming as a simple local control.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>Digital, addressable dimming for 12V and 24V LED strip</li>
+            <li>Smooth, flicker-free PWM dimming with stable colour</li>
+            <li>DALI-2, DT6 and DT8 tunable white options</li>
+            <li>Mains push dimming on most models</li>
+            <li>Indoor IP20 and outdoor IP67 versions</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">CV DALI range at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Brands: <span>Lifud, Snappy, Ltech</span></li>
+                <li>Output voltage: <span>12V or 24VDC</span></li>
+                <li>Power: <span>36W – 320W</span></li>
+                <li>Input: <span>240VAC mains</span></li>
+                <li>Standards: <span>DALI, DALI-2, DT6, DT8</span></li>
+                <li>Formats: <span>Linear, compact, waterproof</span></li>
+                <li>IP rating: <span>IP20 and IP67</span></li>
+                <li>Other inputs: <span>Mains push dimming, NFC</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How a CV DALI driver works</h2>
+          <div class="text-muted lh-lg">
+            <p>The driver takes <strong>mains power</strong> and converts it to a steady <strong>12V or 24V DC</strong> output for the LED strip. A separate <strong>two-wire DALI bus</strong> connects it to the controller, which sends digital commands to each driver by its address.</p>
+            <p>To dim, the driver uses <strong>pulse width modulation (PWM)</strong>: the output stays at full voltage but is switched on and off thousands of times a second. The DALI level sets how long the output is on in each cycle, so the strip dims smoothly while its colour stays consistent.</p>
+            <p>Up to <strong>64 drivers</strong> share one DALI line, arranged into up to <strong>16 groups</strong> and <strong>16 scenes</strong>, and each driver can feed several strip runs in parallel up to its rated power.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 340" role="img" aria-labelledby="cvDaliDiagTitle">
+              <title id="cvDaliDiagTitle">A DALI controller on a two-wire bus addressing constant voltage DALI drivers, each feeding 24V LED strip dimmed by PWM</title>
+              <style>
+                .cd-box{fill:#112638}
+                .cd-boxt{font:600 12px Outfit,system-ui,sans-serif;fill:#fff}
+                .cd-drv{fill:#e8eef4;stroke:#7f93a6}
+                .cd-drvt{font:600 11px Outfit,system-ui,sans-serif;fill:#112638}
+                .cd-strip{fill:#fff;stroke:#7f93a6}
+                .cd-chip{fill:#f4b625}
+                .cd-bus{fill:none;stroke:#1fada1;stroke-width:3}
+                .cd-mains{fill:none;stroke:#c0392b;stroke-width:2;stroke-dasharray:6 4}
+                .cd-dc{fill:none;stroke:#183858;stroke-width:2}
+                .cd-pwm{fill:none;stroke:#1fada1;stroke-width:2}
+                .cd-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .cd-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .cd-v{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#1fada1}
+                .cd-r{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#c0392b}
+              </style>
+              <text x="320" y="22" text-anchor="middle" class="cd-lbl">DALI control of 24V LED strip</text>
+              <!-- controller -->
+              <rect x="20" y="60" width="120" height="70" rx="8" class="cd-box"/>
+              <text x="80" y="88" text-anchor="middle" class="cd-boxt">DALI controller</text>
+              <text x="80" y="106" text-anchor="middle" class="cd-boxt" style="font-size:11px">+ bus power</text>
+              <!-- mains -->
+              <path d="M150 52 H610" class="cd-mains"/>
+              <text x="612" y="47" text-anchor="end" class="cd-r">Mains</text>
+              <!-- bus -->
+              <path d="M140 95 H610" class="cd-bus"/>
+              <text x="612" y="88" text-anchor="end" class="cd-v">DALI bus (2-wire)</text>
+              <!-- drivers -->
+              <rect x="180" y="130" width="120" height="46" rx="6" class="cd-drv"/>
+              <rect x="400" y="130" width="120" height="46" rx="6" class="cd-drv"/>
+              <text x="240" y="150" text-anchor="middle" class="cd-drvt">CV DALI driver</text>
+              <text x="240" y="167" text-anchor="middle" class="cd-v">Address 1</text>
+              <text x="460" y="150" text-anchor="middle" class="cd-drvt">CV DALI driver</text>
+              <text x="460" y="167" text-anchor="middle" class="cd-v">Address 2</text>
+              <path d="M205 52 V130 M425 52 V130" class="cd-mains" style="stroke-width:1.5"/>
+              <path d="M275 95 V130 M495 95 V130" class="cd-pwm"/>
+              <!-- 24V outputs -->
+              <path d="M240 176 V200 M460 176 V200" class="cd-dc"/>
+              <text x="248" y="193" class="cd-sub">24V</text>
+              <text x="468" y="193" class="cd-sub">24V</text>
+              <!-- strips -->
+              <rect x="160" y="200" width="160" height="16" rx="3" class="cd-strip"/>
+              <rect x="380" y="200" width="160" height="16" rx="3" class="cd-strip"/>
+              <g class="cd-chip">
+                <rect x="168" y="204" width="10" height="8"/><rect x="188" y="204" width="10" height="8"/><rect x="208" y="204" width="10" height="8"/><rect x="228" y="204" width="10" height="8"/><rect x="248" y="204" width="10" height="8"/><rect x="268" y="204" width="10" height="8"/><rect x="288" y="204" width="10" height="8"/><rect x="306" y="204" width="10" height="8"/>
+              </g>
+              <g class="cd-chip" opacity=".35">
+                <rect x="388" y="204" width="10" height="8"/><rect x="408" y="204" width="10" height="8"/><rect x="428" y="204" width="10" height="8"/><rect x="448" y="204" width="10" height="8"/><rect x="468" y="204" width="10" height="8"/><rect x="488" y="204" width="10" height="8"/><rect x="508" y="204" width="10" height="8"/><rect x="526" y="204" width="10" height="8"/>
+              </g>
+              <text x="240" y="234" text-anchor="middle" class="cd-sub">LED strip at 80%</text>
+              <text x="460" y="234" text-anchor="middle" class="cd-sub">LED strip at 25%</text>
+              <!-- PWM waveforms -->
+              <path d="M170 290 V256 H202 V290 H210 V256 H242 V290 H250 V256 H282 V290 H290 V256 H310" class="cd-pwm"/>
+              <path d="M390 290 V256 H400 V290 H430 V256 H440 V290 H470 V256 H480 V290 H510 V256 H520 V290 H530" class="cd-pwm"/>
+              <path d="M165 290 H315 M385 290 H535" class="cd-dc" style="stroke-width:1;stroke:#c3cfda"/>
+              <text x="240" y="310" text-anchor="middle" class="cd-sub">PWM output: long on-time</text>
+              <text x="460" y="310" text-anchor="middle" class="cd-sub">PWM output: short on-time</text>
+              <text x="320" y="334" text-anchor="middle" class="cd-sub">Up to 64 drivers, 16 groups and 16 scenes per DALI line</text>
+            </svg>
+            <figcaption>Simplified illustration: mains (red, dashed) powers each driver, the DALI bus (teal) carries commands, and each driver dims its 24V strip by varying the PWM on-time.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CV vs CC -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">CV or CC?</p>
+        <h2 class="ips-section-title mb-2">Constant voltage vs constant current DALI</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">The DALI control side is the same for both. The choice depends on the LED load you are driving.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Feature</th><th scope="col" class="ips-col">CV DALI driver</th><th scope="col" class="ips-col">CC DALI driver</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Output</td><td class="ips-col">Fixed voltage: 12V or 24VDC</td><td class="ips-col">Fixed current: e.g. 350mA, 700mA</td></tr>
+            <tr><td>Typical loads</td><td class="ips-col">LED strip, linear profiles, signage modules</td><td class="ips-col">Downlights, panels, COB and linear light engines</td></tr>
+            <tr><td>Current limiting</td><td class="ips-col">Built into the strip or module</td><td class="ips-col">Provided by the driver</td></tr>
+            <tr><td>Wiring LEDs</td><td class="ips-col">Several runs in parallel, up to rated power</td><td class="ips-col">LEDs in series within the voltage window</td></tr>
+            <tr><td>Dimming method</td><td class="ips-col">PWM of the output voltage</td><td class="ips-col">Current reduction (CCR) or PWM</td></tr>
+            <tr><td>Our power range</td><td class="ips-col">36W – 320W</td><td class="ips-col">6W – 165W</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">For constant current models, see <a href="dali-led-driver-technology.html">DALI LED driver technology</a>.</p>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">CV DALI drivers compared</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Choose the voltage to match the strip, the power to cover the load, and the DALI type for the control you need.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Series</th><th scope="col" class="ips-col">Output</th><th scope="col" class="ips-col">Power</th><th scope="col" class="ips-col">IP rating</th><th scope="col" class="ips-col">Dimming</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Ltech LM36</td><td class="ips-col">12V / 24V</td><td class="ips-col">36W</td><td class="ips-col">IP20</td><td class="ips-col">DALI-2 + push</td></tr>
+            <tr><td>Ltech LM75</td><td class="ips-col">12V / 24V</td><td class="ips-col">75W / 100W</td><td class="ips-col">IP20</td><td class="ips-col">DALI-1 / DALI-2 + push</td></tr>
+            <tr><td>Ltech LM-75/100-G2D2</td><td class="ips-col">12V / 24V, 2 channels</td><td class="ips-col">75W / 100W</td><td class="ips-col">IP20</td><td class="ips-col">DALI-2 DT8 CT + push</td></tr>
+            <tr><td>Ltech LM150</td><td class="ips-col">12V / 24V</td><td class="ips-col">150W</td><td class="ips-col">IP20</td><td class="ips-col">DALI-2 + push</td></tr>
+            <tr><td>Ltech G1D2F</td><td class="ips-col">12V / 24V</td><td class="ips-col">75 – 150W</td><td class="ips-col">IP20</td><td class="ips-col">DALI-2 DT6 + push, NFC</td></tr>
+            <tr><td>Lifud LF-GHD</td><td class="ips-col">24V</td><td class="ips-col">75 – 240W</td><td class="ips-col">IP20</td><td class="ips-col">DALI-2 DT8 / DT6 + push</td></tr>
+            <tr><td>Snappy SD96 / SD200</td><td class="ips-col">24V</td><td class="ips-col">96W / 200W</td><td class="ips-col">IP20</td><td class="ips-col">DALI</td></tr>
+            <tr><td>Snappy SDL</td><td class="ips-col">12V / 24V</td><td class="ips-col">60 – 240W</td><td class="ips-col">IP20</td><td class="ips-col">DALI + push</td></tr>
+            <tr><td>Snappy SDL-VFP</td><td class="ips-col">12V / 24V</td><td class="ips-col">60 / 100 / 150W</td><td class="ips-col">IP67</td><td class="ips-col">DALI-2 DT6 + push</td></tr>
+            <tr><td>Snappy SDG</td><td class="ips-col">12V / 24V</td><td class="ips-col">100 – 320W</td><td class="ips-col">IP67, metal case</td><td class="ips-col">DALI</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of CV DALI LED drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why DALI is a strong choice for controlling LED strip in commercial projects.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-bullseye"></i></span>
+            <h3>Addressable strip lighting</h3>
+            <p>Every driver has its own address, so each strip run can be controlled alone, in groups or in scenes.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-sliders"></i></span>
+            <h3>Smooth PWM dimming</h3>
+            <p>Flicker-free dimming that keeps the strip's colour consistent from full brightness to low levels.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-thermometer-half"></i></span>
+            <h3>Tunable white</h3>
+            <p>DT8 drivers control warm and cool channels for full colour temperature control over DALI.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-hand-index"></i></span>
+            <h3>Push dimming</h3>
+            <p>Most models also accept a mains push switch, for simple local control without a DALI controller.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-diagram-3"></i></span>
+            <h3>Open standard</h3>
+            <p>IEC 62386 compliance means drivers, sensors and controllers from different makers work together.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-droplet"></i></span>
+            <h3>Indoor and outdoor</h3>
+            <p>IP20 linear and compact drivers for luminaires, and IP67 cases for façades and wet locations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Selection &amp; set-up</p>
+          <h2 class="ips-section-title mb-3">Choosing and installing a CV DALI driver</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Match the voltage</strong>: use a 12V driver for 12V strip and a 24V driver for 24V strip.</li>
+            <li><strong>Size the power</strong>: add up the strip load (W/m × length) and allow at least 20% headroom.</li>
+            <li><strong>Choose the DALI type</strong>: DT6 for single-colour dimming, DT8 with two channels for tunable white.</li>
+            <li><strong>Limit voltage drop</strong>: on long runs, feed the strip from both ends or from several points.</li>
+            <li><strong>Pick the case</strong>: IP20 for inside luminaires and enclosures, IP67 for outdoor and wet locations.</li>
+            <li><strong>Commission the system</strong>: address the drivers and set up groups and scenes with the DALI controller.</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Complete the DALI system</h3>
+            <p class="mb-3">We supply the strip, controllers and related drivers for a full installation:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="product-dali-controllers.html">DALI controllers</a></li>
+              <li><a href="product-flexible-led-strips.html">Flexible LED strips</a></li>
+              <li><a href="tuneable-white-led-strip-technology.html">Tuneable white LED strip technology</a></li>
+              <li><a href="product-cc-dali-dimmable-led-drivers.html">CC DALI drivers for LED modules</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">64</div><div class="ips-stat-label">Drivers per DALI line</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">12 / 24V</div><div class="ips-stat-label">Output voltage</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">36–320W</div><div class="ips-stat-label">Power range</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">IP67</div><div class="ips-stat-label">Waterproof options</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where CV DALI drivers are used</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">Wherever LED strip needs to be part of a building-wide DALI lighting system.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-building me-2"></i>Offices</h3><p class="mb-0">Cove, linear and feature lighting on the same DALI system as the panels.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-cup-straw me-2"></i>Hospitality</h3><p class="mb-0">Bar, back-light and mood scenes in hotels and restaurants.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail</h3><p class="mb-0">Shelf and display strip with time-of-day and promotion scenes.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-heart-pulse me-2"></i>Healthcare</h3><p class="mb-0">Tunable white DT8 strip for wards, corridors and patient rooms.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-house me-2"></i>Residential</h3><p class="mb-0">Kitchen, staircase and architectural strip on a smart home DALI system.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-buildings me-2"></i>Façades</h3><p class="mb-0">IP67 drivers for outdoor linear and wall-wash lighting.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE LINKS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Explore</p>
+        <h2 class="ips-section-title mb-2">Explore CV DALI drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse our CV DALI driver ranges and controllers.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-cv-dali-dimmable-led-drivers-lifud.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/LF-GHD-series-CV-DALI.jpg" alt="Lifud CV DALI Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Lifud CV DALI</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-cv-dali-dimmable-led-drivers-snappy.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Snappy-dali-group-sm.jpg" alt="Snappy CV DALI Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Snappy CV DALI</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-cv-dali-dimmable-led-drivers-ltech.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/LM-36-12-G1D2.jpg" alt="Ltech CV DALI Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Ltech CV DALI</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dali-controllers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Lifud-DALI-2-Visual-3.jpg" alt="DALI Controllers" loading="lazy" /></div>
+            <div class="card-body"><h3>DALI Controllers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">CV DALI driver questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="cvDaliFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is a CV DALI LED driver?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#cvDaliFaq"><div class="accordion-body">A constant voltage (CV) DALI driver is a 12V or 24V DC LED power supply with a built-in DALI interface. It powers LED strip and other constant voltage loads, and dims them in response to digital commands from a DALI controller, so each driver can be addressed, grouped and set to scenes individually.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">What is the difference between a CV and a CC DALI driver?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#cvDaliFaq"><div class="accordion-body">A CV DALI driver holds a fixed output voltage, usually 12V or 24V, and is used with LED strip and modules that have their own current limiting. A CC DALI driver delivers a fixed current, such as 350mA or 700mA, and is used with LED modules and COB light engines without current limiting. The DALI control side works the same way for both.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">How does a CV DALI driver dim LED strip?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#cvDaliFaq"><div class="accordion-body">Most CV DALI drivers dim by pulse width modulation (PWM). The output stays at 12V or 24V but is switched on and off at high frequency, and the DALI level sets how long the output is on in each cycle. This keeps the colour of the LEDs consistent across the whole dimming range.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Can a CV DALI driver control tunable white LED strip?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#cvDaliFaq"><div class="accordion-body">Yes, with a DALI DT8 driver that has two output channels, one for warm white and one for cool white. The Ltech LM-75/100-G2D2 has two independent outputs for DT8 colour temperature control, and the Lifud LF-GHD series can be switched between DT6 and DT8, so a DALI controller can set both brightness and colour temperature.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">How do I size a CV DALI driver for LED strip?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#cvDaliFaq"><div class="accordion-body">Match the driver output voltage to the strip, then add up the strip load in watts (watts per metre multiplied by length) and choose a driver rated at least 20% above that total. For long runs, feed the strip from more than one point to limit voltage drop.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Planning DALI control for LED strip?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Our team can help you choose the right CV DALI driver, strip and controller for your project.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
