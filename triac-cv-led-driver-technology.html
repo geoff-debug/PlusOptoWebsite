@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triac CV LED Driver Technology — Plus Opto</title>
+  <meta name="description" content="How Triac mains dimmable constant voltage LED drivers work: phase-cut dimming of 12V and 24V LED strip, PWM output, push dimming, tuneable white CCT, dimmer compatibility and how to size a Triac CV driver." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="Triac CV LED Driver Technology — Plus Opto" />
+  <meta property="og:description" content="How Triac mains dimmable constant voltage LED drivers work: phase-cut dimming of 12V and 24V LED strip, PWM output, push dimming, tuneable white CCT, dimmer compatibility and how to size a Triac CV driver." />
+  <meta property="og:url" content="https://www.plusopto.com/triac-cv-led-driver-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/Triac%20LED%20Drivers%20group.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="Triac CV LED Driver Technology — Plus Opto" />
+  <meta name="twitter:description" content="How Triac mains dimmable constant voltage LED drivers work: phase-cut dimming of 12V and 24V LED strip, PWM output, push dimming, tuneable white CCT, dimmer compatibility and how to size a Triac CV driver." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/Triac%20LED%20Drivers%20group.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/triac-cv-led-driver-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/triac-cv-led-driver-technology.html#webpage",
+      "url": "https://www.plusopto.com/triac-cv-led-driver-technology.html",
+      "name": "Triac CV LED Driver Technology — Plus Opto",
+      "description": "How Triac mains dimmable constant voltage LED drivers work: phase-cut dimming of 12V and 24V LED strip, PWM output, push dimming, tuneable white CCT, dimmer compatibility and how to size a Triac CV driver.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/triac-cv-led-driver-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Drivers", "item": "https://www.plusopto.com/category-led-drivers.html" },
+        { "@type": "ListItem", "position": 4, "name": "Dimmable LED Drivers", "item": "https://www.plusopto.com/product-dimmable-led-drivers.html" },
+        { "@type": "ListItem", "position": 5, "name": "Triac Mains CV Dimmable LED Drivers", "item": "https://www.plusopto.com/product-triac-mains-cv-dimmable-led-drivers.html" },
+        { "@type": "ListItem", "position": 6, "name": "Triac CV Driver Technology", "item": "https://www.plusopto.com/triac-cv-led-driver-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/triac-cv-led-driver-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a Triac dimmable CV LED driver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A Triac dimmable constant voltage (CV) driver is a 12V or 24V DC LED power supply that works with a standard mains phase-cut wall dimmer. The dimmer cuts part of each mains half-cycle, and the driver reads what remains and dims the LED strip connected to its output, with no extra control wiring." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does a Triac CV driver dim LED strip?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The driver keeps its output at 12V or 24V and dims by pulse width modulation (PWM), switching the output on and off at high frequency. The setting of the Triac dimmer controls how long the output is on in each cycle, which keeps the colour of the strip consistent as it dims." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is push dimming?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Push dimming uses a standard mains retractive push switch instead of a dimmer. A short press switches the light on or off and a long press dims up or down, with the last level remembered. Drivers such as the LTECH LM-G1T2 series accept either a Triac dimmer or a push switch." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use a Triac CV driver with constant current LED fixtures?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Triac CV drivers are designed for resistor current-limited loads such as standard 12V and 24V LED strip. Fixtures with built-in constant current electronics, such as MR16 lamps or constant current strip, can draw a much higher inrush current and trip the driver's overload protection, so check compatibility before connecting them." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I size a Triac CV driver for LED strip?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Match the driver output voltage to the strip, add up the strip load in watts (watts per metre multiplied by length) and choose a driver rated at least 20% above that total. Also check the total driver load sits within the Triac dimmer's LED rating." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-dimmable-led-drivers.html">Dimmable LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-triac-mains-cv-dimmable-led-drivers.html">Triac Mains CV Dimmable LED Drivers</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Triac CV Driver Technology</li>
+        </ol>
+      </nav>
+      <h1>Triac CV LED Driver Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How Triac mains dimmable constant voltage drivers let 12V and 24V LED strip be dimmed from standard wall dimmers or push switches, and how to choose the right one.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/Triac%20LED%20Drivers%20group.jpg" alt="Triac mains dimmable constant voltage LED drivers" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What is a Triac CV LED driver?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>A Triac dimmable constant voltage (CV) driver is a 12V or 24V DC LED power supply that works with a standard mains phase-cut dimmer. The dimmer is wired in the live feed in place of a light switch and cuts part of each mains half-cycle. The driver reads what remains and dims the LED strip, linear light or signage connected to its output, with no extra control wiring.</p>
+            <p>Our Triac CV range from Snappy, Lifud and LTECH covers 10W to 300W at 12V or 24V, in compact and slim linear cases. The drivers work with most leading and trailing edge dimmers for smooth, flicker-free dimming, and LTECH models add mains push dimming, dimming down to 0.1% and a dual-channel CCT version for tuneable white strip.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>Dims 12V and 24V LED strip from a standard wall dimmer</li>
+            <li>No extra control wiring: ideal for retrofit and residential projects</li>
+            <li>Flicker-free PWM dimming with stable colour</li>
+            <li>Mains push dimming on LTECH models</li>
+            <li>Dual-channel CCT model for tuneable white strip</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">Triac CV range at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Brands: <span>Snappy, Lifud, LTECH</span></li>
+                <li>Output voltage: <span>12V or 24VDC</span></li>
+                <li>Power: <span>10W – 300W</span></li>
+                <li>Input: <span>220-240VAC mains</span></li>
+                <li>Dimmers: <span>Leading and trailing edge</span></li>
+                <li>Other inputs: <span>Mains push dimming</span></li>
+                <li>Dimming: <span>0–100%, flicker free</span></li>
+                <li>Colour: <span>Single colour or CCT</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How Triac CV dimming works</h2>
+          <div class="text-muted lh-lg">
+            <p>A <strong>Triac (phase-cut) dimmer</strong> removes part of each mains half-cycle: a <strong>leading edge</strong> dimmer cuts the start, a <strong>trailing edge</strong> dimmer cuts the end. The driver measures the remaining <strong>conduction angle</strong> to work out the dimming level.</p>
+            <p>It then produces a steady <strong>12V or 24V</strong> output and dims the strip by <strong>pulse width modulation (PWM)</strong>, switching the output on and off at high frequency. The lower the dimmer setting, the shorter the on-time, while the strip's colour stays consistent.</p>
+            <p>On drivers with <strong>push dimming</strong>, a mains push switch on a separate terminal does the same job: a short press switches on or off, and a long press dims.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 320" role="img" aria-labelledby="tvDiagTitle">
+              <title id="tvDiagTitle">A Triac dimmer or a push switch controlling a Triac constant voltage driver, which dims 24V LED strip by PWM</title>
+              <style>
+                .tv-box{fill:#112638}
+                .tv-boxt{font:600 12px Outfit,system-ui,sans-serif;fill:#fff}
+                .tv-drv{fill:#e8eef4;stroke:#7f93a6}
+                .tv-drvt{font:600 11px Outfit,system-ui,sans-serif;fill:#112638}
+                .tv-strip{fill:#fff;stroke:#7f93a6}
+                .tv-chip{fill:#f4b625}
+                .tv-mains{fill:none;stroke:#c0392b;stroke-width:2}
+                .tv-dc{fill:none;stroke:#183858;stroke-width:2}
+                .tv-pwm{fill:none;stroke:#1fada1;stroke-width:2}
+                .tv-axis{fill:none;stroke:#c3cfda;stroke-width:1}
+                .tv-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .tv-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .tv-v{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#1fada1}
+                .tv-r{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#c0392b}
+              </style>
+              <text x="320" y="22" text-anchor="middle" class="tv-lbl">Dim LED strip from a wall dimmer or push switch</text>
+              <!-- inputs -->
+              <text x="20" y="74" class="tv-r">Mains L</text>
+              <path d="M80 70 H110" class="tv-mains"/>
+              <rect x="110" y="48" width="120" height="44" rx="8" class="tv-box"/>
+              <text x="170" y="68" text-anchor="middle" class="tv-boxt">Triac dimmer</text>
+              <text x="170" y="84" text-anchor="middle" class="tv-boxt" style="font-size:11px">phase-cut</text>
+              <path d="M230 70 H290 V112 H310" class="tv-mains" style="stroke-dasharray:6 4"/>
+              <text x="20" y="166" class="tv-r">Mains L</text>
+              <path d="M80 162 H110" class="tv-mains"/>
+              <rect x="110" y="140" width="120" height="44" rx="8" class="tv-box"/>
+              <text x="170" y="160" text-anchor="middle" class="tv-boxt">Push switch</text>
+              <text x="170" y="176" text-anchor="middle" class="tv-boxt" style="font-size:11px">LTECH models</text>
+              <path d="M230 162 H290 V136 H310" class="tv-mains" style="stroke-dasharray:2 3"/>
+              <!-- driver -->
+              <rect x="310" y="96" width="130" height="54" rx="6" class="tv-drv"/>
+              <text x="375" y="118" text-anchor="middle" class="tv-drvt">Triac CV driver</text>
+              <text x="375" y="136" text-anchor="middle" class="tv-v">24V PWM out</text>
+              <!-- strip -->
+              <path d="M440 123 H470" class="tv-dc"/>
+              <rect x="470" y="115" width="150" height="16" rx="3" class="tv-strip"/>
+              <g class="tv-chip" opacity=".55">
+                <rect x="480" y="119" width="10" height="8"/><rect x="503" y="119" width="10" height="8"/><rect x="526" y="119" width="10" height="8"/><rect x="549" y="119" width="10" height="8"/><rect x="572" y="119" width="10" height="8"/><rect x="595" y="119" width="10" height="8"/>
+              </g>
+              <text x="545" y="152" text-anchor="middle" class="tv-sub">24V LED strip</text>
+              <!-- PWM -->
+              <text x="170" y="222" text-anchor="middle" class="tv-drvt" style="font-size:13px">Dimmer high</text>
+              <text x="470" y="222" text-anchor="middle" class="tv-drvt" style="font-size:13px">Dimmer low</text>
+              <path d="M40 290 H300 M340 290 H600" class="tv-axis"/>
+              <path d="M40 290 V246 H88 V290 H105 V246 H153 V290 H170 V246 H218 V290 H235 V246 H283 V290 H300" class="tv-pwm"/>
+              <path d="M340 290 V246 H355 V290 H405 V246 H420 V290 H470 V246 H485 V290 H535 V246 H550 V290 H600" class="tv-pwm"/>
+              <text x="170" y="310" text-anchor="middle" class="tv-sub">Long on-time: bright</text>
+              <text x="470" y="310" text-anchor="middle" class="tv-sub">Short on-time: dim</text>
+            </svg>
+            <figcaption>Simplified illustration: the Triac dimmer or push switch sets the level, and the driver dims its 24V output by varying the PWM on-time.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRIAC vs PUSH -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Control options</p>
+        <h2 class="ips-section-title mb-2">Leading edge, trailing edge and push dimming</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Our Triac CV drivers work with both dimmer types, and LTECH models also accept a simple push switch.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Feature</th><th scope="col" class="ips-col">Leading edge (RL)</th><th scope="col" class="ips-col">Trailing edge (RC / ELV)</th><th scope="col" class="ips-col">Push dimming</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>How it controls</td><td class="ips-col">Cuts the start of each half-cycle</td><td class="ips-col">Cuts the end of each half-cycle</td><td class="ips-col">Momentary mains push switch</td></tr>
+            <tr><td>Control</td><td class="ips-col">Rotary or slide dimmer</td><td class="ips-col">Rotary or slide dimmer</td><td class="ips-col">Short press on/off, long press to dim</td></tr>
+            <tr><td>Character</td><td class="ips-col">Abrupt switching, can buzz</td><td class="ips-col">Gentle switching, usually quieter</td><td class="ips-col">No dimmer needed, level remembered</td></tr>
+            <tr><td>Best for</td><td class="ips-col">Existing leading edge circuits</td><td class="ips-col">New LED installations</td><td class="ips-col">Simple, low-cost local control</td></tr>
+            <tr><td>Our drivers</td><td class="ips-col">All Triac CV series</td><td class="ips-col">All Triac CV series</td><td class="ips-col">LTECH LM-G1T2 and LM-G2T2</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">For constant current models, see <a href="triac-led-driver-technology.html">Triac LED driver technology</a>.</p>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">Triac CV drivers compared</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Choose the voltage to match the strip, the power to cover the load, and the control features you need.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Series</th><th scope="col" class="ips-col">Output</th><th scope="col" class="ips-col">Power</th><th scope="col" class="ips-col">Format</th><th scope="col" class="ips-col">Dimming</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Snappy SP</td><td class="ips-col">12V / 24V (200W, 300W: 24V)</td><td class="ips-col">10 – 300W</td><td class="ips-col">Compact</td><td class="ips-col">Triac leading / trailing edge</td></tr>
+            <tr><td>Snappy SL Linear</td><td class="ips-col">12V / 24V</td><td class="ips-col">75 – 150W</td><td class="ips-col">Slim linear</td><td class="ips-col">Triac leading / trailing edge</td></tr>
+            <tr><td>Lifud LF-GAT</td><td class="ips-col">24V</td><td class="ips-col">75W, 150W</td><td class="ips-col">Linear</td><td class="ips-col">Leading / trailing edge</td></tr>
+            <tr><td>LTECH LM-36-G1T2</td><td class="ips-col">12V / 24V</td><td class="ips-col">36W</td><td class="ips-col">Linear</td><td class="ips-col">Triac / ELV + push</td></tr>
+            <tr><td>LTECH LM-75-G1T2</td><td class="ips-col">12V / 24V</td><td class="ips-col">75W</td><td class="ips-col">Linear</td><td class="ips-col">Triac / ELV + push</td></tr>
+            <tr><td>LTECH LM-150-G1T2</td><td class="ips-col">12V / 24V</td><td class="ips-col">150W</td><td class="ips-col">Linear</td><td class="ips-col">Triac / ELV, soft-on / fade</td></tr>
+            <tr><td>LTECH LM-75-G2T2</td><td class="ips-col">12V / 24V, 2 channels</td><td class="ips-col">75W</td><td class="ips-col">Linear</td><td class="ips-col">Triac / ELV + push DIM / CCT</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of Triac CV LED drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why Triac dimming is a popular way to control LED strip in homes, hospitality and retrofit projects.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-plug"></i></span>
+            <h3>No extra wiring</h3>
+            <p>The dimmer replaces the light switch in the existing live feed, with no separate control cables.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-sliders"></i></span>
+            <h3>Smooth PWM dimming</h3>
+            <p>Flicker-free 0–100% dimming that keeps the strip's colour consistent, down to 0.1% on LTECH models.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-hand-index"></i></span>
+            <h3>Push dimming</h3>
+            <p>Use a simple retractive push switch instead of a dimmer, with the last level remembered.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-thermometer-half"></i></span>
+            <h3>Tuneable white</h3>
+            <p>The dual-channel LM-75-G2T2 adjusts brightness and colour temperature from a dimmer or push switch.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-arrow-repeat"></i></span>
+            <h3>Ideal for retrofit</h3>
+            <p>Add dimmable LED strip to circuits that already have phase-cut dimmers, with no rewiring.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-lightning-charge"></i></span>
+            <h3>Up to 300W</h3>
+            <p>From compact 10W drivers for cabinets to 300W units for long strip runs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Selection &amp; set-up</p>
+          <h2 class="ips-section-title mb-3">Choosing and installing a Triac CV driver</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Match the voltage</strong>: use a 12V driver for 12V strip and a 24V driver for 24V strip.</li>
+            <li><strong>Size the power</strong>: add up the strip load (W/m × length) and allow at least 20% headroom.</li>
+            <li><strong>Use the right load</strong>: Triac CV drivers suit resistor-limited LED strip; check before connecting constant current fixtures such as MR16 lamps.</li>
+            <li><strong>Use an LED-rated dimmer</strong>: keep the total driver load within its LED rating; trailing edge usually gives the smoothest results.</li>
+            <li><strong>Set the minimum level</strong>: if the dimmer has a minimum-level adjustment, set it so the strip stays stable at the bottom of the range.</li>
+            <li><strong>Limit voltage drop</strong>: on long runs, feed the strip from both ends or from several points.</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Related technology and products</h3>
+            <p class="mb-3">Compare other dimming methods and complete the installation:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="triac-led-driver-technology.html">Triac CC driver technology</a></li>
+              <li><a href="0-10v-cv-led-driver-technology.html">0-10V CV driver technology</a></li>
+              <li><a href="product-flexible-led-strips.html">Flexible LED strips</a></li>
+              <li><a href="tuneable-white-led-strip-technology.html">Tuneable white LED strip technology</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">12 / 24V</div><div class="ips-stat-label">Output voltage</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">10–300W</div><div class="ips-stat-label">Power range</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">0.1%</div><div class="ips-stat-label">Dimming depth (LTECH)</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">0</div><div class="ips-stat-label">Extra control wires</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where Triac CV drivers are used</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">Wherever LED strip needs to be dimmed from a standard wall dimmer or push switch.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-house me-2"></i>Residential</h3><p class="mb-0">Kitchen, cove, staircase and bedroom strip on existing dimmers.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-cup-straw me-2"></i>Hospitality</h3><p class="mb-0">Bar, back-light and mood lighting in restaurants and hotels.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail</h3><p class="mb-0">Shelf and display strip in shops and showrooms.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-arrow-repeat me-2"></i>Retrofit</h3><p class="mb-0">LED strip upgrades on circuits with phase-cut dimmers.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-door-open me-2"></i>Furniture</h3><p class="mb-0">Cabinet, wardrobe and display-case lighting.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-building me-2"></i>Meeting rooms</h3><p class="mb-0">Cove and feature strip dimmed for presentations.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE LINKS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Explore</p>
+        <h2 class="ips-section-title mb-2">Explore dimmable LED drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse our Triac drivers and other dimming options.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-triac-mains-cv-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/SP36-12_24VFT-Triac-Dimmable.jpg" alt="Triac Mains CV Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Triac CV Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-triac-mains-cc-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Lifud-LF-AATxxx.jpg" alt="Triac Mains CC Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Triac CC Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-0-10v-cv-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Snappy-SL-VFM-series-sm.jpg" alt="0-10V CV Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>0-10V CV Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-cv-dali-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Snappy-dali-group-sm.jpg" alt="CV DALI Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>CV DALI Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">Triac CV driver questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="tvFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is a Triac dimmable CV LED driver?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#tvFaq"><div class="accordion-body">A Triac dimmable constant voltage (CV) driver is a 12V or 24V DC LED power supply that works with a standard mains phase-cut wall dimmer. The dimmer cuts part of each mains half-cycle, and the driver reads what remains and dims the LED strip connected to its output, with no extra control wiring.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">How does a Triac CV driver dim LED strip?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#tvFaq"><div class="accordion-body">The driver keeps its output at 12V or 24V and dims by pulse width modulation (PWM), switching the output on and off at high frequency. The setting of the Triac dimmer controls how long the output is on in each cycle, which keeps the colour of the strip consistent as it dims.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">What is push dimming?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#tvFaq"><div class="accordion-body">Push dimming uses a standard mains retractive push switch instead of a dimmer. A short press switches the light on or off and a long press dims up or down, with the last level remembered. Drivers such as the LTECH LM-G1T2 series accept either a Triac dimmer or a push switch.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Can I use a Triac CV driver with constant current LED fixtures?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#tvFaq"><div class="accordion-body">Triac CV drivers are designed for resistor current-limited loads such as standard 12V and 24V LED strip. Fixtures with built-in constant current electronics, such as MR16 lamps or constant current strip, can draw a much higher inrush current and trip the driver's overload protection, so check compatibility before connecting them.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">How do I size a Triac CV driver for LED strip?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#tvFaq"><div class="accordion-body">Match the driver output voltage to the strip, add up the strip load in watts (watts per metre multiplied by length) and choose a driver rated at least 20% above that total. Also check the total driver load sits within the Triac dimmer's LED rating.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help dimming LED strip?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Our team can help you choose a Triac CV driver, compatible dimmer and LED strip for your project.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
