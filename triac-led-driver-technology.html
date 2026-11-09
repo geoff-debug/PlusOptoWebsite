@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Triac Dimmable LED Driver Technology — Plus Opto</title>
+  <meta name="description" content="How Triac mains dimmable constant current LED drivers work: leading and trailing edge phase-cut dimming, dimmer compatibility, minimum load, flicker-free dimming and how to choose a Triac CC driver." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="Triac Dimmable LED Driver Technology — Plus Opto" />
+  <meta property="og:description" content="How Triac mains dimmable constant current LED drivers work: leading and trailing edge phase-cut dimming, dimmer compatibility, minimum load, flicker-free dimming and how to choose a Triac CC driver." />
+  <meta property="og:url" content="https://www.plusopto.com/triac-led-driver-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/LED-Driver-group-new-sm.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="Triac Dimmable LED Driver Technology — Plus Opto" />
+  <meta name="twitter:description" content="How Triac mains dimmable constant current LED drivers work: leading and trailing edge phase-cut dimming, dimmer compatibility, minimum load, flicker-free dimming and how to choose a Triac CC driver." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/LED-Driver-group-new-sm.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/triac-led-driver-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/triac-led-driver-technology.html#webpage",
+      "url": "https://www.plusopto.com/triac-led-driver-technology.html",
+      "name": "Triac Dimmable LED Driver Technology — Plus Opto",
+      "description": "How Triac mains dimmable constant current LED drivers work: leading and trailing edge phase-cut dimming, dimmer compatibility, minimum load, flicker-free dimming and how to choose a Triac CC driver.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/triac-led-driver-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Drivers", "item": "https://www.plusopto.com/category-led-drivers.html" },
+        { "@type": "ListItem", "position": 4, "name": "Dimmable LED Drivers", "item": "https://www.plusopto.com/product-dimmable-led-drivers.html" },
+        { "@type": "ListItem", "position": 5, "name": "Triac Mains CC Dimmable LED Drivers", "item": "https://www.plusopto.com/product-triac-mains-cc-dimmable-led-drivers.html" },
+        { "@type": "ListItem", "position": 6, "name": "Triac Driver Technology", "item": "https://www.plusopto.com/triac-led-driver-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/triac-led-driver-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a Triac dimmable LED driver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A Triac dimmable LED driver works with a standard mains phase-cut wall dimmer. The dimmer cuts away part of each half-cycle of the mains supply, and the driver measures how much is left and reduces its LED output current to match. No extra control wires are needed." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between leading edge and trailing edge dimmers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A leading edge dimmer cuts the start of each mains half-cycle and was designed for incandescent and wire-wound transformer loads. A trailing edge dimmer cuts the end of each half-cycle, switches more gently and is usually quieter and better suited to electronic LED drivers. Our Triac drivers work with both types, but trailing edge dimmers often give the smoothest results." }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do LED lights flicker on a Triac dimmer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Flicker usually comes from a mismatch between the dimmer and the load: the total LED load may be below the dimmer's minimum load, the dimmer may not be designed for LEDs, or the dimmer's minimum setting may be too low. Use an LED-rated dimmer, keep the load within its LED rating and minimum load, and adjust its minimum level if it has one." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many Triac drivers can I connect to one dimmer?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It depends on the dimmer's LED load rating, not its incandescent rating. Add up the input power of all the drivers, make sure the total sits between the dimmer's minimum and maximum LED load, and allow for the inrush current of several drivers switching on together." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the output current set on a Triac CC driver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Depending on the model, the output current is fixed, chosen from several values, or set by DIP switch. Set it to match the LED module's rated current before connecting the LEDs, and check that the LED forward voltage sits within the driver's output voltage range." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-dimmable-led-drivers.html">Dimmable LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-triac-mains-cc-dimmable-led-drivers.html">Triac Mains CC Dimmable LED Drivers</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Triac Driver Technology</li>
+        </ol>
+      </nav>
+      <h1>Triac Dimmable LED Driver Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How Triac mains dimmable constant current drivers let LED luminaires be dimmed from standard phase-cut wall dimmers, and how to get smooth, flicker-free results.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/LED-Driver-group-new-sm.jpg" alt="Triac mains dimmable constant current LED drivers" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What is a Triac dimmable LED driver?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>A Triac dimmable LED driver is a constant current LED power supply designed to work with a standard mains phase-cut dimmer. The dimmer is wired in the live feed in place of a light switch, and cuts away part of each mains half-cycle. The driver measures how much of the waveform remains and reduces its LED current to match, so luminaires can be dimmed with no extra control wiring.</p>
+            <p>Our Triac CC range from Lifud, Snappy and LTECH covers 3W to 50W, with output currents from 100mA to 1050mA and output voltages up to 42V. The drivers work with most leading edge and trailing edge dimmers, giving smooth, flicker-free dimming, and some models add mains push dimming or deep dimming down to 0.1%.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>Dims from standard leading or trailing edge wall dimmers</li>
+            <li>No extra control wiring: ideal for retrofit and residential projects</li>
+            <li>Smooth, flicker-free 0–100% dimming</li>
+            <li>Output current fixed, selectable or set by DIP switch</li>
+            <li>Compact models for downlights and small luminaires</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">Triac CC range at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Brands: <span>Lifud, Snappy, LTECH</span></li>
+                <li>Power: <span>3W – 50W</span></li>
+                <li>Output current: <span>100mA – 1050mA</span></li>
+                <li>Output voltage: <span>Up to 42VDC</span></li>
+                <li>Input: <span>220-240VAC mains</span></li>
+                <li>Dimmers: <span>Leading and trailing edge</span></li>
+                <li>Dimming: <span>0–100%, flicker free</span></li>
+                <li>Current setting: <span>Fixed, selectable or DIP</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How Triac dimming works</h2>
+          <div class="text-muted lh-lg">
+            <p>A Triac (phase-cut) dimmer switches the <strong>mains supply</strong> on and off within every half-cycle, 100 times a second on a 50Hz supply. Turning the dimmer down removes a larger part of each half-cycle, reducing the power delivered.</p>
+            <p>A <strong>leading edge</strong> dimmer cuts the start of each half-cycle; a <strong>trailing edge</strong> dimmer cuts the end. The Triac LED driver detects this <strong>conduction angle</strong> and converts it into a steady, reduced <strong>constant current</strong> for the LEDs.</p>
+            <p>Because the driver smooths the output, the LEDs dim without visible flicker, while the dimmer and wiring stay the same as for a traditional lamp.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 320" role="img" aria-labelledby="trDiagTitle">
+              <title id="trDiagTitle">A Triac dimmer in the mains live feed to a Triac LED driver, with leading edge and trailing edge phase-cut mains waveforms</title>
+              <style>
+                .td-box{fill:#112638}
+                .td-boxt{font:600 12px Outfit,system-ui,sans-serif;fill:#fff}
+                .td-drv{fill:#e8eef4;stroke:#7f93a6}
+                .td-drvt{font:600 11px Outfit,system-ui,sans-serif;fill:#112638}
+                .td-led{fill:#f4b625;stroke:#d39a14}
+                .td-mains{fill:none;stroke:#c0392b;stroke-width:2}
+                .td-cut{fill:none;stroke:#c0392b;stroke-width:2.5}
+                .td-ghost{fill:none;stroke:#c3cfda;stroke-width:1.5;stroke-dasharray:4 3}
+                .td-dc{fill:none;stroke:#183858;stroke-width:2}
+                .td-axis{fill:none;stroke:#7f93a6;stroke-width:1}
+                .td-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .td-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .td-v{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#1fada1}
+                .td-r{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#c0392b}
+              </style>
+              <text x="320" y="22" text-anchor="middle" class="td-lbl">The dimmer cuts the mains; the driver dims the LEDs</text>
+              <!-- wiring chain -->
+              <text x="20" y="74" class="td-r">Mains</text>
+              <path d="M66 70 H120" class="td-mains"/>
+              <rect x="120" y="48" width="120" height="44" rx="8" class="td-box"/>
+              <text x="180" y="68" text-anchor="middle" class="td-boxt">Triac dimmer</text>
+              <text x="180" y="84" text-anchor="middle" class="td-boxt" style="font-size:11px">phase-cut</text>
+              <path d="M240 70 H300" class="td-mains" style="stroke-dasharray:6 4"/>
+              <text x="270" y="62" text-anchor="middle" class="td-sub">cut AC</text>
+              <rect x="300" y="48" width="130" height="44" rx="6" class="td-drv"/>
+              <text x="365" y="68" text-anchor="middle" class="td-drvt">Triac CC driver</text>
+              <text x="365" y="84" text-anchor="middle" class="td-v">reduced current</text>
+              <path d="M430 70 H480" class="td-dc"/>
+              <text x="455" y="62" text-anchor="middle" class="td-sub">DC</text>
+              <rect x="480" y="61" width="130" height="18" rx="4" class="td-led" opacity=".55"/>
+              <text x="545" y="104" text-anchor="middle" class="td-sub">LEDs dimmed</text>
+              <!-- waveforms -->
+              <text x="170" y="180" text-anchor="middle" class="td-drvt" style="font-size:13px">Leading edge</text>
+              <text x="470" y="180" text-anchor="middle" class="td-drvt" style="font-size:13px">Trailing edge</text>
+              <path d="M40 250 H300 M340 250 H600" class="td-axis"/>
+              <polyline points="40.0,250.0 41.3,248.7 42.6,247.5 43.9,246.2 45.2,245.0 46.5,243.7 47.8,242.5 49.1,241.3 50.4,240.1 51.7,238.8 53.0,237.6 54.3,236.5 55.6,235.3 56.9,234.1 58.2,233.0 59.5,231.8 60.8,230.7 62.1,229.6 63.4,228.6 64.7,227.5 66.0,226.5 67.3,225.5 68.6,224.5 69.9,223.5 71.2,222.6 72.5,221.7 73.8,220.8 75.1,220.0 76.4,219.2 77.7,218.4 79.0,217.6 80.3,216.9 81.6,216.2 82.9,215.6 84.2,214.9 85.5,214.4 86.8,213.8 88.1,213.3 89.4,212.8 90.7,212.4 92.0,212.0 93.3,211.6 94.6,211.3 95.9,211.0 97.2,210.7 98.5,210.5 99.8,210.3 101.1,210.2 102.4,210.1 103.7,210.0 105.0,210.0 106.3,210.0 107.6,210.1 108.9,210.2 110.2,210.3 111.5,210.5 112.8,210.7 114.1,211.0 115.4,211.3 116.7,211.6 118.0,212.0 119.3,212.4 120.6,212.8 121.9,213.3 123.2,213.8 124.5,214.4 125.8,214.9 127.1,215.6 128.4,216.2 129.7,216.9 131.0,217.6 132.3,218.4 133.6,219.2 134.9,220.0 136.2,220.8 137.5,221.7 138.8,222.6 140.1,223.5 141.4,224.5 142.7,225.5 144.0,226.5 145.3,227.5 146.6,228.6 147.9,229.6 149.2,230.7 150.5,231.8 151.8,233.0 153.1,234.1 154.4,235.3 155.7,236.5 157.0,237.6 158.3,238.8 159.6,240.1 160.9,241.3 162.2,242.5 163.5,243.7 164.8,245.0 166.1,246.2 167.4,247.5 168.7,248.7 170.0,250.0 171.3,251.3 172.6,252.5 173.9,253.8 175.2,255.0 176.5,256.3 177.8,257.5 179.1,258.7 180.4,259.9 181.7,261.2 183.0,262.4 184.3,263.5 185.6,264.7 186.9,265.9 188.2,267.0 189.5,268.2 190.8,269.3 192.1,270.4 193.4,271.4 194.7,272.5 196.0,273.5 197.3,274.5 198.6,275.5 199.9,276.5 201.2,277.4 202.5,278.3 203.8,279.2 205.1,280.0 206.4,280.8 207.7,281.6 209.0,282.4 210.3,283.1 211.6,283.8 212.9,284.4 214.2,285.1 215.5,285.6 216.8,286.2 218.1,286.7 219.4,287.2 220.7,287.6 222.0,288.0 223.3,288.4 224.6,288.7 225.9,289.0 227.2,289.3 228.5,289.5 229.8,289.7 231.1,289.8 232.4,289.9 233.7,290.0 235.0,290.0 236.3,290.0 237.6,289.9 238.9,289.8 240.2,289.7 241.5,289.5 242.8,289.3 244.1,289.0 245.4,288.7 246.7,288.4 248.0,288.0 249.3,287.6 250.6,287.2 251.9,286.7 253.2,286.2 254.5,285.6 255.8,285.1 257.1,284.4 258.4,283.8 259.7,283.1 261.0,282.4 262.3,281.6 263.6,280.8 264.9,280.0 266.2,279.2 267.5,278.3 268.8,277.4 270.1,276.5 271.4,275.5 272.7,274.5 274.0,273.5 275.3,272.5 276.6,271.4 277.9,270.4 279.2,269.3 280.5,268.2 281.8,267.0 283.1,265.9 284.4,264.7 285.7,263.5 287.0,262.4 288.3,261.2 289.6,259.9 290.9,258.7 292.2,257.5 293.5,256.3 294.8,255.0 296.1,253.8 297.4,252.5 298.7,251.3 300.0,250.0" class="td-ghost"/>
+              <polyline points="40.0,250.0 41.3,250.0 42.6,250.0 43.9,250.0 45.2,250.0 46.5,250.0 47.8,250.0 49.1,250.0 50.4,250.0 51.7,250.0 53.0,250.0 54.3,250.0 55.6,250.0 56.9,250.0 58.2,250.0 59.5,250.0 60.8,250.0 62.1,250.0 63.4,250.0 64.7,250.0 66.0,250.0 67.3,250.0 68.6,250.0 69.9,250.0 71.2,250.0 72.5,250.0 73.8,250.0 75.1,250.0 76.4,250.0 77.7,250.0 79.0,250.0 80.3,250.0 81.6,250.0 82.9,250.0 84.2,250.0 85.5,250.0 86.8,250.0 88.1,250.0 89.4,250.0 90.7,250.0 92.0,212.0 93.3,211.6 94.6,211.3 95.9,211.0 97.2,210.7 98.5,210.5 99.8,210.3 101.1,210.2 102.4,210.1 103.7,210.0 105.0,210.0 106.3,210.0 107.6,210.1 108.9,210.2 110.2,210.3 111.5,210.5 112.8,210.7 114.1,211.0 115.4,211.3 116.7,211.6 118.0,212.0 119.3,212.4 120.6,212.8 121.9,213.3 123.2,213.8 124.5,214.4 125.8,214.9 127.1,215.6 128.4,216.2 129.7,216.9 131.0,217.6 132.3,218.4 133.6,219.2 134.9,220.0 136.2,220.8 137.5,221.7 138.8,222.6 140.1,223.5 141.4,224.5 142.7,225.5 144.0,226.5 145.3,227.5 146.6,228.6 147.9,229.6 149.2,230.7 150.5,231.8 151.8,233.0 153.1,234.1 154.4,235.3 155.7,236.5 157.0,237.6 158.3,238.8 159.6,240.1 160.9,241.3 162.2,242.5 163.5,243.7 164.8,245.0 166.1,246.2 167.4,247.5 168.7,248.7 170.0,250.0 171.3,250.0 172.6,250.0 173.9,250.0 175.2,250.0 176.5,250.0 177.8,250.0 179.1,250.0 180.4,250.0 181.7,250.0 183.0,250.0 184.3,250.0 185.6,250.0 186.9,250.0 188.2,250.0 189.5,250.0 190.8,250.0 192.1,250.0 193.4,250.0 194.7,250.0 196.0,250.0 197.3,250.0 198.6,250.0 199.9,250.0 201.2,250.0 202.5,250.0 203.8,250.0 205.1,250.0 206.4,250.0 207.7,250.0 209.0,250.0 210.3,250.0 211.6,250.0 212.9,250.0 214.2,250.0 215.5,250.0 216.8,250.0 218.1,250.0 219.4,250.0 220.7,250.0 222.0,250.0 223.3,288.4 224.6,288.7 225.9,289.0 227.2,289.3 228.5,289.5 229.8,289.7 231.1,289.8 232.4,289.9 233.7,290.0 235.0,290.0 236.3,290.0 237.6,289.9 238.9,289.8 240.2,289.7 241.5,289.5 242.8,289.3 244.1,289.0 245.4,288.7 246.7,288.4 248.0,288.0 249.3,287.6 250.6,287.2 251.9,286.7 253.2,286.2 254.5,285.6 255.8,285.1 257.1,284.4 258.4,283.8 259.7,283.1 261.0,282.4 262.3,281.6 263.6,280.8 264.9,280.0 266.2,279.2 267.5,278.3 268.8,277.4 270.1,276.5 271.4,275.5 272.7,274.5 274.0,273.5 275.3,272.5 276.6,271.4 277.9,270.4 279.2,269.3 280.5,268.2 281.8,267.0 283.1,265.9 284.4,264.7 285.7,263.5 287.0,262.4 288.3,261.2 289.6,259.9 290.9,258.7 292.2,257.5 293.5,256.3 294.8,255.0 296.1,253.8 297.4,252.5 298.7,251.3 300.0,250.0" class="td-cut"/>
+              <polyline points="340.0,250.0 341.3,248.7 342.6,247.5 343.9,246.2 345.2,245.0 346.5,243.7 347.8,242.5 349.1,241.3 350.4,240.1 351.7,238.8 353.0,237.6 354.3,236.5 355.6,235.3 356.9,234.1 358.2,233.0 359.5,231.8 360.8,230.7 362.1,229.6 363.4,228.6 364.7,227.5 366.0,226.5 367.3,225.5 368.6,224.5 369.9,223.5 371.2,222.6 372.5,221.7 373.8,220.8 375.1,220.0 376.4,219.2 377.7,218.4 379.0,217.6 380.3,216.9 381.6,216.2 382.9,215.6 384.2,214.9 385.5,214.4 386.8,213.8 388.1,213.3 389.4,212.8 390.7,212.4 392.0,212.0 393.3,211.6 394.6,211.3 395.9,211.0 397.2,210.7 398.5,210.5 399.8,210.3 401.1,210.2 402.4,210.1 403.7,210.0 405.0,210.0 406.3,210.0 407.6,210.1 408.9,210.2 410.2,210.3 411.5,210.5 412.8,210.7 414.1,211.0 415.4,211.3 416.7,211.6 418.0,212.0 419.3,212.4 420.6,212.8 421.9,213.3 423.2,213.8 424.5,214.4 425.8,214.9 427.1,215.6 428.4,216.2 429.7,216.9 431.0,217.6 432.3,218.4 433.6,219.2 434.9,220.0 436.2,220.8 437.5,221.7 438.8,222.6 440.1,223.5 441.4,224.5 442.7,225.5 444.0,226.5 445.3,227.5 446.6,228.6 447.9,229.6 449.2,230.7 450.5,231.8 451.8,233.0 453.1,234.1 454.4,235.3 455.7,236.5 457.0,237.6 458.3,238.8 459.6,240.1 460.9,241.3 462.2,242.5 463.5,243.7 464.8,245.0 466.1,246.2 467.4,247.5 468.7,248.7 470.0,250.0 471.3,251.3 472.6,252.5 473.9,253.8 475.2,255.0 476.5,256.3 477.8,257.5 479.1,258.7 480.4,259.9 481.7,261.2 483.0,262.4 484.3,263.5 485.6,264.7 486.9,265.9 488.2,267.0 489.5,268.2 490.8,269.3 492.1,270.4 493.4,271.4 494.7,272.5 496.0,273.5 497.3,274.5 498.6,275.5 499.9,276.5 501.2,277.4 502.5,278.3 503.8,279.2 505.1,280.0 506.4,280.8 507.7,281.6 509.0,282.4 510.3,283.1 511.6,283.8 512.9,284.4 514.2,285.1 515.5,285.6 516.8,286.2 518.1,286.7 519.4,287.2 520.7,287.6 522.0,288.0 523.3,288.4 524.6,288.7 525.9,289.0 527.2,289.3 528.5,289.5 529.8,289.7 531.1,289.8 532.4,289.9 533.7,290.0 535.0,290.0 536.3,290.0 537.6,289.9 538.9,289.8 540.2,289.7 541.5,289.5 542.8,289.3 544.1,289.0 545.4,288.7 546.7,288.4 548.0,288.0 549.3,287.6 550.6,287.2 551.9,286.7 553.2,286.2 554.5,285.6 555.8,285.1 557.1,284.4 558.4,283.8 559.7,283.1 561.0,282.4 562.3,281.6 563.6,280.8 564.9,280.0 566.2,279.2 567.5,278.3 568.8,277.4 570.1,276.5 571.4,275.5 572.7,274.5 574.0,273.5 575.3,272.5 576.6,271.4 577.9,270.4 579.2,269.3 580.5,268.2 581.8,267.0 583.1,265.9 584.4,264.7 585.7,263.5 587.0,262.4 588.3,261.2 589.6,259.9 590.9,258.7 592.2,257.5 593.5,256.3 594.8,255.0 596.1,253.8 597.4,252.5 598.7,251.3 600.0,250.0" class="td-ghost"/>
+              <polyline points="340.0,250.0 341.3,248.7 342.6,247.5 343.9,246.2 345.2,245.0 346.5,243.7 347.8,242.5 349.1,241.3 350.4,240.1 351.7,238.8 353.0,237.6 354.3,236.5 355.6,235.3 356.9,234.1 358.2,233.0 359.5,231.8 360.8,230.7 362.1,229.6 363.4,228.6 364.7,227.5 366.0,226.5 367.3,225.5 368.6,224.5 369.9,223.5 371.2,222.6 372.5,221.7 373.8,220.8 375.1,220.0 376.4,219.2 377.7,218.4 379.0,217.6 380.3,216.9 381.6,216.2 382.9,215.6 384.2,214.9 385.5,214.4 386.8,213.8 388.1,213.3 389.4,212.8 390.7,212.4 392.0,212.0 393.3,211.6 394.6,211.3 395.9,211.0 397.2,210.7 398.5,210.5 399.8,210.3 401.1,210.2 402.4,210.1 403.7,210.0 405.0,210.0 406.3,210.0 407.6,210.1 408.9,210.2 410.2,210.3 411.5,210.5 412.8,210.7 414.1,211.0 415.4,211.3 416.7,211.6 418.0,212.0 419.3,250.0 420.6,250.0 421.9,250.0 423.2,250.0 424.5,250.0 425.8,250.0 427.1,250.0 428.4,250.0 429.7,250.0 431.0,250.0 432.3,250.0 433.6,250.0 434.9,250.0 436.2,250.0 437.5,250.0 438.8,250.0 440.1,250.0 441.4,250.0 442.7,250.0 444.0,250.0 445.3,250.0 446.6,250.0 447.9,250.0 449.2,250.0 450.5,250.0 451.8,250.0 453.1,250.0 454.4,250.0 455.7,250.0 457.0,250.0 458.3,250.0 459.6,250.0 460.9,250.0 462.2,250.0 463.5,250.0 464.8,250.0 466.1,250.0 467.4,250.0 468.7,250.0 470.0,250.0 471.3,251.3 472.6,252.5 473.9,253.8 475.2,255.0 476.5,256.3 477.8,257.5 479.1,258.7 480.4,259.9 481.7,261.2 483.0,262.4 484.3,263.5 485.6,264.7 486.9,265.9 488.2,267.0 489.5,268.2 490.8,269.3 492.1,270.4 493.4,271.4 494.7,272.5 496.0,273.5 497.3,274.5 498.6,275.5 499.9,276.5 501.2,277.4 502.5,278.3 503.8,279.2 505.1,280.0 506.4,280.8 507.7,281.6 509.0,282.4 510.3,283.1 511.6,283.8 512.9,284.4 514.2,285.1 515.5,285.6 516.8,286.2 518.1,286.7 519.4,287.2 520.7,287.6 522.0,288.0 523.3,288.4 524.6,288.7 525.9,289.0 527.2,289.3 528.5,289.5 529.8,289.7 531.1,289.8 532.4,289.9 533.7,290.0 535.0,290.0 536.3,290.0 537.6,289.9 538.9,289.8 540.2,289.7 541.5,289.5 542.8,289.3 544.1,289.0 545.4,288.7 546.7,288.4 548.0,250.0 549.3,250.0 550.6,250.0 551.9,250.0 553.2,250.0 554.5,250.0 555.8,250.0 557.1,250.0 558.4,250.0 559.7,250.0 561.0,250.0 562.3,250.0 563.6,250.0 564.9,250.0 566.2,250.0 567.5,250.0 568.8,250.0 570.1,250.0 571.4,250.0 572.7,250.0 574.0,250.0 575.3,250.0 576.6,250.0 577.9,250.0 579.2,250.0 580.5,250.0 581.8,250.0 583.1,250.0 584.4,250.0 585.7,250.0 587.0,250.0 588.3,250.0 589.6,250.0 590.9,250.0 592.2,250.0 593.5,250.0 594.8,250.0 596.1,250.0 597.4,250.0 598.7,250.0 600.0,250.0" class="td-cut"/>
+              <text x="170" y="312" text-anchor="middle" class="td-sub">Start of each half-cycle removed</text>
+              <text x="470" y="312" text-anchor="middle" class="td-sub">End of each half-cycle removed</text>
+            </svg>
+            <figcaption>Simplified illustration: the dimmer removes part of each mains half-cycle (dashed grey shows the full waveform). The driver reads what remains and sets a steady LED current.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEADING vs TRAILING -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Dimmer types</p>
+        <h2 class="ips-section-title mb-2">Leading edge vs trailing edge dimmers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Our Triac drivers work with both types. Choosing the right dimmer is the key to smooth, quiet, flicker-free dimming.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Feature</th><th scope="col" class="ips-col">Leading edge (RL)</th><th scope="col" class="ips-col">Trailing edge (RC / ELV)</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Part of half-cycle removed</td><td class="ips-col">The start</td><td class="ips-col">The end</td></tr>
+            <tr><td>Designed for</td><td class="ips-col">Incandescent and wire-wound transformer loads</td><td class="ips-col">Electronic transformers and LED drivers</td></tr>
+            <tr><td>Switching</td><td class="ips-col">Abrupt switch-on, can cause buzz and inrush</td><td class="ips-col">Gentle switch-on, usually quieter</td></tr>
+            <tr><td>Minimum load</td><td class="ips-col">Often higher</td><td class="ips-col">Often lower, better for small LED loads</td></tr>
+            <tr><td>With our Triac drivers</td><td class="ips-col">Compatible: check the dimmer's LED rating</td><td class="ips-col">Compatible: usually the smoothest results</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">Triac CC drivers compared</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Choose the power and current to suit the LEDs, then the size and features you need.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Series</th><th scope="col" class="ips-col">Power</th><th scope="col" class="ips-col">Output</th><th scope="col" class="ips-col">Current setting</th><th scope="col" class="ips-col">Features</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Snappy SP3</td><td class="ips-col">3 – 10W</td><td class="ips-col">350 / 500 / 700mA, 2.5–29V</td><td class="ips-col">Model choice</td><td class="ips-col">Miniature size</td></tr>
+            <tr><td>Lifud LF-GD</td><td class="ips-col">3 – 30W</td><td class="ips-col">Constant current</td><td class="ips-col">DIP switch</td><td class="ips-col">Leading / trailing edge</td></tr>
+            <tr><td>LTECH TD-9 / TD-10</td><td class="ips-col">9W, 10W</td><td class="ips-col">100 – 700mA, 9–42V</td><td class="ips-col">Adjustable</td><td class="ips-col">Compact</td></tr>
+            <tr><td>LTECH SE-9 to SE-15</td><td class="ips-col">9W, 12W, 15W</td><td class="ips-col">100 – 700mA, 2–42V</td><td class="ips-col">Adjustable</td><td class="ips-col">Wide voltage window</td></tr>
+            <tr><td>Snappy SP</td><td class="ips-col">10 – 36W</td><td class="ips-col">Constant current</td><td class="ips-col">Fixed</td><td class="ips-col">Short circuit, overload, over temperature protection</td></tr>
+            <tr><td>Lifud LF-AAT</td><td class="ips-col">8 – 40W</td><td class="ips-col">100 – 1050mA, 9–42V</td><td class="ips-col">DIP switch</td><td class="ips-col">Smart MCU, 0.1% dimming depth</td></tr>
+            <tr><td>LTECH SE-30 / SE-40</td><td class="ips-col">30W, 40W</td><td class="ips-col">150 – 1050mA, 9–42V</td><td class="ips-col">DIP switch</td><td class="ips-col">Triac / ELV, soft-on, 0.1% depth</td></tr>
+            <tr><td>PSU-SEA TD</td><td class="ips-col">30 – 50W</td><td class="ips-col">Constant current</td><td class="ips-col">Choice of fixed values</td><td class="ips-col">Triac and mains push dimming</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of Triac dimmable LED drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why Triac dimming is a popular choice for retrofit, residential and hospitality lighting.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-plug"></i></span>
+            <h3>No extra wiring</h3>
+            <p>The dimmer replaces the light switch in the existing live feed, with no separate control cables.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-arrow-repeat"></i></span>
+            <h3>Ideal for retrofit</h3>
+            <p>Upgrade existing dimmed circuits to LED without rewiring walls or ceilings.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-sliders"></i></span>
+            <h3>Smooth dimming</h3>
+            <p>Flicker-free 0–100% dimming, down to 0.1% on selected models.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-toggles"></i></span>
+            <h3>Wide dimmer choice</h3>
+            <p>Works with most leading and trailing edge dimmers from the major wiring-accessory brands.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-house"></i></span>
+            <h3>Familiar control</h3>
+            <p>Users keep the rotary or push dimmers they know, with no app or programming needed.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-currency-pound"></i></span>
+            <h3>Cost effective</h3>
+            <p>The simplest, lowest-cost way to add dimming to small LED installations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Selection &amp; set-up</p>
+          <h2 class="ips-section-title mb-3">Choosing and installing a Triac driver</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Match the current</strong>: set or choose the output current to match the LED module's rated current.</li>
+            <li><strong>Check the voltage window</strong>: the LED forward voltage must sit within the driver's output voltage range.</li>
+            <li><strong>Use an LED-rated dimmer</strong>: trailing edge dimmers usually give the smoothest, quietest results.</li>
+            <li><strong>Respect the dimmer load</strong>: keep the total driver load between the dimmer's minimum and maximum LED rating.</li>
+            <li><strong>Set the minimum level</strong>: if the dimmer has a minimum-level adjustment, set it so the LEDs stay stable at the bottom of the range.</li>
+            <li><strong>Avoid mixing loads</strong>: keep different driver types off the same dimmer where possible.</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Related technology and products</h3>
+            <p class="mb-3">Compare other dimming methods and driver types:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="0-10v-led-driver-technology.html">0-10V LED driver technology</a></li>
+              <li><a href="dali-led-driver-technology.html">DALI LED driver technology</a></li>
+              <li><a href="cc-led-driver-technology.html">Constant current driver technology</a></li>
+              <li><a href="product-triac-mains-cv-dimmable-led-drivers.html">Triac CV drivers for LED strip</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">0–100%</div><div class="ips-stat-label">Flicker-free dimming</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">3–50W</div><div class="ips-stat-label">Power range</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">1050mA</div><div class="ips-stat-label">Maximum output current</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">0</div><div class="ips-stat-label">Extra control wires</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where Triac drivers are used</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">Wherever LED lighting needs to be dimmed from a standard wall dimmer.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-house me-2"></i>Residential</h3><p class="mb-0">Downlights and pendants on existing living-room and bedroom dimmers.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-cup-straw me-2"></i>Hospitality</h3><p class="mb-0">Restaurant, bar and hotel room lighting with simple mood control.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail</h3><p class="mb-0">Spot and accent lighting in smaller shops and showrooms.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-arrow-repeat me-2"></i>Retrofit</h3><p class="mb-0">LED upgrades on circuits that already have phase-cut dimmers.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-building me-2"></i>Meeting rooms</h3><p class="mb-0">Presentation dimming without a separate control system.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-lamp me-2"></i>Luminaires</h3><p class="mb-0">Compact drivers built into dimmable downlights and decorative fittings.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE LINKS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Explore</p>
+        <h2 class="ips-section-title mb-2">Explore dimmable LED drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse our Triac drivers and other dimming options.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-triac-mains-cc-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Lifud-LF-AATxxx.jpg" alt="Triac Mains CC Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Triac CC Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-triac-mains-cv-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Snappy-SL-VFM-series-sm.jpg" alt="Triac Mains CV Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Triac CV Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-0-10v-cc-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Lifud%20LF-ABA%20series%200-10v.png" alt="0-10V CC Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>0-10V CC Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-cc-dali-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Lifud-LF-ADD.png" alt="CC DALI Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>CC DALI Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">Triac driver questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="trFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is a Triac dimmable LED driver?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#trFaq"><div class="accordion-body">A Triac dimmable LED driver works with a standard mains phase-cut wall dimmer. The dimmer cuts away part of each half-cycle of the mains supply, and the driver measures how much is left and reduces its LED output current to match. No extra control wires are needed.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">What is the difference between leading edge and trailing edge dimmers?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#trFaq"><div class="accordion-body">A leading edge dimmer cuts the start of each mains half-cycle and was designed for incandescent and wire-wound transformer loads. A trailing edge dimmer cuts the end of each half-cycle, switches more gently and is usually quieter and better suited to electronic LED drivers. Our Triac drivers work with both types, but trailing edge dimmers often give the smoothest results.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Why do LED lights flicker on a Triac dimmer?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#trFaq"><div class="accordion-body">Flicker usually comes from a mismatch between the dimmer and the load: the total LED load may be below the dimmer's minimum load, the dimmer may not be designed for LEDs, or the dimmer's minimum setting may be too low. Use an LED-rated dimmer, keep the load within its LED rating and minimum load, and adjust its minimum level if it has one.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">How many Triac drivers can I connect to one dimmer?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#trFaq"><div class="accordion-body">It depends on the dimmer's LED load rating, not its incandescent rating. Add up the input power of all the drivers, make sure the total sits between the dimmer's minimum and maximum LED load, and allow for the inrush current of several drivers switching on together.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">How is the output current set on a Triac CC driver?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#trFaq"><div class="accordion-body">Depending on the model, the output current is fixed, chosen from several values, or set by DIP switch. Set it to match the LED module's rated current before connecting the LEDs, and check that the LED forward voltage sits within the driver's output voltage range.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help matching drivers and dimmers?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Our team can help you choose a Triac driver and compatible dimmer for smooth, flicker-free results.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
