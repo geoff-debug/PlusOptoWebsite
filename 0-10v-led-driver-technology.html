@@ -73,7 +73,7 @@
         {
           "@type": "Question",
           "name": "How is the output current set on a 0-10V CC driver?",
-          "acceptedAnswer": { "@type": "Answer", "text": "Depending on the model, the output current is set by DIP switches or by NFC programming with a phone app. Set it to match the LED module's rated current before connecting the LEDs, and check that the LED forward voltage sits within the driver's output voltage range." }
+          "acceptedAnswer": { "@type": "Answer", "text": "Depending on the model, the output current is set by DIP switches or by NFC programming with a phone app. On drivers with an Rx input, a fixed resistor across DIM+ and DIM- can also hold the output at a set current below the rated value, chosen from the driver's Rx dimming curve. Set it to match the LED module's rated current before connecting the LEDs, and check that the LED forward voltage sits within the driver's output voltage range." }
         }
       ]
     }
@@ -327,6 +327,7 @@
             <tr><td>1-10V</td><td class="ips-col">DC control voltage from 1V to 10V sets the output level</td><td class="ips-col">Holds at minimum below 1V; switch off at the mains</td><td class="ips-col">Wall dimmers with a mains switch</td></tr>
             <tr><td>10V PWM</td><td class="ips-col">10V pulse signal; the duty cycle sets the output level</td><td class="ips-col">Dim-to-off at a few % duty</td><td class="ips-col">PWM controllers and lighting modules</td></tr>
             <tr><td>Rx</td><td class="ips-col">Variable resistor across DIM+ and DIM-, typically 0-100kΩ</td><td class="ips-col">Dim-to-off at low resistance</td><td class="ips-col">Simple potentiometer, no power needed</td></tr>
+            <tr><td>Fixed resistor (Rx)</td><td class="ips-col">A fixed resistor across DIM+ and DIM- holds the output at a set current below the rated value</td><td class="ips-col">Not used for dimming; sets a fixed level</td><td class="ips-col">No controller: sets the CC value in the luminaire</td></tr>
           </tbody>
         </table>
       </div>
@@ -423,6 +424,7 @@
           <h2 class="ips-section-title mb-3">Choosing and installing a 0-10V driver</h2>
           <ul class="list-unstyled ips-check text-muted mb-0">
             <li><strong>Match the current</strong>: set the output current by DIP switch or NFC to the LED module's rated current.</li>
+            <li><strong>Fine-tune with a fixed resistor</strong>: on Rx-capable drivers, a fixed resistor across DIM+ and DIM- sets the output current below the DIP switch value. Choose its value from the driver's Rx dimming curve.</li>
             <li><strong>Check the voltage window</strong>: the LED forward voltage must sit within the driver's output voltage range.</li>
             <li><strong>Choose the signal</strong>: 0-10V dim-to-off, 1-10V, or a multi-mode driver to suit the controller.</li>
             <li><strong>Size the controller</strong>: check how many drivers it can sink current for on one control pair.</li>
@@ -534,7 +536,7 @@
         </div>
         <div class="accordion-item">
           <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">How is the output current set on a 0-10V CC driver?</button></h3>
-          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#z10Faq"><div class="accordion-body">Depending on the model, the output current is set by DIP switches or by NFC programming with a phone app. Set it to match the LED module's rated current before connecting the LEDs, and check that the LED forward voltage sits within the driver's output voltage range.</div></div>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#z10Faq"><div class="accordion-body">Depending on the model, the output current is set by DIP switches or by NFC programming with a phone app. On drivers with an Rx input, a fixed resistor across DIM+ and DIM- can also hold the output at a set current below the rated value, chosen from the driver's Rx dimming curve. Set it to match the LED module's rated current before connecting the LEDs, and check that the LED forward voltage sits within the driver's output voltage range.</div></div>
         </div>
       </div>
     </div>
