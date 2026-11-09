@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>0-10V LED Driver Technology — Plus Opto</title>
+  <meta name="description" content="How 0-10V dimmable constant current LED drivers work: analogue 0-10V and 1-10V control, dim-to-off, PWM and resistor dimming, tuneable white, and how to choose and wire a 0-10V CC driver." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="0-10V LED Driver Technology — Plus Opto" />
+  <meta property="og:description" content="How 0-10V dimmable constant current LED drivers work: analogue 0-10V and 1-10V control, dim-to-off, PWM and resistor dimming, tuneable white, and how to choose and wire a 0-10V CC driver." />
+  <meta property="og:url" content="https://www.plusopto.com/0-10v-led-driver-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/LED-Driver-group-new-sm.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="0-10V LED Driver Technology — Plus Opto" />
+  <meta name="twitter:description" content="How 0-10V dimmable constant current LED drivers work: analogue 0-10V and 1-10V control, dim-to-off, PWM and resistor dimming, tuneable white, and how to choose and wire a 0-10V CC driver." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/LED-Driver-group-new-sm.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/0-10v-led-driver-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/0-10v-led-driver-technology.html#webpage",
+      "url": "https://www.plusopto.com/0-10v-led-driver-technology.html",
+      "name": "0-10V LED Driver Technology — Plus Opto",
+      "description": "How 0-10V dimmable constant current LED drivers work: analogue 0-10V and 1-10V control, dim-to-off, PWM and resistor dimming, tuneable white, and how to choose and wire a 0-10V CC driver.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/0-10v-led-driver-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Drivers", "item": "https://www.plusopto.com/category-led-drivers.html" },
+        { "@type": "ListItem", "position": 4, "name": "Dimmable LED Drivers", "item": "https://www.plusopto.com/product-dimmable-led-drivers.html" },
+        { "@type": "ListItem", "position": 5, "name": "0-10V CC Dimmable LED Drivers", "item": "https://www.plusopto.com/product-0-10v-cc-dimmable-led-drivers.html" },
+        { "@type": "ListItem", "position": 6, "name": "0-10V Driver Technology", "item": "https://www.plusopto.com/0-10v-led-driver-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/0-10v-led-driver-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is 0-10V dimming?",
+          "acceptedAnswer": { "@type": "Answer", "text": "0-10V is an analogue lighting control method. A low-voltage DC signal between 0 and 10 volts, carried on a separate pair of control wires, sets the light output of the driver: 10V gives full brightness and lower voltages dim the LEDs, down to minimum or off." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between 0-10V and 1-10V?",
+          "acceptedAnswer": { "@type": "Answer", "text": "With 1-10V, the driver dims to its minimum level at 1V and below, and the light is switched off by breaking the mains supply. With 0-10V dim-to-off drivers, the light turns off when the control signal falls to around 0.5V or below, so no separate switching is needed. Many modern drivers recognise both signals automatically." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many 0-10V drivers can share one controller?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Several drivers can be wired in parallel on the same control pair, and they all dim together. The number depends on how much current the controller can sink compared with the current each driver's dimming input supplies, so check both datasheets. 0-10V is not addressable, so drivers that need different levels need separate control channels." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do the 0-10V control wires have polarity?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The control pair is marked DIM+ and DIM-, and must be connected to the matching terminals on the controller. If the DIM input is left unconnected, most drivers run at 100% output. Always follow the driver and controller instructions and local wiring regulations." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is the output current set on a 0-10V CC driver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Depending on the model, the output current is set by DIP switches or by NFC programming with a phone app. Set it to match the LED module's rated current before connecting the LEDs, and check that the LED forward voltage sits within the driver's output voltage range." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-dimmable-led-drivers.html">Dimmable LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-0-10v-cc-dimmable-led-drivers.html">0-10V CC Dimmable LED Drivers</a></li>
+          <li class="breadcrumb-item active" aria-current="page">0-10V Driver Technology</li>
+        </ol>
+      </nav>
+      <h1>0-10V LED Driver Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How 0-10V dimmable constant current LED drivers use a simple analogue control signal to dim LED luminaires, and how to choose between 0-10V, 1-10V, multi-mode and tuneable white drivers.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/LED-Driver-group-new-sm.jpg" alt="0-10V dimmable constant current LED drivers" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What is a 0-10V LED driver?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>A 0-10V dimmable LED driver is a constant current LED power supply with an analogue dimming input. A low-voltage DC control signal, carried on a separate pair of wires, sets the light output: 10V gives full brightness, and lowering the voltage dims the LEDs smoothly down to their minimum level or off. It is one of the simplest and most widely used ways to dim commercial LED luminaires.</p>
+            <p>Our 0-10V CC range from Lifud and LTECH, plus the SRP-2007 50W driver, covers 8W to 50W, with output currents from 100mA to 1500mA set by DIP switch or NFC programming. Multi-mode drivers also accept PWM and variable resistor (Rx) signals, and LTECH's dual-channel models add 0-10V tuneable white control.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>Simple analogue dimming from a wall controller, sensor or BMS</li>
+            <li>Smooth, flicker-free dimming to 1% (0.01% on LTECH T-PWM models)</li>
+            <li>0-10V, 1-10V, PWM and Rx inputs on multi-mode drivers</li>
+            <li>Output current set by DIP switch or NFC</li>
+            <li>Tuneable white dual-channel options</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">0-10V CC range at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Brands: <span>Lifud, LTECH</span></li>
+                <li>Power: <span>8W – 50W</span></li>
+                <li>Output current: <span>100mA – 1500mA</span></li>
+                <li>Output voltage: <span>Up to 48VDC</span></li>
+                <li>Input: <span>100-240VAC / 220-240VAC</span></li>
+                <li>Dimming: <span>0-10V, 1-10V, PWM, Rx</span></li>
+                <li>Current setting: <span>DIP switch or NFC</span></li>
+                <li>Colour: <span>Single colour or tuneable white</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How 0-10V dimming works</h2>
+          <div class="text-muted lh-lg">
+            <p>Each driver is connected to <strong>mains power</strong> and, separately, to a <strong>two-wire control pair</strong> marked DIM+ and DIM-. The driver's dimming input supplies a small current, and the controller <strong>sinks</strong> it to pull the control voltage down between 10V and 0V.</p>
+            <p>The driver reads that voltage and reduces its <strong>constant current output</strong> in proportion: around 10V gives 100% output, and the light dims as the voltage falls. On dim-to-off models the LEDs switch off at about 0.5V; on 1-10V models the light holds at minimum below 1V.</p>
+            <p>Because the signal is analogue, every driver on the same control pair dims <strong>together</strong>. Different zones need their own control channels.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 360" role="img" aria-labelledby="z10DiagTitle">
+              <title id="z10DiagTitle">A 0-10V controller wired in parallel to two constant current LED drivers, with a graph of output current rising as the control voltage rises from 0 to 10 volts</title>
+              <style>
+                .zd-box{fill:#112638}
+                .zd-boxt{font:600 12px Outfit,system-ui,sans-serif;fill:#fff}
+                .zd-drv{fill:#e8eef4;stroke:#7f93a6}
+                .zd-drvt{font:600 11px Outfit,system-ui,sans-serif;fill:#112638}
+                .zd-led{fill:#f4b625;stroke:#d39a14}
+                .zd-ctl{fill:none;stroke:#1fada1;stroke-width:3}
+                .zd-mains{fill:none;stroke:#c0392b;stroke-width:2;stroke-dasharray:6 4}
+                .zd-wire{fill:none;stroke:#183858;stroke-width:1.5}
+                .zd-axis{fill:none;stroke:#7f93a6;stroke-width:1.2}
+                .zd-curve{fill:none;stroke:#1fada1;stroke-width:3}
+                .zd-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .zd-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .zd-v{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#1fada1}
+                .zd-r{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#c0392b}
+              </style>
+              <text x="320" y="22" text-anchor="middle" class="zd-lbl">One control pair dims every driver together</text>
+              <!-- controller -->
+              <rect x="20" y="60" width="120" height="66" rx="8" class="zd-box"/>
+              <text x="80" y="88" text-anchor="middle" class="zd-boxt">0-10V controller</text>
+              <text x="80" y="106" text-anchor="middle" class="zd-boxt" style="font-size:11px">set to 6V</text>
+              <!-- mains -->
+              <path d="M150 50 H610" class="zd-mains"/>
+              <text x="612" y="45" text-anchor="end" class="zd-r">Mains</text>
+              <!-- control pair -->
+              <path d="M140 88 H610 M140 100 H610" class="zd-ctl" style="stroke-width:2"/>
+              <text x="612" y="118" text-anchor="end" class="zd-v">DIM+ / DIM- (6V)</text>
+              <!-- drivers -->
+              <rect x="200" y="130" width="120" height="44" rx="6" class="zd-drv"/>
+              <rect x="400" y="130" width="120" height="44" rx="6" class="zd-drv"/>
+              <text x="260" y="150" text-anchor="middle" class="zd-drvt">0-10V CC driver</text>
+              <text x="260" y="166" text-anchor="middle" class="zd-v">60% output</text>
+              <text x="460" y="150" text-anchor="middle" class="zd-drvt">0-10V CC driver</text>
+              <text x="460" y="166" text-anchor="middle" class="zd-v">60% output</text>
+              <path d="M220 50 V130 M420 50 V130" class="zd-mains" style="stroke-width:1.5"/>
+              <path d="M290 88 V130 M300 100 V130 M490 88 V130 M500 100 V130" class="zd-ctl" style="stroke-width:1.5"/>
+              <!-- LED outputs -->
+              <path d="M260 174 V194 M460 174 V194" class="zd-wire"/>
+              <rect x="215" y="194" width="90" height="16" rx="4" class="zd-led" opacity=".6"/>
+              <rect x="415" y="194" width="90" height="16" rx="4" class="zd-led" opacity=".6"/>
+              <!-- graph -->
+              <path d="M150 340 H470 M150 340 V236" class="zd-axis"/>
+              <path d="M150 340 H166 L174 330 L418 248 H470" class="zd-curve"/>
+              <path d="M150 248 H418" class="zd-axis" style="stroke-dasharray:3 3;stroke-width:1"/>
+              <text x="144" y="252" text-anchor="end" class="zd-sub">100%</text>
+              <text x="144" y="339" text-anchor="end" class="zd-sub">Off</text>
+              <text x="150" y="356" text-anchor="middle" class="zd-sub">0V</text>
+              <text x="310" y="356" text-anchor="middle" class="zd-sub">5V</text>
+              <text x="470" y="356" text-anchor="middle" class="zd-sub">10V</text>
+              <text x="484" y="300" class="zd-sub">Control voltage</text>
+              <text x="484" y="316" class="zd-sub">sets output current</text>
+              <text x="484" y="332" class="zd-v">Dim-to-off below 0.5V</text>
+            </svg>
+            <figcaption>Simplified illustration: mains (red, dashed) powers each driver, while the 0-10V control pair (teal) sets the same dimming level on every driver connected to it.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTROL SIGNALS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Control signals</p>
+        <h2 class="ips-section-title mb-2">0-10V, 1-10V, PWM and Rx compared</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Multi-mode drivers accept several analogue signals on the same DIM terminals, so one driver can suit different controllers.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Signal</th><th scope="col" class="ips-col">How it works</th><th scope="col" class="ips-col">Low end</th><th scope="col" class="ips-col">Typical controller</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>0-10V</td><td class="ips-col">DC control voltage from 0V to 10V sets the output level</td><td class="ips-col">Dim-to-off at about 0.5V</td><td class="ips-col">Wall dimmers, sensors, BMS outputs</td></tr>
+            <tr><td>1-10V</td><td class="ips-col">DC control voltage from 1V to 10V sets the output level</td><td class="ips-col">Holds at minimum below 1V; switch off at the mains</td><td class="ips-col">Wall dimmers with a mains switch</td></tr>
+            <tr><td>10V PWM</td><td class="ips-col">10V pulse signal; the duty cycle sets the output level</td><td class="ips-col">Dim-to-off at a few % duty</td><td class="ips-col">PWM controllers and lighting modules</td></tr>
+            <tr><td>Rx</td><td class="ips-col">Variable resistor across DIM+ and DIM-, typically 0-100kΩ</td><td class="ips-col">Dim-to-off at low resistance</td><td class="ips-col">Simple potentiometer, no power needed</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">0-10V CC drivers compared</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Choose the power and current to suit the LEDs, then the dimming inputs and current setting method you need.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Series</th><th scope="col" class="ips-col">Power</th><th scope="col" class="ips-col">Output current</th><th scope="col" class="ips-col">Current setting</th><th scope="col" class="ips-col">Dimming</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Lifud LF-AAA</td><td class="ips-col">8 – 40W</td><td class="ips-col">100 – 1050mA</td><td class="ips-col">DIP switch</td><td class="ips-col">0-10V</td></tr>
+            <tr><td>Lifud LF-ABA</td><td class="ips-col">12 – 40W</td><td class="ips-col">Up to 1050mA</td><td class="ips-col">DIP switch</td><td class="ips-col">0-10V / PWM / Rx, 12V AUX</td></tr>
+            <tr><td>LTECH SE-W1A</td><td class="ips-col">10W, 20W</td><td class="ips-col">From 100mA</td><td class="ips-col">NFC</td><td class="ips-col">0-10V</td></tr>
+            <tr><td>LTECH SE-W1A-DIP</td><td class="ips-col">10 – 40W</td><td class="ips-col">From 350mA</td><td class="ips-col">DIP switch</td><td class="ips-col">0-10V</td></tr>
+            <tr><td>LTECH SE-W2A-NFC</td><td class="ips-col">30W, 40W</td><td class="ips-col">200 – 1050mA</td><td class="ips-col">NFC, 1mA steps</td><td class="ips-col">0-10V / 1-10V / PWM / Rx, tuneable white</td></tr>
+            <tr><td>SRP-2007</td><td class="ips-col">50W</td><td class="ips-col">250 – 1500mA</td><td class="ips-col">DIP switch</td><td class="ips-col">0-10V / 1-10V</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of 0-10V LED drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why 0-10V remains a popular choice for dimming commercial LED lighting.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-plug"></i></span>
+            <h3>Simple to install</h3>
+            <p>Just two low-voltage control wires alongside the mains, with no addressing or commissioning.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-sliders"></i></span>
+            <h3>Smooth dimming</h3>
+            <p>Flicker-free dimming to 1%, or down to 0.01% with LTECH T-PWM technology.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-diagram-2"></i></span>
+            <h3>Wide compatibility</h3>
+            <p>Works with wall dimmers, occupancy and daylight sensors, and building management systems.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-currency-pound"></i></span>
+            <h3>Cost effective</h3>
+            <p>An economical way to add dimming where individual addressing is not needed.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-thermometer-half"></i></span>
+            <h3>Tuneable white</h3>
+            <p>Dual-channel drivers use a second 0-10V input to set colour temperature as well as brightness.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-phone"></i></span>
+            <h3>Flexible set-up</h3>
+            <p>Set the output current by DIP switch, or by NFC from a phone app without powering the driver.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Selection &amp; set-up</p>
+          <h2 class="ips-section-title mb-3">Choosing and installing a 0-10V driver</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Match the current</strong>: set the output current by DIP switch or NFC to the LED module's rated current.</li>
+            <li><strong>Check the voltage window</strong>: the LED forward voltage must sit within the driver's output voltage range.</li>
+            <li><strong>Choose the signal</strong>: 0-10V dim-to-off, 1-10V, or a multi-mode driver to suit the controller.</li>
+            <li><strong>Size the controller</strong>: check how many drivers it can sink current for on one control pair.</li>
+            <li><strong>Wire the control pair</strong>: DIM+ to DIM+ and DIM- to DIM-, kept separate from the mains wiring as the instructions require.</li>
+            <li><strong>Zone the lighting</strong>: use a separate control channel for each group that needs its own level.</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Related technology and products</h3>
+            <p class="mb-3">Compare other dimming methods and driver types:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="dali-led-driver-technology.html">DALI LED driver technology</a></li>
+              <li><a href="cc-led-driver-technology.html">Constant current driver technology</a></li>
+              <li><a href="product-0-10v-cv-dimmable-led-drivers.html">0-10V CV drivers for LED strip</a></li>
+              <li><a href="product-dimmable-led-drivers.html">All dimmable LED drivers</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">0–10V</div><div class="ips-stat-label">Analogue control signal</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">1%</div><div class="ips-stat-label">Typical dimming depth</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">8–50W</div><div class="ips-stat-label">Power range</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">1.5A</div><div class="ips-stat-label">Maximum output current</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where 0-10V drivers are used</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">0-10V suits any space that needs reliable, straightforward dimming by zone.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-building me-2"></i>Offices</h3><p class="mb-0">Panels and downlights dimmed by zone, sensor or BMS.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail</h3><p class="mb-0">Track and downlights set to suit displays and opening hours.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-mortarboard me-2"></i>Education</h3><p class="mb-0">Classroom dimming from simple wall controls.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-cup-straw me-2"></i>Hospitality</h3><p class="mb-0">Restaurant, bar and hotel lighting with smooth low-level dimming.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-box-seam me-2"></i>Warehouses</h3><p class="mb-0">High-output luminaires dimmed by occupancy sensors to save energy.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-house me-2"></i>Residential</h3><p class="mb-0">Kitchen and living-space downlights on rotary or slide dimmers.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE LINKS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Explore</p>
+        <h2 class="ips-section-title mb-2">Explore dimmable LED drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse our 0-10V drivers and other dimming options.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-0-10v-cc-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Lifud%20LF-ABA%20series%200-10v.png" alt="0-10V CC Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>0-10V CC Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-0-10v-cv-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/LED-Driver-group-new-sm.jpg" alt="0-10V CV Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>0-10V CV Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-cc-dali-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Lifud-LF-ADD.png" alt="CC DALI Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>CC DALI Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/SE-40-300-1050-W1A%20NFC.jpg" alt="Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>All Dimmable Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">0-10V driver questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="z10Faq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is 0-10V dimming?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#z10Faq"><div class="accordion-body">0-10V is an analogue lighting control method. A low-voltage DC signal between 0 and 10 volts, carried on a separate pair of control wires, sets the light output of the driver: 10V gives full brightness and lower voltages dim the LEDs, down to minimum or off.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">What is the difference between 0-10V and 1-10V?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#z10Faq"><div class="accordion-body">With 1-10V, the driver dims to its minimum level at 1V and below, and the light is switched off by breaking the mains supply. With 0-10V dim-to-off drivers, the light turns off when the control signal falls to around 0.5V or below, so no separate switching is needed. Many modern drivers recognise both signals automatically.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">How many 0-10V drivers can share one controller?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#z10Faq"><div class="accordion-body">Several drivers can be wired in parallel on the same control pair, and they all dim together. The number depends on how much current the controller can sink compared with the current each driver's dimming input supplies, so check both datasheets. 0-10V is not addressable, so drivers that need different levels need separate control channels.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Do the 0-10V control wires have polarity?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#z10Faq"><div class="accordion-body">Yes. The control pair is marked DIM+ and DIM-, and must be connected to the matching terminals on the controller. If the DIM input is left unconnected, most drivers run at 100% output. Always follow the driver and controller instructions and local wiring regulations.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">How is the output current set on a 0-10V CC driver?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#z10Faq"><div class="accordion-body">Depending on the model, the output current is set by DIP switches or by NFC programming with a phone app. Set it to match the LED module's rated current before connecting the LEDs, and check that the LED forward voltage sits within the driver's output voltage range.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help choosing a 0-10V driver?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Our team can help you match the driver current, dimming signal and controller to your luminaire.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
