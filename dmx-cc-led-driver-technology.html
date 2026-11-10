@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DMX CC LED Driver Technology — Plus Opto</title>
+  <meta name="description" content="How DMX512 constant current LED drivers work: DMX universes, channels and addressing, RDM, daisy-chain wiring and termination, deep flicker-free PWM dimming and how to choose a DMX CC driver." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="DMX CC LED Driver Technology — Plus Opto" />
+  <meta property="og:description" content="How DMX512 constant current LED drivers work: DMX universes, channels and addressing, RDM, daisy-chain wiring and termination, deep flicker-free PWM dimming and how to choose a DMX CC driver." />
+  <meta property="og:url" content="https://www.plusopto.com/dmx-cc-led-driver-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/DMX-CC-driver-group-sm.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="DMX CC LED Driver Technology — Plus Opto" />
+  <meta name="twitter:description" content="How DMX512 constant current LED drivers work: DMX universes, channels and addressing, RDM, daisy-chain wiring and termination, deep flicker-free PWM dimming and how to choose a DMX CC driver." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/DMX-CC-driver-group-sm.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/dmx-cc-led-driver-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/dmx-cc-led-driver-technology.html#webpage",
+      "url": "https://www.plusopto.com/dmx-cc-led-driver-technology.html",
+      "name": "DMX CC LED Driver Technology — Plus Opto",
+      "description": "How DMX512 constant current LED drivers work: DMX universes, channels and addressing, RDM, daisy-chain wiring and termination, deep flicker-free PWM dimming and how to choose a DMX CC driver.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/dmx-cc-led-driver-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Controllers", "item": "https://www.plusopto.com/category-led-controllers.html" },
+        { "@type": "ListItem", "position": 4, "name": "DMX LED Controllers", "item": "https://www.plusopto.com/product-dmx-controllers-overview.html" },
+        { "@type": "ListItem", "position": 5, "name": "DMX LED Drivers Constant Current", "item": "https://www.plusopto.com/product-dmx-led-drivers-cc.html" },
+        { "@type": "ListItem", "position": 6, "name": "DMX CC Driver Technology", "item": "https://www.plusopto.com/dmx-cc-led-driver-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/dmx-cc-led-driver-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a DMX constant current LED driver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A DMX constant current (CC) driver is a mains LED driver with a DMX512 control input. It supplies a fixed current to an LED module and dims it to the level sent on its DMX channel, so each fitting can be controlled individually from a lighting desk, DMX controller or building system." }
+        },
+        {
+          "@type": "Question",
+          "name": "How is a DMX driver addressed?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Each driver is given a start address from 1 to 512 and listens to that DMX channel, or to consecutive channels for 2-channel tuneable white models. The address is set with buttons and a display on the Sunricher SRP-2106 drivers, or by RDM or the app on the Ltech SE series. Drivers given the same address respond together." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is RDM?",
+          "acceptedAnswer": { "@type": "Answer", "text": "RDM (Remote Device Management) is a two-way extension of DMX512 that runs on the same cable. A controller that supports RDM can find each driver, set its DMX address and read its status remotely, without access to the driver itself. The Ltech SE-W1M and SE-W2M drivers support RDM." }
+        },
+        {
+          "@type": "Question",
+          "name": "How should DMX cable be wired?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Run the DMX line as a daisy chain from driver to driver using screened twisted-pair data cable, not a star or spur layout, and fit a 120 ohm terminator at the last driver. Use a DMX splitter or amplifier to create extra branches, or if a line has more devices than the DMX standard allows (normally 32)." }
+        },
+        {
+          "@type": "Question",
+          "name": "How deep can DMX CC drivers dim?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The Ltech SE-W1M and SE-W2M drivers dim from 100% down to 0.01% with high-frequency PWM at 3600Hz, which is flicker free to IEEE 1789. Soft-on and fade-in functions make changes smooth and comfortable." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-dmx-controllers-overview.html">DMX LED Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-dmx-led-drivers-cc.html">DMX LED Drivers Constant Current</a></li>
+          <li class="breadcrumb-item active" aria-current="page">DMX CC Driver Technology</li>
+        </ol>
+      </nav>
+      <h1>DMX CC LED Driver Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How DMX512 constant current drivers give individual, deep-dimming control of LED fittings, and how to address, wire and choose them.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/DMX-CC-driver-group-sm.jpg" alt="DMX constant current LED drivers and DMX dimming modules from Ltech and Sunricher" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What is a DMX CC LED driver?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>A DMX constant current (CC) driver is a mains LED driver with a DMX512 control input. It supplies a fixed current to an LED module and dims it to the level sent on its DMX channel, so every fitting can be controlled individually from a lighting desk, DMX controller or building management system. DMX is the standard for architectural, stage and entertainment lighting.</p>
+            <p>Our range includes Ltech SE series drivers up to 20W with DMX/RDM and dimming down to 0.01%, and Sunricher SRP-2106 drivers at 50W and 75W with 250–1500mA output and a built-in address display. Ltech LT-84A and LT-834A modules convert DMX or DALI to 0-10V, PWM or mains phase-cut dimming for other drivers and lamps.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>Individual control of each fitting on a DMX512 line</li>
+            <li>Constant current output set by DIP switch or app</li>
+            <li>Deep, flicker-free dimming to IEEE 1789</li>
+            <li>RDM for remote addressing on Ltech SE models</li>
+            <li>Tuneable white 2-channel model</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">DMX CC range at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Brands: <span>Ltech, Sunricher</span></li>
+                <li>Control: <span>DMX512, RDM on SE series</span></li>
+                <li>Output current: <span>100mA – 1500mA</span></li>
+                <li>Power: <span>Up to 75W</span></li>
+                <li>Input: <span>Mains AC (100-240VAC on SE series)</span></li>
+                <li>Current setting: <span>DIP switch or app</span></li>
+                <li>Dimming: <span>Down to 0.01% (SE series)</span></li>
+                <li>Channels: <span>1 or 2 (tuneable white)</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How DMX dimming works</h2>
+          <div class="text-muted lh-lg">
+            <p>A DMX controller sends a continuous stream of data called a <strong>universe</strong>: 512 <strong>channels</strong>, each holding a level from 0 to 255. The stream travels over a <strong>daisy-chained</strong> twisted-pair cable from driver to driver, with a <strong>120Ω terminator</strong> at the end of the line.</p>
+            <p>Each driver is set to a <strong>start address</strong> and reads only its own channel, or two consecutive channels for tuneable white. Drivers with the same address act together.</p>
+            <p>The driver then sets its <strong>constant current</strong> output to that level using <strong>high-frequency PWM</strong>. With <strong>RDM</strong>, the controller can also find drivers, set their addresses and read their status over the same cable.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 320" role="img" aria-labelledby="dmxDiagTitle">
+              <title id="dmxDiagTitle">A DMX controller sending a 512-channel universe along a daisy-chained line to three addressed constant current drivers, with a terminator at the end</title>
+              <style>
+                .dx-box{fill:#112638}
+                .dx-boxt{font:600 12px Outfit,system-ui,sans-serif;fill:#fff}
+                .dx-drv{fill:#e8eef4;stroke:#7f93a6}
+                .dx-drvt{font:600 11px Outfit,system-ui,sans-serif;fill:#112638}
+                .dx-bus{fill:none;stroke:#1fada1;stroke-width:3}
+                .dx-dc{fill:none;stroke:#183858;stroke-width:2}
+                .dx-led{fill:#f4b625;stroke:#c99512}
+                .dx-ch{fill:#e8eef4;stroke:#c3cfda}
+                .dx-chon{fill:#1fada1}
+                .dx-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .dx-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .dx-v{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#1fada1}
+              </style>
+              <text x="320" y="22" text-anchor="middle" class="dx-lbl">One DMX universe, three addressed CC drivers</text>
+              <!-- controller -->
+              <rect x="20" y="60" width="96" height="56" rx="8" class="dx-box"/>
+              <text x="68" y="84" text-anchor="middle" class="dx-boxt">DMX</text>
+              <text x="68" y="100" text-anchor="middle" class="dx-boxt">controller</text>
+              <!-- bus -->
+              <path d="M116 88 H600" class="dx-bus"/>
+              <text x="130" y="78" class="dx-v">DMX512 line</text>
+              <rect x="600" y="78" width="22" height="20" rx="3" class="dx-box"/>
+              <text x="611" y="118" text-anchor="middle" class="dx-sub">120Ω</text>
+              <!-- drops -->
+              <path d="M260 88 V140" class="dx-bus"/>
+              <path d="M400 88 V140" class="dx-bus"/>
+              <path d="M540 88 V140" class="dx-bus"/>
+              <!-- drivers -->
+              <rect x="205" y="140" width="110" height="44" rx="6" class="dx-drv"/>
+              <text x="260" y="159" text-anchor="middle" class="dx-drvt">DMX CC driver</text>
+              <text x="260" y="175" text-anchor="middle" class="dx-sub" style="font-size:11px">Address 001</text>
+              <rect x="345" y="140" width="110" height="44" rx="6" class="dx-drv"/>
+              <text x="400" y="159" text-anchor="middle" class="dx-drvt">DMX CC driver</text>
+              <text x="400" y="175" text-anchor="middle" class="dx-sub" style="font-size:11px">Address 002</text>
+              <rect x="485" y="140" width="110" height="44" rx="6" class="dx-drv"/>
+              <text x="540" y="159" text-anchor="middle" class="dx-drvt">DMX CC driver</text>
+              <text x="540" y="175" text-anchor="middle" class="dx-sub" style="font-size:11px">Address 003</text>
+              <!-- LEDs -->
+              <path d="M260 184 V204" class="dx-dc"/><circle cx="260" cy="218" r="14" class="dx-led"/>
+              <path d="M400 184 V204" class="dx-dc"/><circle cx="400" cy="218" r="14" class="dx-led" opacity=".55"/>
+              <path d="M540 184 V204" class="dx-dc"/><circle cx="540" cy="218" r="14" class="dx-led" opacity=".2"/>
+              <text x="260" y="250" text-anchor="middle" class="dx-sub">100%</text>
+              <text x="400" y="250" text-anchor="middle" class="dx-sub">50%</text>
+              <text x="540" y="250" text-anchor="middle" class="dx-sub">10%</text>
+              <!-- universe strip -->
+              <text x="20" y="282" class="dx-sub">Universe:</text>
+              <rect x="90" y="270" width="26" height="16" class="dx-chon"/>
+              <rect x="118" y="270" width="26" height="16" class="dx-chon" opacity=".55"/>
+              <rect x="146" y="270" width="26" height="16" class="dx-chon" opacity=".2"/>
+              <rect x="174" y="270" width="26" height="16" class="dx-ch"/>
+              <rect x="202" y="270" width="26" height="16" class="dx-ch"/>
+              <rect x="230" y="270" width="26" height="16" class="dx-ch"/>
+              <text x="270" y="282" class="dx-sub">…</text>
+              <rect x="290" y="270" width="26" height="16" class="dx-ch"/>
+              <text x="90" y="306" class="dx-sub">ch 1  2  3</text>
+              <text x="290" y="306" class="dx-sub">ch 512</text>
+              <text x="380" y="282" class="dx-sub">512 channels, 0–255 each</text>
+            </svg>
+            <figcaption>Simplified illustration: each driver reads the channel at its address from the DMX universe and dims its constant current output to that level.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DMX vs others -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Control options</p>
+        <h2 class="ips-section-title mb-2">DMX compared with DALI and 0-10V</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">How DMX512 compares with the other common ways to dim constant current LED fittings.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Feature</th><th scope="col" class="ips-col">DMX512</th><th scope="col" class="ips-col">DALI</th><th scope="col" class="ips-col">0-10V</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Signal</td><td class="ips-col">Fast digital data stream</td><td class="ips-col">Slower digital commands</td><td class="ips-col">Analogue voltage</td></tr>
+            <tr><td>Wiring</td><td class="ips-col">Data cable, daisy chain, terminated</td><td class="ips-col">2-wire bus, any topology</td><td class="ips-col">2-wire pair per zone</td></tr>
+            <tr><td>Devices per line</td><td class="ips-col">512 channels per universe</td><td class="ips-col">64 addresses per bus</td><td class="ips-col">Per zone</td></tr>
+            <tr><td>Speed</td><td class="ips-col">Smooth real-time effects</td><td class="ips-col">Scenes and slow fades</td><td class="ips-col">Real-time, no addressing</td></tr>
+            <tr><td>Best for</td><td class="ips-col">Architectural, stage and dynamic lighting</td><td class="ips-col">Commercial building control</td><td class="ips-col">Simple dimming zones</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">See also <a href="dali-led-driver-technology.html">DALI LED driver technology</a> and <a href="0-10v-led-driver-technology.html">0-10V LED driver technology</a>.</p>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">DMX CC drivers compared</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Choose the current to match the LED module, then check its forward voltage is within the driver's output range.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Model</th><th scope="col" class="ips-col">Output current</th><th scope="col" class="ips-col">Output voltage</th><th scope="col" class="ips-col">Max. power</th><th scope="col" class="ips-col">Current set by</th><th scope="col" class="ips-col">Control</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Ltech SE-10-350-700-W1M</td><td class="ips-col">350 – 700mA</td><td class="ips-col">2 – 12V</td><td class="ips-col">8.4W</td><td class="ips-col">DIP switch</td><td class="ips-col">DMX/RDM, 1 channel</td></tr>
+            <tr><td>Ltech SE-12-100-400-W1M</td><td class="ips-col">100 – 400mA</td><td class="ips-col">10 – 42V</td><td class="ips-col">12W</td><td class="ips-col">DIP switch</td><td class="ips-col">DMX/RDM, 1 channel</td></tr>
+            <tr><td>Ltech SE-12-350-700-W1M</td><td class="ips-col">350 – 700mA</td><td class="ips-col">10 – 24V</td><td class="ips-col">12W</td><td class="ips-col">DIP switch</td><td class="ips-col">DMX/RDM, 1 channel</td></tr>
+            <tr><td>Ltech SE-20-100-700-W2M</td><td class="ips-col">100 – 700mA, 1mA steps</td><td class="ips-col">9 – 42V</td><td class="ips-col">20W</td><td class="ips-col">App</td><td class="ips-col">DMX/RDM, 2 channel CCT</td></tr>
+            <tr><td>Sunricher SRP-2106-CC50</td><td class="ips-col">250 – 1500mA</td><td class="ips-col">—</td><td class="ips-col">50W</td><td class="ips-col">DIP switch</td><td class="ips-col">DMX512, 1 or 2 channel</td></tr>
+            <tr><td>Sunricher SRP-2106-75CC</td><td class="ips-col">250 – 1500mA</td><td class="ips-col">—</td><td class="ips-col">75W</td><td class="ips-col">DIP switch</td><td class="ips-col">DMX512, 1 or 2 channel</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">Also in the range: the Ltech LT-84A converts DMX or DALI to four 0-10V, 5V PWM or 10V PWM outputs, and the LT-834A dims mains lamps by phase cut from DMX or DALI.</p>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of DMX CC LED drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why DMX is the choice for dynamic and architectural LED lighting.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-grid-3x3"></i></span>
+            <h3>Individual control</h3>
+            <p>Up to 512 channels per universe, so every fitting or group can have its own level.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-lightning"></i></span>
+            <h3>Real-time effects</h3>
+            <p>The continuous data stream gives smooth fades, chases and dynamic scenes.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-sliders"></i></span>
+            <h3>Deep dimming</h3>
+            <p>Down to 0.01% on Ltech SE models, flicker free to IEEE 1789 for camera-friendly light.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-arrow-left-right"></i></span>
+            <h3>RDM</h3>
+            <p>Find drivers, set addresses and check status remotely over the DMX cable.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-toggles"></i></span>
+            <h3>Adjustable current</h3>
+            <p>Set from 100mA to 1500mA by DIP switch or app to suit the LED module.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-thermometer-half"></i></span>
+            <h3>Tuneable white</h3>
+            <p>The 2-channel SE-W2M controls brightness and colour temperature from two DMX channels.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Selection &amp; set-up</p>
+          <h2 class="ips-section-title mb-3">Choosing and installing a DMX CC driver</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Match the current</strong>: set the driver to the LED module's rated current before switching on.</li>
+            <li><strong>Check the voltage</strong>: the module's forward voltage must sit within the driver's output range.</li>
+            <li><strong>Plan the addresses</strong>: give each driver, or group of drivers, its own start address; 2-channel models use two.</li>
+            <li><strong>Daisy-chain the cable</strong>: run screened twisted-pair data cable from driver to driver, with no spurs or star joints.</li>
+            <li><strong>Terminate the line</strong>: fit a 120Ω terminator at the last driver on each DMX line.</li>
+            <li><strong>Split large systems</strong>: use a DMX splitter or amplifier for branches or more devices than one line allows (normally 32).</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Related technology and products</h3>
+            <p class="mb-3">Complete the system and compare other control methods:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="product-dmx-master-controllers.html">DMX master controllers</a></li>
+              <li><a href="product-dmx-decoders-cc.html">DMX decoders constant current</a></li>
+              <li><a href="cc-led-driver-technology.html">CC LED driver technology</a></li>
+              <li><a href="dali-led-driver-technology.html">DALI LED driver technology</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">512</div><div class="ips-stat-label">Channels per universe</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">0.01%</div><div class="ips-stat-label">Dimming depth (SE series)</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">3600Hz</div><div class="ips-stat-label">PWM frequency (SE series)</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">1500mA</div><div class="ips-stat-label">Maximum output current</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where DMX CC drivers are used</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">Wherever LED fittings need individual, dynamic or broadcast-quality control.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-building me-2"></i>Architectural</h3><p class="mb-0">Facade, feature and accent lighting with dynamic scenes.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-camera-reels me-2"></i>Stage and studio</h3><p class="mb-0">Flicker-free dimming for theatres, studios and live events.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-bank me-2"></i>Museums and galleries</h3><p class="mb-0">Precise low-level dimming for displays and exhibits.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-cup-straw me-2"></i>Hospitality</h3><p class="mb-0">Restaurants, bars and hotels with programmed lighting scenes.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail</h3><p class="mb-0">Spotlights and downlights in flagship stores and showrooms.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-easel me-2"></i>Exhibitions</h3><p class="mb-0">Stands and attractions controlled from a central DMX desk.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE LINKS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Explore</p>
+        <h2 class="ips-section-title mb-2">Explore DMX LED control</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse our DMX drivers, decoders and controllers.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dmx-led-drivers-cv.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/LM-36-24-G1M2.jpg" alt="DMX LED Drivers Constant Voltage" loading="lazy" /></div>
+            <div class="card-body"><h3>DMX CV Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dmx-decoders-cc.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/LT-858-CC.png" alt="DMX Decoders Constant Current" loading="lazy" /></div>
+            <div class="card-body"><h3>DMX CC Decoders</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dmx-master-controllers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/LT512S.jpg" alt="DMX Master Controllers" loading="lazy" /></div>
+            <div class="card-body"><h3>DMX Master Controllers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-cc-dali-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Lifud-LF-ADD.png" alt="CC DALI Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>CC DALI Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">DMX CC driver questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="dmxFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is a DMX constant current LED driver?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#dmxFaq"><div class="accordion-body">A DMX constant current (CC) driver is a mains LED driver with a DMX512 control input. It supplies a fixed current to an LED module and dims it to the level sent on its DMX channel, so each fitting can be controlled individually from a lighting desk, DMX controller or building system.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">How is a DMX driver addressed?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#dmxFaq"><div class="accordion-body">Each driver is given a start address from 1 to 512 and listens to that DMX channel, or to consecutive channels for 2-channel tuneable white models. The address is set with buttons and a display on the Sunricher SRP-2106 drivers, or by RDM or the app on the Ltech SE series. Drivers given the same address respond together.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">What is RDM?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#dmxFaq"><div class="accordion-body">RDM (Remote Device Management) is a two-way extension of DMX512 that runs on the same cable. A controller that supports RDM can find each driver, set its DMX address and read its status remotely, without access to the driver itself. The Ltech SE-W1M and SE-W2M drivers support RDM.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">How should DMX cable be wired?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#dmxFaq"><div class="accordion-body">Run the DMX line as a daisy chain from driver to driver using screened twisted-pair data cable, not a star or spur layout, and fit a 120 ohm terminator at the last driver. Use a DMX splitter or amplifier to create extra branches, or if a line has more devices than the DMX standard allows (normally 32).</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">How deep can DMX CC drivers dim?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#dmxFaq"><div class="accordion-body">The Ltech SE-W1M and SE-W2M drivers dim from 100% down to 0.01% with high-frequency PWM at 3600Hz, which is flicker free to IEEE 1789. Soft-on and fade-in functions make changes smooth and comfortable.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help with DMX lighting control?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Our team can help you choose DMX drivers, controllers and LED fittings, and plan addressing and cabling.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
