@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DMX Master Controller Technology — Plus Opto</title>
+  <meta name="description" content="How DMX master controllers work: devices that generate the DMX512 signal for LED decoders and drivers, from USB interfaces with stand-alone scene memory to pixel controllers and wall panels, with addressing, wiring and how to choose one." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="DMX Master Controller Technology — Plus Opto" />
+  <meta property="og:description" content="How DMX master controllers work: devices that generate the DMX512 signal for LED decoders and drivers, from USB interfaces with stand-alone scene memory to pixel controllers and wall panels, with addressing, wiring and how to choose one." />
+  <meta property="og:url" content="https://www.plusopto.com/dmx-master-controller-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/DMX-master-controller-group-sm.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="DMX Master Controller Technology — Plus Opto" />
+  <meta name="twitter:description" content="How DMX master controllers work: devices that generate the DMX512 signal for LED decoders and drivers, from USB interfaces with stand-alone scene memory to pixel controllers and wall panels, with addressing, wiring and how to choose one." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/DMX-master-controller-group-sm.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/dmx-master-controller-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/dmx-master-controller-technology.html#webpage",
+      "url": "https://www.plusopto.com/dmx-master-controller-technology.html",
+      "name": "DMX Master Controller Technology — Plus Opto",
+      "description": "How DMX master controllers work: devices that generate the DMX512 signal for LED decoders and drivers, from USB interfaces with stand-alone scene memory to pixel controllers and wall panels, with addressing, wiring and how to choose one.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/dmx-master-controller-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Controllers", "item": "https://www.plusopto.com/category-led-controllers.html" },
+        { "@type": "ListItem", "position": 4, "name": "DMX LED Controllers", "item": "https://www.plusopto.com/product-dmx-controllers-overview.html" },
+        { "@type": "ListItem", "position": 5, "name": "DMX Master Controllers", "item": "https://www.plusopto.com/product-dmx-master-controllers.html" },
+        { "@type": "ListItem", "position": 6, "name": "DMX Master Controller Technology", "item": "https://www.plusopto.com/dmx-master-controller-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/dmx-master-controller-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a DMX master controller?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A DMX master controller is the device that generates the DMX512 signal. It sends a level for each of up to 512 channels many times a second, and the DMX decoders and drivers on the line each read the channels at their own address. Without a master, DMX decoders have nothing to follow." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is a DMX universe?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A universe is one DMX512 line carrying 512 channels. An RGB decoder uses 3 channels, an RGBW decoder 4 and an RGB+CCT decoder 5, so one universe can control up to 170 RGB zones. Larger projects use controllers with two or more universes, such as the LTSA-1024 with 1024 channels." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a computer to run a DMX master controller?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Only for programming. The USB interfaces are programmed from LED Player or similar software, then the scenes are saved to their internal memory and played in stand-alone mode with no computer attached. The LT-600 plays shows from its SD card, and the X5 and MS-WF-512 wall panels work on their own from the wall." }
+        },
+        {
+          "@type": "Question",
+          "name": "How should a DMX line be wired?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Run a single daisy chain from the master to each decoder in turn using screened twisted-pair data cable, not a star or branches. Fit a 120 ohm terminator across the data pair at the last decoder. A DMX line normally supports up to 32 devices before a DMX amplifier or splitter is needed." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I set the decoder addresses?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Set each decoder's start address so its channels match what the master sends. For example, the X5 RGB+CCT panel uses 5 channels per zone, so the decoders are set to 001 for zone 1, 006 for zone 2, 011 for zone 3 and 016 for zone 4. With PC software, you choose the addresses when you add the fixtures to the project." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-dmx-controllers-overview.html">DMX LED Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-dmx-master-controllers.html">DMX Master Controllers</a></li>
+          <li class="breadcrumb-item active" aria-current="page">DMX Master Controller Technology</li>
+        </ol>
+      </nav>
+      <h1>DMX Master Controller Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How DMX master controllers generate the DMX512 signal that drives LED decoders and drivers, from USB interfaces to pixel controllers and wall panels.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/DMX-master-controller-group-sm.jpg" alt="LT-512S, LTSA-512, LT-600 and X5 DMX master controllers" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What are DMX master controllers?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>A DMX master controller is the device that <strong>creates the DMX512 signal</strong>. DMX decoders and DMX LED drivers only follow instructions, so every DMX lighting system needs one master at the start of the line.</p>
+            <p>The master sends a level from 0 to 255 for each of up to <strong>512 channels</strong>, refreshed many times a second. Each decoder reads the channels from its own <strong>start address</strong> and drives its LEDs to match. Masters range from <strong>USB interfaces</strong> programmed from a PC, to <strong>pixel controllers</strong> that play video shows, to <strong>wall panels</strong> with touch keys.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>Generates the DMX512 signal for decoders and drivers</li>
+            <li>512 channels per universe, up to 1024 on dual-universe models</li>
+            <li>Programmed from PC software or set from the panel</li>
+            <li>Stand-alone playback from internal memory or SD card</li>
+            <li>Scene triggers from keys, timers, contacts and remotes</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">DMX masters at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Protocol: <span>DMX512</span></li>
+                <li>Channels: <span>512 per universe</span></li>
+                <li>Types: <span>USB, pixel, wall panel</span></li>
+                <li>Software: <span>LED Player</span></li>
+                <li>Playback: <span>PC or stand-alone</span></li>
+                <li>Pixel outputs: <span>16 (LT-600)</span></li>
+                <li>Wireless: <span>2.4GHz RF, WiFi</span></li>
+                <li>Brands: <span>LTECH, MiBoxer</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How a DMX master works</h2>
+          <div class="text-muted lh-lg">
+            <p>DMX512 is a <strong>one-way serial signal</strong> sent over a twisted data pair. The master sends a packet holding the level of every channel, then repeats it continuously, so a decoder that misses one packet catches the next.</p>
+            <p>The decoders are <strong>daisy-chained</strong> on one line. Each is set to a <strong>start address</strong> and takes as many channels as it needs: 3 for RGB, 4 for RGBW, 5 for RGB+CCT. A <strong>120Ω terminator</strong> at the end of the line stops signal reflections.</p>
+            <p>Shows are built in PC software or chosen on the panel, then stored in the master and replayed with <strong>no computer attached</strong>.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 320" role="img" aria-labelledby="dmDiagTitle">
+              <title id="dmDiagTitle">A DMX master sends the DMX512 signal along a daisy chain to three RGB+CCT decoders at addresses 001, 006 and 011, each driving its own LED strip, with a 120 ohm terminator at the end of the line</title>
+              <style>
+                .dm-box{fill:#fff;stroke:#7f93a6;stroke-width:1.5}
+                .dm-drv{fill:#e8eef4;stroke:#7f93a6}
+                .dm-drvt{font:600 11px Outfit,system-ui,sans-serif;fill:#112638}
+                .dm-line{fill:none;stroke:#1fada1;stroke-width:2.5}
+                .dm-dc{fill:none;stroke:#183858;stroke-width:2}
+                .dm-strip{fill:#fff;stroke:#7f93a6}
+                .dm-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .dm-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .dm-v{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#1fada1}
+                .dm-w{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#183858}
+              </style>
+              <text x="320" y="22" text-anchor="middle" class="dm-lbl">One master, many addressed decoders</text>
+              <!-- master -->
+              <rect x="20" y="124" width="110" height="56" rx="8" class="dm-box"/>
+              <rect x="32" y="136" width="40" height="16" rx="3" fill="#112638"/>
+              <text x="52" y="148" text-anchor="middle" style="font:600 10px 'Space Grotesk',sans-serif;fill:#1fada1">001</text>
+              <g fill="#3a5470"><circle cx="88" cy="144" r="4"/><circle cx="102" cy="144" r="4"/><circle cx="116" cy="144" r="4"/></g>
+              <text x="75" y="170" text-anchor="middle" class="dm-drvt">DMX master</text>
+              <text x="75" y="204" text-anchor="middle" class="dm-sub">PC, memory</text>
+              <text x="75" y="220" text-anchor="middle" class="dm-sub">or panel</text>
+              <!-- DMX chain -->
+              <path d="M130 152 H180" class="dm-line"/>
+              <path d="M280 152 H320" class="dm-line"/>
+              <path d="M420 152 H460" class="dm-line"/>
+              <path d="M560 152 H586" class="dm-line"/>
+              <text x="225" y="98" text-anchor="middle" class="dm-w">Address 001</text>
+              <text x="370" y="98" text-anchor="middle" class="dm-w">Address 006</text>
+              <text x="510" y="98" text-anchor="middle" class="dm-w">Address 011</text>
+              <rect x="180" y="130" width="100" height="44" rx="6" class="dm-drv"/>
+              <text x="230" y="150" text-anchor="middle" class="dm-drvt">Decoder</text>
+              <text x="230" y="165" text-anchor="middle" class="dm-drvt">CH 1–5</text>
+              <rect x="320" y="130" width="100" height="44" rx="6" class="dm-drv"/>
+              <text x="370" y="150" text-anchor="middle" class="dm-drvt">Decoder</text>
+              <text x="370" y="165" text-anchor="middle" class="dm-drvt">CH 6–10</text>
+              <rect x="460" y="130" width="100" height="44" rx="6" class="dm-drv"/>
+              <text x="510" y="150" text-anchor="middle" class="dm-drvt">Decoder</text>
+              <text x="510" y="165" text-anchor="middle" class="dm-drvt">CH 11–15</text>
+              <!-- terminator -->
+              <rect x="586" y="142" width="34" height="20" rx="3" fill="#183858"/>
+              <text x="603" y="190" text-anchor="middle" class="dm-sub">120Ω</text>
+              <!-- strips -->
+              <path d="M230 174 V206" class="dm-dc"/>
+              <path d="M370 174 V206" class="dm-dc"/>
+              <path d="M510 174 V206" class="dm-dc"/>
+              <rect x="180" y="206" width="100" height="16" rx="3" class="dm-strip"/>
+              <rect x="320" y="206" width="100" height="16" rx="3" class="dm-strip"/>
+              <rect x="460" y="206" width="100" height="16" rx="3" class="dm-strip"/>
+              <g fill="#e2574c"><rect x="190" y="210" width="10" height="8"/><rect x="214" y="210" width="10" height="8"/><rect x="238" y="210" width="10" height="8"/><rect x="262" y="210" width="10" height="8"/></g>
+              <g fill="#f4b625"><rect x="330" y="210" width="10" height="8"/><rect x="354" y="210" width="10" height="8"/><rect x="378" y="210" width="10" height="8"/><rect x="402" y="210" width="10" height="8"/></g>
+              <g fill="#4a7fd4"><rect x="470" y="210" width="10" height="8"/><rect x="494" y="210" width="10" height="8"/><rect x="518" y="210" width="10" height="8"/><rect x="542" y="210" width="10" height="8"/></g>
+              <text x="370" y="254" text-anchor="middle" class="dm-sub">RGB+CCT LED strip, one zone per decoder</text>
+              <text x="320" y="296" text-anchor="middle" class="dm-v">DMX512 daisy chain: 512 channels, up to 32 devices per line</text>
+            </svg>
+            <figcaption>Simplified illustration: each RGB+CCT decoder takes 5 channels from its start address, and the line ends with a 120Ω terminator.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHOOSING -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Types of master</p>
+        <h2 class="ips-section-title mb-2">Choosing the type of master</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Choose by how the show is created and how the lights will be controlled day to day.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Type</th><th scope="col" class="ips-col">Programmed by</th><th scope="col" class="ips-col">Best for</th><th scope="col" class="ips-col">Our controllers</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>USB-DMX interface</td><td class="ips-col">PC software (LED Player)</td><td class="ips-col">Custom scenes and shows, played from a PC or memory</td><td class="ips-col">LT-512S</td></tr>
+            <tr><td>Stand-alone interface</td><td class="ips-col">PC software, then stand-alone</td><td class="ips-col">Permanent installs with timers, contacts and keys</td><td class="ips-col">LTSA-512, LTSA-1024</td></tr>
+            <tr><td>Pixel / video controller</td><td class="ips-col">PC over Ethernet, SD card</td><td class="ips-col">Pixel LED video, facades and media walls</td><td class="ips-col">LT-600</td></tr>
+            <tr><td>Wall panel master</td><td class="ips-col">Touch keys, remote or app</td><td class="ips-col">Room lighting with zones, colours and scenes</td><td class="ips-col">X5, MS-WF-512</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">See also <a href="dmx-cv-led-driver-technology.html">DMX CV LED driver technology</a> and <a href="dmx-cc-led-driver-technology.html">DMX CC LED driver technology</a>.</p>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">DMX masters compared</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Key details from each controller's datasheet.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Controller</th><th scope="col" class="ips-col">Output</th><th scope="col" class="ips-col">Control and memory</th><th scope="col" class="ips-col">Power</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>LT-512S</td><td class="ips-col">512 DMX channels, XLR-3</td><td class="ips-col">PC software, stand-alone memory, IR remote option</td><td class="ips-col">5V via USB</td></tr>
+            <tr><td>LTSA-512 / LTSA-1024</td><td class="ips-col">512 or 1024 DMX channels</td><td class="ips-col">8 scene keys, clock, dry contacts, IR, micro SD</td><td class="ips-col">5V USB-C or 9–36VDC</td></tr>
+            <tr><td>LT-600</td><td class="ips-col">16 outputs, SPI or DMX512</td><td class="ips-col">Ethernet, WiFi, 2GB SD card, up to 32,768 RGB pixels</td><td class="ips-col">12VDC adaptor</td></tr>
+            <tr><td>X5</td><td class="ips-col">DMX512 and 2.4GHz RF, 4 zones RGB+CCT</td><td class="ips-col">Touch panel, MiBoxer remotes and app</td><td class="ips-col">100–240VAC</td></tr>
+            <tr><td>MS-WF-512</td><td class="ips-col">DMX512 and 2.4GHz RF</td><td class="ips-col">Colour screen, WiFi app, scene remote</td><td class="ips-col">5–24VDC</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">The X5 sends 5 channels per zone: decoders are set to 001, 006, 011 and 016 for zones 1 to 4.</p>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of DMX control</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why a DMX master is the heart of a flexible LED lighting system.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-grid-3x3-gap"></i></span>
+            <h3>Many zones</h3>
+            <p>Up to 512 channels per universe, enough for 170 separate RGB zones.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-patch-check"></i></span>
+            <h3>Open standard</h3>
+            <p>Any DMX512 decoder or driver can be added to the line.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-film"></i></span>
+            <h3>Dynamic shows</h3>
+            <p>Fades, chases and colour changes run in perfect step across every zone.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-cpu"></i></span>
+            <h3>Stand-alone</h3>
+            <p>Shows play from internal memory or SD card with no PC attached.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-clock"></i></span>
+            <h3>Automatic triggers</h3>
+            <p>Start scenes by clock, calendar, dry contact or remote on stand-alone models.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-diagram-3"></i></span>
+            <h3>Simple wiring</h3>
+            <p>One data cable daisy-chained from decoder to decoder.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Selection &amp; set-up</p>
+          <h2 class="ips-section-title mb-3">Choosing and setting up a DMX master</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Count the channels</strong>: add up 3, 4 or 5 channels per decoder. Over 512 needs a second universe.</li>
+            <li><strong>Choose the control</strong>: PC software for custom shows, a wall panel for day-to-day room control.</li>
+            <li><strong>Wire the line</strong>: daisy-chain the decoders with screened twisted-pair cable and fit a 120Ω terminator at the end.</li>
+            <li><strong>Address the decoders</strong>: set each start address to match the channels the master sends.</li>
+            <li><strong>Programme the show</strong>: build scenes in LED Player and save them to the controller's memory.</li>
+            <li><strong>Add triggers</strong>: assign scenes to keys, times, contacts or a remote for stand-alone use.</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Related technology and products</h3>
+            <p class="mb-3">Complete the system with decoders and drivers:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="product-dmx-decoders-cv.html">CV DMX decoders</a></li>
+              <li><a href="product-dmx-led-drivers-cv.html">DMX CV LED drivers</a></li>
+              <li><a href="product-dmx-decoders-cc.html">CC DMX decoders</a></li>
+              <li><a href="dmx-cv-led-driver-technology.html">DMX CV LED driver technology</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">512</div><div class="ips-stat-label">Channels per universe</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">1024</div><div class="ips-stat-label">Channels on LTSA-1024</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">16</div><div class="ips-stat-label">Pixel outputs on LT-600</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">120Ω</div><div class="ips-stat-label">Line terminator</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where DMX masters are used</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">Wherever LED lighting needs many zones or dynamic effects.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-building me-2"></i>Architectural</h3><p class="mb-0">Facade and building outline lighting with timed colour shows.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-cup-straw me-2"></i>Hospitality</h3><p class="mb-0">Bar, club and restaurant scenes triggered from the wall.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail</h3><p class="mb-0">Window and display lighting that changes with the season.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-display me-2"></i>Media walls</h3><p class="mb-0">Pixel LED video and graphics from the LT-600.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-easel me-2"></i>Exhibitions</h3><p class="mb-0">Stand and showroom lighting programmed for each event.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-tree me-2"></i>Landscape</h3><p class="mb-0">Garden, bridge and water feature lighting on a timer.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE LINKS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Explore</p>
+        <h2 class="ips-section-title mb-2">Explore DMX lighting control</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse decoders, drivers and controllers.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dmx-decoders-cv.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/LT-811-10A.png" alt="CV DMX Decoders" loading="lazy" /></div>
+            <div class="card-body"><h3>CV DMX Decoders</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dmx-led-drivers-cv.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/DMX-CV-driver-group-sm.jpg" alt="DMX CV LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>DMX CV Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="products-spi-led-controllers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/LT-spi16_m16.jpg" alt="SPI LED Controllers" loading="lazy" /></div>
+            <div class="card-body"><h3>SPI Controllers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-rf-touch-panel-led-controllers-e-series.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/E-series-touch-panel-group-sm.jpg" alt="E Series RF Touch Panels" loading="lazy" /></div>
+            <div class="card-body"><h3>E Series Touch Panels</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">DMX master questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="dmFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is a DMX master controller?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#dmFaq"><div class="accordion-body">A DMX master controller is the device that generates the DMX512 signal. It sends a level for each of up to 512 channels many times a second, and the DMX decoders and drivers on the line each read the channels at their own address. Without a master, DMX decoders have nothing to follow.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">What is a DMX universe?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#dmFaq"><div class="accordion-body">A universe is one DMX512 line carrying 512 channels. An RGB decoder uses 3 channels, an RGBW decoder 4 and an RGB+CCT decoder 5, so one universe can control up to 170 RGB zones. Larger projects use controllers with two or more universes, such as the LTSA-1024 with 1024 channels.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Do I need a computer to run a DMX master controller?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#dmFaq"><div class="accordion-body">Only for programming. The USB interfaces are programmed from LED Player or similar software, then the scenes are saved to their internal memory and played in stand-alone mode with no computer attached. The LT-600 plays shows from its SD card, and the X5 and MS-WF-512 wall panels work on their own from the wall.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">How should a DMX line be wired?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#dmFaq"><div class="accordion-body">Run a single daisy chain from the master to each decoder in turn using screened twisted-pair data cable, not a star or branches. Fit a 120 ohm terminator across the data pair at the last decoder. A DMX line normally supports up to 32 devices before a DMX amplifier or splitter is needed.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">How do I set the decoder addresses?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#dmFaq"><div class="accordion-body">Set each decoder's start address so its channels match what the master sends. For example, the X5 RGB+CCT panel uses 5 channels per zone, so the decoders are set to 001 for zone 1, 006 for zone 2, 011 for zone 3 and 016 for zone 4. With PC software, you choose the addresses when you add the fixtures to the project.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help choosing a DMX master?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Our team can help you plan channels, decoders and wiring for your project.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
