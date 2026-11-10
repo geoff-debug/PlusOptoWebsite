@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DALI Touch Panel Technology — Plus Opto</title>
+  <meta name="description" content="How DALI touch panels work: wall panels powered from the two-wire DALI bus that switch, dim and colour-tune DALI drivers by address, group or broadcast, with scene keys, DT6 and DT8 control, and how to choose and address a panel." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="DALI Touch Panel Technology — Plus Opto" />
+  <meta property="og:description" content="How DALI touch panels work: wall panels powered from the two-wire DALI bus that switch, dim and colour-tune DALI drivers by address, group or broadcast, with scene keys, DT6 and DT8 control, and how to choose and address a panel." />
+  <meta property="og:url" content="https://www.plusopto.com/dali-touch-panel-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/DALI-touch-panel-group-sm.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="DALI Touch Panel Technology — Plus Opto" />
+  <meta name="twitter:description" content="How DALI touch panels work: wall panels powered from the two-wire DALI bus that switch, dim and colour-tune DALI drivers by address, group or broadcast, with scene keys, DT6 and DT8 control, and how to choose and address a panel." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/DALI-touch-panel-group-sm.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/dali-touch-panel-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/dali-touch-panel-technology.html#webpage",
+      "url": "https://www.plusopto.com/dali-touch-panel-technology.html",
+      "name": "DALI Touch Panel Technology — Plus Opto",
+      "description": "How DALI touch panels work: wall panels powered from the two-wire DALI bus that switch, dim and colour-tune DALI drivers by address, group or broadcast, with scene keys, DT6 and DT8 control, and how to choose and address a panel.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/dali-touch-panel-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Controllers", "item": "https://www.plusopto.com/category-led-controllers.html" },
+        { "@type": "ListItem", "position": 4, "name": "Touch Panel LED Controllers", "item": "https://www.plusopto.com/product-touch-panel-led-controllers-overview.html" },
+        { "@type": "ListItem", "position": 5, "name": "DALI Touch Panel LED Controllers", "item": "https://www.plusopto.com/product-rf-touch-panel-led-controllers-dali.html" },
+        { "@type": "ListItem", "position": 6, "name": "DALI Touch Panel Technology", "item": "https://www.plusopto.com/dali-touch-panel-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/dali-touch-panel-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a DALI touch panel?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A DALI touch panel is a wall control that connects to the two-wire DALI bus instead of switching mains or LED power. It sends DALI commands to the drivers on the bus to switch, dim and colour-tune the lights, and it recalls scenes stored in the drivers. It fits a standard 86mm wall box." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a DALI touch panel need its own power supply?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No separate supply is needed at the panel. It is powered from the DALI bus itself, drawing less than 6mA. The bus does need a DALI bus power supply, such as a 16V, 250mA unit, which also powers the other control devices on the bus." }
+        },
+        {
+          "@type": "Question",
+          "name": "What are unicast, group and broadcast modes?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In unicast mode each zone key controls one driver short address (0 to 63). In group mode each zone key controls one DALI group (0 to 15), so many drivers respond together. In broadcast mode the panel controls every driver on the bus. The panel's four zone keys take four consecutive addresses or groups from the start value you set." }
+        },
+        {
+          "@type": "Question",
+          "name": "What do DT6 and DT8 mean?",
+          "acceptedAnswer": { "@type": "Answer", "text": "They are DALI device types defined in IEC 62386. DT6 is for single-channel LED dimming. DT8 is for colour control, using Tc for tunable white, x-y coordinates for RGB, or RGBWAF for multi-channel colour. The panel's control type must match the device type of the DALI drivers." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I set the address on a DALI touch panel?",
+          "acceptedAnswer": { "@type": "Answer", "text": "On the EDT and EDA panels, two rotary switches on the back select the mode and the start address: X sets unicast, group or broadcast and Y sets the value. On the DP panels, unlock the digital display with a long press of the M key, then step through the address, group and scene settings with the arrow keys." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-touch-panel-led-controllers-overview.html">Touch Panel LED Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-rf-touch-panel-led-controllers-dali.html">DALI Touch Panel LED Controllers</a></li>
+          <li class="breadcrumb-item active" aria-current="page">DALI Touch Panel Technology</li>
+        </ol>
+      </nav>
+      <h1>DALI Touch Panel Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How DALI touch panels switch, dim and colour-tune LED lighting over the two-wire DALI bus, by address, group or broadcast.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/DALI-touch-panel-group-sm.jpg" alt="DP, EDT and EDA DALI touch panels and DALI bus power supplies" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What are DALI touch panels?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>DALI touch panels are glass wall controls that connect to the <strong>DALI bus</strong>, the two-wire control line that links DALI LED drivers. They do not switch the LED power themselves. Instead they send digital commands to the drivers, which then switch, dim and colour-tune the lights.</p>
+            <p>Each panel is <strong>powered from the bus</strong>, so only the two DALI wires run to the wall box. The panel can control drivers by <strong>individual address</strong>, by <strong>group</strong> or by <strong>broadcast</strong>, and its scene keys recall lighting scenes stored in the drivers. The panels follow the DALI standard, <strong>IEC 62386</strong>, so they work with DALI drivers of the matching device type.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>Glass touch panel for a standard 86mm wall box</li>
+            <li>Powered from the DALI bus, with no separate supply</li>
+            <li>Unicast, group and broadcast control</li>
+            <li>Dimming (DT6) and colour control (DT8)</li>
+            <li>Scene keys that recall stored DALI scenes</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">DALI panels at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Standard: <span>IEC 62386</span></li>
+                <li>Power: <span>DALI bus, under 6mA</span></li>
+                <li>Device types: <span>DT6, DT8</span></li>
+                <li>Control: <span>Dim, CT, RGB, RGBW</span></li>
+                <li>Zones: <span>Up to 4 per panel</span></li>
+                <li>Addresses: <span>64 short, 16 groups</span></li>
+                <li>Size: <span>86 × 86mm</span></li>
+                <li>Ranges: <span>DP, EDT, EDA</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How DALI panels work</h2>
+          <div class="text-muted lh-lg">
+            <p>A <strong>DALI bus power supply</strong> puts around 16V on the two bus wires. The panel and the drivers all connect to the same pair, which is polarity-free and can run alongside the mains cabling.</p>
+            <p>When a key or slider is touched, the panel sends a <strong>DALI command</strong> on the bus. Every driver hears it, but only the drivers with the matching <strong>short address</strong> or <strong>group</strong> respond, so one pair of wires can control many separate zones.</p>
+            <p><strong>Scenes</strong> are stored in the drivers themselves. A short press on a scene key recalls the scene, and a long press saves the current light levels to it.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 320" role="img" aria-labelledby="dpDiagTitle">
+              <title id="dpDiagTitle">A DALI bus power supply feeds a two-wire DALI bus. A DALI touch panel and four DALI drivers connect to the bus, and the panel controls each driver's zone of lights by address or group.</title>
+              <style>
+                .dp-panel{fill:#fff;stroke:#7f93a6;stroke-width:1.5}
+                .dp-drv{fill:#e8eef4;stroke:#7f93a6}
+                .dp-drvt{font:600 11px Outfit,system-ui,sans-serif;fill:#112638}
+                .dp-bus{fill:none;stroke:#183858;stroke-width:2}
+                .dp-tap{fill:none;stroke:#183858;stroke-width:1.5}
+                .dp-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .dp-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .dp-v{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#1fada1}
+                .dp-w{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#183858}
+              </style>
+              <text x="320" y="22" text-anchor="middle" class="dp-lbl">One pair of wires, many zones</text>
+              <!-- power supply -->
+              <text x="70" y="62" text-anchor="middle" class="dp-sub">Mains in</text>
+              <rect x="20" y="72" width="100" height="44" rx="6" class="dp-drv"/>
+              <text x="70" y="91" text-anchor="middle" class="dp-drvt">DALI bus PSU</text>
+              <text x="70" y="106" text-anchor="middle" class="dp-drvt">16V</text>
+              <path d="M70 116 V146" class="dp-tap"/>
+              <!-- bus -->
+              <path d="M40 146 H620" class="dp-bus"/>
+              <path d="M40 154 H620" class="dp-bus"/>
+              <text x="40" y="172" class="dp-w">DA1, DA2</text>
+              <!-- drivers and lamps -->
+              <g>
+                <circle cx="325" cy="54" r="9" fill="#f4b625"/>
+                <path d="M325 63 V86" class="dp-tap"/>
+                <rect x="290" y="86" width="70" height="36" rx="6" class="dp-drv"/>
+                <text x="325" y="108" text-anchor="middle" class="dp-drvt">Driver</text>
+                <path d="M325 122 V146" class="dp-tap"/>
+                <text x="325" y="180" text-anchor="middle" class="dp-sub">Zone 1</text>
+              </g>
+              <g>
+                <circle cx="405" cy="54" r="9" fill="#f4b625"/>
+                <path d="M405 63 V86" class="dp-tap"/>
+                <rect x="370" y="86" width="70" height="36" rx="6" class="dp-drv"/>
+                <text x="405" y="108" text-anchor="middle" class="dp-drvt">Driver</text>
+                <path d="M405 122 V146" class="dp-tap"/>
+                <text x="405" y="180" text-anchor="middle" class="dp-sub">Zone 2</text>
+              </g>
+              <g>
+                <circle cx="485" cy="54" r="9" fill="#f4b625"/>
+                <path d="M485 63 V86" class="dp-tap"/>
+                <rect x="450" y="86" width="70" height="36" rx="6" class="dp-drv"/>
+                <text x="485" y="108" text-anchor="middle" class="dp-drvt">Driver</text>
+                <path d="M485 122 V146" class="dp-tap"/>
+                <text x="485" y="180" text-anchor="middle" class="dp-sub">Zone 3</text>
+              </g>
+              <g>
+                <circle cx="565" cy="54" r="9" fill="#f4b625"/>
+                <path d="M565 63 V86" class="dp-tap"/>
+                <rect x="530" y="86" width="70" height="36" rx="6" class="dp-drv"/>
+                <text x="565" y="108" text-anchor="middle" class="dp-drvt">Driver</text>
+                <path d="M565 122 V146" class="dp-tap"/>
+                <text x="565" y="180" text-anchor="middle" class="dp-sub">Zone 4</text>
+              </g>
+              <!-- panel -->
+              <path d="M200 154 V190" class="dp-tap"/>
+              <rect x="150" y="190" width="100" height="100" rx="8" class="dp-panel"/>
+              <rect x="166" y="206" width="68" height="10" rx="4" fill="#f4b625" opacity=".8"/>
+              <g fill="#3a5470"><circle cx="170" cy="240" r="5"/><circle cx="190" cy="240" r="5"/><circle cx="210" cy="240" r="5"/><circle cx="230" cy="240" r="5"/></g>
+              <g fill="none" stroke="#3a5470" stroke-width="1.5"><circle cx="170" cy="266" r="5"/><circle cx="190" cy="266" r="5"/><circle cx="210" cy="266" r="5"/><circle cx="230" cy="266" r="5"/></g>
+              <text x="200" y="308" text-anchor="middle" class="dp-sub">DALI touch panel</text>
+              <!-- notes -->
+              <text x="445" y="226" text-anchor="middle" class="dp-v">Commands to address or group</text>
+              <text x="445" y="246" text-anchor="middle" class="dp-sub">On/off, dim, colour, scenes</text>
+              <text x="445" y="276" text-anchor="middle" class="dp-sub">Panel powered from the bus</text>
+            </svg>
+            <figcaption>Simplified illustration: the panel and drivers share one two-wire DALI bus, and each zone key controls a driver address or group.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHOOSING -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Device types</p>
+        <h2 class="ips-section-title mb-2">Matching the panel to the drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">DALI groups drivers by device type. Choose a panel that sends the same type as your drivers.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Light type</th><th scope="col" class="ips-col">DALI device type</th><th scope="col" class="ips-col">Driver needed</th><th scope="col" class="ips-col">Our panels</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Single colour dimming</td><td class="ips-col">DT6</td><td class="ips-col">DALI dimmable CV or CC driver</td><td class="ips-col">DP1S, EDT1, EDA1–EDA4</td></tr>
+            <tr><td>Tunable white</td><td class="ips-col">DT8, Tc</td><td class="ips-col">DALI DT8 tunable white driver</td><td class="ips-col">DP2S, EDT2</td></tr>
+            <tr><td>RGB colour</td><td class="ips-col">DT8, x-y</td><td class="ips-col">DALI DT8 colour driver</td><td class="ips-col">DP3S, EDT3</td></tr>
+            <tr><td>RGBW / RGB+CCT</td><td class="ips-col">DT8, RGBWAF</td><td class="ips-col">DALI DT8 multi-channel driver</td><td class="ips-col">DP3S</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">See also <a href="dali-led-driver-technology.html">DALI LED driver technology</a> and <a href="cv-dali-led-driver-technology.html">CV DALI LED driver technology</a>.</p>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">DALI panels compared</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Pick the light type, then how you want to set the address.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Panel</th><th scope="col" class="ips-col">Control</th><th scope="col" class="ips-col">Keys</th><th scope="col" class="ips-col">Address setting</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>DP1S</td><td class="ips-col">Dimming (DT6)</td><td class="ips-col">4 zones, 4 scenes</td><td class="ips-col">Digital display and M key</td></tr>
+            <tr><td>DP2S</td><td class="ips-col">CCT (DT8 Tc)</td><td class="ips-col">4 zones, 4 scenes</td><td class="ips-col">Digital display and M key</td></tr>
+            <tr><td>DP3S</td><td class="ips-col">RGB, RGBW, RGB+CCT (DT8)</td><td class="ips-col">4 zones, 3 scenes</td><td class="ips-col">Digital display and M key</td></tr>
+            <tr><td>EDT1</td><td class="ips-col">Dimming</td><td class="ips-col">4 zones, 4 scenes, dimming ring</td><td class="ips-col">Rotary switches</td></tr>
+            <tr><td>EDT2</td><td class="ips-col">CT (DT8 Tc)</td><td class="ips-col">4 zones, 4 scenes, touch ring</td><td class="ips-col">Rotary switches</td></tr>
+            <tr><td>EDT3</td><td class="ips-col">RGB (DT8 x-y)</td><td class="ips-col">4 zones, 4 scenes, colour ring</td><td class="ips-col">Rotary switches</td></tr>
+            <tr><td>EDA1–EDA4</td><td class="ips-col">On/off and dimming</td><td class="ips-col">1 to 4 channel keys</td><td class="ips-col">Rotary switches</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">All panels are powered from the DALI bus and fit an 86mm wall box. The EDT and EDA panels measure 86 × 86 × 37mm.</p>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of DALI panels</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why a DALI wall panel suits commercial and larger lighting schemes.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-plug"></i></span>
+            <h3>Two wires only</h3>
+            <p>Just the polarity-free DALI pair runs to the wall box, with no mains switching.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-battery-charging"></i></span>
+            <h3>Bus powered</h3>
+            <p>The panel draws its power from the DALI bus, so there are no batteries or adapters.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-grid-3x3-gap"></i></span>
+            <h3>Flexible zoning</h3>
+            <p>Control single addresses, groups or the whole bus, and rezone without rewiring.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-patch-check"></i></span>
+            <h3>Open standard</h3>
+            <p>IEC 62386 commands work with DALI drivers of the matching device type.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-collection"></i></span>
+            <h3>Scenes</h3>
+            <p>Recall up to 16 stored scenes, and save new ones with a long press.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-palette"></i></span>
+            <h3>Colour control</h3>
+            <p>DT8 panels tune white light and colour as well as brightness.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Selection &amp; set-up</p>
+          <h2 class="ips-section-title mb-3">Choosing and setting up a DALI panel</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Match the device type</strong>: DT6 for dimming, DT8 for tunable white or colour, to suit the drivers.</li>
+            <li><strong>Power the bus</strong>: fit a DALI bus power supply, for example 16V at 250mA, and wire DA1 and DA2 to the panel and drivers.</li>
+            <li><strong>Address the drivers</strong>: give each driver a short address (0–63) or add it to a group (0–15).</li>
+            <li><strong>Set the panel mode</strong>: choose unicast, group or broadcast and the start value. The four zone keys take that value and the next three.</li>
+            <li><strong>Set the scenes</strong>: choose the first scene number. The scene keys take that scene and the ones that follow.</li>
+            <li><strong>Fit the panel</strong>: fix the base to an 86mm wall box and clip the glass panel on.</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Related technology and products</h3>
+            <p class="mb-3">Complete the system with DALI drivers and controllers:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="product-cv-dali-dimmable-led-drivers.html">CV DALI dimmable LED drivers</a></li>
+              <li><a href="product-cc-dali-dimmable-led-drivers.html">CC DALI dimmable LED drivers</a></li>
+              <li><a href="product-dali-controllers.html">DALI controllers</a></li>
+              <li><a href="dali-led-driver-technology.html">DALI LED driver technology</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">64</div><div class="ips-stat-label">Short addresses</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">16</div><div class="ips-stat-label">Groups and scenes</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">2</div><div class="ips-stat-label">Bus wires</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">86mm</div><div class="ips-stat-label">Wall box size</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where DALI panels are used</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">Wherever lighting is controlled in zones from a DALI system.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-building me-2"></i>Offices</h3><p class="mb-0">Meeting room and open-plan zones, dimmed and tuned from the wall.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-cup-straw me-2"></i>Hospitality</h3><p class="mb-0">Hotel, restaurant and bar scenes recalled at the touch of a key.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-mortarboard me-2"></i>Education</h3><p class="mb-0">Classroom and lecture theatre presets for teaching and presenting.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-hospital me-2"></i>Healthcare</h3><p class="mb-0">Tunable white lighting for wards, clinics and treatment rooms.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail</h3><p class="mb-0">Feature and colour lighting zones across the shop floor.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-house me-2"></i>Residential</h3><p class="mb-0">Whole-home DALI lighting with a wall panel in each room.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE LINKS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Explore</p>
+        <h2 class="ips-section-title mb-2">Explore DALI lighting control</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse DALI drivers, controllers and panels.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-cv-dali-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Snappy-dali-group-sm.jpg" alt="CV DALI Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>CV DALI Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-cc-dali-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Lifud-LF-ADD.png" alt="CC DALI Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>CC DALI Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dali-controllers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Lifud-DALI-2-Visual-3.jpg" alt="DALI Controllers" loading="lazy" /></div>
+            <div class="card-body"><h3>DALI Controllers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-rf-touch-panel-led-controllers-e-series.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/E-series-touch-panel-group-sm.jpg" alt="E Series RF Touch Panels" loading="lazy" /></div>
+            <div class="card-body"><h3>E Series Touch Panels</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">DALI panel questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="dpFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is a DALI touch panel?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#dpFaq"><div class="accordion-body">A DALI touch panel is a wall control that connects to the two-wire DALI bus instead of switching mains or LED power. It sends DALI commands to the drivers on the bus to switch, dim and colour-tune the lights, and it recalls scenes stored in the drivers. It fits a standard 86mm wall box.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Does a DALI touch panel need its own power supply?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#dpFaq"><div class="accordion-body">No separate supply is needed at the panel. It is powered from the DALI bus itself, drawing less than 6mA. The bus does need a DALI bus power supply, such as a 16V, 250mA unit, which also powers the other control devices on the bus.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">What are unicast, group and broadcast modes?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#dpFaq"><div class="accordion-body">In unicast mode each zone key controls one driver short address (0 to 63). In group mode each zone key controls one DALI group (0 to 15), so many drivers respond together. In broadcast mode the panel controls every driver on the bus. The panel's four zone keys take four consecutive addresses or groups from the start value you set.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">What do DT6 and DT8 mean?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#dpFaq"><div class="accordion-body">They are DALI device types defined in IEC 62386. DT6 is for single-channel LED dimming. DT8 is for colour control, using Tc for tunable white, x-y coordinates for RGB, or RGBWAF for multi-channel colour. The panel's control type must match the device type of the DALI drivers.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">How do I set the address on a DALI touch panel?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#dpFaq"><div class="accordion-body">On the EDT and EDA panels, two rotary switches on the back select the mode and the start address: X sets unicast, group or broadcast and Y sets the value. On the DP panels, unlock the digital display with a long press of the M key, then step through the address, group and scene settings with the arrow keys.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help choosing a panel?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Our team can help you match DALI panels, drivers and power supplies for your project.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
