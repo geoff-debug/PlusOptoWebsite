@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casambi CV LED Driver Technology — Plus Opto</title>
+  <meta name="description" content="How Casambi enabled constant voltage LED drivers work: Bluetooth mesh control of 12V, 24V and 48V LED strip from an app, no gateway or control wiring, push dimming and how to size a Casambi CV driver." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="Casambi CV LED Driver Technology — Plus Opto" />
+  <meta property="og:description" content="How Casambi enabled constant voltage LED drivers work: Bluetooth mesh control of 12V, 24V and 48V LED strip from an app, no gateway or control wiring, push dimming and how to size a Casambi CV driver." />
+  <meta property="og:url" content="https://www.plusopto.com/casambi-cv-led-driver-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/SCL150-12_24_48VF.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="Casambi CV LED Driver Technology — Plus Opto" />
+  <meta name="twitter:description" content="How Casambi enabled constant voltage LED drivers work: Bluetooth mesh control of 12V, 24V and 48V LED strip from an app, no gateway or control wiring, push dimming and how to size a Casambi CV driver." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/SCL150-12_24_48VF.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/casambi-cv-led-driver-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/casambi-cv-led-driver-technology.html#webpage",
+      "url": "https://www.plusopto.com/casambi-cv-led-driver-technology.html",
+      "name": "Casambi CV LED Driver Technology — Plus Opto",
+      "description": "How Casambi enabled constant voltage LED drivers work: Bluetooth mesh control of 12V, 24V and 48V LED strip from an app, no gateway or control wiring, push dimming and how to size a Casambi CV driver.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/casambi-cv-led-driver-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Drivers", "item": "https://www.plusopto.com/category-led-drivers.html" },
+        { "@type": "ListItem", "position": 4, "name": "Dimmable LED Drivers", "item": "https://www.plusopto.com/product-dimmable-led-drivers.html" },
+        { "@type": "ListItem", "position": 5, "name": "Casambi Enabled CV LED Drivers", "item": "https://www.plusopto.com/product-casambi-enabled-led-drivers-cv.html" },
+        { "@type": "ListItem", "position": 6, "name": "Casambi CV Driver Technology", "item": "https://www.plusopto.com/casambi-cv-led-driver-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/casambi-cv-led-driver-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a Casambi CV LED driver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A Casambi constant voltage (CV) driver is a 12V, 24V or 48V DC LED power supply with a Casambi Bluetooth Low Energy radio built in. It powers LED strip or linear lighting and can be switched, dimmed and grouped from the Casambi app or Casambi compatible wireless switches, with no control wiring." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a gateway to use Casambi drivers?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Casambi drivers form a Bluetooth mesh in which every driver relays commands to its neighbours, so the system is set up and controlled directly from the app. A gateway is only needed for remote control or monitoring over the internet." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I dim a Casambi CV driver with a wall switch?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Snappy SCL series has a built-in push dimming input for a standard retractive push switch: a short press switches the light on or off and a long press dims. When several drivers are dimmed together, they are linked in the Casambi app, and Casambi wireless switches can be used as well." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which output voltage should I choose?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Match the driver to the strip voltage. 24V strip is the most common choice for general lighting, and 48V strip allows longer runs with less voltage drop because it draws half the current of 24V strip for the same power. 12V suits short runs and low-voltage fittings." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I size a Casambi CV driver for LED strip?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Add up the strip load in watts (watts per metre multiplied by length) and choose a driver rated at least 20% above that total. For example, 8m of 14.4W/m strip draws 115W, so a 150W driver is the right choice. Note that the 12V SCL150 is rated at 132W." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-dimmable-led-drivers.html">Dimmable LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-casambi-enabled-led-drivers-cv.html">Casambi Enabled CV LED Drivers</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Casambi CV Driver Technology</li>
+        </ol>
+      </nav>
+      <h1>Casambi CV LED Driver Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How Casambi enabled constant voltage drivers bring wireless Bluetooth control to 12V, 24V and 48V LED strip, and how to choose the right one.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/SCL150-12_24_48VF.jpg" alt="Snappy SCL series Casambi enabled constant voltage LED driver" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What is a Casambi CV LED driver?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>A Casambi enabled constant voltage (CV) driver is a 12V, 24V or 48V DC LED power supply with a Casambi Bluetooth Low Energy radio built in. It powers LED strip, linear lighting and signage, and can be switched, dimmed and grouped from the Casambi app on a phone or tablet, or from Casambi compatible wireless switches. There is no control wiring and no gateway is needed.</p>
+            <p>Our Casambi CV range is the Snappy SCL series: slimline linear drivers rated at 100W and 150W with 12V, 24V or 48V outputs. The SCL150 dims from 1% to 100%, reaches up to 93.5% efficiency, and has a built-in push dimming input for a standard wall push switch.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>Wireless control of LED strip from the Casambi app and switches</li>
+            <li>Self-forming Bluetooth mesh: no gateway or control cables</li>
+            <li>12V, 24V or 48V output to match the strip</li>
+            <li>Built-in push dimming from a standard push switch</li>
+            <li>Slim linear case for coves, ceilings and furniture</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">Casambi CV range at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Series: <span>Snappy SCL100, SCL150</span></li>
+                <li>Output voltage: <span>12V, 24V or 48VDC</span></li>
+                <li>Power: <span>100W or 150W</span></li>
+                <li>Input: <span>220-240VAC mains</span></li>
+                <li>Control: <span>Casambi Bluetooth mesh</span></li>
+                <li>Other inputs: <span>Push dimming</span></li>
+                <li>Dimming: <span>1–100%</span></li>
+                <li>Efficiency: <span>Up to 93.5%</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How Casambi CV control works</h2>
+          <div class="text-muted lh-lg">
+            <p>Every Casambi driver is a <strong>node</strong> in a <strong>Bluetooth Low Energy mesh</strong>. Each node relays messages to its neighbours, so a command from the app or a switch reaches every driver, even those out of direct range of the phone.</p>
+            <p>Drivers are <strong>commissioned in the Casambi app</strong>, where they are named and grouped into rooms, scenes and timers. The settings are stored in the network, so the lights keep working without the phone.</p>
+            <p>Each driver holds a steady <strong>12V, 24V or 48V</strong> output and dims the LED strip to the requested level. A wired <strong>push switch</strong> adds local on/off and dimming, and drivers linked in the app dim together.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 320" role="img" aria-labelledby="cvcDiagTitle">
+              <title id="cvcDiagTitle">The Casambi app and a push switch controlling two Casambi constant voltage drivers linked by a Bluetooth mesh, each powering a 24V LED strip</title>
+              <style>
+                .cv-box{fill:#112638}
+                .cv-boxt{font:600 12px Outfit,system-ui,sans-serif;fill:#fff}
+                .cv-drv{fill:#e8eef4;stroke:#7f93a6}
+                .cv-drvt{font:600 11px Outfit,system-ui,sans-serif;fill:#112638}
+                .cv-mesh{fill:none;stroke:#1fada1;stroke-width:2;stroke-dasharray:6 4}
+                .cv-mains{fill:none;stroke:#c0392b;stroke-width:2;stroke-dasharray:2 3}
+                .cv-dc{fill:none;stroke:#183858;stroke-width:2}
+                .cv-strip{fill:#fff;stroke:#7f93a6}
+                .cv-chip{fill:#f4b625}
+                .cv-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .cv-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .cv-v{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#1fada1}
+              </style>
+              <text x="320" y="22" text-anchor="middle" class="cv-lbl">Wireless control of LED strip over a Bluetooth mesh</text>
+              <!-- phone -->
+              <rect x="40" y="60" width="72" height="130" rx="10" class="cv-box"/>
+              <rect x="50" y="74" width="52" height="92" rx="3" fill="#1fada1" opacity=".35"/>
+              <text x="76" y="116" text-anchor="middle" class="cv-boxt">Casambi</text>
+              <text x="76" y="132" text-anchor="middle" class="cv-boxt">app</text>
+              <text x="76" y="212" text-anchor="middle" class="cv-sub">Phone / tablet</text>
+              <!-- push switch -->
+              <rect x="46" y="240" width="60" height="36" rx="6" class="cv-box"/>
+              <text x="76" y="263" text-anchor="middle" class="cv-boxt">Push</text>
+              <text x="76" y="298" text-anchor="middle" class="cv-sub">Mains push switch</text>
+              <path d="M106 258 H170 V250 H200" class="cv-mains"/>
+              <!-- mesh -->
+              <path d="M112 110 L200 92" class="cv-mesh"/>
+              <path d="M260 114 V228" class="cv-mesh"/>
+              <text x="268" y="176" class="cv-v">Bluetooth mesh</text>
+              <!-- drivers -->
+              <rect x="200" y="70" width="120" height="44" rx="6" class="cv-drv"/>
+              <text x="260" y="89" text-anchor="middle" class="cv-drvt">Casambi CV driver</text>
+              <text x="260" y="105" text-anchor="middle" class="cv-sub" style="font-size:11px">24V output</text>
+              <rect x="200" y="228" width="120" height="44" rx="6" class="cv-drv"/>
+              <text x="260" y="247" text-anchor="middle" class="cv-drvt">Casambi CV driver</text>
+              <text x="260" y="263" text-anchor="middle" class="cv-sub" style="font-size:11px">24V output</text>
+              <!-- strips -->
+              <path d="M320 92 H360" class="cv-dc"/>
+              <rect x="360" y="84" width="250" height="16" rx="3" class="cv-strip"/>
+              <g class="cv-chip">
+                <rect x="372" y="88" width="10" height="8"/><rect x="402" y="88" width="10" height="8"/><rect x="432" y="88" width="10" height="8"/><rect x="462" y="88" width="10" height="8"/><rect x="492" y="88" width="10" height="8"/><rect x="522" y="88" width="10" height="8"/><rect x="552" y="88" width="10" height="8"/><rect x="582" y="88" width="10" height="8"/>
+              </g>
+              <text x="485" y="124" text-anchor="middle" class="cv-sub">Cove strip: 100%</text>
+              <path d="M320 250 H360" class="cv-dc"/>
+              <rect x="360" y="242" width="250" height="16" rx="3" class="cv-strip"/>
+              <g class="cv-chip" opacity=".4">
+                <rect x="372" y="246" width="10" height="8"/><rect x="402" y="246" width="10" height="8"/><rect x="432" y="246" width="10" height="8"/><rect x="462" y="246" width="10" height="8"/><rect x="492" y="246" width="10" height="8"/><rect x="522" y="246" width="10" height="8"/><rect x="552" y="246" width="10" height="8"/><rect x="582" y="246" width="10" height="8"/>
+              </g>
+              <text x="485" y="282" text-anchor="middle" class="cv-sub">Shelf strip: 30%</text>
+            </svg>
+            <figcaption>Simplified illustration: the app, a wireless switch or a wired push switch sets the level, and each driver dims its 24V LED strip; commands hop between drivers across the mesh.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASAMBI vs WIRED -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Control options</p>
+        <h2 class="ips-section-title mb-2">Casambi compared with wired CV dimming</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">How wireless Casambi control compares with the other ways to dim 12V and 24V LED strip.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Feature</th><th scope="col" class="ips-col">Casambi</th><th scope="col" class="ips-col">DALI</th><th scope="col" class="ips-col">0-10V</th><th scope="col" class="ips-col">Triac</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Control link</td><td class="ips-col">Bluetooth mesh</td><td class="ips-col">2-wire digital bus</td><td class="ips-col">2-wire analogue signal</td><td class="ips-col">Dimmer in the mains feed</td></tr>
+            <tr><td>Control wiring</td><td class="ips-col">None</td><td class="ips-col">Separate DALI pair</td><td class="ips-col">Separate 0-10V pair</td><td class="ips-col">None</td></tr>
+            <tr><td>Individual control</td><td class="ips-col">Yes, every driver</td><td class="ips-col">Yes, up to 64 per bus</td><td class="ips-col">No, per control zone</td><td class="ips-col">No, per circuit</td></tr>
+            <tr><td>Scenes and timers</td><td class="ips-col">Yes, in the app</td><td class="ips-col">Yes, with a controller</td><td class="ips-col">With a separate controller</td><td class="ips-col">No</td></tr>
+            <tr><td>Best for</td><td class="ips-col">Retrofit and flexible spaces</td><td class="ips-col">New-build commercial</td><td class="ips-col">Simple wired zones</td><td class="ips-col">Existing dimmer circuits</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">See also <a href="cv-dali-led-driver-technology.html">CV DALI</a>, <a href="0-10v-cv-led-driver-technology.html">0-10V CV</a> and <a href="triac-cv-led-driver-technology.html">Triac CV</a> driver technology.</p>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">Snappy SCL150 models compared</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Choose the voltage to match the strip, then check the load is within the driver's rating.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Model</th><th scope="col" class="ips-col">Output voltage</th><th scope="col" class="ips-col">Max. power</th><th scope="col" class="ips-col">Output current</th><th scope="col" class="ips-col">Efficiency</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>SCL150-12VF</td><td class="ips-col">12V</td><td class="ips-col">132W</td><td class="ips-col">0 – 11A</td><td class="ips-col">92%</td></tr>
+            <tr><td>SCL150-24VF</td><td class="ips-col">24V</td><td class="ips-col">150W</td><td class="ips-col">0 – 6.25A</td><td class="ips-col">93.5%</td></tr>
+            <tr><td>SCL150-48VF</td><td class="ips-col">48V</td><td class="ips-col">150W</td><td class="ips-col">0 – 3.125A</td><td class="ips-col">93.5%</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">All models: 220-240VAC input, 1–100% dimming, push dimming, IP20, 336.6 × 30 × 18.2mm, 50,000 hour life and 5 year warranty. The SCL100 offers the same features at 100W.</p>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of Casambi CV LED drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why Casambi is a popular way to add smart control to LED strip.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-bluetooth"></i></span>
+            <h3>No control wiring</h3>
+            <p>Drivers talk to each other over Bluetooth, so only mains power is needed at each driver.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-diagram-3"></i></span>
+            <h3>No gateway needed</h3>
+            <p>The self-forming mesh is commissioned and controlled straight from the app.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-phone"></i></span>
+            <h3>Easy set-up</h3>
+            <p>Group strip runs, create scenes and set timers in the Casambi app, and change them at any time.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-hand-index"></i></span>
+            <h3>Push dimming</h3>
+            <p>A standard retractive push switch gives local on/off and dimming alongside the app.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-lightning-charge"></i></span>
+            <h3>12V, 24V or 48V</h3>
+            <p>Choose 48V for long strip runs with less voltage drop, or 12V and 24V to match existing strip.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-arrows-collapse"></i></span>
+            <h3>Slim linear case</h3>
+            <p>Just 30mm wide and 18.2mm high, for coves, bulkheads and furniture.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Selection &amp; set-up</p>
+          <h2 class="ips-section-title mb-3">Choosing and installing a Casambi CV driver</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Match the voltage</strong>: use a 12V, 24V or 48V driver to match the strip.</li>
+            <li><strong>Size the power</strong>: add up the strip load (W/m × length) and allow at least 20% headroom; the 12V SCL150 is rated at 132W.</li>
+            <li><strong>Limit voltage drop</strong>: on long runs, feed the strip from both ends or choose 48V strip.</li>
+            <li><strong>Plan the mesh</strong>: keep drivers within Bluetooth range of each other, and avoid fitting them inside enclosed metal housings.</li>
+            <li><strong>Commission in the app</strong>: add each driver to a Casambi network, then group strip runs and create scenes.</li>
+            <li><strong>Add switches</strong>: use Casambi wireless switches, or wire a push switch to the push dimming input.</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Related technology and products</h3>
+            <p class="mb-3">Compare other dimming methods and complete the installation:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="casambi-cc-led-driver-technology.html">Casambi CC driver technology</a></li>
+              <li><a href="product-casambi-enabled-drivers-overview.html">Casambi enabled drivers overview</a></li>
+              <li><a href="product-flexible-led-strips.html">Flexible LED strips</a></li>
+              <li><a href="smd-led-strip-technology.html">SMD LED strip technology</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">12/24/48V</div><div class="ips-stat-label">Output voltage</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">150W</div><div class="ips-stat-label">Maximum power</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">93.5%</div><div class="ips-stat-label">Peak efficiency</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">0</div><div class="ips-stat-label">Gateways needed</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where Casambi CV drivers are used</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">Wherever LED strip needs flexible wireless control without new cabling.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-cup-straw me-2"></i>Hospitality</h3><p class="mb-0">Cove, bar and back-light strip with scenes and timers.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail</h3><p class="mb-0">Shelf and display strip regrouped as layouts change.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-house me-2"></i>Residential</h3><p class="mb-0">App-controlled kitchen, cove and stair lighting.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-arrow-repeat me-2"></i>Retrofit</h3><p class="mb-0">Smart strip lighting in existing buildings with no new control cables.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-briefcase me-2"></i>Offices</h3><p class="mb-0">Feature and indirect lighting in meeting rooms and receptions.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-door-open me-2"></i>Furniture</h3><p class="mb-0">Cabinet and display-case strip controlled from a phone.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE LINKS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Explore</p>
+        <h2 class="ips-section-title mb-2">Explore smart and dimmable CV drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse our Casambi drivers and other ways to dim LED strip.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-casambi-enabled-led-drivers-cc.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Casambi-CC-driver-group-sm.jpg" alt="Casambi Enabled CC LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Casambi CC Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-cv-dali-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Snappy-dali-group-sm.jpg" alt="CV DALI Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>CV DALI Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-0-10v-cv-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Snappy-SL-VFM-series-sm.jpg" alt="0-10V CV Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>0-10V CV Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-triac-mains-cv-dimmable-led-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Triac%20LED%20Drivers%20group.jpg" alt="Triac Mains CV Dimmable LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Triac CV Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">Casambi CV driver questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="cvcFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is a Casambi CV LED driver?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#cvcFaq"><div class="accordion-body">A Casambi constant voltage (CV) driver is a 12V, 24V or 48V DC LED power supply with a Casambi Bluetooth Low Energy radio built in. It powers LED strip or linear lighting and can be switched, dimmed and grouped from the Casambi app or Casambi compatible wireless switches, with no control wiring.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Do I need a gateway to use Casambi drivers?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#cvcFaq"><div class="accordion-body">No. Casambi drivers form a Bluetooth mesh in which every driver relays commands to its neighbours, so the system is set up and controlled directly from the app. A gateway is only needed for remote control or monitoring over the internet.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Can I dim a Casambi CV driver with a wall switch?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#cvcFaq"><div class="accordion-body">Yes. The Snappy SCL series has a built-in push dimming input for a standard retractive push switch: a short press switches the light on or off and a long press dims. When several drivers are dimmed together, they are linked in the Casambi app, and Casambi wireless switches can be used as well.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Which output voltage should I choose?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#cvcFaq"><div class="accordion-body">Match the driver to the strip voltage. 24V strip is the most common choice for general lighting, and 48V strip allows longer runs with less voltage drop because it draws half the current of 24V strip for the same power. 12V suits short runs and low-voltage fittings.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">How do I size a Casambi CV driver for LED strip?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#cvcFaq"><div class="accordion-body">Add up the strip load in watts (watts per metre multiplied by length) and choose a driver rated at least 20% above that total. For example, 8m of 14.4W/m strip draws 115W, so a 150W driver is the right choice. Note that the 12V SCL150 is rated at 132W.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help with wireless strip lighting?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Our team can help you choose Casambi drivers, switches and LED strip for your project.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
