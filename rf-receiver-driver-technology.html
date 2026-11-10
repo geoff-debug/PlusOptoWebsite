@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RF Receiver Driver Technology — Plus Opto</title>
+  <meta name="description" content="How RF LED receiver drivers work: 2.4GHz and sub-GHz wireless control of LED strip from remotes and touch panels, pairing, zones and sync, CV and CC outputs, WiFi and DMX options and how to choose a receiver." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="RF Receiver Driver Technology — Plus Opto" />
+  <meta property="og:description" content="How RF LED receiver drivers work: 2.4GHz and sub-GHz wireless control of LED strip from remotes and touch panels, pairing, zones and sync, CV and CC outputs, WiFi and DMX options and how to choose a receiver." />
+  <meta property="og:url" content="https://www.plusopto.com/rf-receiver-driver-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/RF-receiver-driver-group-sm.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="RF Receiver Driver Technology — Plus Opto" />
+  <meta name="twitter:description" content="How RF LED receiver drivers work: 2.4GHz and sub-GHz wireless control of LED strip from remotes and touch panels, pairing, zones and sync, CV and CC outputs, WiFi and DMX options and how to choose a receiver." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/RF-receiver-driver-group-sm.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/rf-receiver-driver-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/rf-receiver-driver-technology.html#webpage",
+      "url": "https://www.plusopto.com/rf-receiver-driver-technology.html",
+      "name": "RF Receiver Driver Technology — Plus Opto",
+      "description": "How RF LED receiver drivers work: 2.4GHz and sub-GHz wireless control of LED strip from remotes and touch panels, pairing, zones and sync, CV and CC outputs, WiFi and DMX options and how to choose a receiver.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/rf-receiver-driver-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Controllers", "item": "https://www.plusopto.com/category-led-controllers.html" },
+        { "@type": "ListItem", "position": 4, "name": "RF Controllers", "item": "https://www.plusopto.com/product-rf-controllers-drivers-overview.html" },
+        { "@type": "ListItem", "position": 5, "name": "RF LED Receiver Drivers", "item": "https://www.plusopto.com/product-rf-led-controller-drivers.html" },
+        { "@type": "ListItem", "position": 6, "name": "RF Receiver Driver Technology", "item": "https://www.plusopto.com/rf-receiver-driver-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/rf-receiver-driver-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an RF LED receiver driver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "An RF receiver driver sits between a low voltage power supply and the LED strip. It receives wireless commands from a hand-held remote or wall touch panel and dims each output channel by PWM, so single colour, tuneable white, RGB, RGBW and RGB+CCT strip can be controlled with no control wiring." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I pair a remote with a receiver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Each receiver learns the ID of its remote or touch panel. Typically you press the learning button on the receiver, or switch its power on, and then press a button or zone on the remote within a few seconds; the lights flash to confirm. The exact steps are in each receiver's datasheet, and the same steps with a long press clear the pairing." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I mix remotes and receivers from different brands?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. Although many systems use the 2.4GHz band, each brand uses its own protocol. Mi-Light and MiBoxer FUT receivers work with FUT remotes and B/T series panels, Ltech receivers work with Ltech remotes and panels, and Sunricher SR receivers work with SR remotes and panels." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between zones and sync?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Zones let one remote control several receivers or groups separately, for example kitchen and lounge strip on different zone buttons. Sync makes several receivers in the same zone run colour changing effects in step, so long runs fed by more than one receiver change together." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I choose a CV or CC receiver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Use a constant voltage (CV) receiver for standard 12V or 24V LED strip, which is powered at a fixed voltage. Use a constant current (CC) receiver, such as the Ltech T3-CC, T4-CC, R4-CC or F4-CC set to 350, 700 or 1050mA, for LED fittings and modules that need a fixed current." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-rf-controllers-drivers-overview.html">RF Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-rf-led-controller-drivers.html">RF LED Receiver Drivers</a></li>
+          <li class="breadcrumb-item active" aria-current="page">RF Receiver Driver Technology</li>
+        </ol>
+      </nav>
+      <h1>RF Receiver Driver Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How RF receiver drivers give wireless control of LED strip from hand-held remotes and touch panels, and how to choose the right one.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/RF-receiver-driver-group-sm.jpg" alt="RF LED receiver drivers from Mi-Light, MiBoxer and Ltech" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What is an RF receiver driver?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>An RF receiver driver (also called a receiving controller) sits between a power supply and the LED strip. It receives wireless commands from a hand-held remote or wall touch panel and dims each output channel by pulse width modulation (PWM). Depending on the model and how it is wired, it controls single colour, tuneable white (CCT), RGB, RGBW or RGB+CCT strip, with no control cable between the remote and the lights.</p>
+            <p>Our range from Mi-Light, MiBoxer, Ltech and Sunricher covers 1 to 5 channel receivers. Most run from a 5–24VDC or 12–24VDC supply with constant voltage outputs, and constant current versions drive LED fittings at 350, 700 or 1050mA. Combo models such as the MiBoxer CL series have a mains power supply built in, and some receivers add WiFi app control or a DMX interface.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>Wireless control of LED strip from remotes and touch panels</li>
+            <li>Single colour, CCT, RGB, RGBW and RGB+CCT models</li>
+            <li>Zone control and synchronised effects across receivers</li>
+            <li>Constant voltage and constant current outputs</li>
+            <li>WiFi app and voice control on FUT W+ models</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">RF receiver range at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Brands: <span>Mi-Light, MiBoxer, Ltech, Sunricher</span></li>
+                <li>RF: <span>2.4GHz, 433MHz or 868MHz</span></li>
+                <li>Channels: <span>1 to 5</span></li>
+                <li>DC input: <span>5–24V, 12–24V or 12–48V</span></li>
+                <li>Mains input: <span>CL, SRP combo models</span></li>
+                <li>CV output: <span>3A – 12A per channel</span></li>
+                <li>CC output: <span>350 / 700 / 1050mA</span></li>
+                <li>Range: <span>Typically 30m</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How RF receiver drivers work</h2>
+          <div class="text-muted lh-lg">
+            <p>The remote or touch panel sends a short <strong>radio message</strong>, usually in the <strong>2.4GHz</strong> band, carrying its own <strong>ID</strong>, the zone and the command. A receiver only responds to IDs it has <strong>learned</strong> during pairing, so neighbouring systems do not interfere.</p>
+            <p>The receiver switches each output channel on and off at high frequency using <strong>PWM</strong>. Changing the on-time of the red, green, blue, white or warm and cool white channels sets the brightness and colour of the strip.</p>
+            <p>Receivers can <strong>relay and synchronise</strong>: on many 2.4GHz systems a receiver passes the signal on to others within range, so colour changing effects stay in step across long runs.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 320" role="img" aria-labelledby="rfDiagTitle">
+              <title id="rfDiagTitle">A remote and a touch panel sending 2.4GHz commands to two synchronised RF receiver drivers, each driving RGBW LED strip with four PWM channels</title>
+              <style>
+                .rf-box{fill:#112638}
+                .rf-boxt{font:600 12px Outfit,system-ui,sans-serif;fill:#fff}
+                .rf-drv{fill:#e8eef4;stroke:#7f93a6}
+                .rf-drvt{font:600 11px Outfit,system-ui,sans-serif;fill:#112638}
+                .rf-wave{fill:none;stroke:#1fada1;stroke-width:2;stroke-dasharray:6 4}
+                .rf-dc{fill:none;stroke:#183858;stroke-width:2}
+                .rf-strip{fill:#fff;stroke:#7f93a6}
+                .rf-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .rf-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .rf-v{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#1fada1}
+                .rf-r{stroke:#d64545;stroke-width:3}.rf-g{stroke:#2e9e4f;stroke-width:3}.rf-b{stroke:#2f6fd6;stroke-width:3}.rf-w{stroke:#b9c3cc;stroke-width:3}
+              </style>
+              <text x="320" y="22" text-anchor="middle" class="rf-lbl">Wireless control of RGBW strip over 2.4GHz RF</text>
+              <!-- remote -->
+              <rect x="44" y="56" width="56" height="110" rx="12" class="rf-box"/>
+              <circle cx="72" cy="86" r="14" fill="none" stroke="#1fada1" stroke-width="4"/>
+              <rect x="56" y="112" width="32" height="8" rx="3" fill="#7f93a6"/>
+              <rect x="56" y="126" width="32" height="8" rx="3" fill="#7f93a6"/>
+              <rect x="56" y="140" width="32" height="8" rx="3" fill="#7f93a6"/>
+              <text x="72" y="186" text-anchor="middle" class="rf-sub">Remote</text>
+              <!-- panel -->
+              <rect x="44" y="218" width="56" height="56" rx="6" class="rf-box"/>
+              <circle cx="72" cy="246" r="16" fill="none" stroke="#1fada1" stroke-width="4"/>
+              <text x="72" y="294" text-anchor="middle" class="rf-sub">Touch panel</text>
+              <!-- RF links -->
+              <path d="M100 110 L210 82" class="rf-wave"/>
+              <path d="M100 246 L210 240" class="rf-wave"/>
+              <text x="118" y="196" class="rf-v">2.4GHz RF</text>
+              <path d="M270 104 V218" class="rf-wave"/>
+              <text x="278" y="166" class="rf-v">Sync / relay</text>
+              <!-- receivers -->
+              <rect x="210" y="60" width="120" height="44" rx="6" class="rf-drv"/>
+              <text x="270" y="79" text-anchor="middle" class="rf-drvt">RF receiver driver</text>
+              <text x="270" y="95" text-anchor="middle" class="rf-sub" style="font-size:11px">Zone 1</text>
+              <rect x="210" y="218" width="120" height="44" rx="6" class="rf-drv"/>
+              <text x="270" y="237" text-anchor="middle" class="rf-drvt">RF receiver driver</text>
+              <text x="270" y="253" text-anchor="middle" class="rf-sub" style="font-size:11px">Zone 1</text>
+              <!-- channel lines to strip 1 -->
+              <path d="M330 70 H370" class="rf-r"/><path d="M330 78 H370" class="rf-g"/><path d="M330 86 H370" class="rf-b"/><path d="M330 94 H370" class="rf-w"/>
+              <rect x="370" y="68" width="240" height="28" rx="3" class="rf-strip"/>
+              <g><rect x="382" y="74" width="16" height="16" fill="#b56be0"/><rect x="420" y="74" width="16" height="16" fill="#b56be0"/><rect x="458" y="74" width="16" height="16" fill="#b56be0"/><rect x="496" y="74" width="16" height="16" fill="#b56be0"/><rect x="534" y="74" width="16" height="16" fill="#b56be0"/><rect x="572" y="74" width="16" height="16" fill="#b56be0"/></g>
+              <text x="490" y="118" text-anchor="middle" class="rf-sub">RGBW strip</text>
+              <!-- channel lines to strip 2 -->
+              <path d="M330 228 H370" class="rf-r"/><path d="M330 236 H370" class="rf-g"/><path d="M330 244 H370" class="rf-b"/><path d="M330 252 H370" class="rf-w"/>
+              <rect x="370" y="226" width="240" height="28" rx="3" class="rf-strip"/>
+              <g><rect x="382" y="232" width="16" height="16" fill="#b56be0"/><rect x="420" y="232" width="16" height="16" fill="#b56be0"/><rect x="458" y="232" width="16" height="16" fill="#b56be0"/><rect x="496" y="232" width="16" height="16" fill="#b56be0"/><rect x="534" y="232" width="16" height="16" fill="#b56be0"/><rect x="572" y="232" width="16" height="16" fill="#b56be0"/></g>
+              <text x="490" y="276" text-anchor="middle" class="rf-sub">RGBW strip, in sync</text>
+              <!-- PWM mini plot -->
+              <text x="410" y="166" class="rf-sub">PWM per channel:</text>
+              <path d="M410 196 V180 H440 V196 H450 V180 H480 V196 H490 V180 H520 V196" fill="none" stroke="#d64545" stroke-width="2"/>
+              <path d="M530 196 V180 H540 V196 H570 V180 H580 V196 H610" fill="none" stroke="#2f6fd6" stroke-width="2"/>
+            </svg>
+            <figcaption>Simplified illustration: the remote or panel sends its ID, zone and command; paired receivers set the PWM on-time of each colour channel and keep effects in sync.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEMS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Control systems</p>
+        <h2 class="ips-section-title mb-2">Matching receivers to remotes and panels</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Each brand uses its own radio protocol, so receivers must be paired with remotes and panels from the same system.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">System</th><th scope="col" class="ips-col">Receivers</th><th scope="col" class="ips-col">RF</th><th scope="col" class="ips-col">Controlled from</th><th scope="col" class="ips-col">Extras</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Mi-Light / MiBoxer</td><td class="ips-col">FUT series, FUT035W+, FUT037W+, LS2, CL series</td><td class="ips-col">2.4GHz</td><td class="ips-col">FUT remotes, B/T series touch panels</td><td class="ips-col">WiFi app and voice control (W+ models, or via gateway)</td></tr>
+            <tr><td>Ltech 2.4GHz</td><td class="ips-col">P5, T3, T4, R4, F4, F4/F5-DMX, T3-5A</td><td class="ips-col">2.4GHz</td><td class="ips-col">Ltech Mini, T, F, V and Q remotes, touch panels, WiFi-104/106</td><td class="ips-col">CC versions, DMX interface (F-DMX)</td></tr>
+            <tr><td>Ltech 433MHz</td><td class="ips-col">M3-3A, M3-5A</td><td class="ips-col">433.92MHz</td><td class="ips-col">Ltech M series mini remotes</td><td class="ips-col">Low-cost RGB control</td></tr>
+            <tr><td>Sunricher</td><td class="ips-col">SR-1009F series, SRP-1009-75RGBW</td><td class="ips-col">868 / 915 / 434MHz</td><td class="ips-col">SR-2818/2819 remotes, SR-2820 panels</td><td class="ips-col">CV or CC, mains input (SRP)</td></tr>
+            <tr><td>Standalone</td><td class="ips-col">BC350RF, BC354RF</td><td class="ips-col">RF remote</td><td class="ips-col">Rotary knobs on the unit or remote</td><td class="ips-col">LED display, 37 modes</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">See also <a href="product-rf-led-minicontrollers-set-2.4ghz.html">2.4GHz RF minicontroller sets</a> and <a href="product-rf-led-minicontroller-sets-433mhz.html">433MHz minicontroller sets</a>.</p>
+    </div>
+  </section>
+
+  <!-- CV vs CC -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Outputs</p>
+        <h2 class="ips-section-title mb-2">Constant voltage and constant current receivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Choose the output type to match the LEDs you are controlling.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Feature</th><th scope="col" class="ips-col">Constant voltage (CV)</th><th scope="col" class="ips-col">Constant current (CC)</th><th scope="col" class="ips-col">Mains combo</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>For</td><td class="ips-col">12V and 24V LED strip</td><td class="ips-col">LED fittings and modules</td><td class="ips-col">12V or 24V strip, no separate PSU</td></tr>
+            <tr><td>Input</td><td class="ips-col">5–24VDC or 12–24VDC supply</td><td class="ips-col">12–48VDC supply (Ltech CC)</td><td class="ips-col">100–240VAC (CL) or 220–240VAC (SRP)</td></tr>
+            <tr><td>Output</td><td class="ips-col">PWM at supply voltage, 3–12A per channel</td><td class="ips-col">350 / 700 / 1050mA per channel</td><td class="ips-col">60W or 75W (CL), 300–1500mA CC (SRP)</td></tr>
+            <tr><td>Examples</td><td class="ips-col">FUT, P5, T3-CV, T4-CV, R4-5A, F4-5A, LS2</td><td class="ips-col">T3-CC, T4-CC, R4-CC, F4-CC</td><td class="ips-col">CL-1P to CL-4P, SRP-1009-75RGBW</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of RF receiver drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why RF control is a simple, low-cost way to add colour and dimming to LED strip.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-broadcast"></i></span>
+            <h3>No control wiring</h3>
+            <p>Remotes and battery or mains touch panels link to receivers by radio, with no cables to the lights.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-palette"></i></span>
+            <h3>Full colour control</h3>
+            <p>Dimming, tuneable white, RGB, RGBW and RGB+CCT, often from the same multi-mode receiver.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-grid-3x3-gap"></i></span>
+            <h3>Zones and sync</h3>
+            <p>Control areas separately from one remote, or run effects in step across many receivers.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-wifi"></i></span>
+            <h3>App and voice</h3>
+            <p>FUT W+ receivers and gateways add smartphone app control and Alexa or Google voice control.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-lightning-charge"></i></span>
+            <h3>CV and CC</h3>
+            <p>Drive LED strip or constant current fittings from the same family of remotes and panels.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-diagram-2"></i></span>
+            <h3>DMX ready</h3>
+            <p>Ltech F4-DMX and F5-DMX receivers also accept wired DMX512 for larger installations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Selection &amp; set-up</p>
+          <h2 class="ips-section-title mb-3">Choosing and installing an RF receiver</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Pick the system first</strong>: choose the remote or panel you want, then a receiver from the same brand and RF band.</li>
+            <li><strong>Match the channels</strong>: 1 channel for single colour, 2 for CCT, 3 for RGB, 4 for RGBW and 5 for RGB+CCT.</li>
+            <li><strong>Check the current</strong>: keep each channel within its rating, and the total within the receiver's maximum load.</li>
+            <li><strong>Size the supply</strong>: the power supply must match the strip voltage and cover the full load with at least 20% headroom.</li>
+            <li><strong>Pair each receiver</strong>: use the learning button or power-on method in the datasheet to link it to the remote or zone.</li>
+            <li><strong>Mind the range</strong>: typically 30m in open space; metal enclosures and walls reduce it, so mount receivers where the signal can reach.</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Related technology and products</h3>
+            <p class="mb-3">Complete the system and compare other control methods:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="product-hand-held-remotes-overview.html">Hand-held remote controls</a></li>
+              <li><a href="product-touch-panel-led-controllers-overview.html">Touch panel LED controllers</a></li>
+              <li><a href="product-wifi-led-controllers-overview.html">WiFi LED controllers</a></li>
+              <li><a href="tuneable-white-led-strip-technology.html">Tuneable white LED strip technology</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">2.4GHz</div><div class="ips-stat-label">Main RF band</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">1–5</div><div class="ips-stat-label">Output channels</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">30m</div><div class="ips-stat-label">Typical range</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">0</div><div class="ips-stat-label">Control cables</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where RF receiver drivers are used</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">Wherever LED strip needs simple wireless colour and dimming control.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-house me-2"></i>Residential</h3><p class="mb-0">Kitchen, cove, bedroom and garden strip from a remote or wall panel.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-cup-straw me-2"></i>Hospitality</h3><p class="mb-0">Colour changing bar, back-light and mood lighting.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail</h3><p class="mb-0">Shelf, display and window lighting with zones.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-signpost me-2"></i>Signage</h3><p class="mb-0">RGB effects on illuminated signs and channel letters.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-easel me-2"></i>Events and exhibitions</h3><p class="mb-0">Quick-to-install colour lighting for stands and stages.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-arrow-repeat me-2"></i>Retrofit</h3><p class="mb-0">Add colour control to existing strip without new cabling.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE LINKS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Explore</p>
+        <h2 class="ips-section-title mb-2">Explore RF and wireless LED control</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse our remotes, panels and other wireless controllers.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-rf-led-minicontrollers-set-2.4ghz.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/mini-controller-transmitters.jpg" alt="RF LED minicontroller sets" loading="lazy" /></div>
+            <div class="card-body"><h3>RF Minicontroller Sets</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-hand-held-remotes-overview.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/handheld-remote-banner.jpg" alt="Hand-held remote controls" loading="lazy" /></div>
+            <div class="card-body"><h3>Hand-held Remotes</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-touch-panel-led-controllers-overview.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Ltech-Touch-panel-Visual-banner.jpg" alt="Touch panel LED controllers" loading="lazy" /></div>
+            <div class="card-body"><h3>Touch Panel Controllers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-wifi-led-controllers-overview.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/wifi-106-4.jpg" alt="WiFi LED controllers" loading="lazy" /></div>
+            <div class="card-body"><h3>WiFi LED Controllers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">RF receiver driver questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="rfFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is an RF LED receiver driver?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#rfFaq"><div class="accordion-body">An RF receiver driver sits between a low voltage power supply and the LED strip. It receives wireless commands from a hand-held remote or wall touch panel and dims each output channel by PWM, so single colour, tuneable white, RGB, RGBW and RGB+CCT strip can be controlled with no control wiring.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">How do I pair a remote with a receiver?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#rfFaq"><div class="accordion-body">Each receiver learns the ID of its remote or touch panel. Typically you press the learning button on the receiver, or switch its power on, and then press a button or zone on the remote within a few seconds; the lights flash to confirm. The exact steps are in each receiver's datasheet, and the same steps with a long press clear the pairing.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Can I mix remotes and receivers from different brands?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#rfFaq"><div class="accordion-body">No. Although many systems use the 2.4GHz band, each brand uses its own protocol. Mi-Light and MiBoxer FUT receivers work with FUT remotes and B/T series panels, Ltech receivers work with Ltech remotes and panels, and Sunricher SR receivers work with SR remotes and panels.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">What is the difference between zones and sync?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#rfFaq"><div class="accordion-body">Zones let one remote control several receivers or groups separately, for example kitchen and lounge strip on different zone buttons. Sync makes several receivers in the same zone run colour changing effects in step, so long runs fed by more than one receiver change together.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">Should I choose a CV or CC receiver?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#rfFaq"><div class="accordion-body">Use a constant voltage (CV) receiver for standard 12V or 24V LED strip, which is powered at a fixed voltage. Use a constant current (CC) receiver, such as the Ltech T3-CC, T4-CC, R4-CC or F4-CC set to 350, 700 or 1050mA, for LED fittings and modules that need a fixed current.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help with wireless LED control?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Our team can help you choose receivers, remotes, panels and power supplies for your project.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
