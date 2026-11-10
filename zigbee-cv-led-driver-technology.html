@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zigbee CV LED Driver Technology — Plus Opto</title>
+  <meta name="description" content="How Zigbee constant voltage LED drivers work: Zigbee 3.0 mesh control of LED strip from an app, remote or voice assistant through a Zigbee gateway, dimming, CCT and RGB models, and how to choose a Zigbee CV driver." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="Zigbee CV LED Driver Technology — Plus Opto" />
+  <meta property="og:description" content="How Zigbee constant voltage LED drivers work: Zigbee 3.0 mesh control of LED strip from an app, remote or voice assistant through a Zigbee gateway, dimming, CCT and RGB models, and how to choose a Zigbee CV driver." />
+  <meta property="og:url" content="https://www.plusopto.com/zigbee-cv-led-driver-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/Zigbee-group.png" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="Zigbee CV LED Driver Technology — Plus Opto" />
+  <meta name="twitter:description" content="How Zigbee constant voltage LED drivers work: Zigbee 3.0 mesh control of LED strip from an app, remote or voice assistant through a Zigbee gateway, dimming, CCT and RGB models, and how to choose a Zigbee CV driver." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/Zigbee-group.png" />
+  <link rel="canonical" href="https://www.plusopto.com/zigbee-cv-led-driver-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/zigbee-cv-led-driver-technology.html#webpage",
+      "url": "https://www.plusopto.com/zigbee-cv-led-driver-technology.html",
+      "name": "Zigbee CV LED Driver Technology — Plus Opto",
+      "description": "How Zigbee constant voltage LED drivers work: Zigbee 3.0 mesh control of LED strip from an app, remote or voice assistant through a Zigbee gateway, dimming, CCT and RGB models, and how to choose a Zigbee CV driver.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/zigbee-cv-led-driver-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Drivers", "item": "https://www.plusopto.com/category-led-drivers.html" },
+        { "@type": "ListItem", "position": 4, "name": "Dimmable LED Drivers", "item": "https://www.plusopto.com/product-dimmable-led-drivers.html" },
+        { "@type": "ListItem", "position": 5, "name": "Zigbee CV LED Drivers", "item": "https://www.plusopto.com/product-zigbee-led-drivers-cv.html" },
+        { "@type": "ListItem", "position": 6, "name": "Zigbee CV Driver Technology", "item": "https://www.plusopto.com/zigbee-cv-led-driver-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/zigbee-cv-led-driver-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a Zigbee CV LED driver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A Zigbee constant voltage (CV) driver powers 12V or 24V LED strip and has a Zigbee radio built in, so the strip can be switched, dimmed and colour controlled wirelessly from a smartphone app, a Zigbee remote or wall panel, or a voice assistant, with no control wiring." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do Zigbee drivers need a gateway?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, for app and voice control. A Zigbee gateway or hub joins the drivers into a network and links it to your WiFi router, so the Tuya Smart app and voice assistants can reach them. Zigbee remotes and wall panels can also be paired to control drivers directly." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is Zigbee 3.0?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Zigbee 3.0 is the current version of the Zigbee standard. It brings the earlier application profiles together into one, so certified devices from different manufacturers can join the same network. It runs in the 2.4GHz band on the low-power IEEE 802.15.4 radio standard." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does a Zigbee mesh extend range?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Mains-powered Zigbee devices, including LED drivers, act as routers that pass messages on to other devices. Each driver added to the network therefore extends its coverage, and messages can take another route if one device is out of range." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I choose a mains Zigbee driver or a Zigbee receiver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A mains Zigbee driver such as the Lifud LF-GAZ150 combines the power supply and Zigbee control in one unit. A low-voltage Zigbee receiver such as the MiBoxer FUT-Z series fits between a separate 12V or 24V power supply and the strip, and offers dimming, CCT, RGB, RGBW and RGB+CCT models." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-dimmable-led-drivers.html">Dimmable LED Drivers</a></li>
+          <li class="breadcrumb-item"><a href="product-zigbee-led-drivers-cv.html">Zigbee CV LED Drivers</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Zigbee CV Driver Technology</li>
+        </ol>
+      </nav>
+      <h1>Zigbee CV LED Driver Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How Zigbee constant voltage drivers bring smart home and app control to LED strip, and how to choose between mains drivers and low-voltage receivers.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/Zigbee-group.png" alt="Zigbee LED controller with Zigbee wall panel and remote" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What is a Zigbee CV LED driver?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>Zigbee is an open global wireless standard for low-power smart home and building devices. A Zigbee constant voltage (CV) driver powers 12V or 24V LED strip and has a Zigbee radio built in, so the strip can be switched, dimmed and colour controlled from a smartphone app, a Zigbee remote or wall panel, or a voice assistant, with no control wiring.</p>
+            <p>Our range has two types. The Lifud LF-GAZ150 is a 150W mains driver with a 24V output and Zigbee control in one unit, with a 2-channel tuneable white version. The MiBoxer FUT-Z series are Zigbee 3.0 receivers that fit between a 12–24V power supply and the strip, in dimming, CCT, RGB, RGBW and RGB+CCT models.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>App control with the Tuya Smart app through a Zigbee gateway</li>
+            <li>Voice control via the gateway with popular voice assistants</li>
+            <li>Self-healing Zigbee 3.0 mesh: each driver extends the network</li>
+            <li>Single colour, CCT, RGB, RGBW and RGB+CCT control</li>
+            <li>Flicker-free dimming to IEEE 1789 on the LF-GAZ150</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">Zigbee CV range at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Brands: <span>Lifud, MiBoxer</span></li>
+                <li>Protocol: <span>Zigbee 3.0, 2.4GHz mesh</span></li>
+                <li>Mains driver: <span>150W, 24V, 6.25A</span></li>
+                <li>Receivers: <span>12–24VDC in, up to 12A</span></li>
+                <li>Channels: <span>1 to 5</span></li>
+                <li>Colour: <span>Dim, CCT, RGB, RGBW, RGB+CCT</span></li>
+                <li>Control: <span>App, remote, panel, voice</span></li>
+                <li>Needs: <span>Zigbee gateway for app/voice</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How Zigbee control works</h2>
+          <div class="text-muted lh-lg">
+            <p>A <strong>Zigbee gateway</strong> (or hub) creates the network and connects it to your WiFi router, so the <strong>Tuya Smart app</strong> and voice assistants can send commands from anywhere.</p>
+            <p>Each mains-powered driver acts as a <strong>router</strong> in the <strong>Zigbee 3.0 mesh</strong>, passing messages on to its neighbours. Adding drivers extends the range, and messages find another path if one device is out of reach.</p>
+            <p>The driver holds a steady <strong>12V or 24V</strong> output and dims each channel by <strong>PWM</strong>. Zigbee <strong>remotes and wall panels</strong> can also be paired to control drivers directly.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 320" role="img" aria-labelledby="zbDiagTitle">
+              <title id="zbDiagTitle">A phone app connecting through a Zigbee gateway to a mesh of a mains Zigbee driver and a Zigbee receiver, each driving LED strip, with a Zigbee remote paired directly</title>
+              <style>
+                .zb-box{fill:#112638}
+                .zb-boxt{font:600 12px Outfit,system-ui,sans-serif;fill:#fff}
+                .zb-drv{fill:#e8eef4;stroke:#7f93a6}
+                .zb-drvt{font:600 11px Outfit,system-ui,sans-serif;fill:#112638}
+                .zb-mesh{fill:none;stroke:#1fada1;stroke-width:2;stroke-dasharray:6 4}
+                .zb-wifi{fill:none;stroke:#7f93a6;stroke-width:2;stroke-dasharray:2 3}
+                .zb-dc{fill:none;stroke:#183858;stroke-width:2}
+                .zb-strip{fill:#fff;stroke:#7f93a6}
+                .zb-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .zb-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .zb-v{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#1fada1}
+              </style>
+              <text x="320" y="22" text-anchor="middle" class="zb-lbl">App, gateway and Zigbee 3.0 mesh</text>
+              <!-- phone -->
+              <rect x="20" y="44" width="56" height="96" rx="10" class="zb-box"/>
+              <rect x="28" y="56" width="40" height="66" rx="3" fill="#1fada1" opacity=".35"/>
+              <text x="48" y="94" text-anchor="middle" class="zb-boxt" style="font-size:11px">App</text>
+              <text x="48" y="160" text-anchor="middle" class="zb-sub">Tuya Smart</text>
+              <!-- gateway -->
+              <path d="M76 92 H120" class="zb-wifi"/>
+              <rect x="120" y="70" width="100" height="46" rx="8" class="zb-box"/>
+              <text x="170" y="90" text-anchor="middle" class="zb-boxt">Zigbee</text>
+              <text x="170" y="106" text-anchor="middle" class="zb-boxt">gateway</text>
+              <text x="98" y="84" text-anchor="middle" class="zb-sub" style="font-size:10px">WiFi</text>
+              <!-- remote -->
+              <rect x="20" y="196" width="56" height="90" rx="12" class="zb-box"/>
+              <circle cx="48" cy="224" r="12" fill="none" stroke="#1fada1" stroke-width="4"/>
+              <rect x="34" y="248" width="28" height="7" rx="3" fill="#7f93a6"/>
+              <rect x="34" y="262" width="28" height="7" rx="3" fill="#7f93a6"/>
+              <text x="48" y="306" text-anchor="middle" class="zb-sub">Zigbee remote</text>
+              <!-- mesh links -->
+              <path d="M220 90 L300 82" class="zb-mesh"/>
+              <path d="M76 240 L300 222" class="zb-mesh"/>
+              <path d="M375 104 V200" class="zb-mesh"/>
+              <text x="383" y="156" class="zb-v">Zigbee 3.0 mesh</text>
+              <!-- drivers -->
+              <rect x="300" y="60" width="150" height="44" rx="6" class="zb-drv"/>
+              <text x="375" y="79" text-anchor="middle" class="zb-drvt">Zigbee CV driver</text>
+              <text x="375" y="95" text-anchor="middle" class="zb-sub" style="font-size:11px">Mains in, 24V out</text>
+              <rect x="300" y="200" width="150" height="44" rx="6" class="zb-drv"/>
+              <text x="375" y="219" text-anchor="middle" class="zb-drvt">Zigbee receiver</text>
+              <text x="375" y="235" text-anchor="middle" class="zb-sub" style="font-size:11px">12–24V supply in</text>
+              <!-- strips -->
+              <path d="M450 82 H480" class="zb-dc"/>
+              <rect x="480" y="74" width="140" height="16" rx="3" class="zb-strip"/>
+              <g fill="#f4b625" opacity=".7"><rect x="490" y="78" width="10" height="8"/><rect x="512" y="78" width="10" height="8"/><rect x="534" y="78" width="10" height="8"/><rect x="556" y="78" width="10" height="8"/><rect x="578" y="78" width="10" height="8"/><rect x="600" y="78" width="10" height="8"/></g>
+              <text x="550" y="112" text-anchor="middle" class="zb-sub">Single colour strip</text>
+              <path d="M450 222 H480" class="zb-dc"/>
+              <rect x="480" y="214" width="140" height="16" rx="3" class="zb-strip"/>
+              <g fill="#b56be0"><rect x="490" y="218" width="10" height="8"/><rect x="512" y="218" width="10" height="8"/><rect x="534" y="218" width="10" height="8"/><rect x="556" y="218" width="10" height="8"/><rect x="578" y="218" width="10" height="8"/><rect x="600" y="218" width="10" height="8"/></g>
+              <text x="550" y="252" text-anchor="middle" class="zb-sub">RGB+CCT strip</text>
+            </svg>
+            <figcaption>Simplified illustration: the app reaches the drivers through the gateway, commands hop between drivers across the mesh, and a paired remote can control them directly.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WIRELESS COMPARED -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Control options</p>
+        <h2 class="ips-section-title mb-2">Zigbee compared with other wireless control</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">How Zigbee compares with the other wireless ways to control LED strip.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Feature</th><th scope="col" class="ips-col">Zigbee 3.0</th><th scope="col" class="ips-col">Casambi</th><th scope="col" class="ips-col">WiFi</th><th scope="col" class="ips-col">RF 2.4GHz</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Network</td><td class="ips-col">Low-power mesh</td><td class="ips-col">Bluetooth mesh</td><td class="ips-col">Each device on the router</td><td class="ips-col">Remote to receiver</td></tr>
+            <tr><td>Gateway</td><td class="ips-col">Needed for app and voice</td><td class="ips-col">Not needed</td><td class="ips-col">Not needed</td><td class="ips-col">Not needed</td></tr>
+            <tr><td>App and voice</td><td class="ips-col">Yes, via gateway</td><td class="ips-col">Casambi app</td><td class="ips-col">Yes</td><td class="ips-col">Only via a gateway</td></tr>
+            <tr><td>Smart home integration</td><td class="ips-col">Strong, open standard</td><td class="ips-col">Casambi ecosystem</td><td class="ips-col">App-dependent</td><td class="ips-col">Limited</td></tr>
+            <tr><td>Best for</td><td class="ips-col">Smart homes and larger installations</td><td class="ips-col">Professional retrofit projects</td><td class="ips-col">A few devices at home</td><td class="ips-col">Simple, low-cost control</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">See also <a href="casambi-cv-led-driver-technology.html">Casambi CV driver technology</a> and <a href="rf-receiver-driver-technology.html">RF receiver driver technology</a>.</p>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">Zigbee CV drivers and receivers compared</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Choose a mains driver for a neat all-in-one installation, or a receiver to add Zigbee to an existing power supply.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Model</th><th scope="col" class="ips-col">Type</th><th scope="col" class="ips-col">Input</th><th scope="col" class="ips-col">Output</th><th scope="col" class="ips-col">Control</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Lifud LF-GAZ150B6250-24</td><td class="ips-col">Mains driver</td><td class="ips-col">220–240VAC</td><td class="ips-col">24V, 0–6.25A, 150W</td><td class="ips-col">Single colour, dim to off</td></tr>
+            <tr><td>Lifud LF-GAZ150 (suffix A)</td><td class="ips-col">Mains driver</td><td class="ips-col">220–240VAC</td><td class="ips-col">24V, 150W, 2 channels</td><td class="ips-col">Tuneable white (CCT)</td></tr>
+            <tr><td>MiBoxer FUT036Z</td><td class="ips-col">Receiver</td><td class="ips-col">12–24VDC</td><td class="ips-col">1 channel</td><td class="ips-col">Dimming</td></tr>
+            <tr><td>MiBoxer FUT035Z</td><td class="ips-col">Receiver</td><td class="ips-col">12–24VDC</td><td class="ips-col">2 channels</td><td class="ips-col">CCT</td></tr>
+            <tr><td>MiBoxer FUT037Z</td><td class="ips-col">Receiver</td><td class="ips-col">12–24VDC</td><td class="ips-col">3 channels</td><td class="ips-col">RGB</td></tr>
+            <tr><td>MiBoxer FUT038Z</td><td class="ips-col">Receiver</td><td class="ips-col">12–24VDC</td><td class="ips-col">4 channels</td><td class="ips-col">RGBW</td></tr>
+            <tr><td>MiBoxer FUT039Z</td><td class="ips-col">Receiver</td><td class="ips-col">12–24VDC</td><td class="ips-col">5 channels</td><td class="ips-col">RGB+CCT</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">FUT-Z receivers handle up to 12A in total. The LF-GAZ150 is 92% efficient, flicker free to IEEE 1789 and has a 5 year warranty.</p>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of Zigbee CV LED drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why Zigbee is a popular choice for smart LED strip lighting.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-house-gear"></i></span>
+            <h3>Smart home ready</h3>
+            <p>An open standard that works with Zigbee gateways, apps and voice assistants.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-diagram-3"></i></span>
+            <h3>Self-healing mesh</h3>
+            <p>Every mains-powered driver relays messages, extending range and finding new routes.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-phone"></i></span>
+            <h3>App and voice control</h3>
+            <p>Scenes, schedules and colour control from the Tuya Smart app, or by voice.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-palette"></i></span>
+            <h3>Full colour range</h3>
+            <p>Dimming, tuneable white, RGB, RGBW and RGB+CCT models.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-plug"></i></span>
+            <h3>No control wiring</h3>
+            <p>Only power is needed at each driver; control is wireless.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-battery-charging"></i></span>
+            <h3>Low power</h3>
+            <p>Zigbee is designed for low-power devices, so battery remotes and sensors last.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Selection &amp; set-up</p>
+          <h2 class="ips-section-title mb-3">Choosing and installing a Zigbee CV driver</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Choose the type</strong>: a mains driver for all-in-one installations, or a receiver to use with a separate 12V or 24V power supply.</li>
+            <li><strong>Match the channels</strong>: 1 for single colour, 2 for CCT, 3 for RGB, 4 for RGBW and 5 for RGB+CCT.</li>
+            <li><strong>Size the load</strong>: add up the strip load (W/m × length) with at least 20% headroom, within the driver or receiver rating.</li>
+            <li><strong>Add a gateway</strong>: install a Zigbee gateway for app and voice control, and pair each driver to it.</li>
+            <li><strong>Plan the mesh</strong>: keep drivers within range of each other or the gateway, and avoid enclosed metal housings.</li>
+            <li><strong>Add switches</strong>: pair Zigbee remotes or wall panels for local control.</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Related technology and products</h3>
+            <p class="mb-3">Compare other wireless controls and complete the installation:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="product-handheld-remote-controls-miboxer.html">MiBoxer hand-held remotes</a></li>
+              <li><a href="product-wifi-led-controllers-overview.html">WiFi LED controllers</a></li>
+              <li><a href="casambi-cv-led-driver-technology.html">Casambi CV driver technology</a></li>
+              <li><a href="tuneable-white-led-strip-technology.html">Tuneable white LED strip technology</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">3.0</div><div class="ips-stat-label">Zigbee version</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">2.4GHz</div><div class="ips-stat-label">Radio band</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">1–5</div><div class="ips-stat-label">Output channels</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">150W</div><div class="ips-stat-label">Mains driver power</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where Zigbee CV drivers are used</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">Wherever LED strip needs to join a smart home or building system.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-house me-2"></i>Smart homes</h3><p class="mb-0">Kitchen, cove and garden strip on the same app as other smart devices.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-building me-2"></i>Apartments and hotels</h3><p class="mb-0">Room lighting scenes controlled from an app or panel.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail</h3><p class="mb-0">Shelf and display strip on schedules and scenes.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-briefcase me-2"></i>Offices</h3><p class="mb-0">Feature and indirect lighting linked to building systems.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-signpost me-2"></i>Signage and light boxes</h3><p class="mb-0">Illuminated signs switched and dimmed on a timer.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-arrow-repeat me-2"></i>Retrofit</h3><p class="mb-0">Smart strip lighting without running new control cables.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE LINKS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Explore</p>
+        <h2 class="ips-section-title mb-2">Explore smart and wireless CV drivers</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse our other wireless and smart LED strip drivers.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-casambi-enabled-led-drivers-cv.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/SCL150-12_24_48VF.jpg" alt="Casambi Enabled CV LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>Casambi CV Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-rf-led-controller-drivers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/RF-receiver-driver-group-sm.jpg" alt="RF LED Receiver Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>RF Receiver Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-wifi-led-controllers-overview.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/wifi-106-4.jpg" alt="WiFi LED Controllers" loading="lazy" /></div>
+            <div class="card-body"><h3>WiFi LED Controllers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dmx-led-drivers-cv.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/DMX-CV-driver-group-sm.jpg" alt="DMX LED Drivers Constant Voltage" loading="lazy" /></div>
+            <div class="card-body"><h3>DMX CV Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">Zigbee CV driver questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="zbFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is a Zigbee CV LED driver?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#zbFaq"><div class="accordion-body">A Zigbee constant voltage (CV) driver powers 12V or 24V LED strip and has a Zigbee radio built in, so the strip can be switched, dimmed and colour controlled wirelessly from a smartphone app, a Zigbee remote or wall panel, or a voice assistant, with no control wiring.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Do Zigbee drivers need a gateway?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#zbFaq"><div class="accordion-body">Yes, for app and voice control. A Zigbee gateway or hub joins the drivers into a network and links it to your WiFi router, so the Tuya Smart app and voice assistants can reach them. Zigbee remotes and wall panels can also be paired to control drivers directly.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">What is Zigbee 3.0?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#zbFaq"><div class="accordion-body">Zigbee 3.0 is the current version of the Zigbee standard. It brings the earlier application profiles together into one, so certified devices from different manufacturers can join the same network. It runs in the 2.4GHz band on the low-power IEEE 802.15.4 radio standard.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">How does a Zigbee mesh extend range?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#zbFaq"><div class="accordion-body">Mains-powered Zigbee devices, including LED drivers, act as routers that pass messages on to other devices. Each driver added to the network therefore extends its coverage, and messages can take another route if one device is out of range.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">Should I choose a mains Zigbee driver or a Zigbee receiver?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#zbFaq"><div class="accordion-body">A mains Zigbee driver such as the Lifud LF-GAZ150 combines the power supply and Zigbee control in one unit. A low-voltage Zigbee receiver such as the MiBoxer FUT-Z series fits between a separate 12V or 24V power supply and the strip, and offers dimming, CCT, RGB, RGBW and RGB+CCT models.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help with smart strip lighting?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Our team can help you choose Zigbee drivers, receivers, gateways and LED strip for your project.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
