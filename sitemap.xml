@@ -500,7 +500,7 @@
   </url>
   <url>
     <loc>https://www.plusopto.com/product-dmx-decoders-cv.html</loc>
-    <lastmod>2026-09-15</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -932,6 +932,12 @@
   </url>
   <url>
     <loc>https://www.plusopto.com/dmx-master-controller-technology.html</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/cv-dmx-decoder-technology.html</loc>
     <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

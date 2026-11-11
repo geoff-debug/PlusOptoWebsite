@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CV DMX Decoder Technology — Plus Opto</title>
+  <meta name="description" content="How constant voltage DMX decoders work: they take a DMX512 signal and a DC supply and drive LED strip with PWM, from 1 to 40 channels, with addressing, RDM, dimming curves and how to size and choose a decoder." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="CV DMX Decoder Technology — Plus Opto" />
+  <meta property="og:description" content="How constant voltage DMX decoders work: they take a DMX512 signal and a DC supply and drive LED strip with PWM, from 1 to 40 channels, with addressing, RDM, dimming curves and how to size and choose a decoder." />
+  <meta property="og:url" content="https://www.plusopto.com/cv-dmx-decoder-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/CV-DMX-decoder-group-sm.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="CV DMX Decoder Technology — Plus Opto" />
+  <meta name="twitter:description" content="How constant voltage DMX decoders work: they take a DMX512 signal and a DC supply and drive LED strip with PWM, from 1 to 40 channels, with addressing, RDM, dimming curves and how to size and choose a decoder." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/CV-DMX-decoder-group-sm.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/cv-dmx-decoder-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/cv-dmx-decoder-technology.html#webpage",
+      "url": "https://www.plusopto.com/cv-dmx-decoder-technology.html",
+      "name": "CV DMX Decoder Technology — Plus Opto",
+      "description": "How constant voltage DMX decoders work: they take a DMX512 signal and a DC supply and drive LED strip with PWM, from 1 to 40 channels, with addressing, RDM, dimming curves and how to size and choose a decoder.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/cv-dmx-decoder-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Controllers", "item": "https://www.plusopto.com/category-led-controllers.html" },
+        { "@type": "ListItem", "position": 4, "name": "DMX LED Controllers", "item": "https://www.plusopto.com/product-dmx-controllers-overview.html" },
+        { "@type": "ListItem", "position": 5, "name": "DMX Decoders Constant Voltage", "item": "https://www.plusopto.com/product-dmx-decoders-cv.html" },
+        { "@type": "ListItem", "position": 6, "name": "CV DMX Decoder Technology", "item": "https://www.plusopto.com/cv-dmx-decoder-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/cv-dmx-decoder-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does a CV DMX decoder do?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A constant voltage DMX decoder sits between a DC power supply and the LED strip. It reads the DMX512 signal from the master controller and switches the supply to each output channel with PWM, so each colour or zone of strip is dimmed to the level the master sends." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between a DMX decoder and a DMX driver?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A DMX decoder has no power supply inside. It needs a separate 12V or 24V DC supply and only does the dimming. A DMX LED driver combines the mains power supply and the DMX dimming in one unit. Decoders suit high channel counts and existing DC supplies, while drivers save space and wiring." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many channels and how much current do I need?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Count one channel for each colour of each zone: 1 for single colour, 2 for tunable white, 3 for RGB, 4 for RGBW and 5 for RGB+CCT. Then check the strip current on each channel is within the decoder rating, from 3A to 12A per channel in our range, and that the total does not exceed the decoder's maximum." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is RDM?",
+          "acceptedAnswer": { "@type": "Answer", "text": "RDM, Remote Device Management, adds two-way communication to the DMX line. With an RDM master, you can find each decoder, read its settings and change its DMX address without going to the decoder itself. Most of our CV decoders support DMX512 and RDM." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I set the DMX address on a decoder?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most of our decoders have an OLED or digital display with buttons, where you enter the start address from 001 to 512. The LT-D4L and LT-830-8A use DIP switches, where the address is the sum of the switches turned on. RDM decoders can also be addressed from an RDM master." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-dmx-controllers-overview.html">DMX LED Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-dmx-decoders-cv.html">DMX Decoders Constant Voltage</a></li>
+          <li class="breadcrumb-item active" aria-current="page">CV DMX Decoder Technology</li>
+        </ol>
+      </nav>
+      <h1>CV DMX Decoder Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How constant voltage DMX decoders turn a DMX512 signal and a DC supply into PWM dimming for LED strip, from 1 to 40 channels.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/CV-DMX-decoder-group-sm.jpg" alt="LT-820-5A, D5A, LT-912-OLED and BC640 DIN rail constant voltage DMX decoders" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What are CV DMX decoders?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>A constant voltage DMX decoder is the link between a <strong>DMX512 control system</strong> and <strong>12V or 24V LED strip</strong>. It takes power from a separate DC supply and the DMX signal from the master, and dims each output channel to the level the master sends.</p>
+            <p>Our range runs from <strong>single-channel</strong> decoders for one run of strip to <strong>40-channel</strong> DIN rail units for large installations, at <strong>3A to 12A per channel</strong>. Most support <strong>RDM</strong> for remote addressing, and many have an OLED display, selectable dimming curves and 16-bit resolution for smooth low-level dimming.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>DMX512 in, constant voltage PWM out</li>
+            <li>1 to 40 channels, 3A to 12A per channel</li>
+            <li>5–24V, 12–24V or 12–48V DC input</li>
+            <li>Address set on the display, by DIP switch or by RDM</li>
+            <li>Dimming, CCT, RGB, RGBW and RGB+CCT control</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">CV decoders at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Input signal: <span>DMX512, RDM</span></li>
+                <li>Output: <span>Constant voltage PWM</span></li>
+                <li>Channels: <span>1 to 40</span></li>
+                <li>Current: <span>3A to 12A per channel</span></li>
+                <li>Supply: <span>5 to 48VDC</span></li>
+                <li>Dimming: <span>0–100%</span></li>
+                <li>DMX ports: <span>XLR, RJ45, terminal</span></li>
+                <li>Mounting: <span>Surface or DIN rail</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How a CV DMX decoder works</h2>
+          <div class="text-muted lh-lg">
+            <p>The decoder reads the DMX512 line and picks out the channels starting at its <strong>DMX address</strong>. Each DMX value from 0 to 255 sets the brightness of one output.</p>
+            <p>Each output is a <strong>MOSFET switch</strong> on the negative side of the strip. It switches the DC supply on and off thousands of times a second, and the share of time it is on, the <strong>PWM duty cycle</strong>, sets the brightness while the voltage stays constant.</p>
+            <p>The DMX signal also passes <strong>through</strong> the decoder to the next one on the line. Many decoders boost the signal as it passes, and the last one on the line takes a 120Ω terminator.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 320" role="img" aria-labelledby="cdDiagTitle">
+              <title id="cdDiagTitle">A DMX master and a 12 to 24V DC power supply both connect to a DMX decoder at address 001. The decoder drives four PWM channels to an RGBW LED strip and passes the DMX signal on to the next decoder.</title>
+              <style>
+                .cd-box{fill:#fff;stroke:#7f93a6;stroke-width:1.5}
+                .cd-drv{fill:#e8eef4;stroke:#7f93a6}
+                .cd-drvt{font:600 11px Outfit,system-ui,sans-serif;fill:#112638}
+                .cd-dmx{fill:none;stroke:#1fada1;stroke-width:2.5}
+                .cd-dc{fill:none;stroke:#183858;stroke-width:2}
+                .cd-strip{fill:#fff;stroke:#7f93a6}
+                .cd-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .cd-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .cd-v{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#1fada1}
+                .cd-w{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#183858}
+              </style>
+              <text x="320" y="22" text-anchor="middle" class="cd-lbl">DMX and DC in, PWM out</text>
+              <!-- master -->
+              <rect x="20" y="60" width="100" height="44" rx="6" class="cd-drv"/>
+              <text x="70" y="86" text-anchor="middle" class="cd-drvt">DMX master</text>
+              <path d="M120 82 H290 V112" class="cd-dmx"/>
+              <text x="205" y="72" text-anchor="middle" class="cd-v">DMX512 in</text>
+              <!-- PSU -->
+              <rect x="20" y="200" width="100" height="44" rx="6" class="cd-drv"/>
+              <text x="70" y="219" text-anchor="middle" class="cd-drvt">DC power</text>
+              <text x="70" y="234" text-anchor="middle" class="cd-drvt">supply</text>
+              <path d="M120 222 H180 V180 H220" class="cd-dc"/>
+              <text x="70" y="264" text-anchor="middle" class="cd-w">12–24V DC</text>
+              <!-- decoder -->
+              <rect x="220" y="112" width="140" height="96" rx="8" class="cd-box"/>
+              <rect x="240" y="126" width="60" height="22" rx="3" fill="#112638"/>
+              <text x="270" y="142" text-anchor="middle" style="font:600 11px 'Space Grotesk',sans-serif;fill:#1fada1">A001</text>
+              <g fill="#3a5470"><circle cx="318" cy="137" r="5"/><circle cx="338" cy="137" r="5"/></g>
+              <text x="290" y="174" text-anchor="middle" class="cd-drvt">DMX decoder</text>
+              <text x="290" y="192" text-anchor="middle" class="cd-sub">CH 1–4</text>
+              <!-- outputs -->
+              <path d="M360 130 H440" stroke="#e2574c" stroke-width="2.5" fill="none"/>
+              <path d="M360 148 H440" stroke="#3aa65c" stroke-width="2.5" fill="none"/>
+              <path d="M360 166 H440" stroke="#4a7fd4" stroke-width="2.5" fill="none"/>
+              <path d="M360 184 H440" stroke="#c9a227" stroke-width="2.5" fill="none"/>
+              <text x="400" y="112" text-anchor="middle" class="cd-w">PWM out</text>
+              <rect x="440" y="120" width="180" height="74" rx="4" class="cd-strip"/>
+              <g fill="#e2574c"><rect x="452" y="126" width="12" height="8"/><rect x="496" y="126" width="12" height="8"/><rect x="540" y="126" width="12" height="8"/><rect x="584" y="126" width="12" height="8"/></g>
+              <g fill="#3aa65c"><rect x="452" y="144" width="12" height="8"/><rect x="496" y="144" width="12" height="8"/><rect x="540" y="144" width="12" height="8"/><rect x="584" y="144" width="12" height="8"/></g>
+              <g fill="#4a7fd4"><rect x="452" y="162" width="12" height="8"/><rect x="496" y="162" width="12" height="8"/><rect x="540" y="162" width="12" height="8"/><rect x="584" y="162" width="12" height="8"/></g>
+              <g fill="#f4b625"><rect x="452" y="180" width="12" height="8"/><rect x="496" y="180" width="12" height="8"/><rect x="540" y="180" width="12" height="8"/><rect x="584" y="180" width="12" height="8"/></g>
+              <text x="530" y="214" text-anchor="middle" class="cd-sub">RGBW LED strip</text>
+              <!-- DMX through -->
+              <path d="M290 208 V276 H440" class="cd-dmx"/>
+              <text x="530" y="280" text-anchor="middle" class="cd-v">DMX to next decoder</text>
+              <text x="530" y="300" text-anchor="middle" class="cd-sub">120Ω at the last one</text>
+            </svg>
+            <figcaption>Simplified illustration: the decoder reads four DMX channels from address 001 and dims the strip's red, green, blue and white with PWM from the DC supply.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CHOOSING -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Channels</p>
+        <h2 class="ips-section-title mb-2">Matching channels to the LED strip</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Each colour of each zone needs its own DMX channel and decoder output.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Strip type</th><th scope="col" class="ips-col">DMX channels per zone</th><th scope="col" class="ips-col">Zones per universe</th><th scope="col" class="ips-col">Example decoder</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Single colour</td><td class="ips-col">1</td><td class="ips-col">512</td><td class="ips-col">LT-811-12A, 1 × 12A</td></tr>
+            <tr><td>Tunable white</td><td class="ips-col">2</td><td class="ips-col">256</td><td class="ips-col">D4H in CT mode</td></tr>
+            <tr><td>RGB</td><td class="ips-col">3</td><td class="ips-col">170</td><td class="ips-col">D4A / D4B, 3 × 8A</td></tr>
+            <tr><td>RGBW</td><td class="ips-col">4</td><td class="ips-col">128</td><td class="ips-col">LT-820-5A, 4 × 5A</td></tr>
+            <tr><td>RGB+CCT</td><td class="ips-col">5</td><td class="ips-col">102</td><td class="ips-col">D5A / D5B or LT-905, 5 × 5A</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">Multi-channel decoders such as the LT-932-OLED split their outputs into several zones, each with its own addresses.</p>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">CV DMX decoders compared</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Ratings from each decoder's datasheet.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Decoder</th><th scope="col" class="ips-col">Channels × current</th><th scope="col" class="ips-col">Input</th><th scope="col" class="ips-col">Set-up and DMX ports</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>LT-811-12A</td><td class="ips-col">1 × 12A, plus 0-10V out</td><td class="ips-col">12–24VDC</td><td class="ips-col">OLED, RDM, 16-bit</td></tr>
+            <tr><td>LT-820-5A</td><td class="ips-col">4 × 5A or 3 × 6A</td><td class="ips-col">5–24VDC</td><td class="ips-col">OLED, RDM, 16-bit</td></tr>
+            <tr><td>D4A / D4B</td><td class="ips-col">4 × 6A or 3 × 8A</td><td class="ips-col">12–48VDC</td><td class="ips-col">Display, RDM, terminal (A) or RJ45 (B)</td></tr>
+            <tr><td>D5A / D5B</td><td class="ips-col">5 × 5A, 4 × 6A or 3 × 8A</td><td class="ips-col">12–48VDC</td><td class="ips-col">Display, RDM, terminal (A) or RJ45 (B)</td></tr>
+            <tr><td>LT-D4L</td><td class="ips-col">4 × 6A or 3 × 8A</td><td class="ips-col">5–24VDC</td><td class="ips-col">DIP switches, RDM, XLR-3, RJ45, terminal</td></tr>
+            <tr><td>D4H</td><td class="ips-col">4 × 4A or 3 × 5A</td><td class="ips-col">5–24VDC</td><td class="ips-col">DIN rail, display, RDM</td></tr>
+            <tr><td>LT-905</td><td class="ips-col">5 × 5A</td><td class="ips-col">12–24VDC</td><td class="ips-col">RDM, XLR-3, RJ45</td></tr>
+            <tr><td>LT-912-OLED</td><td class="ips-col">12 × 4A</td><td class="ips-col">12–24VDC</td><td class="ips-col">OLED, RDM, XLR-5, RJ45, terminal</td></tr>
+            <tr><td>LT-916-OLED</td><td class="ips-col">16 × 3A</td><td class="ips-col">12–24VDC</td><td class="ips-col">OLED, RDM, XLR-5, RJ45, terminal</td></tr>
+            <tr><td>LT-924-OLED</td><td class="ips-col">24 × 3A</td><td class="ips-col">12–24VDC</td><td class="ips-col">OLED, RDM, XLR-3, XLR-5, RJ45, terminal</td></tr>
+            <tr><td>LT-932-OLED</td><td class="ips-col">32 × 3A</td><td class="ips-col">12–24VDC</td><td class="ips-col">OLED, RDM, XLR-3, XLR-5, RJ45, terminal</td></tr>
+            <tr><td>BC640-DIN-DMX-40</td><td class="ips-col">40 × 3A</td><td class="ips-col">12–24VDC</td><td class="ips-col">DIN rail, RJ45, terminal</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">Output power is the supply voltage times the total current: for example, the LT-932-OLED gives up to 2304W at 24V.</p>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of CV DMX decoders</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why a separate decoder and power supply suits DMX LED strip projects.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-grid-3x3-gap"></i></span>
+            <h3>High channel counts</h3>
+            <p>Up to 40 outputs in one unit for large multi-zone schemes.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-plug"></i></span>
+            <h3>Choose the supply</h3>
+            <p>Use any suitable 12V, 24V or 48V DC supply, sized for the load.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-sliders"></i></span>
+            <h3>Smooth dimming</h3>
+            <p>16-bit resolution and selectable curves for flicker-free low levels.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-arrow-left-right"></i></span>
+            <h3>RDM</h3>
+            <p>Find decoders and change their addresses from the RDM master.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-display"></i></span>
+            <h3>Easy set-up</h3>
+            <p>Set the address and mode on the OLED or digital display.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-shield-check"></i></span>
+            <h3>Protected outputs</h3>
+            <p>Short circuit, over-current and over-heat protection on most models.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Selection &amp; set-up</p>
+          <h2 class="ips-section-title mb-3">Choosing and setting up a CV DMX decoder</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Count the channels</strong>: 1 to 5 per zone, depending on the strip type.</li>
+            <li><strong>Check the current</strong>: keep each channel's strip current within the decoder's rating, and the total within its maximum.</li>
+            <li><strong>Match the voltage</strong>: the decoder's input range must cover the strip and power supply voltage.</li>
+            <li><strong>Size the supply</strong>: allow the full strip load plus around 20% headroom.</li>
+            <li><strong>Set the address</strong>: enter the start address on the display, DIP switches or from an RDM master.</li>
+            <li><strong>Wire the line</strong>: daisy-chain the DMX to each decoder and terminate the last one with 120Ω.</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Related technology and products</h3>
+            <p class="mb-3">Complete the system with a master and power supplies:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="product-dmx-master-controllers.html">DMX master controllers</a></li>
+              <li><a href="product-dmx-led-drivers-cv.html">DMX CV LED drivers</a></li>
+              <li><a href="product-dmx-decoders-cc.html">CC DMX decoders</a></li>
+              <li><a href="dmx-master-controller-technology.html">DMX master controller technology</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">40</div><div class="ips-stat-label">Max. channels</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">12A</div><div class="ips-stat-label">Max. per channel</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">16-bit</div><div class="ips-stat-label">Dimming resolution</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">48V</div><div class="ips-stat-label">Max. DC input</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where CV DMX decoders are used</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">Wherever LED strip is controlled from a DMX system.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-building me-2"></i>Architectural</h3><p class="mb-0">Facade, cove and outline lighting in many zones.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-cup-straw me-2"></i>Hospitality</h3><p class="mb-0">Bar back, ceiling and feature strip lighting.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-music-note-beamed me-2"></i>Entertainment</h3><p class="mb-0">Stage, club and venue lighting from a DMX console.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail</h3><p class="mb-0">Shelf, window and display strip lighting.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-easel me-2"></i>Exhibitions</h3><p class="mb-0">Stand and showroom effects programmed per event.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-hdd-rack me-2"></i>Control panels</h3><p class="mb-0">DIN rail decoders in central lighting control cabinets.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE LINKS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Explore</p>
+        <h2 class="ips-section-title mb-2">Explore DMX lighting control</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse masters, drivers and controllers.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dmx-master-controllers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/DMX-master-controller-group-sm.jpg" alt="DMX Master Controllers" loading="lazy" /></div>
+            <div class="card-body"><h3>DMX Master Controllers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dmx-led-drivers-cv.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/DMX-CV-driver-group-sm.jpg" alt="DMX CV LED Drivers" loading="lazy" /></div>
+            <div class="card-body"><h3>DMX CV Drivers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="products-spi-led-controllers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/LT-spi16_m16.jpg" alt="SPI LED Controllers" loading="lazy" /></div>
+            <div class="card-body"><h3>SPI Controllers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-rf-touch-panel-led-controllers-e-series.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/E-series-touch-panel-group-sm.jpg" alt="E Series RF Touch Panels" loading="lazy" /></div>
+            <div class="card-body"><h3>E Series Touch Panels</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">CV DMX decoder questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="cdFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What does a CV DMX decoder do?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#cdFaq"><div class="accordion-body">A constant voltage DMX decoder sits between a DC power supply and the LED strip. It reads the DMX512 signal from the master controller and switches the supply to each output channel with PWM, so each colour or zone of strip is dimmed to the level the master sends.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">What is the difference between a DMX decoder and a DMX driver?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#cdFaq"><div class="accordion-body">A DMX decoder has no power supply inside. It needs a separate 12V or 24V DC supply and only does the dimming. A DMX LED driver combines the mains power supply and the DMX dimming in one unit. Decoders suit high channel counts and existing DC supplies, while drivers save space and wiring.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">How many channels and how much current do I need?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#cdFaq"><div class="accordion-body">Count one channel for each colour of each zone: 1 for single colour, 2 for tunable white, 3 for RGB, 4 for RGBW and 5 for RGB+CCT. Then check the strip current on each channel is within the decoder rating, from 3A to 12A per channel in our range, and that the total does not exceed the decoder's maximum.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">What is RDM?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#cdFaq"><div class="accordion-body">RDM, Remote Device Management, adds two-way communication to the DMX line. With an RDM master, you can find each decoder, read its settings and change its DMX address without going to the decoder itself. Most of our CV decoders support DMX512 and RDM.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">How do I set the DMX address on a decoder?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#cdFaq"><div class="accordion-body">Most of our decoders have an OLED or digital display with buttons, where you enter the start address from 001 to 512. The LT-D4L and LT-830-8A use DIP switches, where the address is the sum of the switches turned on. RDM decoders can also be addressed from an RDM master.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help choosing a decoder?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Our team can help you size decoders, power supplies and LED strip for your DMX project.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
