@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SPI LED Controller Technology — Plus Opto</title>
+  <meta name="description" content="How SPI pixel controllers drive addressable LED strip: one data line through every pixel IC, one-wire and two-wire ICs, pixel count and IC set-up, DMX to SPI decoders and RF remotes. Controllers for up to 2048 pixels from Plus Opto." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="SPI LED Controller Technology — Plus Opto" />
+  <meta property="og:description" content="How SPI pixel controllers drive addressable LED strip: one data line through every pixel IC, one-wire and two-wire ICs, pixel count and IC set-up, DMX to SPI decoders and RF remotes. Controllers for up to 2048 pixels from Plus Opto." />
+  <meta property="og:url" content="https://www.plusopto.com/spi-led-controller-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/SPI-controller-group-sm.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="SPI LED Controller Technology — Plus Opto" />
+  <meta name="twitter:description" content="How SPI pixel controllers drive addressable LED strip: one data line through every pixel IC, one-wire and two-wire ICs, pixel count and IC set-up, DMX to SPI decoders and RF remotes. Controllers for up to 2048 pixels from Plus Opto." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/SPI-controller-group-sm.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/spi-led-controller-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/spi-led-controller-technology.html#webpage",
+      "url": "https://www.plusopto.com/spi-led-controller-technology.html",
+      "name": "SPI LED Controller Technology — Plus Opto",
+      "description": "How SPI pixel controllers drive addressable LED strip: one data line through every pixel IC, one-wire and two-wire ICs, pixel count and IC set-up, DMX to SPI decoders and RF remotes. Controllers for up to 2048 pixels from Plus Opto.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/spi-led-controller-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "LED Controllers", "item": "https://www.plusopto.com/category-led-controllers.html" },
+        { "@type": "ListItem", "position": 4, "name": "SPI Controllers", "item": "https://www.plusopto.com/product-spi-controllers-overview.html" },
+        { "@type": "ListItem", "position": 5, "name": "SPI LED Controllers", "item": "https://www.plusopto.com/products-spi-led-controllers.html" },
+        { "@type": "ListItem", "position": 6, "name": "SPI LED Controller Technology", "item": "https://www.plusopto.com/spi-led-controller-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/spi-led-controller-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an SPI LED controller?",
+          "acceptedAnswer": { "@type": "Answer", "text": "An SPI LED controller sends a serial digital data signal to addressable (pixel) LED strip. Each pixel has its own driver IC that reads its colour from the data stream and passes the rest along, so every pixel can show a different colour and moving effects can run along the strip." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between an SPI controller and a DMX to SPI decoder?",
+          "acceptedAnswer": { "@type": "Answer", "text": "A standalone SPI controller runs its own built-in effects and is set from an RF remote or panel. A DMX to SPI decoder, such as the LT-DMX-1809, DMX-SPI-202 or DMX-SPI-203, takes a DMX512 signal from a lighting console and converts it to SPI, so the pixels can be programmed as part of a larger DMX scheme." }
+        },
+        {
+          "@type": "Question",
+          "name": "How many pixels can one controller drive?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The SPIR3 and SPIR3-M drive 2048 single colour, 1536 RGB or 1024 RGBW pixels, the SPE-103E up to 2048 pixels and the LT-SPI-16S 8 to 1020 pixels. In DMX decode mode, the DMX-SPI-202 controls 170 RGB pixels from 510 channels, or up to 1020 pixels using its virtual pixel function." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which pixel LED ICs are supported?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most controllers support the common one-wire ICs such as WS2811, WS2812B, TM1809, UCS1903 and SK6812. The LT-SPI-16S, DMX-SPI-202, DMX-SPI-203 and SPE-103E also support two-wire ICs with a separate clock line, such as APA102, WS2801 and LPD8806. Check the datasheet for the full list." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to set the IC type?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Not on the SPIR3 and SPIR3-M, which detect the chip automatically. On the LT-SPI-16S the IC type, pixel count and RGB order are set from the M16S remote, and on the DMX-SPI-202 and DMX-SPI-203 they are chosen on the OLED display. On the LT-DMX-1809, DIP switch 10 selects 800K or 400K data speed." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <style>
+    .ips-section-title{font-family:'Outfit',sans-serif;color:#112638;font-weight:700}
+    .ips-eyebrow{font-size:.75rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--po-teal);margin-bottom:.5rem}
+    .ips-figure{background:#fff;border:1px solid #e4eaf0;border-radius:10px;padding:1.5rem;box-shadow:var(--po-shadow-card)}
+    .ips-figure svg{width:100%;height:auto;display:block}
+    .ips-figure figcaption{font-size:.8125rem;color:#6b7f8e;margin-top:.75rem;text-align:center}
+    .ips-icon{width:44px;height:44px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;background:rgba(31,173,161,.1);color:var(--po-teal);font-size:1.3rem;margin-bottom:1rem}
+    .ips-compare{background:#fff;border-radius:10px;overflow:hidden;box-shadow:var(--po-shadow-card)}
+    .ips-compare table{margin:0}
+    .ips-compare th{font-family:'Outfit',sans-serif;font-weight:600;background:#112638;color:#fff;font-size:.9rem;padding:.85rem 1rem;border:0}
+    .ips-compare th.ips-col{background:var(--po-teal)}
+    .ips-compare td{font-size:.875rem;padding:.75rem 1rem;border-color:#e4eaf0;color:#475e6e;vertical-align:middle}
+    .ips-compare td:first-child{font-weight:600;color:#1a2b3c}
+    .ips-compare td.ips-col{background:rgba(31,173,161,.06);color:#1a2b3c}
+    .ips-stat{font-family:'Outfit',sans-serif;font-size:2rem;font-weight:700;color:var(--po-teal-glow);line-height:1}
+    .ips-stat-label{font-size:.8125rem;color:rgba(210,228,245,.7);margin-top:.35rem}
+    .ips-faq .accordion-button{font-family:'Outfit',sans-serif;font-weight:600;color:#112638}
+    .ips-faq .accordion-button:not(.collapsed){background:rgba(31,173,161,.08);color:#112638;box-shadow:none}
+    .ips-faq .accordion-button:focus{box-shadow:0 0 0 .2rem rgba(31,173,161,.25)}
+    .ips-faq .accordion-body{font-size:.9rem;color:#475e6e;line-height:1.7}
+    .ips-check li{position:relative;padding-left:1.6rem;margin-bottom:.55rem}
+    .ips-check li::before{content:"\F26E";font-family:"bootstrap-icons";position:absolute;left:0;top:0;color:var(--po-teal)}
+  </style>
+
+  <div class="page-hero">
+    <div class="container">
+      <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="products.html">Products</a></li>
+          <li class="breadcrumb-item"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="breadcrumb-item"><a href="product-spi-controllers-overview.html">SPI Controllers</a></li>
+          <li class="breadcrumb-item"><a href="products-spi-led-controllers.html">SPI LED Controllers</a></li>
+          <li class="breadcrumb-item active" aria-current="page">SPI LED Controller Technology</li>
+        </ol>
+      </nav>
+      <h1>SPI LED Controller Technology</h1>
+      <p class="subtitle" style="max-width:680px;">How SPI controllers send pixel data down addressable LED strip, so every LED can show its own colour and effects can run along the strip.</p>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:var(--po-shadow-card);">
+            <img src="assets/img/SPI-controller-group-sm.jpg" alt="LT-SPI-16S+M16S controller, B6 SPI panel and DMX-SPI-203+M203 controller" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <p class="ips-eyebrow">Overview</p>
+          <h2 class="ips-section-title mb-3">What are SPI LED controllers?</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>Addressable LED strip has a small <strong>driver IC</strong> in every pixel, or every few LEDs. An SPI controller sends a <strong>serial data signal</strong> along the strip, and each IC picks out its own colour and brightness, so every pixel can be set on its own.</p>
+            <p>That makes <strong>moving effects</strong> possible: chases, meteors, flows and rainbows that run along the strip. Our range includes <strong>standalone controllers</strong> with built-in effects and RF remotes, and <strong>DMX to SPI decoders</strong> that bring pixel strip into a DMX512 lighting scheme. They drive single colour, RGB and RGBW pixel strip.</p>
+          </div>
+
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li>SPI (TTL) data out to pixel ICs</li>
+            <li>Up to 2048 pixels per controller</li>
+            <li>RF 2.4GHz remote, panel or DMX512 control</li>
+            <li>5–24V DC supply</li>
+            <li>Single colour, RGB and RGBW pixel strip</li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="value-card mb-4" style="height:auto;">
+              <h3 class="mb-3">SPI controllers at a glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-4">
+                <li>Output: <span>SPI (TTL) data</span></li>
+                <li>Pixels: <span>Up to 2048</span></li>
+                <li>Supply: <span>5 to 24VDC</span></li>
+                <li>Control: <span>RF 2.4GHz, DMX512, RDM</span></li>
+                <li>Built-in effects: <span>16 to 300</span></li>
+                <li>Strip type: <span>Mono, RGB, RGBW</span></li>
+                <li>ICs: <span>WS2811, WS2812B, TM1809, APA102…</span></li>
+              </ul>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <p class="ips-eyebrow">The technology</p>
+          <h2 class="ips-section-title mb-3">How an SPI controller works</h2>
+          <div class="text-muted lh-lg">
+            <p>The controller sends a stream of colour data down the <strong>DATA</strong> line. The first pixel IC keeps the first set of values, three for RGB or four for RGBW, and passes the rest on to the next pixel, and so on to the end of the strip.</p>
+            <p>The controller repeats the stream many times a second, changing the values to create <strong>effects</strong>. It needs to know the <strong>number of pixels</strong> and the <strong>colour order</strong> of the strip, and on some models the IC type.</p>
+            <p>The strip takes its power from the <strong>DC supply</strong>. On long runs, inject power at several points along the strip so the far end does not dim.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <figure class="ips-figure mb-0">
+            <svg viewBox="0 0 640 300" role="img" aria-labelledby="spiDiagTitle">
+              <title id="spiDiagTitle">An RF remote or DMX console controls an SPI controller. The controller sends one data line into an addressable LED strip, where each pixel IC takes its own colour and passes the rest on. A DC power supply powers the controller and the strip.</title>
+              <style>
+                .sx-box{fill:#fff;stroke:#7f93a6;stroke-width:1.5}
+                .sx-drv{fill:#e8eef4;stroke:#7f93a6}
+                .sx-drvt{font:600 11px Outfit,system-ui,sans-serif;fill:#112638}
+                .sx-dat{fill:none;stroke:#1fada1;stroke-width:2.5}
+                .sx-ctl{fill:none;stroke:#1fada1;stroke-width:2;stroke-dasharray:5 4}
+                .sx-dc{fill:none;stroke:#183858;stroke-width:2}
+                .sx-lbl{font:600 15px Outfit,system-ui,sans-serif;fill:#112638}
+                .sx-sub{font:12px 'Space Grotesk',system-ui,sans-serif;fill:#6b7f8e}
+                .sx-v{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#1fada1}
+                .sx-w{font:600 12px 'Space Grotesk',system-ui,sans-serif;fill:#183858}
+              </style>
+              <text x="320" y="22" text-anchor="middle" class="sx-lbl">One data line through every pixel</text>
+              <!-- remote / DMX -->
+              <rect x="20" y="60" width="100" height="44" rx="6" class="sx-drv"/>
+              <text x="70" y="79" text-anchor="middle" class="sx-drvt">Remote or</text>
+              <text x="70" y="94" text-anchor="middle" class="sx-drvt">DMX console</text>
+              <path d="M120 82 H225 V100" class="sx-ctl"/>
+              <text x="175" y="72" text-anchor="middle" class="sx-v">RF or DMX512</text>
+              <!-- PSU -->
+              <rect x="20" y="210" width="100" height="44" rx="6" class="sx-drv"/>
+              <text x="70" y="229" text-anchor="middle" class="sx-drvt">DC power</text>
+              <text x="70" y="244" text-anchor="middle" class="sx-drvt">supply</text>
+              <path d="M120 232 H225 V190" class="sx-dc"/>
+              <path d="M70 254 V280 H600 V172" class="sx-dc"/>
+              <text x="330" y="272" text-anchor="middle" class="sx-w">5–24V DC to the strip</text>
+              <!-- controller -->
+              <rect x="170" y="100" width="110" height="90" rx="8" class="sx-box"/>
+              <text x="225" y="138" text-anchor="middle" class="sx-drvt">SPI</text>
+              <text x="225" y="153" text-anchor="middle" class="sx-drvt">controller</text>
+              <text x="225" y="175" text-anchor="middle" class="sx-sub">up to 2048 px</text>
+              <!-- data line and strip -->
+              <text x="480" y="96" text-anchor="middle" class="sx-w">Addressable LED strip</text>
+              <rect x="340" y="108" width="280" height="64" rx="6" fill="#f4f6f8" stroke="#7f93a6"/>
+              <path d="M280 140 H612" class="sx-dat"/>
+              <text x="310" y="130" text-anchor="middle" class="sx-v">DATA</text>
+              <g stroke="#7f93a6" stroke-width="1">
+                <rect x="352" y="118" width="44" height="44" rx="4" fill="#fff"/>
+                <rect x="406" y="118" width="44" height="44" rx="4" fill="#fff"/>
+                <rect x="460" y="118" width="44" height="44" rx="4" fill="#fff"/>
+                <rect x="514" y="118" width="44" height="44" rx="4" fill="#fff"/>
+                <rect x="568" y="118" width="44" height="44" rx="4" fill="#fff"/>
+                <circle cx="374" cy="134" r="9" fill="#e2574c"/>
+                <circle cx="428" cy="134" r="9" fill="#3aa65c"/>
+                <circle cx="482" cy="134" r="9" fill="#4a7fd4"/>
+                <circle cx="536" cy="134" r="9" fill="#f4b625"/>
+                <circle cx="590" cy="134" r="9" fill="#b05cc8"/>
+              </g>
+              <g fill="#183858">
+                <rect x="366" y="149" width="16" height="8" rx="1"/>
+                <rect x="420" y="149" width="16" height="8" rx="1"/>
+                <rect x="474" y="149" width="16" height="8" rx="1"/>
+                <rect x="528" y="149" width="16" height="8" rx="1"/>
+                <rect x="582" y="149" width="16" height="8" rx="1"/>
+              </g>
+              <text x="480" y="196" text-anchor="middle" class="sx-v">Each pixel IC takes its own colour</text>
+              <text x="480" y="214" text-anchor="middle" class="sx-sub">and passes the rest of the data on</text>
+            </svg>
+            <figcaption>Simplified illustration: one data line runs from the controller through every pixel IC. Two-wire ICs such as the APA102 also use a clock line.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ONE-WIRE / TWO-WIRE -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Pixel ICs</p>
+        <h2 class="ips-section-title mb-2">One-wire or two-wire ICs?</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">The IC in the strip sets how the controller must send its data. Check that the controller supports it.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Feature</th><th scope="col" class="ips-col">One-wire ICs</th><th scope="col" class="ips-col">Two-wire ICs</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Signal lines</td><td class="ips-col">DATA only</td><td class="ips-col">DATA and CLK (clock)</td></tr>
+            <tr><td>Timing</td><td class="ips-col">Fixed data rate, usually 800Kbps, some 400Kbps</td><td class="ips-col">Set by the clock line</td></tr>
+            <tr><td>Example ICs</td><td class="ips-col">WS2811, WS2812B, TM1809, UCS1903, SK6812, SM16703</td><td class="ips-col">APA102, WS2801, LPD8806, LPD6803, P9813</td></tr>
+            <tr><td>Our controllers</td><td class="ips-col">All models</td><td class="ips-col">LT-SPI-16S, DMX-SPI-202, DMX-SPI-203, SPE-103E</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Our range</p>
+        <h2 class="ips-section-title mb-2">SPI controllers compared</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:680px;">Ratings from each controller's datasheet.</p>
+      </div>
+      <div class="ips-compare table-responsive">
+        <table class="table mb-0">
+          <thead>
+            <tr><th scope="col">Controller</th><th scope="col" class="ips-col">Control</th><th scope="col" class="ips-col">Pixels</th><th scope="col" class="ips-col">Supply / output</th><th scope="col" class="ips-col">Effects and set-up</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>LT-SPI-16S + M16S</td><td class="ips-col">M16S RF 2.4GHz remote</td><td class="ips-col">8–1020</td><td class="ips-col">5–24VDC / max. 10A</td><td class="ips-col">16 modes; IC, pixels and RGB order set from the remote</td></tr>
+            <tr><td>SPIR3</td><td class="ips-col">B6 panel or C6 remote, RF 2.4GHz, push switch</td><td class="ips-col">Mono 2048, RGB 1536, RGBW 1024</td><td class="ips-col">5–24VDC / 10A</td><td class="ips-col">20 modes; IC detected automatically</td></tr>
+            <tr><td>SPIR3-M</td><td class="ips-col">B6 panel or C6 remote, RF 2.4GHz, push switch</td><td class="ips-col">Mono 2048, RGB 1536, RGBW 1024</td><td class="ips-col">5–24VDC / 6A</td><td class="ips-col">20 modes; mini size 76 × 19 × 9.5mm</td></tr>
+            <tr><td>SPE-103E-RGB</td><td class="ips-col">RF remote, up to 10m</td><td class="ips-col">300–2048</td><td class="ips-col">5V or 12V versions</td><td class="ips-col">300 built-in programs</td></tr>
+            <tr><td>LT-DMX-1809</td><td class="ips-col">DMX512</td><td class="ips-col">512 channels per unit</td><td class="ips-col">5–24VDC</td><td class="ips-col">DIP switch address; 800K/400K speed; self-test modes</td></tr>
+            <tr><td>DMX-SPI-202</td><td class="ips-col">DMX512 / RDM</td><td class="ips-col">170 RGB or 128 RGBW; up to 1020 virtual</td><td class="ips-col">5–24VDC</td><td class="ips-col">OLED set-up; 16 built-in modes</td></tr>
+            <tr><td>DMX-SPI-203 + M203</td><td class="ips-col">DMX512 and M203 RF remote</td><td class="ips-col">Up to 1024</td><td class="ips-col">5–24VDC</td><td class="ips-col">OLED set-up; 28 modes, 540 effects</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-center text-muted small mt-3 mb-0">The B6 wall panel and C6 handheld remote control the SPIR3 and SPIR3-M from up to 30m.</p>
+    </div>
+  </section>
+
+  <!-- BENEFITS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Benefits</p>
+        <h2 class="ips-section-title mb-2">Advantages of SPI pixel control</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Why addressable strip and an SPI controller go further than standard RGB strip.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-grid-3x3-gap"></i></span>
+            <h3>Every pixel on its own</h3>
+            <p>Each pixel can show a different colour, rather than the whole strip changing together.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-stars"></i></span>
+            <h3>Built-in effects</h3>
+            <p>From 16 to 300 ready-made chases, meteors, flows and fades, with speed and brightness control.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-share"></i></span>
+            <h3>Simple wiring</h3>
+            <p>One data line runs the whole strip, so there is no extra cable for each colour channel.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-broadcast"></i></span>
+            <h3>Wireless control</h3>
+            <p>RF 2.4GHz remotes and wall panels, with scene save on the B6 and C6.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-diagram-3"></i></span>
+            <h3>DMX integration</h3>
+            <p>DMX to SPI decoders let a lighting console program pixel strip with the rest of a DMX scheme.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <span class="ips-icon"><i class="bi bi-cpu"></i></span>
+            <h3>Wide IC support</h3>
+            <p>Works with the common pixel ICs, from the WS2811 and WS2812B to the APA102.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SETUP -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-6">
+          <p class="ips-eyebrow">Selection &amp; set-up</p>
+          <h2 class="ips-section-title mb-3">Choosing and setting up an SPI controller</h2>
+          <ul class="list-unstyled ips-check text-muted mb-0">
+            <li><strong>Check the IC</strong>: confirm the controller supports the strip's pixel IC, and whether it is one-wire or two-wire.</li>
+            <li><strong>Count the pixels</strong>: make sure the run is within the controller's pixel limit for RGB or RGBW.</li>
+            <li><strong>Choose the control</strong>: an RF remote or panel for standalone effects, or a DMX to SPI decoder for a DMX scheme.</li>
+            <li><strong>Match the voltage</strong>: use a DC supply that matches the strip, 5V, 12V or 24V, within the controller's input range.</li>
+            <li><strong>Set the strip up</strong>: set the pixel count and colour order, and the IC type or speed where needed.</li>
+            <li><strong>Feed the power</strong>: inject power along long runs, and keep the data cable from the controller short.</li>
+          </ul>
+        </div>
+        <div class="col-12 col-lg-6">
+          <div class="value-card" style="height:auto;">
+            <h3>Related technology and products</h3>
+            <p class="mb-3">Complete the system with strip and control:</p>
+            <ul class="list-unstyled ips-check text-muted mb-4">
+              <li><a href="products-flexible-led-strip-addressable.html">Flexible addressable LED strip</a></li>
+              <li><a href="product-led-neon-flex-addressable.html">Addressable LED neon flex</a></li>
+              <li><a href="product-dmx-master-controllers.html">DMX master controllers</a></li>
+              <li><a href="dmx-master-controller-technology.html">DMX master controller technology</a></li>
+            </ul>
+            <a href="contact.html" class="btn btn-teal">Ask an Engineer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 mb-5 text-center">
+        <div class="col-6 col-lg-3"><div class="ips-stat">2048</div><div class="ips-stat-label">Max. pixels</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">300</div><div class="ips-stat-label">Max. built-in programs</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">30m</div><div class="ips-stat-label">RF control distance</div></div>
+        <div class="col-6 col-lg-3"><div class="ips-stat">5–24V</div><div class="ips-stat-label">Supply range</div></div>
+      </div>
+      <div class="text-center mb-4">
+        <h2 class="fw-bold mb-2" style="font-family:'Outfit',sans-serif;">Where SPI controllers are used</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:600px;">Wherever light needs to move along a strip.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-building me-2"></i>Architectural</h3><p class="mb-0">Facade outlines and building edges with moving colour.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-shop me-2"></i>Retail and signage</h3><p class="mb-0">Shop fronts, displays and illuminated signs that catch the eye.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-music-note-beamed me-2"></i>Entertainment</h3><p class="mb-0">Stage, bar and venue effects, programmed from DMX.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-house me-2"></i>Home and hospitality</h3><p class="mb-0">Coves, stairs and ceilings with scenes saved on a wall panel.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-calendar-event me-2"></i>Events</h3><p class="mb-0">Exhibition stands and seasonal displays with chase effects.</p></div></div>
+        <div class="col-12 col-md-6 col-lg-4"><div class="highlight-card"><h3><i class="bi bi-cpu me-2"></i>OEM products</h3><p class="mb-0">Pixel effects built into custom LED products and fittings.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE LINKS -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="ips-eyebrow">Explore</p>
+        <h2 class="ips-section-title mb-2">Explore pixel lighting</h2>
+        <p class="text-muted mx-auto mb-0" style="max-width:620px;">Browse addressable strip and DMX control.</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="products-flexible-led-strip-addressable.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Flexistrip-Addressable5050RGB.png" alt="Flexible Addressable LED Strip" loading="lazy" /></div>
+            <div class="card-body"><h3>Addressable LED Strip</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-led-neon-flex-addressable.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/Addressable-Neon.jpg" alt="Addressable LED Neon Flex" loading="lazy" /></div>
+            <div class="card-body"><h3>Addressable Neon Flex</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dmx-master-controllers.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/DMX-master-controller-group-sm.jpg" alt="DMX Master Controllers" loading="lazy" /></div>
+            <div class="card-body"><h3>DMX Master Controllers</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <a href="product-dmx-decoders-cv.html" class="card-product">
+            <div class="card-img-wrap"><img src="assets/img/CV-DMX-decoder-group-sm.jpg" alt="CV DMX Decoders" loading="lazy" /></div>
+            <div class="card-body"><h3>CV DMX Decoders</h3><span class="read-more">View Range →</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5 bg-po-muted">
+    <div class="container" style="max-width:860px;">
+      <div class="text-center mb-4">
+        <p class="ips-eyebrow">FAQ</p>
+        <h2 class="ips-section-title mb-0">SPI LED controller questions</h2>
+      </div>
+      <div class="accordion ips-faq" id="spiFaq">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is an SPI LED controller?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#spiFaq"><div class="accordion-body">An SPI LED controller sends a serial digital data signal to addressable (pixel) LED strip. Each pixel has its own driver IC that reads its colour from the data stream and passes the rest along, so every pixel can show a different colour and moving effects can run along the strip.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">What is the difference between an SPI controller and a DMX to SPI decoder?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#spiFaq"><div class="accordion-body">A standalone SPI controller runs its own built-in effects and is set from an RF remote or panel. A DMX to SPI decoder, such as the LT-DMX-1809, DMX-SPI-202 or DMX-SPI-203, takes a DMX512 signal from a lighting console and converts it to SPI, so the pixels can be programmed as part of a larger DMX scheme.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">How many pixels can one controller drive?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#spiFaq"><div class="accordion-body">The SPIR3 and SPIR3-M drive 2048 single colour, 1536 RGB or 1024 RGBW pixels, the SPE-103E up to 2048 pixels and the LT-SPI-16S 8 to 1020 pixels. In DMX decode mode, the DMX-SPI-202 controls 170 RGB pixels from 510 channels, or up to 1020 pixels using its virtual pixel function.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Which pixel LED ICs are supported?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#spiFaq"><div class="accordion-body">Most controllers support the common one-wire ICs such as WS2811, WS2812B, TM1809, UCS1903 and SK6812. The LT-SPI-16S, DMX-SPI-202, DMX-SPI-203 and SPE-103E also support two-wire ICs with a separate clock line, such as APA102, WS2801 and LPD8806. Check the datasheet for the full list.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">Do I need to set the IC type?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#spiFaq"><div class="accordion-body">Not on the SPIR3 and SPIR3-M, which detect the chip automatically. On the LT-SPI-16S the IC type, pixel count and RGB order are set from the M16S remote, and on the DMX-SPI-202 and DMX-SPI-203 they are chosen on the OLED display. On the LT-DMX-1809, DIP switch 10 selects 800K or 400K data speed.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need help choosing a controller?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">Our team can help you match SPI controllers, pixel strip and power supplies for your project.</p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
