@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Graphic COB LCD Technology — Plus Opto</title>
+  <meta name="description" content="How Chip-on-Board (COB) graphic LCD modules work, with the controller mounted on a PCB behind the display, controllers, interfaces, supply voltage and fonts. Monochrome COB LCDs from 2.2&quot; to 5.67&quot; supplied by Plus Opto." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="Graphic COB LCD Technology — Plus Opto" />
+  <meta property="og:description" content="How Chip-on-Board (COB) graphic LCD modules work, with the controller mounted on a PCB behind the display, controllers, interfaces, supply voltage and fonts. Monochrome COB LCDs from 2.2&quot; to 5.67&quot; supplied by Plus Opto." />
+  <meta property="og:url" content="https://www.plusopto.com/graphic-cob-lcd-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/Graphic-COB-LCD-group-sm.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="Graphic COB LCD Technology — Plus Opto" />
+  <meta name="twitter:description" content="How Chip-on-Board (COB) graphic LCD modules work, with the controller mounted on a PCB behind the display, controllers, interfaces, supply voltage and fonts. Monochrome COB LCDs from 2.2&quot; to 5.67&quot; supplied by Plus Opto." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/Graphic-COB-LCD-group-sm.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/graphic-cob-lcd-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/graphic-cob-lcd-technology.html#webpage",
+      "url": "https://www.plusopto.com/graphic-cob-lcd-technology.html",
+      "name": "Graphic COB LCD Technology — Plus Opto",
+      "description": "How Chip-on-Board (COB) graphic LCD modules work, with the controller mounted on a PCB behind the display, controllers, interfaces, supply voltage and fonts. Monochrome COB LCDs from 2.2\" to 5.67\" supplied by Plus Opto.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/graphic-cob-lcd-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "Display Solutions", "item": "https://www.plusopto.com/category-display-solutions.html" },
+        { "@type": "ListItem", "position": 4, "name": "Graphic LCD Modules", "item": "https://www.plusopto.com/product-graphic-lcd-modules-overview.html" },
+        { "@type": "ListItem", "position": 5, "name": "Graphic COB Modules", "item": "https://www.plusopto.com/product-graphic-COB-modules.html" },
+        { "@type": "ListItem", "position": 6, "name": "Graphic COB LCD Technology", "item": "https://www.plusopto.com/graphic-cob-lcd-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/graphic-cob-lcd-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a COB LCD module?",
+          "acceptedAnswer": { "@type": "Answer", "text": "COB stands for Chip on Board. The LCD controller and driver ICs are mounted directly on a printed circuit board behind the display and covered with a protective epoxy. The PCB also carries the connector pins and screw holes, so the module is ready to fit and connect without designing an extra board." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I choose a COB or a COG graphic LCD?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Choose COB where you want a rigid module with screw holes and header pins that is easy to fit and hand solder, or where you are matching an existing COB outline. Choose COG (Chip on Glass) where space, weight and thickness matter most, such as handheld and portable equipment." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I run a COB graphic LCD from 3.3V?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most COB graphic LCDs run from 5V as standard, and several offer a 3.3V option. The WG14432A3 runs from 3.3V with an optional internal booster, the WG12864AB is a 3.3V version of the WG12864A with negative voltage, and the WG12232A and WG160128B1 offer optional negative voltage for 3V or 3.3V operation." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the display show text without drawing every character?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes, on models with a font built in. The RA6963 controller used in the WG128128A has a character generator mode with a built-in English font, and the WG16080D and WG160128B1 are available in character generator mode. The ST7920 in the WG14432A supports Traditional and Simplified Chinese fonts." }
+        },
+        {
+          "@type": "Question",
+          "name": "Is there a graphic LCD the same size as a 16x2 character LCD?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The 144x32 WG14432A3 and WG14432A5 share the outline dimensions of the WH1602C 16x2 character LCD, so you can move from text only to graphics without changing the mechanical design." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CATEGORY HERO -->
+  <div style="position:relative;height:350px;">
+    <img src="assets/img/Graphic%20LCD%20Modules.png" alt="Graphic COB LCD Technology" style="width:100%;height:100%;object-fit:cover;" />
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(17,38,56,.92) 0%,rgba(17,38,56,.7) 50%,rgba(17,38,56,.35) 100%);"></div>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;">
+      <div class="container">
+        <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+          <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider-color:rgba(210,228,245,0.4);--bs-breadcrumb-item-active-color:rgba(210,228,245,0.75);">
+            <li class="breadcrumb-item"><a href="index.html" style="color:#30e8d9;text-decoration:none;">Home</a></li>
+            <li class="breadcrumb-item"><a href="products.html" style="color:#30e8d9;text-decoration:none;">Products</a></li>
+            <li class="breadcrumb-item"><a href="category-display-solutions.html" style="color:#30e8d9;text-decoration:none;">Display Solutions</a></li>
+            <li class="breadcrumb-item"><a href="product-graphic-lcd-modules-overview.html" style="color:#30e8d9;text-decoration:none;">Graphic LCD Modules</a></li>
+            <li class="breadcrumb-item"><a href="product-graphic-COB-modules.html" style="color:#30e8d9;text-decoration:none;">Graphic COB Modules</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Graphic COB LCD Technology</li>
+          </ol>
+        </nav>
+        <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;color:#fff;margin-bottom:.5rem;">Graphic COB LCD Technology</h1>
+        <p style="color:rgba(210,228,245,.8);max-width:600px;margin:0;">Monochrome Chip-on-Board graphic LCD modules from 2.2&quot; to 5.67&quot;, with resolutions from 122x32 to 320x240. Find out how COB construction works, and how to choose a controller, interface and supply voltage.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <img src="assets/img/Graphic-COB-LCD-group-sm.jpg" alt="Winstar Graphic COB LCD Modules" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Overview</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>A graphic COB (Chip on Board) LCD is a monochrome dot matrix display mounted on its own printed circuit board. The controller and driver ICs sit on the back of the PCB under a protective epoxy, and the board also carries the connector pins and screw holes. The result is a rigid, ready to fit module that connects straight to your microcontroller, with no extra board to design.</p>
+            <p>As the authorised distributor for Winstar Display Corporation we offer graphic COB LCD modules from the 2.2&quot; 122x32 WG12232A up to the 5.67&quot; 320x240 WG320240BX, including the popular 128x64 WG12864A. Polariser options include reflective, transmissive and transflective, with LED backlights in yellow/green, white, blue, red, amber and RGB.</p>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Controller mounted on a rigid PCB</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Resolutions from 122x32 to 320x240</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">6800 and 8080 parallel interfaces</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">5V supply, with 3.3V options</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Screw holes for secure mounting</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Operating range -20℃ to +70℃</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="sidebar-card mb-4">
+              <h3 class="fw-semibold mb-4" style="font-family:'Outfit',sans-serif;font-size:1.05rem;color:#1a2b3c;">Product Resources</h3>
+              <a href="product-graphic-COB-modules.html"
+                 class="d-flex align-items-center gap-3 p-3 rounded-3 border mb-3 text-decoration-none"
+                 style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                  <i class="bi bi-grid-3x3-gap-fill fs-5" style="color:#1a4870;"></i>
+                </div>
+                <div>
+                  <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Graphic COB LCD Modules</div>
+                  <div style="font-size:.78rem;color:#8096a8;">Full product range</div>
+                </div>
+              </a>
+              <a href="product-graphic-COG-modules.html"
+                 class="d-flex align-items-center gap-3 p-3 rounded-3 border mb-3 text-decoration-none"
+                 style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                  <i class="bi bi-layers-fill fs-5" style="color:#1a4870;"></i>
+                </div>
+                <div>
+                  <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Graphic COG LCD Modules</div>
+                  <div style="font-size:.78rem;color:#8096a8;">Controller on the glass</div>
+                </div>
+              </a>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+            <div class="sidebar-card mb-4">
+              <h3 class="fw-semibold mb-3" style="font-family:'Outfit',sans-serif;font-size:1.05rem;color:#1a2b3c;">Graphic COB at a Glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-0">
+                <li>Technology: <span>Monochrome STN / FSTN LCD</span></li>
+                <li>Sizes: <span>2.2&quot; to 5.67&quot;</span></li>
+                <li>Resolution: <span>122x32 to 320x240</span></li>
+                <li>Controllers: <span>AIP31520, ST7920, RW1020, NT7107/NT7108, RA6963, S1D13700</span></li>
+                <li>Interfaces: <span>6800, 8080 (SPI optional on WG14432A)</span></li>
+                <li>Supply: <span>5V, with 3.3V options</span></li>
+                <li>Backlights: <span>Yellow/green, white, blue, red, amber, RGB</span></li>
+                <li>Operating temp: <span>-20℃ to +70℃</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">How a COB LCD Works</h2>
+          <div class="text-muted lh-lg">
+            <p>An LCD is a light valve. A thin layer of liquid crystal sits between two sheets of glass, with polarisers on the outside. Applying a voltage across a pixel twists the liquid crystal and changes how much light passes through, so the pixel appears dark or light against the background. An LED backlight lights the display in the dark.</p>
+            <p class="mb-0">In a COB module the glass panel and backlight sit on top of a PCB. The controller and driver chips are bonded straight onto the back of the board and sealed under black epoxy, then connected to the panel through conductive strips. The controller stores the image in its own memory and scans the display at a set duty cycle, for example 1/64 for a 128x64 panel, so your microcontroller only writes data when the picture changes.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 p-4 bg-white text-center" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <svg viewBox="0 0 640 300" role="img" aria-labelledby="cobDiagTitle" style="width:100%;height:auto;display:block;">
+              <title id="cobDiagTitle">Cross-section of a COB LCD module: the LCD glass and backlight sit on a PCB, with the controller ICs under epoxy on the back of the board, header pins and screw holes</title>
+              <g font-family="Outfit, system-ui, sans-serif" text-anchor="middle">
+                <text x="320" y="24" font-size="16" font-weight="600" fill="#112638">COB Module Cross-Section</text>
+                <text x="320" y="44" font-size="12" fill="#6b7f8e">The controller ICs sit on the PCB behind the display</text>
+              </g>
+              <!-- layers -->
+              <rect x="200" y="64" width="300" height="14" rx="2" fill="#e8eef4" stroke="#b7c6d3"/>
+              <rect x="200" y="80" width="300" height="30" rx="2" fill="#cfdae4" stroke="#b7c6d3"/>
+              <rect x="200" y="93" width="300" height="5" fill="#1fada1" fill-opacity=".45"/>
+              <rect x="200" y="112" width="300" height="12" rx="2" fill="#e8eef4" stroke="#b7c6d3"/>
+              <rect x="200" y="128" width="300" height="28" rx="3" fill="#f4b625"/>
+              <rect x="170" y="160" width="360" height="14" rx="2" fill="#2f8f5b"/>
+              <!-- screw holes -->
+              <circle cx="182" cy="167" r="4" fill="#fff"/>
+              <circle cx="518" cy="167" r="4" fill="#fff"/>
+              <!-- epoxy blobs -->
+              <ellipse cx="270" cy="181" rx="28" ry="8" fill="#112638"/>
+              <ellipse cx="400" cy="181" rx="28" ry="8" fill="#112638"/>
+              <!-- header pins -->
+              <g stroke="#c9a227" stroke-width="3">
+                <line x1="466" y1="174" x2="466" y2="196"/><line x1="476" y1="174" x2="476" y2="196"/><line x1="486" y1="174" x2="486" y2="196"/><line x1="496" y1="174" x2="496" y2="196"/>
+              </g>
+              <g font-family="Outfit, system-ui, sans-serif" font-size="12" fill="#112638" text-anchor="end">
+                <text x="188" y="75">Front polariser</text>
+                <text x="188" y="99">LCD glass</text>
+                <text x="188" y="122">Rear polariser</text>
+                <text x="188" y="146">LED backlight</text>
+                <text x="160" y="171">PCB</text>
+              </g>
+              <g font-family="Outfit, system-ui, sans-serif" font-size="12" text-anchor="middle">
+                <text x="350" y="146" fill="#112638" font-weight="600">Backlight</text>
+                <text x="335" y="210" fill="#112638">Controller ICs under epoxy</text>
+                <text x="481" y="214" fill="#112638">Header pins</text>
+                <text x="572" y="171" fill="#112638">Screw hole</text>
+                <text x="350" y="246" font-weight="600" fill="#1fada1">A rigid PCB carries the controller, pins and screw holes</text>
+                <text x="350" y="270" fill="#6b7f8e">Ready to fit, with no extra board to design</text>
+              </g>
+            </svg>
+            <p class="text-muted mb-0 mt-3" style="font-size:.8125rem;">Simplified illustration, not to scale: layer thicknesses are exaggerated for clarity</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANTAGES -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;color:#112638;">Advantages of Graphic COB LCDs</h2>
+        <p class="text-muted mx-auto" style="max-width:580px;">Why designers choose Chip on Board for robust, easy to fit graphic displays</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-wrench-adjustable"></i></div>
+            <h3>Easy Mounting</h3>
+            <p>Screw holes in the PCB let you fix the module securely in your product, with no brackets or extra boards.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-shield-check"></i></div>
+            <h3>Rigid &amp; Robust</h3>
+            <p>The PCB supports the glass and protects the controller, suiting industrial equipment and control panels.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-plug-fill"></i></div>
+            <h3>Simple Connection</h3>
+            <p>Header pins connect straight to your board or a ribbon cable. The WG320240BX has a 20-pin ZIF connector for flat cable.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-palette-fill"></i></div>
+            <h3>Wide Backlight Choice</h3>
+            <p>LED backlights in yellow/green, white, blue, red, amber and RGB, with STN and FSTN panel types.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-fonts"></i></div>
+            <h3>Built-in Fonts</h3>
+            <p>RA6963 models offer a character generator mode, and the ST7920 in the WG14432A supports Chinese fonts.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-hand-index-thumb-fill"></i></div>
+            <h3>Touch Options</h3>
+            <p>The WG12864A and WG320240BX are available with an optional touch panel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SUPPLY & INTERFACES -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center mb-5">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Choosing a Supply Voltage</h2>
+          <div class="text-muted lh-lg mb-0">
+            <p>Graphic COB LCDs run from 5V as standard. If your design runs from 3.3V, several models are available in a 3.3V version, usually with a negative voltage option that generates the LCD drive voltage on the module.</p>
+            <p class="mb-0">Some models have a negative voltage generator built in as standard, so no external LCD supply is needed.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <table class="table product-spec-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Supply</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Example</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#1fada1;padding:.75rem;border-color:#e4eaf0;">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>5V</td><td class="text-muted">WG12864A, WG16032E, WG128128A</td><td class="fw-medium">Standard on all models</td></tr>
+                <tr><td>3.3V</td><td class="text-muted">WG14432A3, WG12864AB</td><td class="fw-medium">Internal booster or negative voltage</td></tr>
+                <tr><td>3V or 3.3V option</td><td class="text-muted">WG12232A, WG160128B1</td><td class="fw-medium">Optional negative voltage version</td></tr>
+                <tr><td>Built-in negative voltage</td><td class="text-muted">WG16080D, WG320240BX</td><td class="fw-medium">No external LCD supply needed</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Choosing an Interface</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>COB graphic LCDs use an 8-bit parallel bus, in either the 6800 or the 8080 style. The two differ only in how the read and write control lines work, so check which one your controller and microcontroller expect. The WG14432A also offers an optional serial SPI interface.</p>
+            <p class="mb-0">Our engineers can help match a display, controller and interface to your design and arrange samples.</p>
+          </div>
+          <a href="contact.html" class="btn btn-navy px-4">Ask Our Engineers</a>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <table class="table product-spec-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Interface</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Control Lines</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#1fada1;padding:.75rem;border-color:#e4eaf0;">Used On</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>6800 parallel</td><td class="text-muted">E (enable) and R/W</td><td class="fw-medium">WG12232A, WG14432A, WG16032E, WG12864A</td></tr>
+                <tr><td>8080 parallel</td><td class="text-muted">Separate RD and WR</td><td class="fw-medium">WG16080D, WG128128A, WG160128B1</td></tr>
+                <tr><td>6800 or 8080</td><td class="text-muted">Selectable</td><td class="fw-medium">WG320240BX</td></tr>
+                <tr><td>SPI (optional)</td><td class="text-muted">Serial clock and data</td><td class="fw-medium">WG14432A</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE TABLE -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;color:#112638;">Graphic COB LCD Range</h2>
+        <p class="text-muted mx-auto" style="max-width:580px;">Compare our graphic COB LCD modules by size, resolution, controller, interface and outline</p>
+      </div>
+      <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+        <table class="table product-spec-table mb-0">
+          <thead>
+            <tr>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Model</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Size</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Resolution</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Controller</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Interface</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Outline (mm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>WG12232A</td><td>2.2&quot;</td><td>122x32</td><td class="text-muted">AIP31520</td><td class="text-muted">6800</td><td class="text-muted">84.0 x 44.0 x 13.7</td></tr>
+            <tr><td>WG14432A3/A5</td><td>2.44&quot;</td><td>144x32</td><td class="text-muted">ST7920</td><td class="text-muted">6800, optional SPI</td><td class="text-muted">85.0 x 36.0 x 13.2</td></tr>
+            <tr><td>WG16032E</td><td>2.87&quot;</td><td>160x32</td><td class="text-muted">RW1020</td><td class="text-muted">6800</td><td class="text-muted">85.2 x 55.0 x 12.0</td></tr>
+            <tr><td>WG12864A</td><td>2.93&quot;</td><td>128x64</td><td class="text-muted">NT7107, NT7108</td><td class="text-muted">6800</td><td class="text-muted">93.0 x 70.0 x 13.6</td></tr>
+            <tr><td>WG16080D</td><td>2.96&quot;</td><td>160x80</td><td class="text-muted">RA6963</td><td class="text-muted">8080</td><td class="text-muted">93.0 x 70.0 x 13.6</td></tr>
+            <tr><td>WG128128A</td><td>3.06&quot;</td><td>128x128</td><td class="text-muted">RA6963</td><td class="text-muted">8080</td><td class="text-muted">85.0 x 100.0 x 14.5</td></tr>
+            <tr><td>WG160128B1</td><td>4.84&quot;</td><td>160x128</td><td class="text-muted">RA6963</td><td class="text-muted">8080</td><td class="text-muted">129.0 x 102.0 x 16.5</td></tr>
+            <tr><td>WG320240BX</td><td>5.67&quot;</td><td>320x240</td><td class="text-muted">S1D13700</td><td class="text-muted">6800, 8080</td><td class="text-muted">160.0 x 109.0 x 13.0</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted text-center mt-3 mb-0" style="font-size:.8125rem;">Outline thickness is the maximum, including backlight. See the datasheet or contact us for details. <a href="product-graphic-COB-modules.html" class="fw-semibold" style="color:#1a4870;">View Graphic COB LCD Modules →</a></p>
+    </div>
+  </section>
+
+  <!-- STATS & APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 text-center mb-5">
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">2.2&quot;</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Smallest Display</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">320x240</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Highest Resolution</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-gold);">5V</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Standard Supply</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">6</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Backlight Colours</div>
+        </div>
+      </div>
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;">Typical Applications</h2>
+        <p class="mx-auto" style="max-width:580px;color:rgba(210,228,245,.75);">Graphic COB LCDs suit equipment that needs a robust, easy to fit graphic display</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-gear-wide-connected me-2"></i>Industrial Control</h3>
+            <p class="mb-0">Control panels, automation systems and machine status displays.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-speedometer2 me-2"></i>Instruments</h3>
+            <p class="mb-0">Test and measurement equipment, meters and data loggers.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-heart-pulse-fill me-2"></i>Medical Equipment</h3>
+            <p class="mb-0">Bench top medical devices with simple graphic user interfaces.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-thermometer-half me-2"></i>Heating &amp; Building Control</h3>
+            <p class="mb-0">Boiler controls, HVAC panels and building management displays.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-shop me-2"></i>Retail &amp; Payment</h3>
+            <p class="mb-0">Point of sale terminals, vending machines and kiosks.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-lightning-charge-fill me-2"></i>Energy &amp; Power</h3>
+            <p class="mb-0">Inverters, chargers, UPS units and energy monitoring equipment.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5">
+    <div class="container" style="max-width:760px;">
+      <h2 class="fw-bold mb-4 text-center" style="font-family:'Outfit',sans-serif;color:#112638;">Frequently Asked Questions</h2>
+      <div class="accordion" id="cobFaq" style="--bs-accordion-active-bg:rgba(31,173,161,.08);--bs-accordion-active-color:#112638;--bs-accordion-btn-focus-box-shadow:0 0 0 .2rem rgba(31,173,161,.25);--bs-accordion-border-color:#e4eaf0;--bs-accordion-border-radius:10px;--bs-accordion-inner-border-radius:10px;">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is a COB LCD module?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#cobFaq"><div class="accordion-body text-muted lh-lg">COB stands for Chip on Board. The LCD controller and driver ICs are mounted directly on a printed circuit board behind the display and covered with a protective epoxy. The PCB also carries the connector pins and screw holes, so the module is ready to fit and connect without designing an extra board.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Should I choose a COB or a COG graphic LCD?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#cobFaq"><div class="accordion-body text-muted lh-lg">Choose COB where you want a rigid module with screw holes and header pins that is easy to fit and hand solder, or where you are matching an existing COB outline. Choose COG (Chip on Glass) where space, weight and thickness matter most, such as handheld and portable equipment.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Can I run a COB graphic LCD from 3.3V?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#cobFaq"><div class="accordion-body text-muted lh-lg">Most COB graphic LCDs run from 5V as standard, and several offer a 3.3V option. The WG14432A3 runs from 3.3V with an optional internal booster, the WG12864AB is a 3.3V version of the WG12864A with negative voltage, and the WG12232A and WG160128B1 offer optional negative voltage for 3V or 3.3V operation.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Can the display show text without drawing every character?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#cobFaq"><div class="accordion-body text-muted lh-lg">Yes, on models with a font built in. The RA6963 controller used in the WG128128A has a character generator mode with a built-in English font, and the WG16080D and WG160128B1 are available in character generator mode. The ST7920 in the WG14432A supports Traditional and Simplified Chinese fonts.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">Is there a graphic LCD the same size as a 16x2 character LCD?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#cobFaq"><div class="accordion-body text-muted lh-lg">Yes. The 144x32 WG14432A3 and WG14432A5 share the outline dimensions of the WH1602C 16x2 character LCD, so you can move from text only to graphics without changing the mechanical design.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <h2 class="fw-bold mb-4" style="font-family:'Outfit',sans-serif;color:#112638;">Related Products</h2>
+      <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-graphic-COB-modules.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/Graphic-COB-LCD-group-sm.jpg" alt="Graphic COB LCD Modules" loading="lazy" /></div>
+              <div class="card-body"><h3>Graphic COB LCD Modules</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-graphic-COG-modules.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/Graphic-COG-LCD-group-sm.jpg" alt="Graphic COG LCD Modules" loading="lazy" /></div>
+              <div class="card-body"><h3>Graphic COG LCD Modules</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-character-COB-modules.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/Character%20COB%20LCD%20group.png" alt="Character COB LCD Modules" loading="lazy" /></div>
+              <div class="card-body"><h3>Character COB LCD Modules</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-graphic-oled-displays.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/Graphic%20oled%20displays%20grp.png" alt="Graphic OLED Displays" loading="lazy" /></div>
+              <div class="card-body"><h3>Graphic OLED Displays</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need a Custom Solution?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">
+        Our engineering team can help specify or develop a custom solution for your exact requirements.
+      </p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
