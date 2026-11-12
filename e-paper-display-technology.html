@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Paper Display Technology — Plus Opto</title>
+  <meta name="description" content="How e-paper (EPD) displays work: charged ink particles hold the image with no power, for ultra-low power and sunlight readability. Black and white or four-colour, front light and touch options, SPI connection. Winstar e-paper from 1.54&quot; to 4.2&quot; supplied by Plus Opto." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="E-Paper Display Technology — Plus Opto" />
+  <meta property="og:description" content="How e-paper (EPD) displays work: charged ink particles hold the image with no power, for ultra-low power and sunlight readability. Black and white or four-colour, front light and touch options, SPI connection. Winstar e-paper from 1.54&quot; to 4.2&quot; supplied by Plus Opto." />
+  <meta property="og:url" content="https://www.plusopto.com/e-paper-display-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/E-paper-display-group-sm.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="E-Paper Display Technology — Plus Opto" />
+  <meta name="twitter:description" content="How e-paper (EPD) displays work: charged ink particles hold the image with no power, for ultra-low power and sunlight readability. Black and white or four-colour, front light and touch options, SPI connection. Winstar e-paper from 1.54&quot; to 4.2&quot; supplied by Plus Opto." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/E-paper-display-group-sm.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/e-paper-display-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/e-paper-display-technology.html#webpage",
+      "url": "https://www.plusopto.com/e-paper-display-technology.html",
+      "name": "E-Paper Display Technology — Plus Opto",
+      "description": "How e-paper (EPD) displays work: charged ink particles hold the image with no power, for ultra-low power and sunlight readability. Black and white or four-colour, front light and touch options, SPI connection. Winstar e-paper from 1.54\" to 4.2\" supplied by Plus Opto.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/e-paper-display-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "Display Solutions", "item": "https://www.plusopto.com/category-display-solutions.html" },
+        { "@type": "ListItem", "position": 4, "name": "E-Paper Displays", "item": "https://www.plusopto.com/product-e-paper-displays-overview.html" },
+        { "@type": "ListItem", "position": 5, "name": "E-Paper Display Modules", "item": "https://www.plusopto.com/product-e-paper-displays.html" },
+        { "@type": "ListItem", "position": 6, "name": "E-Paper Display Technology", "item": "https://www.plusopto.com/e-paper-display-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/e-paper-display-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an e-paper display?",
+          "acceptedAnswer": { "@type": "Answer", "text": "An e-paper display, or EPD (Electronic Paper Display), shows an image with tiny charged pigment particles instead of light. A TFT backplane moves the particles to the front or back of each pixel, so the display looks like ink on paper and reflects room light rather than giving out its own." }
+        },
+        {
+          "@type": "Question",
+          "name": "Does an e-paper display need power to show an image?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No. E-paper is bistable: once the particles are in place, the image stays when the power is removed. The display uses power only while it is updating, which makes it ideal for battery-powered devices that change their content now and then, such as electronic shelf labels." }
+        },
+        {
+          "@type": "Question",
+          "name": "Can an e-paper display be read in the dark?",
+          "acceptedAnswer": { "@type": "Answer", "text": "E-paper is reflective, so it needs light to be seen. For low light, choose a model with a built-in front light, which lights the display from the front. The 1.54\", 2.7\", 2.9\" black and white and both 4.2\" modules have a front light." }
+        },
+        {
+          "@type": "Question",
+          "name": "What colours are available?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Most of the range is 1-bit black and white. The 2.13\" 122x250 and 2.9\" 128x296 modules are four-colour, showing black, white, red and yellow, which suits price labels and signs that need a highlight colour." }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I connect an e-paper module?",
+          "acceptedAnswer": { "@type": "Answer", "text": "The modules use an SPI interface, with chip select, clock, data and data/command lines, plus reset and a BUSY output. Send the image, start the update, then wait for BUSY to clear before the next command. Winstar provides datasheets and demo code for each module." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CATEGORY HERO -->
+  <div style="position:relative;height:350px;">
+    <img src="assets/img/e-paper-display-group.jpg" alt="E-Paper Display Technology" style="width:100%;height:100%;object-fit:cover;" />
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(17,38,56,.92) 0%,rgba(17,38,56,.7) 50%,rgba(17,38,56,.35) 100%);"></div>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;">
+      <div class="container">
+        <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+          <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider-color:rgba(210,228,245,0.4);--bs-breadcrumb-item-active-color:rgba(210,228,245,0.75);">
+            <li class="breadcrumb-item"><a href="index.html" style="color:#30e8d9;text-decoration:none;">Home</a></li>
+            <li class="breadcrumb-item"><a href="products.html" style="color:#30e8d9;text-decoration:none;">Products</a></li>
+            <li class="breadcrumb-item"><a href="category-display-solutions.html" style="color:#30e8d9;text-decoration:none;">Display Solutions</a></li>
+            <li class="breadcrumb-item"><a href="product-e-paper-displays-overview.html" style="color:#30e8d9;text-decoration:none;">E-Paper Displays</a></li>
+            <li class="breadcrumb-item"><a href="product-e-paper-displays.html" style="color:#30e8d9;text-decoration:none;">E-Paper Display Modules</a></li>
+            <li class="breadcrumb-item active" aria-current="page">E-Paper Display Technology</li>
+          </ol>
+        </nav>
+        <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;color:#fff;margin-bottom:.5rem;">E-Paper Display Technology</h1>
+        <p style="color:rgba(210,228,245,.8);max-width:600px;margin:0;">E-paper display modules from 1.54&quot; to 4.2&quot;, in black and white or four colours, with front light and touch options. Find out how e-paper holds an image with no power, and how to choose and connect a module.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <img src="assets/img/E-paper-display-group-sm.jpg" alt="Winstar 1.54 inch, 4.2 inch and 2.9 inch four-colour e-paper display modules" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Overview</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>An e-paper display, or EPD (Electronic Paper Display), makes its image from tiny charged pigment particles rather than light. It looks like printed ink on paper, reads clearly in bright sunlight and from almost any angle, and holds its image with the power switched off.</p>
+            <p>Because the display only uses power while the picture changes, e-paper suits battery-powered products that update now and then, such as electronic shelf labels, smart tags and IoT devices. As the authorised distributor for Winstar Display Corporation we offer e-paper modules from the 1.54&quot; 200x200 up to the 4.2&quot; 400x300, in black and white or four colours, with front light and capacitive touch options.</p>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Image stays with no power</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Sizes from 1.54&quot; to 4.2&quot;</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Black and white or four-colour</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">SPI interface</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Front light and touch options</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Modules from 1.0mm thick</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="sidebar-card mb-4">
+              <h3 class="fw-semibold mb-4" style="font-family:'Outfit',sans-serif;font-size:1.05rem;color:#1a2b3c;">Product Resources</h3>
+              <a href="product-e-paper-displays.html"
+                 class="d-flex align-items-center gap-3 p-3 rounded-3 border mb-3 text-decoration-none"
+                 style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                  <i class="bi bi-grid-3x3-gap-fill fs-5" style="color:#1a4870;"></i>
+                </div>
+                <div>
+                  <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">E-Paper Display Modules</div>
+                  <div style="font-size:.78rem;color:#8096a8;">Full product range</div>
+                </div>
+              </a>
+              <a href="product-e-paper-displays-overview.html"
+                 class="d-flex align-items-center gap-3 p-3 rounded-3 border mb-3 text-decoration-none"
+                 style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                  <i class="bi bi-file-earmark-text-fill fs-5" style="color:#1a4870;"></i>
+                </div>
+                <div>
+                  <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">E-Paper Displays</div>
+                  <div style="font-size:.78rem;color:#8096a8;">Overview</div>
+                </div>
+              </a>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+            <div class="sidebar-card mb-4">
+              <h3 class="fw-semibold mb-3" style="font-family:'Outfit',sans-serif;font-size:1.05rem;color:#1a2b3c;">E-Paper at a Glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-0">
+                <li>Technology: <span>Electrophoretic, TFT active matrix</span></li>
+                <li>Sizes: <span>1.54&quot; to 4.2&quot;</span></li>
+                <li>Resolution: <span>200x200 to 400x300</span></li>
+                <li>Colours: <span>Black/white, or black/white/red/yellow</span></li>
+                <li>Interface: <span>SPI</span></li>
+                <li>Front light: <span>On black and white models</span></li>
+                <li>Touch: <span>Capacitive option on 4.2&quot;</span></li>
+                <li>Operating temp: <span>0℃ to +50℃ (0℃ to +40℃ four-colour)</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">How E-Paper Works</h2>
+          <div class="text-muted lh-lg">
+            <p>E-paper is an electrophoretic display. A thin film holds millions of tiny cells filled with clear fluid and charged pigment particles: white particles with one charge and black with the other. Four-colour panels add red and yellow pigments.</p>
+            <p class="mb-0">A TFT backplane puts a voltage on each pixel electrode, which pulls one colour of particle to the front, where you see it, and pushes the others to the back. When the voltage is removed the particles stay where they are, so the image holds with no power. The display reflects room light like paper, rather than giving out its own.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 p-4 bg-white text-center" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <svg viewBox="0 0 640 300" role="img" aria-labelledby="epdDiagTitle" style="width:100%;height:auto;display:block;">
+              <title id="epdDiagTitle">Cross-section of an e-paper display: cells of charged white and black particles sit between a transparent front electrode and a TFT backplane. Each pixel electrode pulls white or black particles to the front.</title>
+              <g font-family="Outfit, system-ui, sans-serif" text-anchor="middle">
+                <text x="320" y="24" font-size="16" font-weight="600" fill="#112638">E-Paper Cross-Section</text>
+                <text x="320" y="44" font-size="12" fill="#6b7f8e">Charged particles move to the front or back of each pixel</text>
+              </g>
+              <!-- front electrode -->
+              <rect x="200" y="70" width="300" height="10" rx="2" fill="#e8eef4" stroke="#b7c6d3"/>
+              <!-- cells -->
+              <g fill="#f4f6f8" stroke="#7f93a6" stroke-width="1.2">
+                <rect x="204" y="84" width="54" height="64" rx="10"/>
+                <rect x="263" y="84" width="54" height="64" rx="10"/>
+                <rect x="322" y="84" width="54" height="64" rx="10"/>
+                <rect x="381" y="84" width="54" height="64" rx="10"/>
+                <rect x="440" y="84" width="54" height="64" rx="10"/>
+              </g>
+              <!-- white particles -->
+              <g fill="#fff" stroke="#9aaab8" stroke-width="1">
+                <circle cx="220" cy="96" r="5"/><circle cx="231" cy="94" r="5"/><circle cx="242" cy="96" r="5"/><circle cx="225" cy="105" r="5"/><circle cx="237" cy="105" r="5"/>
+                <circle cx="279" cy="96" r="5"/><circle cx="290" cy="94" r="5"/><circle cx="301" cy="96" r="5"/><circle cx="284" cy="105" r="5"/><circle cx="296" cy="105" r="5"/>
+                <circle cx="338" cy="136" r="5"/><circle cx="349" cy="138" r="5"/><circle cx="360" cy="136" r="5"/><circle cx="343" cy="127" r="5"/><circle cx="355" cy="127" r="5"/>
+                <circle cx="397" cy="136" r="5"/><circle cx="408" cy="138" r="5"/><circle cx="419" cy="136" r="5"/><circle cx="402" cy="127" r="5"/><circle cx="414" cy="127" r="5"/>
+                <circle cx="456" cy="96" r="5"/><circle cx="467" cy="94" r="5"/><circle cx="478" cy="96" r="5"/><circle cx="461" cy="105" r="5"/><circle cx="473" cy="105" r="5"/>
+              </g>
+              <!-- black particles -->
+              <g fill="#112638">
+                <circle cx="220" cy="136" r="5"/><circle cx="231" cy="138" r="5"/><circle cx="242" cy="136" r="5"/><circle cx="225" cy="127" r="5"/><circle cx="237" cy="127" r="5"/>
+                <circle cx="279" cy="136" r="5"/><circle cx="290" cy="138" r="5"/><circle cx="301" cy="136" r="5"/><circle cx="284" cy="127" r="5"/><circle cx="296" cy="127" r="5"/>
+                <circle cx="338" cy="96" r="5"/><circle cx="349" cy="94" r="5"/><circle cx="360" cy="96" r="5"/><circle cx="343" cy="105" r="5"/><circle cx="355" cy="105" r="5"/>
+                <circle cx="397" cy="96" r="5"/><circle cx="408" cy="94" r="5"/><circle cx="419" cy="96" r="5"/><circle cx="402" cy="105" r="5"/><circle cx="414" cy="105" r="5"/>
+                <circle cx="456" cy="136" r="5"/><circle cx="467" cy="138" r="5"/><circle cx="478" cy="136" r="5"/><circle cx="461" cy="127" r="5"/><circle cx="473" cy="127" r="5"/>
+              </g>
+              <!-- backplane and pixel electrodes -->
+              <rect x="200" y="156" width="300" height="16" rx="2" fill="#183858"/>
+              <g fill="#1fada1">
+                <rect x="211" y="152" width="40" height="4"/><rect x="270" y="152" width="40" height="4"/><rect x="329" y="152" width="40" height="4"/><rect x="388" y="152" width="40" height="4"/><rect x="447" y="152" width="40" height="4"/>
+              </g>
+              <!-- what the viewer sees -->
+              <g stroke="#7f93a6" stroke-width="1">
+                <rect x="219" y="186" width="24" height="16" fill="#fff"/>
+                <rect x="278" y="186" width="24" height="16" fill="#fff"/>
+                <rect x="337" y="186" width="24" height="16" fill="#112638"/>
+                <rect x="396" y="186" width="24" height="16" fill="#112638"/>
+                <rect x="455" y="186" width="24" height="16" fill="#fff"/>
+              </g>
+              <g font-family="Outfit, system-ui, sans-serif" font-size="12" fill="#112638" text-anchor="end">
+                <text x="188" y="79">Front electrode</text>
+                <text x="188" y="120">Pigment cells</text>
+                <text x="188" y="168">TFT backplane</text>
+                <text x="188" y="198">What you see</text>
+              </g>
+              <g font-family="Outfit, system-ui, sans-serif" font-size="12" text-anchor="start">
+                <text x="510" y="100" fill="#112638">White particle</text>
+                <text x="510" y="140" fill="#112638">Black particle</text>
+              </g>
+              <g font-family="Outfit, system-ui, sans-serif" font-size="12" text-anchor="middle">
+                <text x="350" y="246" font-weight="600" fill="#1fada1">The image stays when the power is removed</text>
+                <text x="350" y="270" fill="#6b7f8e">Power is used only while the picture changes</text>
+              </g>
+            </svg>
+            <p class="text-muted mb-0 mt-3" style="font-size:.8125rem;">Simplified illustration, not to scale: particles and cells are enlarged for clarity</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANTAGES -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;color:#112638;">Advantages of E-Paper Displays</h2>
+        <p class="text-muted mx-auto" style="max-width:580px;">Why designers choose e-paper for low-power, always-on displays</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-battery-full"></i></div>
+            <h3>Ultra-Low Power</h3>
+            <p>Power is drawn only during an update, so batteries can last a very long time in devices that change content now and then.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-pin-angle-fill"></i></div>
+            <h3>Image Retention</h3>
+            <p>Bistable pixels keep the last image with the power off, so a label or sign stays readable even if the battery runs out.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-brightness-high-fill"></i></div>
+            <h3>Sunlight Readable</h3>
+            <p>A reflective display gets clearer in bright light, with high contrast like ink on paper.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-eye-fill"></i></div>
+            <h3>Wide Viewing Angle</h3>
+            <p>The image reads clearly from almost any angle, with no backlight glare.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-layers-half"></i></div>
+            <h3>Thin &amp; Light</h3>
+            <p>Modules from 1.0mm thick and a few grams in weight, suiting slim labels and wearables.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-hand-index-thumb-fill"></i></div>
+            <h3>Front Light &amp; Touch</h3>
+            <p>Front-lit models read in low light, and the 4.2&quot; is available with a capacitive touch panel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLOUR & CONNECTION -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center mb-5">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Black and White or Four-Colour?</h2>
+          <div class="text-muted lh-lg mb-0">
+            <p>Black and white e-paper shows 1-bit images and is the choice for text, symbols and barcodes. These models also offer a front light for reading in low light.</p>
+            <p class="mb-0">Four-colour panels add red and yellow pigments, so prices, warnings and logos can stand out. They have more particles to move, so an update takes longer than on a black and white panel.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <table class="table product-spec-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Type</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Models</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#1fada1;padding:.75rem;border-color:#e4eaf0;">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Black and white</td><td class="text-muted">1.54&quot;, 2.7&quot;, 2.9&quot; 296x128, 4.2&quot;</td><td class="fw-medium">Front light on all; touch option on 4.2&quot;; 0℃ to +50℃</td></tr>
+                <tr><td>Four-colour</td><td class="text-muted">2.13&quot; 122x250, 2.9&quot; 128x296</td><td class="fw-medium">Black, white, red and yellow; no front light; 0℃ to +40℃</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Connecting an E-Paper Module</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>Each module has an SPI interface on a flexible cable. Your microcontroller writes the image into the driver's memory, starts an update, then waits for the BUSY line to clear. The update waveform depends on temperature, so the driver can read an external I2C temperature sensor.</p>
+            <p class="mb-0">Winstar provides a datasheet and demo code for each module, and our engineers can help with samples and integration.</p>
+          </div>
+          <a href="contact.html" class="btn btn-navy px-4">Ask Our Engineers</a>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <table class="table product-spec-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Signal</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Pins</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#1fada1;padding:.75rem;border-color:#e4eaf0;">Purpose</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>SPI</td><td class="text-muted">CS#, SCL, SDA</td><td class="fw-medium">Chip select, serial clock and data</td></tr>
+                <tr><td>Data/command</td><td class="text-muted">D/C#</td><td class="fw-medium">Marks each byte as data or a command</td></tr>
+                <tr><td>Control</td><td class="text-muted">RES#, BUSY</td><td class="fw-medium">Reset input; busy output during an update</td></tr>
+                <tr><td>Bus select</td><td class="text-muted">BS1</td><td class="fw-medium">Selects the interface mode</td></tr>
+                <tr><td>Temperature</td><td class="text-muted">TSCL, TSDA</td><td class="fw-medium">I2C to an external temperature sensor</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE TABLE -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;color:#112638;">E-Paper Display Range</h2>
+        <p class="text-muted mx-auto" style="max-width:580px;">Compare our e-paper modules by size, resolution, colours, options and outline</p>
+      </div>
+      <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+        <table class="table product-spec-table mb-0">
+          <thead>
+            <tr>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Model</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Size</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Resolution</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Colours</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Options</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Outline (mm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>WAA0154A2AAA4NXXX000</td><td>1.54&quot;</td><td>200x200</td><td class="text-muted">Black, white</td><td class="text-muted">Front light</td><td class="text-muted">31.80 x 37.32 x 1.85</td></tr>
+            <tr><td>WAA0213A2CNA6NXXX000</td><td>2.13&quot;</td><td>122x250</td><td class="text-muted">Black, white, red, yellow</td><td class="text-muted">None</td><td class="text-muted">29.2 x 59.2 x 1.0</td></tr>
+            <tr><td>WAA0270A2AAA7NXXX000</td><td>2.7&quot;</td><td>264x176</td><td class="text-muted">Black, white</td><td class="text-muted">Front light</td><td class="text-muted">45.8 x 70.42 x 1.58</td></tr>
+            <tr><td>WAA0290A2CNA8NXXX000</td><td>2.9&quot;</td><td>128x296</td><td class="text-muted">Black, white, red, yellow</td><td class="text-muted">None</td><td class="text-muted">36.7 x 79.0 x 1.2</td></tr>
+            <tr><td>WAA0290A2AAA8NXXX000</td><td>2.9&quot;</td><td>296x128</td><td class="text-muted">Black, white</td><td class="text-muted">Front light</td><td class="text-muted">36.7 x 79.0 x 1.2</td></tr>
+            <tr><td>WAA0420A2AAB5NXXX000</td><td>4.2&quot;</td><td>400x300</td><td class="text-muted">Black, white</td><td class="text-muted">Front light</td><td class="text-muted">91 x 77 x 2.02</td></tr>
+            <tr><td>WAA0420A2ADB5NXXX000</td><td>4.2&quot;</td><td>400x300</td><td class="text-muted">Black, white</td><td class="text-muted">Front light, capacitive touch</td><td class="text-muted">91 x 77 x 2.02</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted text-center mt-3 mb-0" style="font-size:.8125rem;">All modules use an SPI interface. Outline figures from Winstar's product pages; see the datasheet or contact us for details. <a href="product-e-paper-displays.html" class="fw-semibold" style="color:#1a4870;">View E-Paper Display Modules →</a></p>
+    </div>
+  </section>
+
+  <!-- STATS & APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 text-center mb-5">
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">1.54&quot;</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Smallest Display</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">400x300</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Highest Resolution</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-gold);">0W</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">To Hold an Image</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">1.0mm</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Thinnest Module</div>
+        </div>
+      </div>
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;">Typical Applications</h2>
+        <p class="mx-auto" style="max-width:580px;color:rgba(210,228,245,.75);">E-paper suits battery-powered products whose content changes now and then</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-tags-fill me-2"></i>Electronic Shelf Labels</h3>
+            <p class="mb-0">Prices and promotions updated wirelessly across a store.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-box-seam-fill me-2"></i>Logistics &amp; Asset Tags</h3>
+            <p class="mb-0">Reusable labels for warehouses, containers and equipment.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-wifi me-2"></i>IoT Devices</h3>
+            <p class="mb-0">Sensors and meters that show readings for years on one battery.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-smartwatch me-2"></i>Wearables &amp; Handheld</h3>
+            <p class="mb-0">Badges, watches and portable devices that need a thin, light display.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-door-open-fill me-2"></i>Signs &amp; Room Displays</h3>
+            <p class="mb-0">Meeting room, door and transport timetable signs.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-house-gear-fill me-2"></i>Smart Home</h3>
+            <p class="mb-0">Thermostats, controls and status panels that stay readable.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5">
+    <div class="container" style="max-width:760px;">
+      <h2 class="fw-bold mb-4 text-center" style="font-family:'Outfit',sans-serif;color:#112638;">Frequently Asked Questions</h2>
+      <div class="accordion" id="epdFaq" style="--bs-accordion-active-bg:rgba(31,173,161,.08);--bs-accordion-active-color:#112638;--bs-accordion-btn-focus-box-shadow:0 0 0 .2rem rgba(31,173,161,.25);--bs-accordion-border-color:#e4eaf0;--bs-accordion-border-radius:10px;--bs-accordion-inner-border-radius:10px;">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is an e-paper display?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#epdFaq"><div class="accordion-body text-muted lh-lg">An e-paper display, or EPD (Electronic Paper Display), shows an image with tiny charged pigment particles instead of light. A TFT backplane moves the particles to the front or back of each pixel, so the display looks like ink on paper and reflects room light rather than giving out its own.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">Does an e-paper display need power to show an image?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#epdFaq"><div class="accordion-body text-muted lh-lg">No. E-paper is bistable: once the particles are in place, the image stays when the power is removed. The display uses power only while it is updating, which makes it ideal for battery-powered devices that change their content now and then, such as electronic shelf labels.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Can an e-paper display be read in the dark?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#epdFaq"><div class="accordion-body text-muted lh-lg">E-paper is reflective, so it needs light to be seen. For low light, choose a model with a built-in front light, which lights the display from the front. The 1.54", 2.7", 2.9" black and white and both 4.2" modules have a front light.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">What colours are available?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#epdFaq"><div class="accordion-body text-muted lh-lg">Most of the range is 1-bit black and white. The 2.13" 122x250 and 2.9" 128x296 modules are four-colour, showing black, white, red and yellow, which suits price labels and signs that need a highlight colour.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">How do I connect an e-paper module?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#epdFaq"><div class="accordion-body text-muted lh-lg">The modules use an SPI interface, with chip select, clock, data and data/command lines, plus reset and a BUSY output. Send the image, start the update, then wait for BUSY to clear before the next command. Winstar provides datasheets and demo code for each module.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <h2 class="fw-bold mb-4" style="font-family:'Outfit',sans-serif;color:#112638;">Related Products</h2>
+      <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-e-paper-displays.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/E-paper-display-group-sm.jpg" alt="E-Paper Display Modules" loading="lazy" /></div>
+              <div class="card-body"><h3>E-Paper Display Modules</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-graphic-oled-displays.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/Graphic%20oled%20displays%20grp.png" alt="Graphic OLED Displays" loading="lazy" /></div>
+              <div class="card-body"><h3>Graphic OLED Displays</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-graphic-COG-modules.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/Graphic-COG-LCD-group-sm.jpg?v=2" alt="Graphic COG LCD Modules" loading="lazy" /></div>
+              <div class="card-body"><h3>Graphic COG LCD Modules</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-graphic-COB-modules.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/Graphic-COB-LCD-group-sm.jpg?v=2" alt="Graphic COB LCD Modules" loading="lazy" /></div>
+              <div class="card-body"><h3>Graphic COB LCD Modules</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need a Custom Solution?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">
+        Our engineering team can help specify or develop a custom solution for your exact requirements.
+      </p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
