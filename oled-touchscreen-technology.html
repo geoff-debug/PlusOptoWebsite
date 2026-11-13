@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OLED Touchscreen Technology — Plus Opto</title>
+  <meta name="description" content="How OLED touchscreen displays work: self-emitting graphic OLEDs with a capacitive touch panel added on top or built in-cell, air or optical bonding, display and touch interfaces. Winstar OLED touch modules from 0.91&quot; to 5.5&quot; supplied by Plus Opto." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="OLED Touchscreen Technology — Plus Opto" />
+  <meta property="og:description" content="How OLED touchscreen displays work: self-emitting graphic OLEDs with a capacitive touch panel added on top or built in-cell, air or optical bonding, display and touch interfaces. Winstar OLED touch modules from 0.91&quot; to 5.5&quot; supplied by Plus Opto." />
+  <meta property="og:url" content="https://www.plusopto.com/oled-touchscreen-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/OLED-touch-group-sm.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="OLED Touchscreen Technology — Plus Opto" />
+  <meta name="twitter:description" content="How OLED touchscreen displays work: self-emitting graphic OLEDs with a capacitive touch panel added on top or built in-cell, air or optical bonding, display and touch interfaces. Winstar OLED touch modules from 0.91&quot; to 5.5&quot; supplied by Plus Opto." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/OLED-touch-group-sm.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/oled-touchscreen-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/oled-touchscreen-technology.html#webpage",
+      "url": "https://www.plusopto.com/oled-touchscreen-technology.html",
+      "name": "OLED Touchscreen Technology — Plus Opto",
+      "description": "How OLED touchscreen displays work: self-emitting graphic OLEDs with a capacitive touch panel added on top or built in-cell, air or optical bonding, display and touch interfaces. Winstar OLED touch modules from 0.91\" to 5.5\" supplied by Plus Opto.",
+      "isPartOf": { "@type": "WebSite", "name": "Plus Opto", "url": "https://www.plusopto.com/" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/oled-touchscreen-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "Display Solutions", "item": "https://www.plusopto.com/category-display-solutions.html" },
+        { "@type": "ListItem", "position": 4, "name": "OLED Display Modules", "item": "https://www.plusopto.com/product-oled-display-modules.html" },
+        { "@type": "ListItem", "position": 5, "name": "OLED Touchscreen Displays", "item": "https://www.plusopto.com/product-oled-touchscreen-displays.html" },
+        { "@type": "ListItem", "position": 6, "name": "OLED Touchscreen Technology", "item": "https://www.plusopto.com/oled-touchscreen-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/oled-touchscreen-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is an OLED touchscreen display?",
+          "acceptedAnswer": { "@type": "Answer", "text": "It is a graphic OLED display with a capacitive touch panel (CTP) on the same module. The OLED pixels give out their own light, so the display has deep blacks, high contrast and wide viewing angles, while the touch panel detects a finger through the cover glass so the display can also work as the control panel." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is in-cell touch?",
+          "acceptedAnswer": { "@type": "Answer", "text": "In-cell touch builds the touch sensing into the OLED panel itself instead of adding a separate touch glass. The 0.91\" WEO012832M-CTP uses the SSD7317, a TDDI (touch and display driver integration) IC that drives the display and reads touch from a single chip. It supports four touch keys and a left or right slide, in a module just 1.41mm thick." }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between air bonding and optical bonding?",
+          "acceptedAnswer": { "@type": "Answer", "text": "With air bonding the touch panel is fixed around its edges, leaving a thin air gap above the display. With optical bonding (OCA) the gap is filled with optically clear adhesive, which cuts reflections, improves readability and makes the front stronger. The 1.54\" WEO012864A-CTP is available with either option." }
+        },
+        {
+          "@type": "Question",
+          "name": "How does the touch panel connect?",
+          "acceptedAnswer": { "@type": "Answer", "text": "On most models the touch panel has its own controller on a separate connection, using I2C and detecting one finger. For example, the 1.54\" and 3.55\" use the FT6336U and the 1.18\" round display uses the FT3268. The display itself connects separately over SPI, I2C or a 6800/8080 parallel bus, depending on the driver IC." }
+        },
+        {
+          "@type": "Question",
+          "name": "What display colours are available?",
+          "acceptedAnswer": { "@type": "Answer", "text": "These are monochrome OLEDs, offered in white, yellow, sky blue or green depending on the model. The 256x64 models with the SSD1322 driver and the 1.18\" round display with the SSD1327 support greyscale, for smooth icons and graphics." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- CATEGORY HERO -->
+  <div style="position:relative;height:350px;">
+    <img src="assets/img/LCD%20OLED%20Touch%20Banner.jpg" alt="OLED Touchscreen Technology" style="width:100%;height:100%;object-fit:cover;" />
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(17,38,56,.92) 0%,rgba(17,38,56,.7) 50%,rgba(17,38,56,.35) 100%);"></div>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;">
+      <div class="container">
+        <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+          <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider-color:rgba(210,228,245,0.4);--bs-breadcrumb-item-active-color:rgba(210,228,245,0.75);">
+            <li class="breadcrumb-item"><a href="index.html" style="color:#30e8d9;text-decoration:none;">Home</a></li>
+            <li class="breadcrumb-item"><a href="products.html" style="color:#30e8d9;text-decoration:none;">Products</a></li>
+            <li class="breadcrumb-item"><a href="category-display-solutions.html" style="color:#30e8d9;text-decoration:none;">Display Solutions</a></li>
+            <li class="breadcrumb-item"><a href="product-oled-display-modules.html" style="color:#30e8d9;text-decoration:none;">OLED Display Modules</a></li>
+            <li class="breadcrumb-item"><a href="product-oled-touchscreen-displays.html" style="color:#30e8d9;text-decoration:none;">OLED Touchscreen Displays</a></li>
+            <li class="breadcrumb-item active" aria-current="page">OLED Touchscreen Technology</li>
+          </ol>
+        </nav>
+        <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;color:#fff;margin-bottom:.5rem;">OLED Touchscreen Technology</h1>
+        <p style="color:rgba(210,228,245,.8);max-width:600px;margin:0;">Graphic OLED displays from 0.91&quot; to 5.5&quot; with capacitive touch built in. Find out how the touch panel is added to an OLED, the difference between add-on and in-cell touch, and how to choose a structure and interface.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <img src="assets/img/OLED-touch-group-sm.jpg" alt="Winstar 1.18 inch round, 2.42 inch and 5.5 inch OLED displays with capacitive touch" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Overview</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>An OLED touchscreen display combines a self-emitting graphic OLED with a capacitive touch panel (CTP) in a single module. The OLED gives deep blacks, high contrast and wide viewing angles with no backlight, and the touch panel senses a finger through the cover glass, so the display can also be the control panel. That suits compact products such as smart home controls, appliances, wearables and medical devices.</p>
+            <p>As the authorised distributor for Winstar Display Corporation we offer OLED touch modules from the 0.91&quot; 128x32 with in-cell touch up to the 5.5&quot; 256x64, including a 1.18&quot; round display. Modules come as bare COG or COF glass, or mounted on a frame and PCB, in white, yellow, sky blue or green.</p>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Capacitive touch on one module</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Sizes from 0.91&quot; to 5.5&quot;</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Add-on or in-cell touch</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">SPI, I2C and parallel interfaces</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">No backlight needed</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Round and bar formats</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="sidebar-card mb-4">
+              <h3 class="fw-semibold mb-4" style="font-family:'Outfit',sans-serif;font-size:1.05rem;color:#1a2b3c;">Product Resources</h3>
+              <a href="product-oled-touchscreen-displays.html"
+                 class="d-flex align-items-center gap-3 p-3 rounded-3 border mb-3 text-decoration-none"
+                 style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                  <i class="bi bi-grid-3x3-gap-fill fs-5" style="color:#1a4870;"></i>
+                </div>
+                <div>
+                  <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">OLED Touchscreen Displays</div>
+                  <div style="font-size:.78rem;color:#8096a8;">Full product range</div>
+                </div>
+              </a>
+              <a href="graphic-oled-technology.html"
+                 class="d-flex align-items-center gap-3 p-3 rounded-3 border mb-3 text-decoration-none"
+                 style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                  <i class="bi bi-lightbulb-fill fs-5" style="color:#1a4870;"></i>
+                </div>
+                <div>
+                  <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Graphic OLED Technology</div>
+                  <div style="font-size:.78rem;color:#8096a8;">How OLED displays work</div>
+                </div>
+              </a>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+            <div class="sidebar-card mb-4">
+              <h3 class="fw-semibold mb-3" style="font-family:'Outfit',sans-serif;font-size:1.05rem;color:#1a2b3c;">OLED Touch at a Glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-0">
+                <li>Technology: <span>Monochrome PMOLED + capacitive touch</span></li>
+                <li>Sizes: <span>0.91&quot; to 5.5&quot;</span></li>
+                <li>Resolution: <span>128x32 to 256x64, 128x128 round</span></li>
+                <li>Display ICs: <span>SSD1309, SSD1322, SSD1327, SSD7317</span></li>
+                <li>Display interfaces: <span>6800, 8080, SPI, I2C</span></li>
+                <li>Touch: <span>1 finger; in-cell keys and slide on 0.91&quot;</span></li>
+                <li>Colours: <span>White, yellow, sky blue, green</span></li>
+                <li>Operating temp: <span>Typically -20℃ to +70℃</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">How OLED Touch Works</h2>
+          <div class="text-muted lh-lg">
+            <p>A capacitive touch panel carries a grid of transparent electrodes. Your finger changes the electric field between them, and the touch controller works out where it is. Because the panel senses through glass, it needs no pressure and has no moving parts.</p>
+            <p class="mb-0">On most of the range the touch panel is a separate layer on top of the OLED, with its own touch controller, joined to the display by air bonding or optical bonding. The 0.91&quot; uses in-cell touch instead: the sensing is built into the OLED panel and a single TDDI chip drives the display and reads the touch.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 p-4 bg-white text-center" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <svg viewBox="0 0 640 300" role="img" aria-labelledby="otDiagTitle" style="width:100%;height:auto;display:block;">
+              <title id="otDiagTitle">Two OLED touch structures: an add-on capacitive touch panel on top of the OLED with separate touch and display ICs, and in-cell touch where the sensing is inside the OLED panel and one TDDI chip drives both</title>
+              <g font-family="Outfit, system-ui, sans-serif" text-anchor="middle">
+                <text x="320" y="24" font-size="16" font-weight="600" fill="#112638">Add-on Touch vs In-Cell Touch</text>
+                <text x="320" y="44" font-size="12" fill="#6b7f8e">Where the touch sensor sits in the stack</text>
+                <text x="170" y="70" font-size="13" font-weight="600" fill="#112638">Add-on CTP (most models)</text>
+                <text x="470" y="70" font-size="13" font-weight="600" fill="#112638">In-cell touch (0.91&quot;)</text>
+              </g>
+              <!-- add-on stack -->
+              <rect x="70" y="82" width="200" height="12" rx="2" fill="#e8eef4" stroke="#b7c6d3"/>
+              <rect x="70" y="98" width="200" height="10" fill="#fff" stroke="#1fada1"/>
+              <g stroke="#1fada1" stroke-width="1.5"><line x1="90" y1="98" x2="90" y2="108"/><line x1="115" y1="98" x2="115" y2="108"/><line x1="140" y1="98" x2="140" y2="108"/><line x1="165" y1="98" x2="165" y2="108"/><line x1="190" y1="98" x2="190" y2="108"/><line x1="215" y1="98" x2="215" y2="108"/><line x1="240" y1="98" x2="240" y2="108"/></g>
+              <rect x="70" y="112" width="200" height="10" fill="#f4f6f8" stroke="#9aaab8" stroke-dasharray="4 3"/>
+              <rect x="70" y="126" width="200" height="24" rx="2" fill="#112638"/>
+              <g fill="#f4b625"><rect x="86" y="134" width="10" height="8"/><rect x="104" y="134" width="10" height="8"/><rect x="140" y="134" width="10" height="8"/><rect x="176" y="134" width="10" height="8"/><rect x="194" y="134" width="10" height="8"/><rect x="230" y="134" width="10" height="8"/></g>
+              <rect x="80" y="162" width="80" height="22" rx="4" fill="#e8eef4" stroke="#1fada1"/>
+              <rect x="180" y="162" width="80" height="22" rx="4" fill="#e8eef4" stroke="#7f93a6"/>
+              <g font-family="Outfit, system-ui, sans-serif" font-size="11" font-weight="600" fill="#112638" text-anchor="middle">
+                <text x="120" y="177">Touch IC</text>
+                <text x="220" y="177">Display IC</text>
+              </g>
+              <g font-family="Outfit, system-ui, sans-serif" font-size="11" fill="#112638" text-anchor="start">
+                <text x="278" y="92">Cover glass</text>
+                <text x="278" y="107">Touch sensor</text>
+                <text x="278" y="121">Air gap or OCA</text>
+                <text x="278" y="142">OLED panel</text>
+              </g>
+              <!-- in-cell stack -->
+              <rect x="370" y="82" width="200" height="12" rx="2" fill="#e8eef4" stroke="#b7c6d3"/>
+              <rect x="370" y="98" width="200" height="52" rx="2" fill="#112638"/>
+              <g stroke="#1fada1" stroke-width="1.5" stroke-dasharray="3 3"><line x1="380" y1="110" x2="560" y2="110"/></g>
+              <g fill="#f4b625"><rect x="386" y="126" width="10" height="8"/><rect x="404" y="126" width="10" height="8"/><rect x="440" y="126" width="10" height="8"/><rect x="476" y="126" width="10" height="8"/><rect x="494" y="126" width="10" height="8"/><rect x="530" y="126" width="10" height="8"/></g>
+              <rect x="430" y="162" width="80" height="22" rx="4" fill="#e8eef4" stroke="#1fada1"/>
+              <g font-family="Outfit, system-ui, sans-serif" font-size="11" font-weight="600" fill="#112638" text-anchor="middle">
+                <text x="470" y="177">TDDI IC</text>
+              </g>
+              <g font-family="Outfit, system-ui, sans-serif" font-size="11" fill="#112638" text-anchor="start">
+                <text x="578" y="92">Cover</text>
+                <text x="578" y="122">OLED +</text>
+                <text x="578" y="136">touch</text>
+              </g>
+              <g font-family="Outfit, system-ui, sans-serif" font-size="12" text-anchor="middle">
+                <text x="170" y="210" fill="#6b7f8e">Two ICs, air or optical bonding</text>
+                <text x="470" y="210" fill="#6b7f8e">One chip drives display and touch</text>
+                <text x="320" y="248" font-weight="600" fill="#1fada1">Both sense a finger through the cover glass</text>
+                <text x="320" y="270" fill="#6b7f8e">The OLED gives out its own light, so no backlight is needed</text>
+              </g>
+            </svg>
+            <p class="text-muted mb-0 mt-3" style="font-size:.8125rem;">Simplified illustration, not to scale: layer thicknesses are exaggerated for clarity</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANTAGES -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;color:#112638;">Advantages of OLED Touchscreens</h2>
+        <p class="text-muted mx-auto" style="max-width:580px;">Why designers choose an OLED with touch for compact control panels</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-circle-half"></i></div>
+            <h3>High Contrast</h3>
+            <p>Unlit pixels are truly black, so icons and text stand out clearly, even through a touch panel.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-eye-fill"></i></div>
+            <h3>Wide Viewing Angles</h3>
+            <p>Self-emitting pixels look the same from almost any angle, ideal for wall and appliance controls.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-hand-index-thumb-fill"></i></div>
+            <h3>Buttons Replaced by Glass</h3>
+            <p>Touch keys on the display replace mechanical buttons, for a sealed, easy-clean front.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-layers-half"></i></div>
+            <h3>Thin &amp; Compact</h3>
+            <p>No backlight layer, and the in-cell 0.91&quot; is just 1.41mm thick, suiting wearables and slim devices.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-cpu-fill"></i></div>
+            <h3>Single-Chip Option</h3>
+            <p>The SSD7317 TDDI on the 0.91&quot; drives display and touch from one chip, saving parts and space.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-wrench-adjustable"></i></div>
+            <h3>Ready to Mount</h3>
+            <p>Frame and PCB versions add mounting holes and a pin header, making them simple to fit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STRUCTURE & INTERFACES -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center mb-5">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Choosing a Structure</h2>
+          <div class="text-muted lh-lg mb-0">
+            <p>COG (chip on glass) and COF (chip on film) modules are the thinnest, with the driver on the glass or on the flexible cable, ready to fit behind your own front panel.</p>
+            <p class="mb-0">Frame and PCB versions mount the display on a board with a metal frame, screw holes and a pin header, for easy fitting and hand assembly.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <table class="table product-spec-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Structure</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Models</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#1fada1;padding:.75rem;border-color:#e4eaf0;">Thickness</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>COG</td><td class="text-muted">0.91&quot;, 1.18&quot;, 1.54&quot;, 2.42&quot; WEO012864G, 2.7&quot; WEO012864Q, 3.55&quot;</td><td class="fw-medium">1.41 to 5.0mm</td></tr>
+                <tr><td>COF</td><td class="text-muted">3.12&quot; WEX025664B</td><td class="fw-medium">3.17mm</td></tr>
+                <tr><td>Frame + PCB</td><td class="text-muted">2.42&quot; WEO012864J, 2.7&quot; WEP012864Q, 2.8&quot;, 3.12&quot; WEN025664B, 5.5&quot;</td><td class="fw-medium">4.8 to 10.2mm</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Choosing an Interface</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>The display and the touch panel connect separately on most models. The display interface depends on the driver IC, from I2C for the fewest wires to a parallel bus for the fastest updates. The touch controller usually reports over I2C.</p>
+            <p class="mb-0">Our engineers can help match a display and interface to your design and arrange samples.</p>
+          </div>
+          <a href="contact.html" class="btn btn-navy px-4">Ask Our Engineers</a>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <table class="table product-spec-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Driver IC</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Display interfaces</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#1fada1;padding:.75rem;border-color:#e4eaf0;">Used On</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>SSD7317 (TDDI)</td><td class="text-muted">SPI, I2C</td><td class="fw-medium">0.91&quot; 128x32</td></tr>
+                <tr><td>SSD1327</td><td class="text-muted">SPI, I2C</td><td class="fw-medium">1.18&quot; 128x128 round</td></tr>
+                <tr><td>SSD1309</td><td class="text-muted">6800, 8080, SPI, I2C</td><td class="fw-medium">1.54&quot;, 2.42&quot;, 2.7&quot; 128x64</td></tr>
+                <tr><td>SSD1322</td><td class="text-muted">6800, 8080, SPI</td><td class="fw-medium">2.8&quot;, 3.12&quot;, 3.55&quot;, 5.5&quot; 256x64</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE TABLE -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;color:#112638;">OLED Touchscreen Range</h2>
+        <p class="text-muted mx-auto" style="max-width:580px;">Compare our OLED touch modules by size, resolution, driver IC, interface, structure and outline</p>
+      </div>
+      <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+        <table class="table product-spec-table mb-0" style="white-space:nowrap;">
+          <thead>
+            <tr>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Model</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Size</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Resolution</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Driver IC</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Interface</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Structure</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Outline (mm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>WEO012832M-CTP</td><td>0.91&quot;</td><td>128x32</td><td class="text-muted">SSD7317</td><td class="text-muted">SPI, I2C</td><td class="text-muted">COG, in-cell touch</td><td class="text-muted">30.0 x 11.5 x 1.41</td></tr>
+            <tr><td>WEO128128D-CTP</td><td>1.18&quot;</td><td>128x128 round</td><td class="text-muted">SSD1327</td><td class="text-muted">SPI, I2C</td><td class="text-muted">COG</td><td class="text-muted">Ø50.5 x 5.0</td></tr>
+            <tr><td>WEO012864A-CTP</td><td>1.54&quot;</td><td>128x64</td><td class="text-muted">SSD1309</td><td class="text-muted">6800, 8080, SPI, I2C</td><td class="text-muted">COG, air or optical bonding</td><td class="text-muted">43.04 x 28.22 x 3.01</td></tr>
+            <tr><td>WEO012864G-CTP</td><td>2.42&quot;</td><td>128x64</td><td class="text-muted">SSD1309</td><td class="text-muted">6800, 8080, SPI, I2C</td><td class="text-muted">COG</td><td class="text-muted">66.8 x 41.3 x 3.71</td></tr>
+            <tr><td>WEO012864J-CTP</td><td>2.42&quot;</td><td>128x64</td><td class="text-muted">SSD1309</td><td class="text-muted">6800 (8080 option), SPI, I2C</td><td class="text-muted">COG + frame + PCB</td><td class="text-muted">75.0 x 52.7 x 10.2</td></tr>
+            <tr><td>WEO012864Q-CTP</td><td>2.7&quot;</td><td>128x64</td><td class="text-muted">SSD1309</td><td class="text-muted">6800, 8080, SPI, I2C</td><td class="text-muted">COG</td><td class="text-muted">74.8 x 44.16 x 3.66</td></tr>
+            <tr><td>WEP012864Q-CTP</td><td>2.7&quot;</td><td>128x64</td><td class="text-muted">SSD1309</td><td class="text-muted">6800, 8080, SPI, I2C</td><td class="text-muted">COG + frame + PCB</td><td class="text-muted">82.0 x 47.5 x 8.65</td></tr>
+            <tr><td>WEN025664A-CTP</td><td>2.8&quot;</td><td>256x64</td><td class="text-muted">SSD1322</td><td class="text-muted">6800, 8080, SPI</td><td class="text-muted">COF + frame + PCB</td><td class="text-muted">85.0 x 39.8 x 7.83</td></tr>
+            <tr><td>WEX025664B-CTP</td><td>3.12&quot;</td><td>256x64</td><td class="text-muted">SSD1322</td><td class="text-muted">6800, 8080, SPI</td><td class="text-muted">COF</td><td class="text-muted">89.2 x 29.0 x 3.17</td></tr>
+            <tr><td>WEN025664B-CTP</td><td>3.12&quot;</td><td>256x64</td><td class="text-muted">SSD1322</td><td class="text-muted">6800, 8080, SPI</td><td class="text-muted">COF + frame + PCB</td><td class="text-muted">89.2 x 44.0 x 7.98</td></tr>
+            <tr><td>WEO025664D-CTP</td><td>3.55&quot;</td><td>256x64</td><td class="text-muted">SSD1322</td><td class="text-muted">6800, 8080, SPI</td><td class="text-muted">COG</td><td class="text-muted">100.4 x 36.1 x 3.34</td></tr>
+            <tr><td>WEN025664D-CTP</td><td>5.5&quot;</td><td>256x64</td><td class="text-muted">SSD1322</td><td class="text-muted">6800, 8080, SPI</td><td class="text-muted">COF + frame + PCB</td><td class="text-muted">147.0 x 59.0 x 4.8</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted text-center mt-3 mb-0" style="font-size:.8125rem;">Figures from Winstar's specifications. See the datasheet or contact us for details. <a href="product-oled-touchscreen-displays.html" class="fw-semibold" style="color:#1a4870;">View OLED Touchscreen Displays →</a></p>
+    </div>
+  </section>
+
+  <!-- STATS & APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 text-center mb-5">
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">0.91&quot;</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Smallest Display</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">5.5&quot;</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Largest Display</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-gold);">1.41mm</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Thinnest Module</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">-40℃</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Lowest Operating Temp</div>
+        </div>
+      </div>
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;">Typical Applications</h2>
+        <p class="mx-auto" style="max-width:580px;color:rgba(210,228,245,.75);">OLED touchscreens suit compact products where the display is also the control panel</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-house-gear-fill me-2"></i>Smart Home</h3>
+            <p class="mb-0">Thermostats, lighting controls and wall panels.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-cup-hot-fill me-2"></i>Appliances</h3>
+            <p class="mb-0">Coffee machines, cookers and kitchen appliances with touch keys.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-smartwatch me-2"></i>Wearables</h3>
+            <p class="mb-0">Bands and personal devices using the thin in-cell 0.91&quot;.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-heart-pulse-fill me-2"></i>Medical Devices</h3>
+            <p class="mb-0">Smart healthcare and portable medical instruments.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-gear-wide-connected me-2"></i>Industrial Control</h3>
+            <p class="mb-0">Compact operator panels and instrument front panels.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-lightning-charge-fill me-2"></i>Energy Systems</h3>
+            <p class="mb-0">Chargers, meters and energy monitoring displays.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5">
+    <div class="container" style="max-width:760px;">
+      <h2 class="fw-bold mb-4 text-center" style="font-family:'Outfit',sans-serif;color:#112638;">Frequently Asked Questions</h2>
+      <div class="accordion" id="otFaq" style="--bs-accordion-active-bg:rgba(31,173,161,.08);--bs-accordion-active-color:#112638;--bs-accordion-btn-focus-box-shadow:0 0 0 .2rem rgba(31,173,161,.25);--bs-accordion-border-color:#e4eaf0;--bs-accordion-border-radius:10px;--bs-accordion-inner-border-radius:10px;">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is an OLED touchscreen display?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#otFaq"><div class="accordion-body text-muted lh-lg">It is a graphic OLED display with a capacitive touch panel (CTP) on the same module. The OLED pixels give out their own light, so the display has deep blacks, high contrast and wide viewing angles, while the touch panel detects a finger through the cover glass so the display can also work as the control panel.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">What is in-cell touch?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#otFaq"><div class="accordion-body text-muted lh-lg">In-cell touch builds the touch sensing into the OLED panel itself instead of adding a separate touch glass. The 0.91" WEO012832M-CTP uses the SSD7317, a TDDI (touch and display driver integration) IC that drives the display and reads touch from a single chip. It supports four touch keys and a left or right slide, in a module just 1.41mm thick.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">What is the difference between air bonding and optical bonding?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#otFaq"><div class="accordion-body text-muted lh-lg">With air bonding the touch panel is fixed around its edges, leaving a thin air gap above the display. With optical bonding (OCA) the gap is filled with optically clear adhesive, which cuts reflections, improves readability and makes the front stronger. The 1.54" WEO012864A-CTP is available with either option.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">How does the touch panel connect?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#otFaq"><div class="accordion-body text-muted lh-lg">On most models the touch panel has its own controller on a separate connection, using I2C and detecting one finger. For example, the 1.54" and 3.55" use the FT6336U and the 1.18" round display uses the FT3268. The display itself connects separately over SPI, I2C or a 6800/8080 parallel bus, depending on the driver IC.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">What display colours are available?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#otFaq"><div class="accordion-body text-muted lh-lg">These are monochrome OLEDs, offered in white, yellow, sky blue or green depending on the model. The 256x64 models with the SSD1322 driver and the 1.18" round display with the SSD1327 support greyscale, for smooth icons and graphics.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <h2 class="fw-bold mb-4" style="font-family:'Outfit',sans-serif;color:#112638;">Related Products</h2>
+      <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-oled-touchscreen-displays.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/OLED-touch-group-sm.jpg" alt="OLED Touchscreen Displays" loading="lazy" /></div>
+              <div class="card-body"><h3>OLED Touchscreen Displays</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-graphic-oled-displays.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/Graphic%20oled%20displays%20grp.png" alt="Graphic OLED Displays" loading="lazy" /></div>
+              <div class="card-body"><h3>Graphic OLED Displays</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-character-oled-displays.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/oled-character-group.png" alt="Character OLED Displays" loading="lazy" /></div>
+              <div class="card-body"><h3>Character OLED Displays</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-capacitive-touch-screens.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/10.1%201024x600%20PCAP.jpg" alt="Capacitive Touch Screens" loading="lazy" /></div>
+              <div class="card-body"><h3>Capacitive Touch Screens</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need a Custom Solution?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">
+        Our engineering team can help specify or develop a custom solution for your exact requirements.
+      </p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
