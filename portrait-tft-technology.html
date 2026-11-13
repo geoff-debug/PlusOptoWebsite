@@ -63,7 +63,7 @@
         {
           "@type": "Question",
           "name": "Which interface should I choose?",
-          "acceptedAnswer": { "@type": "Answer", "text": "SPI suits the small displays from 0.96\" to 2.8\", using few connections to a microcontroller. The 2.4\" and 2.8\" also offer an MCU parallel bus for faster updates. The 3.5\" to 8.0\" models use MIPI DSI with 1, 2 or 4 data lanes, for processors with a MIPI display output." }
+          "acceptedAnswer": { "@type": "Answer", "text": "SPI suits the small displays from 0.96\" to 2.8\", using few connections to a microcontroller. The 2.0\", 2.4\" and 2.8\" also offer an MCU parallel bus for faster updates. The 3.5\" to 8.0\" models use MIPI DSI with 1, 2 or 4 data lanes, for processors with a MIPI display output." }
         },
         {
           "@type": "Question",
@@ -73,7 +73,7 @@
         {
           "@type": "Question",
           "name": "Which portrait TFT is best in bright light?",
-          "acceptedAnswer": { "@type": "Answer", "text": "The 2.8\" WF28JSYAJDNN0 is the brightest at 1000 cd/m², followed by the 8.0\" at 900 cd/m² and the 1.54\", 1.8\" and 7.0\" at 850 cd/m². For outdoor use with less backlight power, ask us about transflective portrait displays." }
+          "acceptedAnswer": { "@type": "Answer", "text": "The 2.8\" WF28JSYAJDNN0 is the brightest at 1000 cd/m², followed by the 2.0\" at 950 cd/m², the 8.0\" at 900 cd/m² and the 1.54\", 1.8\" and 7.0\" at 850 cd/m². For outdoor use with less backlight power, ask us about transflective portrait displays." }
         }
       ]
     }
@@ -389,7 +389,7 @@
           <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Choosing a Panel Type</h2>
           <div class="text-muted lh-lg mb-0">
             <p>Most of the range uses IPS panels, with 80° viewing in every direction and stable colour, ideal for screens viewed from any angle.</p>
-            <p class="mb-0">The 1.8&quot; uses a VA panel with a very high 1500:1 contrast, and the 2.0&quot; is transflective, using ambient light to stay readable outdoors.</p>
+            <p class="mb-0">The 1.8&quot; uses a VA panel with a very high 1500:1 contrast, for deep blacks and crisp graphics.</p>
           </div>
         </div>
         <div class="col-12 col-lg-7">
@@ -403,9 +403,8 @@
                 </tr>
               </thead>
               <tbody>
-                <tr><td>IPS</td><td class="text-muted">0.96&quot;, 1.54&quot;, 2.4&quot;, 2.8&quot;, 3.5&quot;, 3.97&quot;, 5.0&quot;, 7.0&quot;, 8.0&quot;</td><td class="fw-medium">Wide viewing angles, stable colour</td></tr>
+                <tr><td>IPS</td><td class="text-muted">0.96&quot;, 1.54&quot;, 2.0&quot;, 2.4&quot;, 2.8&quot;, 3.5&quot;, 3.97&quot;, 5.0&quot;, 7.0&quot;, 8.0&quot;</td><td class="fw-medium">Wide viewing angles, stable colour</td></tr>
                 <tr><td>VA</td><td class="text-muted">1.8&quot;</td><td class="fw-medium">High contrast, 1500:1</td></tr>
-                <tr><td>Transflective</td><td class="text-muted">2.0&quot;</td><td class="fw-medium">Readable in sunlight with less backlight</td></tr>
               </tbody>
             </table>
           </div>
@@ -432,7 +431,7 @@
               </thead>
               <tbody>
                 <tr><td>SPI</td><td class="text-muted">Serial clock and data</td><td class="fw-medium">0.96&quot;, 1.54&quot;, 1.8&quot;, 2.0&quot;, 2.4&quot;, 2.8&quot;</td></tr>
-                <tr><td>MCU parallel</td><td class="text-muted">8-bit or 16-bit bus</td><td class="fw-medium">2.4&quot;, 2.8&quot;</td></tr>
+                <tr><td>MCU parallel</td><td class="text-muted">8-bit or 16-bit bus</td><td class="fw-medium">2.0&quot;, 2.4&quot;, 2.8&quot;</td></tr>
                 <tr><td>MIPI DSI, 1 lane</td><td class="text-muted">High-speed serial</td><td class="fw-medium">3.5&quot;</td></tr>
                 <tr><td>MIPI DSI, 2 lanes</td><td class="text-muted">High-speed serial</td><td class="fw-medium">3.97&quot;, 7.0&quot;</td></tr>
                 <tr><td>MIPI DSI, 4 lanes</td><td class="text-muted">High-speed serial</td><td class="fw-medium">5.0&quot;, 8.0&quot;</td></tr>
@@ -469,7 +468,7 @@
             <tr><td>WF0096ATYAA3DNF10</td><td>0.96&quot;</td><td>80x160</td><td class="text-muted">ST7735S</td><td class="text-muted">SPI</td><td class="text-muted">400 cd/m²</td><td class="text-muted">PCAP, optical bonding</td><td class="text-muted">18.7 x 31.9 x 2.64</td></tr>
             <tr><td>WF0154ASAAA4DSN0</td><td>1.54&quot;</td><td>240x240</td><td class="text-muted">ST7789T3</td><td class="text-muted">SPI</td><td class="text-muted">850 cd/m²</td><td class="text-muted">None</td><td class="text-muted">31.52 x 33.72 x 1.94</td></tr>
             <tr><td>WFN0180A2S0XASNC000</td><td>1.8&quot;</td><td>128x160</td><td class="text-muted">NV3023B</td><td class="text-muted">SPI</td><td class="text-muted">850 cd/m²</td><td class="text-muted">PCAP</td><td class="text-muted">36.5 x 47.0 x 4.73</td></tr>
-            <tr><td>WFN0200A2T07ADNN</td><td>2.0&quot;</td><td>240x320</td><td class="text-muted">ST7789</td><td class="text-muted">SPI</td><td class="text-muted">260 cd/m²</td><td class="text-muted">None</td><td class="text-muted">Contact us</td></tr>
+            <tr><td>WF0200BSYAJDNN0</td><td>2.0&quot;</td><td>240x320</td><td class="text-muted">ST7789VI</td><td class="text-muted">MCU, SPI</td><td class="text-muted">950 cd/m²</td><td class="text-muted">None</td><td class="text-muted">38.8 x 52.3 x 2.15</td></tr>
             <tr><td>WF24LSYAJDNG0</td><td>2.4&quot;</td><td>240x320</td><td class="text-muted">ILI9341V</td><td class="text-muted">MCU, SPI</td><td class="text-muted">800 cd/m²</td><td class="text-muted">PCAP</td><td class="text-muted">42.72 x 60.26 x 4.5</td></tr>
             <tr><td>WF28JSYAJDNN0</td><td>2.8&quot;</td><td>240x320</td><td class="text-muted">ILI9341V</td><td class="text-muted">MCU, SPI</td><td class="text-muted">1000 cd/m²</td><td class="text-muted">None</td><td class="text-muted">50.5 x 69.7 x 4.55</td></tr>
             <tr><td>WF35UTYAIMNN0</td><td>3.5&quot;</td><td>320x480</td><td class="text-muted">ILI9488</td><td class="text-muted">MIPI, 1 lane</td><td class="text-muted">600 cd/m²</td><td class="text-muted">None</td><td class="text-muted">54.5 x 83.0 x 2.46</td></tr>
@@ -480,7 +479,7 @@
           </tbody>
         </table>
       </div>
-      <p class="text-muted text-center mt-3 mb-0" style="font-size:.8125rem;">Figures from Winstar's specifications; the 2.0&quot; is no longer listed by Winstar, so please contact us for details. <a href="product-portrait-tft-displays.html" class="fw-semibold" style="color:#1a4870;">View Portrait TFT Displays →</a></p>
+      <p class="text-muted text-center mt-3 mb-0" style="font-size:.8125rem;">Figures from Winstar's specifications. See the datasheet or contact us for details. <a href="product-portrait-tft-displays.html" class="fw-semibold" style="color:#1a4870;">View Portrait TFT Displays →</a></p>
     </div>
   </section>
 
@@ -565,7 +564,7 @@
         </div>
         <div class="accordion-item">
           <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Which interface should I choose?</button></h3>
-          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#portFaq"><div class="accordion-body text-muted lh-lg">SPI suits the small displays from 0.96" to 2.8", using few connections to a microcontroller. The 2.4" and 2.8" also offer an MCU parallel bus for faster updates. The 3.5" to 8.0" models use MIPI DSI with 1, 2 or 4 data lanes, for processors with a MIPI display output.</div></div>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#portFaq"><div class="accordion-body text-muted lh-lg">SPI suits the small displays from 0.96" to 2.8", using few connections to a microcontroller. The 2.0", 2.4" and 2.8" also offer an MCU parallel bus for faster updates. The 3.5" to 8.0" models use MIPI DSI with 1, 2 or 4 data lanes, for processors with a MIPI display output.</div></div>
         </div>
         <div class="accordion-item">
           <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Are touch screens available?</button></h3>
@@ -573,7 +572,7 @@
         </div>
         <div class="accordion-item">
           <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">Which portrait TFT is best in bright light?</button></h3>
-          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#portFaq"><div class="accordion-body text-muted lh-lg">The 2.8" WF28JSYAJDNN0 is the brightest at 1000 cd/m², followed by the 8.0" at 900 cd/m² and the 1.54", 1.8" and 7.0" at 850 cd/m². For outdoor use with less backlight power, ask us about transflective portrait displays.</div></div>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#portFaq"><div class="accordion-body text-muted lh-lg">The 2.8" WF28JSYAJDNN0 is the brightest at 1000 cd/m², followed by the 2.0" at 950 cd/m², the 8.0" at 900 cd/m² and the 1.54", 1.8" and 7.0" at 850 cd/m². For outdoor use with less backlight power, ask us about transflective portrait displays.</div></div>
         </div>
       </div>
     </div>
