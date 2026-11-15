@@ -1,0 +1,1230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TFT Display Module Selector Guide | Plus Opto</title>
+<meta name="description" content="Compare 53 standard Winstar TFT colour display modules from 1.77 to 8 inch by size, resolution, interface, brightness and touch screen.">
+<link rel="canonical" href="https://www.plusopto.com/tft-module-selector-guide.html">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================
+   Plus Opto — TFT Display Module Selector Guide
+   Self-contained component. Everything is scoped to .po-selector,
+   so the <section> block below can be pasted into any plusopto.com
+   page (the tokens match css/plusopto.css).
+   ========================================================== */
+.po-selector {
+  --po-navy: #112638;
+  --po-navy-light: #183858;
+  --po-navy-mid: #1a3a56;
+  --po-teal: #1fada1;
+  --po-teal-dark: #1a8f85;
+  --po-teal-glow: #30e8d9;
+  --po-gold: #f4b625;
+  --po-text: #1a2b3c;
+  --po-muted: #475e6e;
+  --po-subtle: #8096a8;
+  --po-line: #e4eaf0;
+  --po-tint: #f0f5fa;
+  --po-gradient-hero: linear-gradient(135deg, #112638, #183858, #1a3a56);
+  --po-shadow-card: 0 4px 20px -4px rgba(17, 38, 56, 0.08);
+
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  color: var(--po-text);
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 48px 16px;
+  box-sizing: border-box;
+}
+.po-selector *, .po-selector *::before, .po-selector *::after { box-sizing: inherit; }
+
+/* Heading */
+.po-selector .po-eyebrow {
+  font-family: 'Outfit', sans-serif;
+  font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--po-teal); margin: 0 0 .5rem;
+}
+.po-selector h2 {
+  font-family: 'Outfit', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.25rem); font-weight: 700;
+  color: var(--po-navy); margin: 0 0 .6rem; line-height: 1.2;
+}
+.po-selector .po-intro { color: var(--po-muted); max-width: 70ch; margin: 0 0 1.75rem; line-height: 1.6; }
+
+/* Filters */
+.po-selector .po-filters {
+  display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; align-items: center;
+  margin-bottom: 1rem;
+}
+.po-selector .po-filter-group { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+.po-selector .po-filter-label { font-size: .8rem; font-weight: 600; color: var(--po-subtle); margin-right: .25rem; }
+.po-selector .po-chip {
+  font: 500 .82rem 'Space Grotesk', sans-serif;
+  border: 1px solid var(--po-line); background: #fff; color: var(--po-text);
+  border-radius: 999px; padding: .35rem .85rem; cursor: pointer;
+  transition: background-color .2s, color .2s, border-color .2s;
+}
+.po-selector .po-chip:hover { border-color: var(--po-teal); color: var(--po-teal); }
+.po-selector .po-chip[aria-pressed="true"] { background: var(--po-teal); border-color: var(--po-teal); color: #fff; }
+.po-selector .po-chip:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(31,173,161,.25); }
+.po-selector .po-count { margin-left: auto; font-size: .82rem; color: var(--po-subtle); }
+
+/* Table card */
+.po-selector .po-table-card {
+  background: #fff; border: 1px solid var(--po-line); border-radius: 12px;
+  box-shadow: var(--po-shadow-card); overflow: hidden;
+}
+.po-selector .po-table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.po-selector table { width: 100%; border-collapse: collapse; min-width: 980px; font-size: .875rem; }
+.po-selector thead tr { background: var(--po-gradient-hero); }
+.po-selector thead th {
+  background: transparent; color: #fff;
+  font-family: 'Outfit', sans-serif; font-weight: 600; font-size: .8rem;
+  text-align: left; vertical-align: bottom; line-height: 1.25;
+  padding: .85rem .6rem; white-space: nowrap;
+}
+.po-selector thead th .po-unit { display: block; font-weight: 400; color: rgba(210,228,245,.75); font-size: .72rem; }
+.po-selector tbody td {
+  padding: .7rem .6rem; border-top: 1px solid var(--po-line);
+  vertical-align: middle; white-space: nowrap;
+}
+.po-selector tbody tr:nth-child(even) td { background: #fafcfd; }
+.po-selector tbody tr:hover td { background: var(--po-tint); }
+.po-selector .num { font-variant-numeric: tabular-nums; }
+.po-selector td.po-iface { white-space: normal; max-width: 120px; }
+.po-selector td.po-num-right, .po-selector th.po-num-right { text-align: right; }
+
+/* Sticky model column */
+.po-selector th:first-child, .po-selector td:first-child { position: sticky; left: 0; z-index: 1; }
+.po-selector thead th:first-child { background: var(--po-navy); }
+.po-selector tbody td:first-child { background: #fff; box-shadow: 1px 0 0 var(--po-line); }
+.po-selector tbody tr:nth-child(even) td:first-child { background: #fafcfd; }
+.po-selector tbody tr:hover td:first-child { background: var(--po-tint); }
+.po-selector .po-model { font-weight: 600; color: var(--po-navy); letter-spacing: .01em; }
+
+/* Size badge */
+.po-selector .po-size {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 3rem; height: 3rem; border-radius: 50%;
+  border: 2px solid var(--po-teal); color: var(--po-navy);
+  font-family: 'Outfit', sans-serif; font-weight: 700; font-size: .85rem;
+}
+.po-selector .po-size small { font-size: .62rem; font-weight: 500; margin-left: 1px; color: var(--po-muted); }
+
+/* Tags */
+.po-selector .po-tag {
+  display: inline-block; font-size: .74rem; font-weight: 500; line-height: 1;
+  padding: .3rem .5rem; border-radius: 4px; margin: 1px 2px 1px 0;
+  background: var(--po-tint); color: var(--po-navy-mid);
+}
+.po-selector .po-tag-touch { background: rgba(31,173,161,.12); color: var(--po-teal-dark); }
+.po-selector .po-touch-sub { display: block; font-size: .72rem; color: var(--po-subtle); margin-top: .25rem; }
+.po-selector .po-none { color: var(--po-subtle); }
+.po-selector .po-rec {
+  display: table; margin-top: .3rem;
+  font: 600 .66rem 'Outfit', sans-serif; letter-spacing: .06em; text-transform: uppercase;
+  background: var(--po-gold); color: var(--po-navy); padding: .22rem .45rem; border-radius: 4px;
+}
+.po-selector .po-empty { padding: 2rem; text-align: center; color: var(--po-subtle); display: none; }
+
+/* Footer note + CTA */
+.po-selector .po-foot {
+  display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; justify-content: space-between;
+  margin-top: 1.25rem;
+}
+.po-selector .po-note { font-size: .8rem; color: var(--po-subtle); margin: 0; max-width: 75ch; line-height: 1.55; }
+.po-selector .po-btn {
+  display: inline-block; font: 600 .9rem 'Outfit', sans-serif; text-decoration: none;
+  background: var(--po-navy); color: #fff; padding: .7rem 1.4rem; border-radius: 8px;
+  transition: background-color .2s, box-shadow .2s;
+}
+.po-selector .po-btn:hover { background: var(--po-navy-light); box-shadow: 0 4px 16px rgba(17,38,56,.25); color: #fff; }
+
+@media (max-width: 640px) {
+  .po-selector { padding: 32px 16px; }
+  .po-selector .po-count { margin-left: 0; width: 100%; }
+}
+.po-selector td.po-pic { padding-top: .4rem; padding-bottom: .4rem; }
+.po-selector td.po-pic img { display: block; width: 120px; height: auto; border-radius: 3px; }
+.po-selector td.po-ic { white-space: normal; min-width: 120px; max-width: 160px; font-size: .8rem; }
+.po-selector td.po-stars { color: var(--po-gold); letter-spacing: .05em; font-size: .95rem; }
+.po-selector .po-star-off { color: var(--po-line); }
+.po-selector .po-links { display: flex; flex-wrap: wrap; gap: .6rem; }
+.po-selector table { min-width: 1500px; }
+</style>
+</head>
+<body style="margin:0;background:#f5f7fa;">
+
+<!-- ============ PASTE FROM HERE ============ -->
+<section class="po-selector" id="tft-module-selector">
+  <p class="po-eyebrow">Display Solutions</p>
+  <h2>TFT Display Module Selector Guide</h2>
+  <p class="po-intro">Standard Winstar TFT colour display modules from 1.77" to 8", from 128 × 160 up to 1024 × 600 pixels, with SPI, MCU, 8080, RGB and LVDS interfaces and optional resistive (RTP) or projected capacitive (PCAP) touch. Filter by size, interface or touch to narrow down the list, then get in touch for samples, pricing or a customised version.</p>
+
+  <div class="po-filters" role="group" aria-label="Filter displays">
+    <div class="po-filter-group" data-filter="size">
+      <span class="po-filter-label">Size</span>
+      <button type="button" class="po-chip" aria-pressed="true" data-value="all">All</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="1.77">1.77"</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="2.4">2.4"</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="2.8">2.8"</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="3.2">3.2"</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="3.5">3.5"</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="4.3">4.3"</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="5.7">5.7"</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="7">7"</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="8">8"</button>
+    </div>
+    <div class="po-filter-group" data-filter="iface">
+      <span class="po-filter-label">Interface</span>
+      <button type="button" class="po-chip" aria-pressed="true" data-value="all">All</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="SPI">SPI</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="MCU">MCU</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="8080">8080</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="RGB">RGB</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="LVDS">LVDS</button>
+    </div>
+    <div class="po-filter-group" data-filter="touch">
+      <span class="po-filter-label">Touch</span>
+      <button type="button" class="po-chip" aria-pressed="true" data-value="all">All</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="no">No touch</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="rtp">RTP</button>
+      <button type="button" class="po-chip" aria-pressed="false" data-value="pcap">PCAP</button>
+    </div>
+    <span class="po-count" aria-live="polite"></span>
+  </div>
+
+  <div class="po-table-card">
+    <div class="po-table-scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Model No.</th>
+            <th scope="col">Picture</th>
+            <th scope="col">Resolution<span class="po-unit">pixels</span></th>
+            <th scope="col">Size<span class="po-unit">inch</span></th>
+            <th scope="col">Outline<span class="po-unit">mm</span></th>
+            <th scope="col">Viewing Area<span class="po-unit">mm</span></th>
+            <th scope="col">Active Area<span class="po-unit">mm</span></th>
+            <th scope="col">View<span class="po-unit">direction</span></th>
+            <th scope="col">Interface</th>
+            <th scope="col">Driver IC</th>
+            <th scope="col">Control<span class="po-unit">board</span></th>
+            <th scope="col">Power<span class="po-unit">board</span></th>
+            <th scope="col" class="po-num-right">Brightness<span class="po-unit">cd/m²</span></th>
+            <th scope="col">Recommended</th>
+            <th scope="col">Touch Screen</th>
+            <th scope="col">Op. Temp.<span class="po-unit">°C</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr data-size="1.77" data-iface="SPI MCU" data-touch="no">
+            <td class="po-model">WF18FTLAADNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF18FTLAADNN0.jpg" alt="WF18FTLAADNN0 1.77&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">128 × 160</td>
+            <td><span class="po-size">1.77<small>&quot;</small></span></td>
+            <td class="num">34 × 45.83</td>
+            <td class="num">31.83 × 41.42</td>
+            <td class="num">28.03 × 35.04</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">SPI</span><span class="po-tag">MCU</span></td>
+            <td class="po-ic">ST7735S</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">500</td>
+            <td class="po-stars" title="2 of 3">★★<span class="po-star-off">★</span></td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="1.77" data-iface="SPI MCU" data-touch="no">
+            <td class="po-model">WF18FTZAADNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF18FTZAADNN0.jpg" alt="WF18FTZAADNN0 1.77&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">128 × 160</td>
+            <td><span class="po-size">1.77<small>&quot;</small></span></td>
+            <td class="num">34 × 45.83</td>
+            <td class="num">31.83 × 41.42</td>
+            <td class="num">28.03 × 35.04</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">SPI</span><span class="po-tag">MCU</span></td>
+            <td class="po-ic">ST7735S</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">400</td>
+            <td class="po-stars" title="1 of 3">★<span class="po-star-off">★★</span></td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="1.77" data-iface="SPI" data-touch="no">
+            <td class="po-model">WF18GTLAADNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF18GTLAADNN0.jpg" alt="WF18GTLAADNN0 1.77&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">128 × 160</td>
+            <td><span class="po-size">1.77<small>&quot;</small></span></td>
+            <td class="num">34 × 45.83</td>
+            <td class="num">31.83 × 41.42</td>
+            <td class="num">28.03 × 35.04</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">SPI</span></td>
+            <td class="po-ic">ST7735S</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">500</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="2.4" data-iface="MCU" data-touch="no">
+            <td class="po-model">WF24HTLAJDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF24HTLAJDNN0.jpg" alt="WF24HTLAJDNN0 2.4&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">240 × 320</td>
+            <td><span class="po-size">2.4<small>&quot;</small></span></td>
+            <td class="num">42.72 × 60.26</td>
+            <td class="num">37.72 × 49.96</td>
+            <td class="num">36.72 × 48.96</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">MCU</span></td>
+            <td class="po-ic">ILI9341</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">500</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="2.4" data-iface="SPI" data-touch="no">
+            <td class="po-model">WF24MTLAJDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF24MTLAJDNN0.jpg" alt="WF24MTLAJDNN0 2.4&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">240 × 320</td>
+            <td><span class="po-size">2.4<small>&quot;</small></span></td>
+            <td class="num">42.72 × 60.26</td>
+            <td class="num">37.72 × 49.96</td>
+            <td class="num">36.72 × 48.96</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">SPI</span></td>
+            <td class="po-ic">ST7789V</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">500</td>
+            <td class="po-stars" title="1 of 3">★<span class="po-star-off">★★</span></td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="2.4" data-iface="SPI" data-touch="rtp">
+            <td class="po-model">WF24MTLAJDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF24MTLAJDNT0.jpg" alt="WF24MTLAJDNT0 2.4&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">240 × 320</td>
+            <td><span class="po-size">2.4<small>&quot;</small></span></td>
+            <td class="num">42.72 × 60.26</td>
+            <td class="num">38.72 × 53.96</td>
+            <td class="num">36.72 × 48.96</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">SPI</span></td>
+            <td class="po-ic">ST7789V</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">350</td>
+            <td class="po-stars" title="1 of 3">★<span class="po-star-off">★★</span></td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="2.8" data-iface="MCU" data-touch="no">
+            <td class="po-model">WF28ETLAJDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF28ETLAJDNN0.jpg" alt="WF28ETLAJDNN0 2.8&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">240 × 320</td>
+            <td><span class="po-size">2.8<small>&quot;</small></span></td>
+            <td class="num">50 × 69.2</td>
+            <td class="num">44.2 × 58.6</td>
+            <td class="num">43.2 × 57.6</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">MCU</span></td>
+            <td class="po-ic">ILI9341</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">500</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="2.8" data-iface="MCU" data-touch="pcap">
+            <td class="po-model">WF28ETLAJDNG0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF28ETLAJDNG0.jpg" alt="WF28ETLAJDNG0 2.8&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">240 × 320</td>
+            <td><span class="po-size">2.8<small>&quot;</small></span></td>
+            <td class="num">50 × 69.2</td>
+            <td class="num">44.2 × 58.6</td>
+            <td class="num">43.2 × 57.6</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">MCU</span></td>
+            <td class="po-ic">ILI9341</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">400</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">1-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="2.8" data-iface="MCU" data-touch="rtp">
+            <td class="po-model">WF28ETLAJDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF28ETLAJDNT0.jpg" alt="WF28ETLAJDNT0 2.8&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">240 × 320</td>
+            <td><span class="po-size">2.8<small>&quot;</small></span></td>
+            <td class="num">50 × 69.2</td>
+            <td class="num">44.8 × 63.1</td>
+            <td class="num">43.2 × 57.6</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">MCU</span></td>
+            <td class="po-ic">ILI9341</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">350</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="2.8" data-iface="SPI" data-touch="rtp">
+            <td class="po-model">WF28KTLAJDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF28KTLAJDNT0.jpg" alt="WF28KTLAJDNT0 2.8&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">240 × 320</td>
+            <td><span class="po-size">2.8<small>&quot;</small></span></td>
+            <td class="num">50 × 69.2</td>
+            <td class="num">44.8 × 63.1</td>
+            <td class="num">43.2 × 57.6</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">SPI</span></td>
+            <td class="po-ic">ST7789V</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">350</td>
+            <td class="po-stars" title="1 of 3">★<span class="po-star-off">★★</span></td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="2.8" data-iface="SPI" data-touch="pcap">
+            <td class="po-model">WF28KTZAJDNG0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF28KTZAJDNG0.jpg" alt="WF28KTZAJDNG0 2.8&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">240 × 320</td>
+            <td><span class="po-size">2.8<small>&quot;</small></span></td>
+            <td class="num">50 × 69.2</td>
+            <td class="num">44.2 × 58.6</td>
+            <td class="num">43.2 × 57.6</td>
+            <td>O-TFT</td>
+            <td class="po-iface"><span class="po-tag">SPI</span></td>
+            <td class="po-ic">ST7789V</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">350</td>
+            <td class="po-stars" title="1 of 3">★<span class="po-star-off">★★</span></td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">1-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="3.2" data-iface="8080 SPI MCU" data-touch="no">
+            <td class="po-model">WF32DTLAJDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF32DTLAJDNN0.jpg" alt="WF32DTLAJDNN0 3.2&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">240 × 320</td>
+            <td><span class="po-size">3.2<small>&quot;</small></span></td>
+            <td class="num">55.04 × 77.6</td>
+            <td class="num">49.6 × 65.8</td>
+            <td class="num">48.6 × 64.8</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">8080</span><span class="po-tag">SPI</span><span class="po-tag">MCU</span></td>
+            <td class="po-ic">ILI9341</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">500</td>
+            <td class="po-stars" title="2 of 3">★★<span class="po-star-off">★</span></td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="3.2" data-iface="8080 SPI MCU" data-touch="rtp">
+            <td class="po-model">WF32DTLAJDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF32DTLAJDNT0.jpg" alt="WF32DTLAJDNT0 3.2&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">240 × 320</td>
+            <td><span class="po-size">3.2<small>&quot;</small></span></td>
+            <td class="num">55.04 × 77.6</td>
+            <td class="num">49.6 × 65.8</td>
+            <td class="num">48.6 × 64.8</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">8080</span><span class="po-tag">SPI</span><span class="po-tag">MCU</span></td>
+            <td class="po-ic">ILI9341</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">350</td>
+            <td class="po-stars" title="2 of 3">★★<span class="po-star-off">★</span></td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="3.5" data-iface="SPI MCU RGB" data-touch="no">
+            <td class="po-model">WF35RTIACDNNB</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF35RTIACDNNB.jpg" alt="WF35RTIACDNNB 3.5&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">3.5<small>&quot;</small></span></td>
+            <td class="num">76.84 × 63.84</td>
+            <td class="num">73.1 × 55.5</td>
+            <td class="num">70.08 × 52.56</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">SPI</span><span class="po-tag">MCU</span><span class="po-tag">RGB</span></td>
+            <td class="po-ic">SSD2119</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">400</td>
+            <td class="po-stars" title="2 of 3">★★<span class="po-star-off">★</span></td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="4.3" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF43GTIAEDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF43GTIAEDNN0.jpg" alt="WF43GTIAEDNN0 4.3&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">480 × 272</td>
+            <td><span class="po-size">4.3<small>&quot;</small></span></td>
+            <td class="num">105.5 × 67.2</td>
+            <td class="num">97.1 × 55.9</td>
+            <td class="num">95.04 × 53.856</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ILI6480B</td>
+            <td>Option</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">500</td>
+            <td class="po-stars" title="2 of 3">★★<span class="po-star-off">★</span></td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="4.3" data-iface="RGB" data-touch="rtp">
+            <td class="po-model">WF43GTIAEDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF43GTIAEDNT0.jpg" alt="WF43GTIAEDNT0 4.3&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">480 × 272</td>
+            <td><span class="po-size">4.3<small>&quot;</small></span></td>
+            <td class="num">105.5 × 67.2</td>
+            <td class="num">98.7 × 57.5</td>
+            <td class="num">95.04 × 53.86</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ILI6480B</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">350</td>
+            <td class="po-stars" title="2 of 3">★★<span class="po-star-off">★</span></td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="4.3" data-iface="RGB" data-touch="pcap">
+            <td class="po-model">WF43GTIAEDNGD</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF43GTIAEDNGD.jpg" alt="WF43GTIAEDNGD 4.3&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">480 × 272</td>
+            <td><span class="po-size">4.3<small>&quot;</small></span></td>
+            <td class="num">105.5 × 67.2</td>
+            <td class="num">96.24 × 54.66</td>
+            <td class="num">95.04 × 53.86</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ILI6480B</td>
+            <td>Option</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">400</td>
+            <td class="po-stars" title="2 of 3">★★<span class="po-star-off">★</span></td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">5-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="4.3" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF43VTIAEDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF43VTIAEDNN0.jpg" alt="WF43VTIAEDNN0 4.3&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">480 × 272</td>
+            <td><span class="po-size">4.3<small>&quot;</small></span></td>
+            <td class="num">105.5 × 67.2</td>
+            <td class="num">98.9 × 57.7</td>
+            <td class="num">95.04 × 53.856</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ST7282</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">500</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="4.3" data-iface="RGB" data-touch="rtp">
+            <td class="po-model">WF43VTIAEDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF43VTIAEDNT0.jpg" alt="WF43VTIAEDNT0 4.3&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">480 × 272</td>
+            <td><span class="po-size">4.3<small>&quot;</small></span></td>
+            <td class="num">105.5 × 67.2</td>
+            <td class="num">98.7 × 57.5</td>
+            <td class="num">95.04 × 53.856</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ST7282</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">350</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="4.3" data-iface="RGB" data-touch="pcap">
+            <td class="po-model">WF43VTIAEDNGA</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF43VTIAEDNGA.jpg" alt="WF43VTIAEDNGA 4.3&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">480 × 272</td>
+            <td><span class="po-size">4.3<small>&quot;</small></span></td>
+            <td class="num">105.5 × 67.2</td>
+            <td class="num">96.24 × 54.66</td>
+            <td class="num">95.04 × 53.856</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ST7282</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">400</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">5-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="4.3" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF43VTZAEDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF43VTZAEDNN0.jpg" alt="WF43VTZAEDNN0 4.3&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">480 × 272</td>
+            <td><span class="po-size">4.3<small>&quot;</small></span></td>
+            <td class="num">105.5 × 67.2</td>
+            <td class="num">98.9 × 57.7</td>
+            <td class="num">95.04 × 53.856</td>
+            <td>O-TFT</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ST7282</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">400</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="4.3" data-iface="RGB" data-touch="rtp">
+            <td class="po-model">WF43VTZAEDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF43VTZAEDNT0.jpg" alt="WF43VTZAEDNT0 4.3&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">480 × 272</td>
+            <td><span class="po-size">4.3<small>&quot;</small></span></td>
+            <td class="num">105.5 × 67.2</td>
+            <td class="num">98.7 × 57.5</td>
+            <td class="num">95.04 × 53.856</td>
+            <td>O-TFT</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ST7282</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">280</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="4.3" data-iface="RGB" data-touch="pcap">
+            <td class="po-model">WF43VTZAEDNGA</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF43VTZAEDNGA.jpg" alt="WF43VTZAEDNGA 4.3&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">480 × 272</td>
+            <td><span class="po-size">4.3<small>&quot;</small></span></td>
+            <td class="num">105.5 × 67.2</td>
+            <td class="num">96.24 × 54.66</td>
+            <td class="num">95.04 × 53.856</td>
+            <td>O-TFT</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ST7282</td>
+            <td>Option</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">300</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">5-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="4.3" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF43UTIAEDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF43UTIAEDNN0.jpg" alt="WF43UTIAEDNN0 4.3&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">480 × 272</td>
+            <td><span class="po-size">4.3<small>&quot;</small></span></td>
+            <td class="num">105.4 × 67.1</td>
+            <td class="num">98.48 × 57.19</td>
+            <td class="num">95.04 × 53.856</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ST7282</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">600</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="4.3" data-iface="RGB" data-touch="pcap">
+            <td class="po-model">WF43UTIAEDNGB</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF43UTIAEDNGB.jpg" alt="WF43UTIAEDNGB 4.3&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">480 × 272</td>
+            <td><span class="po-size">4.3<small>&quot;</small></span></td>
+            <td class="num">105.4 × 67.2</td>
+            <td class="num">96.24 × 54.66</td>
+            <td class="num">95.04 × 53.856</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ST7282</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">480</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">5-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="4.3" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF43YTIAEDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF43YTIAEDNN0.jpg" alt="WF43YTIAEDNN0 4.3&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">480 × 272</td>
+            <td><span class="po-size">4.3<small>&quot;</small></span></td>
+            <td class="num">105.5 × 67.2</td>
+            <td class="num">98.9 × 57.7</td>
+            <td class="num">95.04 × 53.86</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ILI6480B</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">500</td>
+            <td class="po-stars" title="2 of 3">★★<span class="po-star-off">★</span></td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="4.3" data-iface="RGB" data-touch="rtp">
+            <td class="po-model">WF43YTIAEDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF43YTIAEDNT0.jpg" alt="WF43YTIAEDNT0 4.3&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">480 × 272</td>
+            <td><span class="po-size">4.3<small>&quot;</small></span></td>
+            <td class="num">105.5 × 67.2</td>
+            <td class="num">98.7 × 57.5</td>
+            <td class="num">95.04 × 53.86</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ILI6480B</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">350</td>
+            <td class="po-stars" title="2 of 3">★★<span class="po-star-off">★</span></td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF57VTIACDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57VTIACDNN0.jpg" alt="WF57VTIACDNN0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">160 × 109</td>
+            <td class="num">118.28 × 88.64</td>
+            <td class="num">115.2 × 86.4</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8218 + HX8615</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">500</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="RGB" data-touch="pcap">
+            <td class="po-model">WF57VTIACDNG0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57VTIACDNG0.jpg" alt="WF57VTIACDNG0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">160 × 109</td>
+            <td class="num">116.4 × 87.76</td>
+            <td class="num">115.2 × 86.4</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8218 + HX8615</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">400</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">5-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="LVDS" data-touch="no">
+            <td class="po-model">WF57VTCECLNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57VTCECLNN0.jpg" alt="WF57VTCECLNN0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">160 × 109</td>
+            <td class="num">118.28 × 88.64</td>
+            <td class="num">115.2 × 86.4</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">LVDS</span></td>
+            <td class="po-ic">SN75LVDS82DGGR</td>
+            <td class="po-none">No</td>
+            <td>Yes</td>
+            <td class="num po-num-right">500</td>
+            <td class="po-none">–</td>
+            <td class="po-none">No</td>
+            <td class="num">0 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF57WTLECDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57WTLECDNN0.jpg" alt="WF57WTLECDNN0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">143.5 × 104.1</td>
+            <td class="num">118.6 × 88.9</td>
+            <td class="num">115.2 × 87.6</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8218 + HX8615</td>
+            <td class="po-none">No</td>
+            <td>Yes</td>
+            <td class="num po-num-right">500</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="RGB" data-touch="rtp">
+            <td class="po-model">WF57WTLECDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57WTLECDNT0.png" alt="WF57WTLECDNT0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">143.5 × 104.1</td>
+            <td class="num">118.6 × 88.9</td>
+            <td class="num">115.2 × 87.6</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8218 + HX8615</td>
+            <td class="po-none">No</td>
+            <td>Yes</td>
+            <td class="num po-num-right">350</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF57XTIACDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57XTIACDNN0.jpg" alt="WF57XTIACDNN0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">126 × 101.55</td>
+            <td class="num">117.9 × 89.1</td>
+            <td class="num">115.2 × 86.4</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8218 + HX8615</td>
+            <td>Option</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">900</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="RGB" data-touch="rtp">
+            <td class="po-model">WF57XTIACDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57XTIACDNT0.jpg" alt="WF57XTIACDNT0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">126 × 101.55</td>
+            <td class="num">117.9 × 89.1</td>
+            <td class="num">115.2 × 87.4</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8218 + HX8615</td>
+            <td>Option</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">600</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="RGB" data-touch="pcap">
+            <td class="po-model">WF57XTIACDNG0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57XTIACDNG0.jpg" alt="WF57XTIACDNG0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">126 × 101.55</td>
+            <td class="num">116.4 × 87.76</td>
+            <td class="num">115.2 × 89.16</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8218 + HX8615</td>
+            <td>Option</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">700</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">5-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF57ZTZGCDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57ZTZGCDNN0.jpg" alt="WF57ZTZGCDNN0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">141.12 × 101.55</td>
+            <td class="num">117.9 × 89.1</td>
+            <td class="num">115.2 × 86.4</td>
+            <td>O-TFT</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8218 + HX8615</td>
+            <td>Option</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">700</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF57ZTIGCDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57ZTIGCDNN0.jpg" alt="WF57ZTIGCDNN0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">141.12 × 101.55</td>
+            <td class="num">117.9 × 89.1</td>
+            <td class="num">115.2 × 86.4</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8218 + HX8615</td>
+            <td>Option</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">900</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="RGB" data-touch="rtp">
+            <td class="po-model">WF57ZTIGCDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57ZTIGCDNT0.jpg" alt="WF57ZTIGCDNT0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">141.12 × 101.55</td>
+            <td class="num">117.9 × 89.1</td>
+            <td class="num">115.2 × 86.4</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8218 + HX8615</td>
+            <td>Option</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">600</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF57A3TIGCDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57A3TIGCDNN0.jpg" alt="WF57A3TIGCDNN0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">141.12 × 101.55</td>
+            <td class="num">117.9 × 89.1</td>
+            <td class="num">115.2 × 86.4</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8218 + HX8615</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">900</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="RGB" data-touch="rtp">
+            <td class="po-model">WF57A3TIGCDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57A3TIGCDNT0.jpg" alt="WF57A3TIGCDNT0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">320 × 240</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">141.12 × 101.55</td>
+            <td class="num">117.9 × 89.1</td>
+            <td class="num">115.2 × 86.4</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8218 + HX8615</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">600</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="5.7" data-iface="RGB" data-touch="rtp">
+            <td class="po-model">WF57A4TLAFDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF57A4TLAFDNT0.jpg" alt="WF57A4TLAFDNT0 5.7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">640 × 480</td>
+            <td><span class="po-size">5.7<small>&quot;</small></span></td>
+            <td class="num">125 × 98.8</td>
+            <td class="num">116.4 × 87.6</td>
+            <td class="num">115.2 × 86.4</td>
+            <td>6H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8250 + HX8678</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">350</td>
+            <td class="po-stars" title="1 of 3">★<span class="po-star-off">★★</span></td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="7" data-iface="RGB" data-touch="pcap">
+            <td class="po-model">WF70B2SIAGDNGA</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF70B2SIAGDNGA.jpg" alt="WF70B2SIAGDNGA 7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">800 × 480</td>
+            <td><span class="po-size">7<small>&quot;</small></span></td>
+            <td class="num">165 × 100</td>
+            <td class="num">156.68 × 88.52</td>
+            <td class="num">154.08 × 85.92</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8264 + HX8664</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">700</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">5-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="7" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF70B4TIAGDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF70B4TIAGDNN0.jpg" alt="WF70B4TIAGDNN0 7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">800 × 480</td>
+            <td><span class="po-size">7<small>&quot;</small></span></td>
+            <td class="num">165 × 100</td>
+            <td class="num">157 × 89.5</td>
+            <td class="num">154.08 × 85.92</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8264 + HX8664</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">400</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="7" data-iface="RGB" data-touch="rtp">
+            <td class="po-model">WF70B4TIAGDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF70B4TIAGDNT0.jpg" alt="WF70B4TIAGDNT0 7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">800 × 480</td>
+            <td><span class="po-size">7<small>&quot;</small></span></td>
+            <td class="num">165 × 100</td>
+            <td class="num">156.6 × 89.1</td>
+            <td class="num">154.08 × 85.92</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8264 + HX8664</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">250</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="7" data-iface="RGB" data-touch="pcap">
+            <td class="po-model">WF70B4TIAGDNGA</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF70B4TIAGDNGA.jpg" alt="WF70B4TIAGDNGA 7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">800 × 480</td>
+            <td><span class="po-size">7<small>&quot;</small></span></td>
+            <td class="num">165 × 100</td>
+            <td class="num">155.22 × 87.19</td>
+            <td class="num">154.08 × 85.92</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8264 + HX8664</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">350</td>
+            <td class="po-stars" title="2 of 3">★★<span class="po-star-off">★</span></td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">5-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="7" data-iface="RGB" data-touch="pcap">
+            <td class="po-model">WF70B4TIAGDNGB</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF70B4TIAGDNGB.jpg" alt="WF70B4TIAGDNGB 7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">800 × 480</td>
+            <td><span class="po-size">7<small>&quot;</small></span></td>
+            <td class="num">202 × 135.5</td>
+            <td class="num">155.22 × 86.92</td>
+            <td class="num">154.08 × 85.92</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">HX8264 + HX8664</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">300</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">5-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="7" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF70D3TIAGDNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF70D3TIAGDNN0.jpg" alt="WF70D3TIAGDNN0 7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">800 × 480</td>
+            <td><span class="po-size">7<small>&quot;</small></span></td>
+            <td class="num">165 × 100</td>
+            <td class="num">157 × 90.1</td>
+            <td class="num">154.08 × 85.92</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ILI6137A + ILI5960-9G</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">400</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="7" data-iface="RGB" data-touch="rtp">
+            <td class="po-model">WF70D3TIAGDNT0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF70D3TIAGDNT0.jpg" alt="WF70D3TIAGDNT0 7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">800 × 480</td>
+            <td><span class="po-size">7<small>&quot;</small></span></td>
+            <td class="num">165 × 100</td>
+            <td class="num">156.6 × 89.1</td>
+            <td class="num">154.08 × 85.92</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ILI6137A + ILI5960-9G</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">250</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="7" data-iface="RGB" data-touch="pcap">
+            <td class="po-model">WF70D3TIAGDNG0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF70D3TIAGDNG0.jpg" alt="WF70D3TIAGDNG0 7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">800 × 480</td>
+            <td><span class="po-size">7<small>&quot;</small></span></td>
+            <td class="num">165 × 100</td>
+            <td class="num">155.22 × 87.19</td>
+            <td class="num">154.08 × 85.92</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">ILI6137A + ILI5960-9G</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">300</td>
+            <td class="po-stars" title="3 of 3">★★★</td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">5-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="7" data-iface="LVDS" data-touch="no">
+            <td class="po-model">WF70A7TIAHLNN0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF70A7TIAHLNN0.jpg" alt="WF70A7TIAHLNN0 7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">1024 × 600</td>
+            <td><span class="po-size">7<small>&quot;</small></span></td>
+            <td class="num">164.8 × 99.8</td>
+            <td class="num">157.2 × 89.43</td>
+            <td class="num">154.2144 × 85.92</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">LVDS</span></td>
+            <td class="po-ic">EK79001HE + EK73215BCGA</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">600</td>
+            <td class="po-stars" title="2 of 3">★★<span class="po-star-off">★</span></td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="7" data-iface="LVDS" data-touch="pcap">
+            <td class="po-model">WF70A7TIAHLNB0</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF70A7TIAHLNB0.jpg" alt="WF70A7TIAHLNB0 7&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">1024 × 600</td>
+            <td><span class="po-size">7<small>&quot;</small></span></td>
+            <td class="num">202 × 135.5</td>
+            <td class="num">155.22 × 86.92</td>
+            <td class="num">154.2144 × 85.92</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">LVDS</span></td>
+            <td class="po-ic">EK79001HE + EK73215BCGA</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">450</td>
+            <td class="po-stars" title="2 of 3">★★<span class="po-star-off">★</span></td>
+            <td><span class="po-tag po-tag-touch">PCAP</span><span class="po-touch-sub">10-point</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="8" data-iface="RGB" data-touch="no">
+            <td class="po-model">WF80BTIAGDNNC</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF80BTIAGDNNC.jpg" alt="WF80BTIAGDNNC 8&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">800 × 480</td>
+            <td><span class="po-size">8<small>&quot;</small></span></td>
+            <td class="num">192.8 × 116.9</td>
+            <td class="num">180.1 × 103.4</td>
+            <td class="num">176.64 × 99.36</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">EK9713 + EK73002</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">420</td>
+            <td class="po-none">–</td>
+            <td class="po-none">No</td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+          <tr data-size="8" data-iface="RGB" data-touch="rtp">
+            <td class="po-model">WF80BTIAGDNTC</td>
+            <td class="po-pic"><img src="assets/img/tft-selector/WF80BTIAGDNTC.jpg" alt="WF80BTIAGDNTC 8&quot; TFT LCD module" width="163" height="88" loading="lazy"></td>
+            <td class="num">800 × 480</td>
+            <td><span class="po-size">8<small>&quot;</small></span></td>
+            <td class="num">192.8 × 116.9</td>
+            <td class="num">180.1 × 103.4</td>
+            <td class="num">177.24 × 99.96</td>
+            <td>12H</td>
+            <td class="po-iface"><span class="po-tag">RGB</span></td>
+            <td class="po-ic">EK9713 + EK73002</td>
+            <td class="po-none">No</td>
+            <td class="po-none">No</td>
+            <td class="num po-num-right">300</td>
+            <td class="po-none">–</td>
+            <td><span class="po-tag po-tag-touch">RTP</span></td>
+            <td class="num">−20 ~ +70</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="po-empty">No displays match these filters.</div>
+    </div>
+  </div>
+
+  <div class="po-foot">
+    <p class="po-note">View direction: 6H and 12H are the best viewing directions (6 o'clock and 12 o'clock); O-TFT is a wide viewing angle panel. Control board "Option" means a controller board is available as an option. Recommended is Winstar's rating, from one to three stars. Specifications are typical values and may change. Please ask for the latest datasheet before designing in.</p>
+    <div class="po-links">
+      <a class="po-btn" href="contact.html">Request a Quote</a>
+    </div>
+  </div>
+
+  <script>
+  (function () {
+    var root = document.getElementById('tft-module-selector');
+    if (!root) return;
+    var state = { size: 'all', iface: 'all', touch: 'all' };
+    var rows = root.querySelectorAll('tbody tr');
+    var count = root.querySelector('.po-count');
+    var empty = root.querySelector('.po-empty');
+
+    function apply() {
+      var shown = 0;
+      rows.forEach(function (r) {
+        var okS = state.size === 'all' || r.dataset.size === state.size;
+        var okI = state.iface === 'all' || (' ' + r.dataset.iface + ' ').indexOf(' ' + state.iface + ' ') > -1;
+        var okT = state.touch === 'all' || r.dataset.touch === state.touch;
+        var ok = okS && okI && okT;
+        r.hidden = !ok;
+        if (ok) shown++;
+      });
+      count.textContent = 'Showing ' + shown + ' of ' + rows.length + ' displays';
+      empty.style.display = shown ? 'none' : 'block';
+    }
+
+    root.querySelectorAll('.po-filter-group').forEach(function (g) {
+      var key = g.dataset.filter;
+      g.addEventListener('click', function (e) {
+        var btn = e.target.closest('.po-chip');
+        if (!btn) return;
+        g.querySelectorAll('.po-chip').forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+        state[key] = btn.dataset.value;
+        apply();
+      });
+    });
+    apply();
+  })();
+  </script>
+</section>
+<!-- ============ PASTE TO HERE ============ -->
+
+</body>
+</html>
