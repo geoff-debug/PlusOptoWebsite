@@ -67,7 +67,7 @@
         {
           "@type": "Question",
           "name": "Which interface should I choose?",
-          "acceptedAnswer": { "@type": "Answer", "text": "SPI suits small displays up to about 3.5 inches driven by a low cost microcontroller with few pins. MCU or 8080 parallel interfaces use the display's own frame memory and suit 2.4 to 3.5 inch displays. RGB is the most common interface from 4.3 to 8 inches and needs a microcontroller or processor with an LCD controller. LVDS uses differential pairs for higher resolutions and longer cables, as on the 1024 x 600 seven inch models." }
+          "acceptedAnswer": { "@type": "Answer", "text": "SPI suits small displays up to about 3.5 inches driven by a low cost microcontroller with few pins. MCU or 8080 parallel interfaces use the display's own frame memory and suit 2.4 to 3.5 inch displays. RGB is the most common interface from 4.3 to 8 inches and needs a microcontroller or processor with an LCD controller. LVDS uses differential pairs for higher resolutions and longer cables, as on the 1024 x 600 seven inch and 10.1 inch models." }
         },
         {
           "@type": "Question",
@@ -446,7 +446,7 @@
           <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Choosing an Interface</h2>
           <div class="text-muted lh-lg mb-4">
             <p>Small TFTs up to around 3.5&quot; have a driver IC with built-in frame memory, so a microcontroller only needs to send changes over SPI or a parallel MCU / 8080 bus. Larger displays use an RGB interface, where the host streams every pixel continuously with sync and clock signals, and needs an LCD controller or a Winstar controller board.</p>
-            <p class="mb-0">The 1024 x 600 seven inch models use LVDS, which carries high resolution video over a few differential pairs and suits longer cable runs. Our engineers can help you match a display to your processor.</p>
+            <p class="mb-0">The 1024 x 600 seven inch models and the 10.1&quot; model use LVDS, which carries high resolution video over a few differential pairs and suits longer cable runs. Our engineers can help you match a display to your processor.</p>
           </div>
           <a href="contact.html" class="btn btn-navy px-4">Ask Our Engineers</a>
         </div>
@@ -464,7 +464,7 @@
                 <tr><td>SPI</td><td class="text-muted" style="white-space:nowrap;">1.77&quot; to 3.5&quot;</td><td class="fw-medium">Low pin count, small MCUs</td></tr>
                 <tr><td>MCU / 8080 parallel</td><td class="text-muted" style="white-space:nowrap;">1.77&quot; to 3.5&quot;</td><td class="fw-medium">Faster updates using on-chip frame memory</td></tr>
                 <tr><td>RGB (16 / 18 / 24-bit)</td><td class="text-muted" style="white-space:nowrap;">3.5&quot; to 8&quot;</td><td class="fw-medium">Processors with an LCD controller</td></tr>
-                <tr><td>LVDS</td><td class="text-muted" style="white-space:nowrap;">5.7&quot; and 7&quot;</td><td class="fw-medium">Higher resolution, longer cables, low EMI</td></tr>
+                <tr><td>LVDS</td><td class="text-muted" style="white-space:nowrap;">5.7&quot; to 10.1&quot;</td><td class="fw-medium">Higher resolution, longer cables, low EMI</td></tr>
               </tbody>
             </table>
           </div>
@@ -502,10 +502,11 @@
             <tr><td>WF70B4TIAGDNN0</td><td>7&quot;</td><td style="white-space:nowrap;">800 x 480</td><td class="text-muted" style="white-space:nowrap;">165 x 100</td><td class="text-muted">HX8264 + HX8664</td><td class="text-muted">No</td><td class="fw-medium">RGB</td></tr>
             <tr><td>WF70A7TIAHLNB0</td><td>7&quot;</td><td style="white-space:nowrap;">1024 x 600</td><td class="text-muted" style="white-space:nowrap;">202 x 135.5</td><td class="text-muted">EK79001HE + EK73215BCGA</td><td class="text-muted">PCAP</td><td class="fw-medium">LVDS</td></tr>
             <tr><td>WF80BTIAGDNNC</td><td>8&quot;</td><td style="white-space:nowrap;">800 x 480</td><td class="text-muted" style="white-space:nowrap;">192.8 x 116.9</td><td class="text-muted">EK9713 + EK73002</td><td class="text-muted">No</td><td class="fw-medium">RGB</td></tr>
+            <tr><td>DS-T101BAH-01</td><td>10.1&quot;</td><td style="white-space:nowrap;">1024 x 600</td><td class="text-muted" style="white-space:nowrap;">235 x 143</td><td class="text-muted">HX8282A11 + HX8696A</td><td class="text-muted">No</td><td class="fw-medium" style="white-space:nowrap;">6/8-bit LVDS</td></tr>
           </tbody>
         </table>
       </div>
-      <p class="text-muted text-center mt-3 mb-0" style="font-size:.8125rem;">Many models are also available with resistive (RTP) or projected capacitive (PCAP) touch. A 10.1&quot; 1024 x 600 module (DS-T101BAH-01) is also available. <a href="tft-module-selector-guide.html" class="fw-semibold" style="color:#1a4870;">Compare all 53 models in the Selector Guide →</a> <a href="product-standard-tft-displays.html" class="fw-semibold" style="color:#1a4870;">View Standard TFT Displays →</a></p>
+      <p class="text-muted text-center mt-3 mb-0" style="font-size:.8125rem;">Many models are also available with resistive (RTP) or projected capacitive (PCAP) touch.<a href="tft-module-selector-guide.html" class="fw-semibold" style="color:#1a4870;">Compare all 53 models in the Selector Guide →</a> <a href="product-standard-tft-displays.html" class="fw-semibold" style="color:#1a4870;">View Standard TFT Displays →</a></p>
     </div>
   </section>
 
@@ -624,7 +625,7 @@
         </div>
         <div class="accordion-item">
           <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Which interface should I choose?</button></h3>
-          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#tftFaq"><div class="accordion-body text-muted lh-lg">SPI suits small displays up to about 3.5 inches driven by a low cost microcontroller with few pins. MCU or 8080 parallel interfaces use the display's own frame memory and suit 2.4 to 3.5 inch displays. RGB is the most common interface from 4.3 to 8 inches and needs a microcontroller or processor with an LCD controller. LVDS uses differential pairs for higher resolutions and longer cables, as on the 1024 x 600 seven inch models.</div></div>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#tftFaq"><div class="accordion-body text-muted lh-lg">SPI suits small displays up to about 3.5 inches driven by a low cost microcontroller with few pins. MCU or 8080 parallel interfaces use the display's own frame memory and suit 2.4 to 3.5 inch displays. RGB is the most common interface from 4.3 to 8 inches and needs a microcontroller or processor with an LCD controller. LVDS uses differential pairs for higher resolutions and longer cables, as on the 1024 x 600 seven inch and 10.1 inch models.</div></div>
         </div>
         <div class="accordion-item">
           <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Should I choose resistive or capacitive touch?</button></h3>
