@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Standard TFT LCD Technology — Plus Opto</title>
+  <meta name="description" content="How standard TFT LCD modules work, viewing direction, SPI, MCU, RGB and LVDS interfaces, resistive and capacitive touch. Winstar TFT displays from 1.77&quot; to 10.1&quot; from Plus Opto." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+  <link rel="stylesheet" href="css/plusopto.css" />
+  <link rel="icon" href="assets/plusopto-logo.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Plus Opto" />
+  <meta property="og:title" content="Standard TFT LCD Technology — Plus Opto" />
+  <meta property="og:description" content="How standard TFT LCD modules work, viewing direction, SPI, MCU, RGB and LVDS interfaces, resistive and capacitive touch. Winstar TFT displays from 1.77&quot; to 10.1&quot; from Plus Opto." />
+  <meta property="og:url" content="https://www.plusopto.com/standard-tft-technology.html" />
+  <meta property="og:image" content="https://www.plusopto.com/assets/img/standard-tft-group.jpg" />
+  <meta property="og:locale" content="en_GB" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@plusopto" />
+  <meta name="twitter:title" content="Standard TFT LCD Technology — Plus Opto" />
+  <meta name="twitter:description" content="How standard TFT LCD modules work, viewing direction, SPI, MCU, RGB and LVDS interfaces, resistive and capacitive touch. Winstar TFT displays from 1.77&quot; to 10.1&quot; from Plus Opto." />
+  <meta name="twitter:image" content="https://www.plusopto.com/assets/img/standard-tft-group.jpg" />
+  <link rel="canonical" href="https://www.plusopto.com/standard-tft-technology.html" />
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://www.plusopto.com/standard-tft-technology.html#webpage",
+      "url": "https://www.plusopto.com/standard-tft-technology.html",
+      "name": "Standard TFT LCD Technology — Plus Opto",
+      "description": "How standard TFT LCD modules work, viewing direction, SPI, MCU, RGB and LVDS interfaces, resistive and capacitive touch. Winstar TFT displays from 1.77\" to 10.1\" from Plus Opto.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "name": "Plus Opto",
+        "url": "https://www.plusopto.com/"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.plusopto.com/standard-tft-technology.html#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.plusopto.com/index.html" },
+        { "@type": "ListItem", "position": 2, "name": "Products", "item": "https://www.plusopto.com/products.html" },
+        { "@type": "ListItem", "position": 3, "name": "Display Solutions", "item": "https://www.plusopto.com/category-display-solutions.html" },
+        { "@type": "ListItem", "position": 4, "name": "TFT Display Modules", "item": "https://www.plusopto.com/product-tft-display-modules.html" },
+        { "@type": "ListItem", "position": 5, "name": "Standard TFT Displays", "item": "https://www.plusopto.com/product-standard-tft-displays.html" },
+        { "@type": "ListItem", "position": 6, "name": "Standard TFT Technology", "item": "https://www.plusopto.com/standard-tft-technology.html" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.plusopto.com/standard-tft-technology.html#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a TFT LCD?",
+          "acceptedAnswer": { "@type": "Answer", "text": "TFT stands for Thin Film Transistor. A TFT LCD is an active matrix colour display in which every red, green and blue sub-pixel has its own transistor and storage capacitor on the rear glass. Each sub-pixel holds its charge between refreshes, which gives sharp, fast and full colour images, lit from behind by an LED backlight." }
+        },
+        {
+          "@type": "Question",
+          "name": "What do 6H, 12H and O-TFT mean?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Standard TN type TFT panels have a best viewing direction. 6H (6 o'clock) panels look best viewed from slightly below and suit products mounted above eye level; 12H (12 o'clock) panels look best viewed from slightly above and suit desktop or low mounted products. O-TFT is Winstar's wide viewing angle panel, which looks good from all directions. For the widest angles and best colour, IPS TFT is also available." }
+        },
+        {
+          "@type": "Question",
+          "name": "Which interface should I choose?",
+          "acceptedAnswer": { "@type": "Answer", "text": "SPI suits small displays up to about 3.5 inches driven by a low cost microcontroller with few pins. MCU or 8080 parallel interfaces use the display's own frame memory and suit 2.4 to 3.5 inch displays. RGB is the most common interface from 4.3 to 8 inches and needs a microcontroller or processor with an LCD controller. LVDS uses differential pairs for higher resolutions and longer cables, as on the 1024 x 600 seven inch models." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I choose resistive or capacitive touch?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Resistive touch (RTP) responds to pressure, so it works with gloves or a stylus and is low cost, but it is single touch and slightly reduces brightness. Projected capacitive touch (PCAP) gives multi-touch with up to 10 points on some models, a clearer image and a tough glass surface, and is the usual choice for modern user interfaces." }
+        },
+        {
+          "@type": "Question",
+          "name": "Are the standard TFT modules suitable for long-term industrial products?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Yes. The Winstar standard range is designed for industrial use, with an operating temperature of minus 20 to plus 70 degrees C on most models, low minimum order quantities and long-term availability. Options such as controller boards, power boards, high brightness backlights and customised cover glass or cables are available." }
+        }
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <div class="topbar py-2">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-3">
+        <a href="tel:+441942671122" class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="font-size:.8rem;"></i>+44 (0) 1942 671122
+        </a>
+        <a href="mailto:sales@plusopto.co.uk" class="topbar-email d-none d-sm-flex align-items-center gap-2">
+          <i class="bi bi-envelope-fill" style="font-size:.8rem;"></i>sales@plusopto.co.uk
+        </a>
+      </div>
+      <a href="contact.html" class="btn btn-teal btn-sm px-3 py-1" style="font-size:.8rem;">Request a Quote</a>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg site-navbar sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="assets/plusopto-logo.jpg" alt="Plus Opto" height="62" />
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-4"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="products.html" role="button" data-bs-toggle="dropdown">Products</a>
+            <ul class="dropdown-menu" id="navCategoryDropdown">
+              <li><a class="dropdown-item" href="category-display-solutions.html">Display Solutions</a></li>
+              <li><a class="dropdown-item" href="category-led-components.html">LED Components</a></li>
+              <li><a class="dropdown-item" href="category-led-drivers.html">LED Drivers</a></li>
+              <li><a class="dropdown-item" href="category-led-controllers.html">LED Controllers</a></li>
+              <li><a class="dropdown-item" href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+              <li><a class="dropdown-item" href="category-connected-lighting.html">Connected Lighting</a></li>
+              <li><a class="dropdown-item" href="category-led-interconnection.html">LED Interconnection</a></li>
+              <li><a class="dropdown-item" href="category-led-strips.html">LED Strips &amp; Modules</a></li>
+              <li><a class="dropdown-item" href="category-semiconductors.html">Semiconductors</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown">About</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="about.html">About Us</a></li>
+              <li><a class="dropdown-item" href="contact.html">Contact</a></li>
+              <li><a class="dropdown-item" href="careers.html">Careers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-search-wrap d-none d-lg-block">
+          <i class="bi bi-search search-icon"></i>
+          <input type="search" class="nav-search" placeholder="Search products…" aria-label="Search" autocomplete="off" />
+          <div class="search-results" id="searchResults" role="listbox" aria-label="Search results"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+  <!-- CATEGORY HERO -->
+  <div style="position:relative;height:350px;">
+    <img src="assets/cat-displays.jpg" alt="Standard TFT LCD Technology" style="width:100%;height:100%;object-fit:cover;" />
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(17,38,56,.92) 0%,rgba(17,38,56,.7) 50%,rgba(17,38,56,.35) 100%);"></div>
+    <div style="position:absolute;inset:0;display:flex;align-items:center;">
+      <div class="container">
+        <nav aria-label="breadcrumb" class="breadcrumb-dark mb-3">
+          <ol class="breadcrumb mb-0" style="--bs-breadcrumb-divider-color:rgba(210,228,245,0.4);--bs-breadcrumb-item-active-color:rgba(210,228,245,0.75);">
+            <li class="breadcrumb-item"><a href="index.html" style="color:#30e8d9;text-decoration:none;">Home</a></li>
+            <li class="breadcrumb-item"><a href="products.html" style="color:#30e8d9;text-decoration:none;">Products</a></li>
+            <li class="breadcrumb-item"><a href="category-display-solutions.html" style="color:#30e8d9;text-decoration:none;">Display Solutions</a></li>
+            <li class="breadcrumb-item"><a href="product-tft-display-modules.html" style="color:#30e8d9;text-decoration:none;">TFT Display Modules</a></li>
+            <li class="breadcrumb-item"><a href="product-standard-tft-displays.html" style="color:#30e8d9;text-decoration:none;">Standard TFT Displays</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Standard TFT Technology</li>
+          </ol>
+        </nav>
+        <h1 style="font-family:'Outfit',sans-serif;font-size:clamp(1.75rem,4vw,2.5rem);font-weight:700;color:#fff;margin-bottom:.5rem;">Standard TFT LCD Technology</h1>
+        <p style="color:rgba(210,228,245,.8);max-width:600px;margin:0;">Full colour TFT LCD modules from 1.77&quot; to 10.1&quot;, from 128 x 160 to 1024 x 600 pixels. Find out how a TFT works, what viewing direction means, and how to choose an interface and touch panel.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        <div class="col-12 col-lg-8">
+
+          <div class="border rounded-3 p-4 bg-white mb-5 text-center" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <img src="assets/img/standard-tft-group.jpg" alt="Winstar Standard TFT LCD Display Modules from 3.5 to 10.1 inch" class="img-fluid" style="max-height:360px;object-fit:contain;" />
+          </div>
+
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Overview</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>A TFT (Thin Film Transistor) LCD is an active matrix colour display. Every red, green and blue sub-pixel has its own tiny transistor that switches it on and holds its level until the next refresh, giving sharp, bright, full colour images with fast response. TFT has become the standard display for embedded products, from handheld instruments to industrial control panels.</p>
+            <p>As the authorised distributor for Winstar Display Corporation we offer more than 50 standard TFT modules from 1.77&quot; to 8&quot;, plus a 10.1&quot; model, with SPI, MCU, 8080, RGB and LVDS interfaces. Many sizes are available without touch, with a resistive touch panel (RTP) or with projected capacitive touch (PCAP), and some include a controller board or power board. Low minimum order quantities and long-term availability make them ideal for design-in to industrial products.</p>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Sizes from 1.77&quot; to 10.1&quot;</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Resolutions from 128 x 160 to 1024 x 600</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">SPI, MCU, 8080, RGB and LVDS interfaces</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">No touch, resistive or capacitive touch</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">Brightness up to 900 cd/m&sup2;</p>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6">
+              <div class="d-flex align-items-start gap-3">
+                <i class="bi bi-check-circle-fill text-teal mt-1" style="font-size:1.1rem;flex-shrink:0;"></i>
+                <p class="text-muted mb-0">&minus;20 to +70&deg;C operating temperature</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-12 col-lg-4 product-sidebar">
+          <div class="sticky-top">
+            <div class="sidebar-card mb-4">
+              <h3 class="fw-semibold mb-4" style="font-family:'Outfit',sans-serif;font-size:1.05rem;color:#1a2b3c;">Product Resources</h3>
+              <a href="product-standard-tft-displays.html"
+                 class="d-flex align-items-center gap-3 p-3 rounded-3 border mb-3 text-decoration-none"
+                 style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                  <i class="bi bi-display fs-5" style="color:#1a4870;"></i>
+                </div>
+                <div>
+                  <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">Standard TFT Displays</div>
+                  <div style="font-size:.78rem;color:#8096a8;">Full product range</div>
+                </div>
+              </a>
+              <a href="tft-module-selector-guide.html"
+                 class="d-flex align-items-center gap-3 p-3 rounded-3 border mb-3 text-decoration-none"
+                 style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                  <i class="bi bi-table fs-5" style="color:#1a4870;"></i>
+                </div>
+                <div>
+                  <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">TFT Selector Guide</div>
+                  <div style="font-size:.78rem;color:#8096a8;">Interactive Web Page</div>
+                </div>
+              </a>
+              <a href="ips-tft-technology.html"
+                 class="d-flex align-items-center gap-3 p-3 rounded-3 border mb-3 text-decoration-none"
+                 style="transition:background .2s;" onmouseenter="this.style.background='#f0f5fa'" onmouseleave="this.style.background='transparent'">
+                <div class="p-2 rounded-3" style="background:rgba(26,72,112,0.08);">
+                  <i class="bi bi-eye-fill fs-5" style="color:#1a4870;"></i>
+                </div>
+                <div>
+                  <div class="fw-medium" style="font-size:.875rem;color:#1a2b3c;">IPS TFT Technology</div>
+                  <div style="font-size:.78rem;color:#8096a8;">Widest viewing angles</div>
+                </div>
+              </a>
+              <a href="contact.html" class="btn btn-teal w-100 mb-2">Request a Quote</a>
+              <a href="contact.html" class="btn btn-outline-teal w-100">Technical Enquiry</a>
+            </div>
+            <div class="sidebar-card mb-4">
+              <h3 class="fw-semibold mb-3" style="font-family:'Outfit',sans-serif;font-size:1.05rem;color:#1a2b3c;">Standard TFT at a Glance</h3>
+              <ul class="list-unstyled spec-mini-list mb-0">
+                <li>Sizes: <span>1.77&quot; to 10.1&quot;</span></li>
+                <li>Resolution: <span>128 x 160 to 1024 x 600</span></li>
+                <li>Panel: <span>TN (6H / 12H), O-TFT wide view</span></li>
+                <li>Interfaces: <span>SPI, MCU, 8080, RGB, LVDS</span></li>
+                <li>Touch: <span>None, RTP, PCAP (up to 10 points)</span></li>
+                <li>Brightness: <span>250 to 900 cd/m&sup2;</span></li>
+                <li>Options: <span>Controller board, power board</span></li>
+                <li>Operating temp.: <span>&minus;20 to +70&deg;C (most models)</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">How a TFT LCD Works</h2>
+          <div class="text-muted lh-lg">
+            <p>A TFT panel is a sandwich of two glass plates with a thin layer of liquid crystal between them. The rear glass carries a grid of thin film transistors, one for every sub-pixel, with row (gate) and column (source) lines. The front glass carries a colour filter with red, green and blue stripes. Polarisers sit on the outside of both plates, and an LED backlight shines through from behind.</p>
+            <p class="mb-0">The driver IC scans the panel one row at a time, switching on that row's transistors and loading a voltage into each sub-pixel. The voltage twists the liquid crystal by a set amount, controlling how much backlight passes through the colour filter. Mixing the three sub-pixel levels creates each pixel's colour, and because every transistor holds its charge between scans, the image is stable and flicker free.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 p-4 bg-white text-center" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <svg viewBox="0 0 640 330" role="img" aria-labelledby="tftDiagTitle" style="width:100%;height:auto;display:block;">
+              <title id="tftDiagTitle">Cross section of a TFT LCD: front polariser, colour filter glass with red, green and blue sub-pixels, liquid crystal, TFT array glass with one transistor per sub-pixel, rear polariser and LED backlight</title>
+              <defs>
+                <marker id="arwTft" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#f4b625"/></marker>
+              </defs>
+              <!-- layers -->
+              <rect x="40" y="40" width="380" height="14" rx="2" fill="#112638"/>
+              <rect x="40" y="58" width="380" height="10" fill="#b7c6d3"/>
+              <g>
+                <rect x="40" y="68" width="60" height="18" fill="#e0322b"/><rect x="104" y="68" width="60" height="18" fill="#2fbf4a"/><rect x="168" y="68" width="60" height="18" fill="#3b6cf0"/>
+                <rect x="232" y="68" width="60" height="18" fill="#e0322b"/><rect x="296" y="68" width="60" height="18" fill="#2fbf4a"/><rect x="360" y="68" width="60" height="18" fill="#3b6cf0"/>
+              </g>
+              <rect x="40" y="86" width="380" height="80" fill="#eef3f7"/>
+              <g fill="#1a4870">
+                <ellipse cx="70" cy="126" rx="4" ry="18" transform="rotate(70 70 126)"/>
+                <ellipse cx="134" cy="126" rx="4" ry="18" transform="rotate(30 134 126)"/>
+                <ellipse cx="198" cy="126" rx="4" ry="18" transform="rotate(60 198 126)"/>
+                <ellipse cx="262" cy="126" rx="4" ry="18" transform="rotate(15 262 126)"/>
+                <ellipse cx="326" cy="126" rx="4" ry="18" transform="rotate(75 326 126)"/>
+                <ellipse cx="390" cy="126" rx="4" ry="18" transform="rotate(40 390 126)"/>
+              </g>
+              <g fill="#f4b625" stroke="#8a6a12" stroke-width="1">
+                <rect x="62" y="166" width="16" height="10"/><rect x="126" y="166" width="16" height="10"/><rect x="190" y="166" width="16" height="10"/>
+                <rect x="254" y="166" width="16" height="10"/><rect x="318" y="166" width="16" height="10"/><rect x="382" y="166" width="16" height="10"/>
+              </g>
+              <rect x="40" y="176" width="380" height="10" fill="#b7c6d3"/>
+              <rect x="40" y="194" width="380" height="14" rx="2" fill="#2c4a66"/>
+              <rect x="40" y="232" width="380" height="20" rx="3" fill="#ffffff" stroke="#c9d6e1"/>
+              <rect x="40" y="252" width="380" height="8" rx="2" fill="#1fada1"/>
+              <!-- light -->
+              <path d="M134 230 L134 20" stroke="#f4b625" stroke-width="3" marker-end="url(#arwTft)"/>
+              <path d="M262 230 L262 20" stroke="#f4b625" stroke-width="3" marker-end="url(#arwTft)"/>
+              <!-- labels -->
+              <g font-family="Outfit, system-ui, sans-serif" font-size="12" fill="#112638">
+                <line x1="424" y1="47" x2="446" y2="47" stroke="#b7c6d3"/><text x="452" y="51">Front polariser</text>
+                <line x1="424" y1="77" x2="446" y2="77" stroke="#b7c6d3"/><text x="452" y="81">Colour filter glass (R, G, B)</text>
+                <line x1="424" y1="126" x2="446" y2="126" stroke="#b7c6d3"/><text x="452" y="130">Liquid crystal</text>
+                <line x1="424" y1="171" x2="446" y2="171" stroke="#b7c6d3"/><text x="452" y="175">Thin film transistors</text>
+                <text x="452" y="190" font-size="11" fill="#6b7f8e">(one per sub-pixel, on TFT glass)</text>
+                <line x1="424" y1="201" x2="446" y2="201" stroke="#b7c6d3"/><text x="452" y="206">Rear polariser</text>
+                <line x1="424" y1="246" x2="446" y2="246" stroke="#b7c6d3"/><text x="452" y="250">LED backlight unit</text>
+              </g>
+              <g font-family="Outfit, system-ui, sans-serif" font-size="12" fill="#6b7f8e" text-anchor="middle">
+                <text x="230" y="290">Each transistor sets the voltage on its sub-pixel,</text>
+                <text x="230" y="308">controlling how much light passes through the colour filter</text>
+              </g>
+            </svg>
+            <p class="text-muted mb-0 mt-3" style="font-size:.8125rem;">Simplified illustration, not to scale</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADVANTAGES -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;color:#112638;">Advantages of Standard TFT Displays</h2>
+        <p class="text-muted mx-auto" style="max-width:580px;">Why designers choose a standard Winstar TFT module for embedded and industrial products</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-palette-fill"></i></div>
+            <h3>Full Colour Graphics</h3>
+            <p>Up to 16.7 million colours with fast response, ideal for graphical user interfaces, icons, gauges, photos and video.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-currency-pound"></i></div>
+            <h3>Cost Effective</h3>
+            <p>TN based standard panels give the lowest cost per inch of any colour display, with low minimum order quantities.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-diagram-3-fill"></i></div>
+            <h3>Choice of Interfaces</h3>
+            <p>SPI, MCU, 8080, RGB and LVDS, so you can match the display to anything from a small microcontroller to an embedded processor.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-hand-index-thumb-fill"></i></div>
+            <h3>Touch Options</h3>
+            <p>Many models come with a resistive touch panel or projected capacitive touch with up to 10 touch points, fitted and tested.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-thermometer-half"></i></div>
+            <h3>Industrial Grade</h3>
+            <p>&minus;20 to +70&deg;C operating temperature on most models, with high brightness versions up to 900 cd/m&sup2;.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="value-card">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-clock-history"></i></div>
+            <h3>Long-Term Supply</h3>
+            <p>A stable standard range suited to long product lifecycles, with customisation of cables, backlights and cover glass available.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIEWING DIRECTION & INTERFACES -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="row g-4 g-lg-5 align-items-center mb-5">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Viewing Direction: 6H, 12H or O-TFT?</h2>
+          <div class="text-muted lh-lg mb-0">
+            <p>Most standard TFTs use a TN (twisted nematic) panel. TN panels look their best from one direction: away from it, contrast and colour start to shift. The best direction is given as a clock position. A 6H (6 o'clock) panel is best viewed from slightly below, and a 12H (12 o'clock) panel from slightly above.</p>
+            <p class="mb-0">Pick the direction to suit how your product is mounted and viewed. Where the display will be seen from many angles, choose an O-TFT wide view model, or step up to an <a href="ips-tft-technology.html" class="fw-semibold" style="color:#1a4870;">IPS TFT</a> for the widest angles and best colour.</p>
+          </div>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <table class="table product-spec-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;"></th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#1fada1;padding:.75rem;border-color:#e4eaf0;">TN (6H / 12H)</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">O-TFT</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">IPS</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Viewing angle</td><td class="fw-medium">Best from one direction</td><td class="text-muted">Wide, all directions</td><td class="text-muted">Widest, all directions</td></tr>
+                <tr><td>Colour shift off-axis</td><td class="fw-medium">Noticeable</td><td class="text-muted">Low</td><td class="text-muted">Very low</td></tr>
+                <tr><td>Response</td><td class="fw-medium">Fast</td><td class="text-muted">Fast</td><td class="text-muted">Fast</td></tr>
+                <tr><td>Best suited to</td><td class="fw-medium">Fixed viewing position</td><td class="text-muted">Viewed from several sides</td><td class="text-muted">Premium colour and image</td></tr>
+                <tr><td>Cost</td><td class="fw-medium">Lowest</td><td class="text-muted">Small premium</td><td class="text-muted">Higher</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row g-4 g-lg-5 align-items-center">
+        <div class="col-12 col-lg-5">
+          <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;color:#112638;">Choosing an Interface</h2>
+          <div class="text-muted lh-lg mb-4">
+            <p>Small TFTs up to around 3.5&quot; have a driver IC with built-in frame memory, so a microcontroller only needs to send changes over SPI or a parallel MCU / 8080 bus. Larger displays use an RGB interface, where the host streams every pixel continuously with sync and clock signals, and needs an LCD controller or a Winstar controller board.</p>
+            <p class="mb-0">The 1024 x 600 seven inch models use LVDS, which carries high resolution video over a few differential pairs and suits longer cable runs. Our engineers can help you match a display to your processor.</p>
+          </div>
+          <a href="contact.html" class="btn btn-navy px-4">Ask Our Engineers</a>
+        </div>
+        <div class="col-12 col-lg-7">
+          <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+            <table class="table product-spec-table mb-0">
+              <thead>
+                <tr>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Interface</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Typical Sizes</th>
+                  <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#1fada1;padding:.75rem;border-color:#e4eaf0;">Best Suited To</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>SPI</td><td class="text-muted" style="white-space:nowrap;">1.77&quot; to 3.5&quot;</td><td class="fw-medium">Low pin count, small MCUs</td></tr>
+                <tr><td>MCU / 8080 parallel</td><td class="text-muted" style="white-space:nowrap;">1.77&quot; to 3.5&quot;</td><td class="fw-medium">Faster updates using on-chip frame memory</td></tr>
+                <tr><td>RGB (16 / 18 / 24-bit)</td><td class="text-muted" style="white-space:nowrap;">3.5&quot; to 8&quot;</td><td class="fw-medium">Processors with an LCD controller</td></tr>
+                <tr><td>LVDS</td><td class="text-muted" style="white-space:nowrap;">5.7&quot; and 7&quot;</td><td class="fw-medium">Higher resolution, longer cables, low EMI</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RANGE TABLE -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;color:#112638;">Standard TFT Display Range</h2>
+        <p class="text-muted mx-auto" style="max-width:580px;">A selection of popular standard TFT modules by size, resolution, driver IC and interface</p>
+      </div>
+      <div class="border rounded-3 bg-white table-responsive" style="box-shadow:0 4px 20px -4px rgba(17,38,56,.08);">
+        <table class="table product-spec-table mb-0">
+          <thead>
+            <tr>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Model</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Size</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Resolution</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;white-space:nowrap;">Outline (mm)</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Driver IC</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#112638;padding:.75rem;border-color:#e4eaf0;">Touch</th>
+              <th scope="col" style="font-family:'Outfit',sans-serif;font-size:.875rem;color:#1fada1;padding:.75rem;border-color:#e4eaf0;">Interface</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>WF18GTLAADNN0</td><td>1.77&quot;</td><td style="white-space:nowrap;">128 x 160</td><td class="text-muted" style="white-space:nowrap;">34 x 45.83</td><td class="text-muted">ST7735S</td><td class="text-muted">No</td><td class="fw-medium">SPI</td></tr>
+            <tr><td>WF28ETLAJDNG0</td><td>2.8&quot;</td><td style="white-space:nowrap;">240 x 320</td><td class="text-muted" style="white-space:nowrap;">50 x 69.2</td><td class="text-muted">ILI9341</td><td class="text-muted">PCAP</td><td class="fw-medium">MCU</td></tr>
+            <tr><td>WF35RTIACDNNB</td><td>3.5&quot;</td><td style="white-space:nowrap;">320 x 240</td><td class="text-muted" style="white-space:nowrap;">76.84 x 63.84</td><td class="text-muted">SSD2119</td><td class="text-muted">No</td><td class="fw-medium" style="white-space:nowrap;">SPI, MCU, RGB</td></tr>
+            <tr><td>WF43GTIAEDNT0</td><td>4.3&quot;</td><td style="white-space:nowrap;">480 x 272</td><td class="text-muted" style="white-space:nowrap;">105.5 x 67.2</td><td class="text-muted">ILI6480B</td><td class="text-muted">RTP</td><td class="fw-medium">RGB</td></tr>
+            <tr><td>WF57WTLECDNN0</td><td>5.7&quot;</td><td style="white-space:nowrap;">320 x 240</td><td class="text-muted" style="white-space:nowrap;">143.5 x 104.1</td><td class="text-muted">HX8218 + HX8615</td><td class="text-muted">No</td><td class="fw-medium">RGB</td></tr>
+            <tr><td>WF70B4TIAGDNN0</td><td>7&quot;</td><td style="white-space:nowrap;">800 x 480</td><td class="text-muted" style="white-space:nowrap;">165 x 100</td><td class="text-muted">HX8264 + HX8664</td><td class="text-muted">No</td><td class="fw-medium">RGB</td></tr>
+            <tr><td>WF70A7TIAHLNB0</td><td>7&quot;</td><td style="white-space:nowrap;">1024 x 600</td><td class="text-muted" style="white-space:nowrap;">202 x 135.5</td><td class="text-muted">EK79001HE + EK73215BCGA</td><td class="text-muted">PCAP</td><td class="fw-medium">LVDS</td></tr>
+            <tr><td>WF80BTIAGDNNC</td><td>8&quot;</td><td style="white-space:nowrap;">800 x 480</td><td class="text-muted" style="white-space:nowrap;">192.8 x 116.9</td><td class="text-muted">EK9713 + EK73002</td><td class="text-muted">No</td><td class="fw-medium">RGB</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="text-muted text-center mt-3 mb-0" style="font-size:.8125rem;">Many models are also available with resistive (RTP) or projected capacitive (PCAP) touch. A 10.1&quot; 1024 x 600 module (DS-T101BAH-01) is also available. <a href="tft-module-selector-guide.html" class="fw-semibold" style="color:#1a4870;">Compare all 53 models in the Selector Guide →</a> <a href="product-standard-tft-displays.html" class="fw-semibold" style="color:#1a4870;">View Standard TFT Displays →</a></p>
+    </div>
+  </section>
+
+  <!-- TOUCH OPTIONS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;color:#112638;">Touch Panel Options</h2>
+        <p class="text-muted mx-auto" style="max-width:620px;">Many standard TFTs are offered in three versions with the same panel and outline, so you can choose the right touch technology without changing the display. The touch option is shown by the letter near the end of the model number: N for no touch, T for resistive and G for capacitive.</p>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-4">
+          <div class="value-card h-100">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-display"></i></div>
+            <h3>No Touch</h3>
+            <p>The brightest and lowest cost option, for display-only products or designs using buttons, encoders or a separate keypad.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="value-card h-100">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-pencil-fill"></i></div>
+            <h3>Resistive (RTP)</h3>
+            <p>Pressure sensitive single touch that works with gloves, a stylus or any object. Low cost and simple to interface with a 4-wire touch controller.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="value-card h-100">
+            <div class="mb-3 text-teal" style="font-size:2rem;"><i class="bi bi-hand-index-thumb-fill"></i></div>
+            <h3>Capacitive (PCAP)</h3>
+            <p>Multi-touch with gestures (5 points on most models, up to 10 on some), a clear image and a durable glass surface, with an I2C touch controller.</p>
+          </div>
+        </div>
+      </div>
+      <p class="text-muted text-center mt-4 mb-0" style="font-size:.8125rem;">For example, WF43VTIAEDNN0 (no touch), WF43VTIAEDNT0 (RTP) and WF43VTIAEDNGA (PCAP) share the same 4.3&quot; panel. <a href="tft-module-selector-guide.html" class="fw-semibold" style="color:#1a4870;">Filter by touch type in the Selector Guide →</a></p>
+    </div>
+  </section>
+
+  <!-- STATS & APPLICATIONS -->
+  <section class="section-navy py-5">
+    <div class="container">
+      <div class="row g-4 text-center mb-5">
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">50+</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Standard Models</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">10.1&quot;</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Largest Size</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-gold);">900</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Max. Brightness (cd/m&sup2;)</div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="stat-value" style="font-family:'Outfit',sans-serif;font-size:2.5rem;font-weight:700;color:var(--po-teal-glow);">5</div>
+          <div style="color:rgba(210,228,245,0.65);font-size:.875rem;margin-top:.35rem;">Interface Types</div>
+        </div>
+      </div>
+      <div class="text-center mb-5">
+        <h2 class="fw-bold" style="font-family:'Outfit',sans-serif;">Typical Applications</h2>
+        <p class="mx-auto" style="max-width:580px;color:rgba(210,228,245,.75);">Standard TFT modules bring colour graphics and touch control to a wide range of products</p>
+      </div>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-gear-wide-connected me-2"></i>Industrial HMI</h3>
+            <p class="mb-0">Machine controls, PLC terminals and process equipment with touch operation.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-heart-pulse-fill me-2"></i>Medical Devices</h3>
+            <p class="mb-0">Patient monitors, infusion pumps and diagnostic equipment with clear colour readouts.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-speedometer2 me-2"></i>Test &amp; Measurement</h3>
+            <p class="mb-0">Handheld meters, analysers and bench instruments showing graphs and waveforms.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-ev-station-fill me-2"></i>EV Charging &amp; Energy</h3>
+            <p class="mb-0">Charge points, inverters and battery systems with status screens and user menus.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-house-gear-fill me-2"></i>Smart Home &amp; Appliances</h3>
+            <p class="mb-0">Thermostats, security panels, coffee machines and white goods with touch interfaces.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="highlight-card">
+            <h3><i class="bi bi-receipt me-2"></i>Retail &amp; Point of Sale</h3>
+            <p class="mb-0">Payment terminals, kiosks, vending and ticketing machines.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5">
+    <div class="container" style="max-width:760px;">
+      <h2 class="fw-bold mb-4 text-center" style="font-family:'Outfit',sans-serif;color:#112638;">Frequently Asked Questions</h2>
+      <div class="accordion" id="tftFaq" style="--bs-accordion-active-bg:rgba(31,173,161,.08);--bs-accordion-active-color:#112638;--bs-accordion-btn-focus-box-shadow:0 0 0 .2rem rgba(31,173,161,.25);--bs-accordion-border-color:#e4eaf0;--bs-accordion-border-radius:10px;--bs-accordion-inner-border-radius:10px;">
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">What is a TFT LCD?</button></h3>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#tftFaq"><div class="accordion-body text-muted lh-lg">TFT stands for Thin Film Transistor. A TFT LCD is an active matrix colour display in which every red, green and blue sub-pixel has its own transistor and storage capacitor on the rear glass. Each sub-pixel holds its charge between refreshes, which gives sharp, fast and full colour images, lit from behind by an LED backlight.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">What do 6H, 12H and O-TFT mean?</button></h3>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#tftFaq"><div class="accordion-body text-muted lh-lg">Standard TN type TFT panels have a best viewing direction. 6H (6 o'clock) panels look best viewed from slightly below and suit products mounted above eye level; 12H (12 o'clock) panels look best viewed from slightly above and suit desktop or low mounted products. O-TFT is Winstar's wide viewing angle panel, which looks good from all directions. For the widest angles and best colour, IPS TFT is also available.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">Which interface should I choose?</button></h3>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#tftFaq"><div class="accordion-body text-muted lh-lg">SPI suits small displays up to about 3.5 inches driven by a low cost microcontroller with few pins. MCU or 8080 parallel interfaces use the display's own frame memory and suit 2.4 to 3.5 inch displays. RGB is the most common interface from 4.3 to 8 inches and needs a microcontroller or processor with an LCD controller. LVDS uses differential pairs for higher resolutions and longer cables, as on the 1024 x 600 seven inch models.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">Should I choose resistive or capacitive touch?</button></h3>
+          <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#tftFaq"><div class="accordion-body text-muted lh-lg">Resistive touch (RTP) responds to pressure, so it works with gloves or a stylus and is low cost, but it is single touch and slightly reduces brightness. Projected capacitive touch (PCAP) gives multi-touch with up to 10 points on some models, a clearer image and a tough glass surface, and is the usual choice for modern user interfaces.</div></div>
+        </div>
+        <div class="accordion-item">
+          <h3 class="accordion-header"><button class="accordion-button collapsed fw-semibold" style="font-family:'Outfit',sans-serif;color:#112638;" type="button" data-bs-toggle="collapse" data-bs-target="#faq5" aria-expanded="false" aria-controls="faq5">Are the standard TFT modules suitable for long-term industrial products?</button></h3>
+          <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#tftFaq"><div class="accordion-body text-muted lh-lg">Yes. The Winstar standard range is designed for industrial use, with an operating temperature of minus 20 to plus 70 degrees C on most models, low minimum order quantities and long-term availability. Options such as controller boards, power boards, high brightness backlights and customised cover glass or cables are available.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED PRODUCTS -->
+  <section class="py-5 bg-po-muted">
+    <div class="container">
+      <h2 class="fw-bold mb-4" style="font-family:'Outfit',sans-serif;color:#112638;">Related Products</h2>
+      <div class="row g-4">
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="product-standard-tft-displays.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/standard-tft-group.jpg" alt="Standard TFT Displays" loading="lazy" /></div>
+              <div class="card-body"><h3>Standard TFT Displays</h3><span class="read-more">More Information →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="ips-tft-technology.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/ips-tft-lcd-group.jpg" alt="IPS TFT Technology" loading="lazy" /></div>
+              <div class="card-body"><h3>IPS TFT Technology</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="bar-tft-technology.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/Bar%20TFT%20Group.jpg" alt="Bar TFT Technology" loading="lazy" /></div>
+              <div class="card-body"><h3>Bar TFT Technology</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-3">
+            <a href="circular-tft-technology.html" class="card-product">
+              <div class="card-img-wrap"><img src="assets/img/Round-TFT-Group.jpg" alt="Circular TFT Technology" loading="lazy" /></div>
+              <div class="card-body"><h3>Circular TFT Technology</h3><span class="read-more">View Details →</span></div>
+            </a>
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-navy py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3" style="font-family:'Outfit',sans-serif;">Need a Custom Solution?</h2>
+      <p style="color:rgba(210,228,245,.75);max-width:560px;margin:0 auto 1.75rem;">
+        Our engineering team can help specify or develop a custom solution for your exact requirements.
+      </p>
+      <a href="contact.html" class="btn btn-teal btn-lg px-5">Talk to Our Engineers</a>
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="site-footer pt-5 pb-4">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 col-lg-3 footer-brand">
+          <img src="assets/Plus_Opto_logo_dark_bg.jpg" alt="Plus Opto" height="53" class="mb-3" />
+          <p>Established in 1994 as a specialist supplier of optoelectronic components. Quality, customer service and technical support.</p>
+          <div class="footer-social mt-2">
+            <a href="https://x.com/plusopto" target="_blank" rel="noopener" aria-label="Plus Opto on X">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/plus-opto-ltd/" target="_blank" rel="noopener" aria-label="Plus Opto on LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+          <div class="footer-enews">
+            <hr />
+            <span class="label">Get our e-news</span>
+            <form class="footer-enews-form" action="https://eepurl.com/iMP-aY" method="get" target="_blank" rel="noopener">
+              <input type="email" name="email" placeholder="you@company.com" aria-label="Email address" required />
+              <button type="submit" aria-label="Subscribe"><i class="bi bi-arrow-right"></i></button>
+            </form>
+          </div>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Products</h4>
+          <ul class="list-unstyled">
+          <li class="mb-2"><a href="category-display-solutions.html">Display Solutions</a></li>
+          <li class="mb-2"><a href="category-led-components.html">LED Components</a></li>
+          <li class="mb-2"><a href="category-led-drivers.html">LED Drivers</a></li>
+          <li class="mb-2"><a href="category-led-controllers.html">LED Controllers</a></li>
+          <li class="mb-2"><a href="category-led-assemblies.html">LED Assemblies &amp; Light Engines</a></li>
+          <li class="mb-2"><a href="category-connected-lighting.html">Connected Lighting</a></li>
+          <li class="mb-2"><a href="category-led-interconnection.html">LED Interconnection</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-md-3 col-lg-2">
+          <h4>Company</h4>
+          <ul class="list-unstyled">
+            <li class="mb-2"><a href="about.html">About Us</a></li>
+            <li class="mb-2"><a href="blog.html">News &amp; Blog</a></li>
+            <li class="mb-2"><a href="contact.html">Contact Us</a></li>
+            <li class="mb-2"><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li class="mb-2"><a href="privacy.html">Privacy Policy</a></li>
+            <li class="mb-2"><a href="legal-information.html">Legal Information</a></li>
+          </ul>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <h4>Contact</h4>
+          <ul class="list-unstyled">
+            <li class="footer-contact-item mb-3"><i class="bi bi-telephone-fill"></i><a href="tel:+441942671122">+44 (0) 1942 671122</a></li>
+            <li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:sales@plusopto.co.uk">sales@plusopto.co.uk</a></li><li class="footer-contact-item mb-3"><i class="bi bi-envelope-fill"></i><a href="mailto:accounts@plusopto.co.uk">accounts@plusopto.co.uk</a></li>
+            <li class="footer-contact-item"><i class="bi bi-geo-alt-fill"></i><span>Leigh, Lancashire, UK</span></li>
+          </ul>
+        </div>
+      </div>
+      <hr class="footer-divider" />
+      <p class="mb-1 text-center text-md-start" style="font-size:.75rem;color:rgba(255,255,255,.6);">Registered in England &amp; Wales 02987120 | VAT Number: GB 732 4193 48</p>
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-2 footer-bottom">
+        <p class="mb-0">&copy; 2026 Plus Opto. All rights reserved.</p>
+        <p class="mb-0">The Optoelectronic Specialists</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
