@@ -7,6 +7,24 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://www.plusopto.com/suppliers.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/supplier-ligitek.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.plusopto.com/supplier-winstar.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://www.plusopto.com/blog-choosing-led-driver.html</loc>
     <lastmod>2026-09-15</lastmod>
     <changefreq>monthly</changefreq>
