@@ -56,6 +56,9 @@
   .spec-table td:last-child { text-align: right; font-weight: 600; color: #153049; }
   .spec-table tr:last-child td { border-bottom: none; }
   .spec-table tr:nth-child(even) td { background: #f4f6f8; }
+  .spec-table.spec-3col th:not(:first-child) { text-align: center; }
+  .spec-table.spec-3col td:not(:first-child) { text-align: center; font-weight: 600; color: #153049; }
+  .spec-table.spec-3col td.spec-note { text-align: center; font-weight: 600; color: #153049; border-top: 1px solid #e2e6ea; }
   .card-footer-btns { padding: 14px 18px; border-top: 1px solid #e2e6ea; background: #f8fafc; display: flex; flex-direction: column; gap: 8px; }
 </style>
     <meta property="og:type" content="website" />
@@ -252,6 +255,19 @@
             <div class="part-number">Surface Mount</div>
             <div class="card-title">Surface Mount Aluminium Profiles</div>
             <div class="card-desc">Designed to be easily mounted onto any surface, these profiles are compatible with low voltage LED strips and provide heat dissipation, easy installation and a choice of diffuser or cover options with adhesive or clip fixing.</div>
+            <table class="spec-table spec-3col">
+              <thead><tr><th>Parameter</th><th>Rectangular</th><th>Square</th></tr></thead>
+              <tbody>
+                <tr><td>Standard Parts</td><td>YD1205<br>17.3×7.3mm</td><td>YD1202<br>17.5×15mm</td></tr>
+                <tr><td>Internal Width</td><td>12.8mm</td><td>12.2mm</td></tr>
+                <tr><td>Profile Lengths</td><td colspan="2">200mm – 2.0M (50mm increments)</td></tr>
+                <tr><td>Mounting</td><td colspan="2">Surface Mount</td></tr>
+                <tr><td>Diffusers</td><td colspan="2">Clear, Frosted, Milky, Opal</td></tr>
+                <tr><td>Operating Voltage</td><td colspan="2">12V or 24V</td></tr>
+                <tr><td>Control</td><td colspan="2">Dimmable</td></tr>
+                <tr><td colspan="3" class="spec-note">Custom lengths subject to MOQ</td></tr>
+              </tbody>
+            </table>
           </div>
           <div class="card-footer-btns">
             <a href="pdfs/Selector guide Surface Mount Alu profile.pdf" target="_blank" class="btn btn-outline-teal w-100">View Selector Guide pdf</a>
